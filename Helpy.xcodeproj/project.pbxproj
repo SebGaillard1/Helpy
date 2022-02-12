@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
-		57BACF5727B7FA59009AE36D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5627B7FA59009AE36D /* ViewController.swift */; };
+		57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */; };
 		57BACF5A27B7FA59009AE36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5827B7FA59009AE36D /* Main.storyboard */; };
 		57BACF5C27B7FA5A009AE36D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5B27B7FA5A009AE36D /* Assets.xcassets */; };
 		57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5D27B7FA5A009AE36D /* LaunchScreen.storyboard */; };
 		57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF6927B7FA5A009AE36D /* HelpyTests.swift */; };
-		57BACF7427B7FA5A009AE36D /* HelpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF7327B7FA5A009AE36D /* HelpyUITests.swift */; };
-		57BACF7627B7FA5A009AE36D /* HelpyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF7527B7FA5A009AE36D /* HelpyUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +37,7 @@
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BACF5427B7FA59009AE36D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57BACF5627B7FA59009AE36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		57BACF5927B7FA59009AE36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57BACF5B27B7FA5A009AE36D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57BACF5E27B7FA5A009AE36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,8 +45,6 @@
 		57BACF6527B7FA5A009AE36D /* HelpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF6927B7FA5A009AE36D /* HelpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpyTests.swift; sourceTree = "<group>"; };
 		57BACF6F27B7FA5A009AE36D /* HelpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57BACF7327B7FA5A009AE36D /* HelpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpyUITests.swift; sourceTree = "<group>"; };
-		57BACF7527B7FA5A009AE36D /* HelpyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +77,6 @@
 			children = (
 				57BACF5127B7FA59009AE36D /* Helpy */,
 				57BACF6827B7FA5A009AE36D /* HelpyTests */,
-				57BACF7227B7FA5A009AE36D /* HelpyUITests */,
 				57BACF5027B7FA59009AE36D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,12 +94,11 @@
 		57BACF5127B7FA59009AE36D /* Helpy */ = {
 			isa = PBXGroup;
 			children = (
+				57BACF8227B7FD6A009AE36D /* Controllers */,
+				57BACF8327B7FD78009AE36D /* Views */,
 				57BACF5227B7FA59009AE36D /* AppDelegate.swift */,
 				57BACF5427B7FA59009AE36D /* SceneDelegate.swift */,
-				57BACF5627B7FA59009AE36D /* ViewController.swift */,
-				57BACF5827B7FA59009AE36D /* Main.storyboard */,
 				57BACF5B27B7FA5A009AE36D /* Assets.xcassets */,
-				57BACF5D27B7FA5A009AE36D /* LaunchScreen.storyboard */,
 				57BACF6027B7FA5A009AE36D /* Info.plist */,
 			);
 			path = Helpy;
@@ -118,13 +112,21 @@
 			path = HelpyTests;
 			sourceTree = "<group>";
 		};
-		57BACF7227B7FA5A009AE36D /* HelpyUITests */ = {
+		57BACF8227B7FD6A009AE36D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				57BACF7327B7FA5A009AE36D /* HelpyUITests.swift */,
-				57BACF7527B7FA5A009AE36D /* HelpyUITestsLaunchTests.swift */,
+				57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */,
 			);
-			path = HelpyUITests;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57BACF8327B7FD78009AE36D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57BACF5827B7FA59009AE36D /* Main.storyboard */,
+				57BACF5D27B7FA5A009AE36D /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57BACF5727B7FA59009AE36D /* ViewController.swift in Sources */,
+				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
 			);
@@ -276,8 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57BACF7427B7FA5A009AE36D /* HelpyUITests.swift in Sources */,
-				57BACF7627B7FA5A009AE36D /* HelpyUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,8 +445,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +458,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,8 +475,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,7 +488,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
