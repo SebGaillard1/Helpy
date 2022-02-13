@@ -27,6 +27,10 @@
 		57BACF8B27B809EB009AE36D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 57BACF8A27B809EB009AE36D /* FirebaseAuth */; };
 		57BACF8D27B809EB009AE36D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 57BACF8C27B809EB009AE36D /* FirebaseDatabase */; };
 		57BACF8F27B809EB009AE36D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 57BACF8E27B809EB009AE36D /* FirebaseFirestore */; };
+		57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */; };
+		57C4215027B95152001A93B1 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214F27B95152001A93B1 /* Jobs.swift */; };
+		57C4215227B95198001A93B1 /* job-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57C4215127B95198001A93B1 /* job-list.txt */; };
+		57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215327B965F3001A93B1 /* JobsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		57BACF6927B7FA5A009AE36D /* HelpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpyTests.swift; sourceTree = "<group>"; };
 		57BACF6F27B7FA5A009AE36D /* HelpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF8527B807D3009AE36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSignUpViewController.swift; sourceTree = "<group>"; };
+		57C4214F27B95152001A93B1 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		57C4215127B95198001A93B1 /* job-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "job-list.txt"; sourceTree = "<group>"; };
+		57C4215327B965F3001A93B1 /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,7 @@
 				57BACF5427B7FA59009AE36D /* SceneDelegate.swift */,
 				5765A15927B84E9A0024B828 /* Constants.swift */,
 				57BACF5B27B7FA5A009AE36D /* Assets.xcassets */,
+				57C4215127B95198001A93B1 /* job-list.txt */,
 				57BACF6027B7FA5A009AE36D /* Info.plist */,
 				57BACF8527B807D3009AE36D /* GoogleService-Info.plist */,
 			);
@@ -148,6 +157,8 @@
 				5765A15D27B852830024B828 /* SignUpViewController.swift */,
 				5765A15F27B8557F0024B828 /* HomeViewController.swift */,
 				5765A16127B856FD0024B828 /* SignInViewController.swift */,
+				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
+				57C4215327B965F3001A93B1 /* JobsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +179,7 @@
 				5765A15727B84C4F0024B828 /* Client.swift */,
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
+				57C4214F27B95152001A93B1 /* Jobs.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +301,7 @@
 				57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */,
 				57BACF5C27B7FA5A009AE36D /* Assets.xcassets in Resources */,
 				57BACF5A27B7FA59009AE36D /* Main.storyboard in Resources */,
+				57C4215227B95198001A93B1 /* job-list.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,10 +333,13 @@
 				5765A15827B84C4F0024B828 /* Client.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,
 				5765A16027B8557F0024B828 /* HomeViewController.swift in Sources */,
+				57C4215027B95152001A93B1 /* Jobs.swift in Sources */,
 				5765A15A27B84E9A0024B828 /* Constants.swift in Sources */,
 				5765A15E27B852830024B828 /* SignUpViewController.swift in Sources */,
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
+				57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
+				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
