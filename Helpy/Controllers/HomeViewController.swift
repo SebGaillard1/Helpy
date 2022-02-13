@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
     @IBAction func signOutDidTouch(_ sender: Any) {
         // 1
         guard let user = Auth.auth().currentUser else { return }
-        let onlineRef = Database.database(url: FirebaseUrl.databaseUrl).reference(withPath: "online/\(user.uid)")
+        let onlineRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "online/\(user.uid)")
         // 2
         onlineRef.removeValue { error, _ in
           // 3

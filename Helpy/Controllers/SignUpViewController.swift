@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class SignUpViewController: UIViewController {
     //MARK: - Outlets
@@ -22,62 +22,64 @@ class SignUpViewController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
+    let ref = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        // 1
-//        handle = Auth.auth().addStateDidChangeListener { _, user in
-//            // 2
-//            if user == nil {
-//                self.navigationController?.popToRootViewController(animated: true)
-//            } else {
-//                // 3
-//                self.performSegue(withIdentifier: self.signUpToSuccess, sender: nil)
-//                self.emailTextField.text = nil
-//                self.passwordTextField.text = nil
-//                self.passwordConfirmationTextField.text = nil
-//            }
-//        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
-//        guard let handle = handle else { return }
-//        Auth.auth().removeStateDidChangeListener(handle)
     }
     
     //MARK: - Actions
     @IBAction func signUpDidTouch(_ sender: Any) {
         // 1
         if passwordTextField.text != passwordConfirmationTextField.text {
-            errorLabel.text = "Password and confirmation are not matching!"
+            errorLabel.text = "Le mot de passe et sa confirmation ne correspondent pas."
+            return
+        }
+        
+        guard
+            let firstName = firstNameTextField.text,
+            let lastName = lastNameTextField.text,
+            !firstName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+            !lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        else {
+            errorLabel.text = "Votre nom et prénom ne peuvent être vides."
             return
         }
         
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text,
-            !email.isEmpty,
-            !password.isEmpty
-        else { return }
+            !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+            !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        else {
+            errorLabel.text = "L'adresse mail et/ou le mot de passe ne peuvent être vides."
+            return
+        }
         
         // 2
-        Auth.auth().createUser(withEmail: email, password: password) { _, error in
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             // 3
-            if error == nil {
-                Auth.auth().signIn(withEmail: email, password: password) { user, error in
-                    if let error = error, user == nil {
-                        self.errorLabel.text = error.localizedDescription
+            if authResult != nil && error == nil {
+                self.addClient(lastName: lastName, firstName: firstName, authResult: authResult!) { error in
+                    if error == nil {
+                        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                            if let error = error, authResult == nil {
+                                self.errorLabel.text = error.localizedDescription
+                            } else {
+                                self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
+                            }
+                        }
                     } else {
-                        self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
+                        self.errorLabel.text = error?.localizedDescription
                     }
                 }
             } else {
@@ -85,4 +87,15 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+    
+    func addClient(lastName: String, firstName: String, authResult: AuthDataResult, completion: @escaping (_ error: Error?) -> Void) {
+        let client = Client(lastName: lastNameTextField.text!, firstName: firstNameTextField.text!, email: authResult.user.email!, uid: authResult.user.uid, key: "")
+        
+        let clientRef = ref.child(client.uid)
+        clientRef.setValue(client.toAnyObject()) { error, _ in
+            completion(error)
+        }
+    }
 }
+
+

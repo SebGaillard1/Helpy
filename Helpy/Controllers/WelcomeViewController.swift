@@ -10,7 +10,7 @@ import Firebase
 
 class WelcomeViewController: UIViewController {
     //MARK: - Properties
-    let ref = Database.database(url: FirebaseUrl.databaseUrl).reference(withPath: "client")
+    let ref = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "client")
     var refObservers: [DatabaseHandle] = []
     
     var handle: AuthStateDidChangeListenerHandle?
