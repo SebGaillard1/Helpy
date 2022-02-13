@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    let ref = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
+    //let ref = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -39,7 +39,6 @@ class SignUpViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func signUpDidTouch(_ sender: Any) {
-        // 1
         if passwordTextField.text != passwordConfirmationTextField.text {
             errorLabel.text = "Le mot de passe et sa confirmation ne correspondent pas."
             return
@@ -65,35 +64,26 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        // 2
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            // 3
-            if authResult != nil && error == nil {
-                self.addClient(lastName: lastName, firstName: firstName, authResult: authResult!) { error in
-                    if error == nil {
-                        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                            if let error = error, authResult == nil {
-                                self.errorLabel.text = error.localizedDescription
-                            } else {
-                                self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
-                            }
-                        }
+            if let error = error, authResult == nil {
+                self.errorLabel.text = error.localizedDescription
+                return
+            }
+            
+            FirebaseDatabaseManager().saveClient(lastName: lastName, firstName: firstName, authResult: authResult) { error in
+                if let error = error {
+                    self.errorLabel.text = error
+                    return
+                }
+                
+                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                    if let error = error, authResult == nil {
+                        self.errorLabel.text = error.localizedDescription
                     } else {
-                        self.errorLabel.text = error?.localizedDescription
+                        self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
                     }
                 }
-            } else {
-                self.errorLabel.text =  "\(error?.localizedDescription ?? "Impossible de créer le compte")"
             }
-        }
-    }
-    
-    func addClient(lastName: String, firstName: String, authResult: AuthDataResult, completion: @escaping (_ error: Error?) -> Void) {
-        let client = Client(lastName: lastNameTextField.text!, firstName: firstNameTextField.text!, email: authResult.user.email!, uid: authResult.user.uid, key: "")
-        
-        let clientRef = ref.child(client.uid)
-        clientRef.setValue(client.toAnyObject()) { error, _ in
-            completion(error)
         }
     }
 }
