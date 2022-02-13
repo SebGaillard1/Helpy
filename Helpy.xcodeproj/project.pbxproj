@@ -31,6 +31,7 @@
 		57C4215227B95198001A93B1 /* job-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57C4215127B95198001A93B1 /* job-list.txt */; };
 		57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215327B965F3001A93B1 /* JobsTableViewController.swift */; };
 		57C4215627B9752B001A93B1 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215527B9752B001A93B1 /* Professional.swift */; };
+		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		57C4215127B95198001A93B1 /* job-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "job-list.txt"; sourceTree = "<group>"; };
 		57C4215327B965F3001A93B1 /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		57C4215527B9752B001A93B1 /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
+		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		57BACF5127B7FA59009AE36D /* Helpy */ = {
 			isa = PBXGroup;
 			children = (
+				57C4215927B9999E001A93B1 /* Extensions */,
 				57BACF8427B8077B009AE36D /* Models */,
 				57BACF8227B7FD6A009AE36D /* Controllers */,
 				57BACF8327B7FD78009AE36D /* Views */,
@@ -182,6 +185,14 @@
 				57C4214F27B95152001A93B1 /* Jobs.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		57C4215927B9999E001A93B1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,
 				5765A15A27B84E9A0024B828 /* Constants.swift in Sources */,
 				5765A15E27B852830024B828 /* SignUpViewController.swift in Sources */,
+				57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */,
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
 				57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,

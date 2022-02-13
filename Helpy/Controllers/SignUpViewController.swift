@@ -12,6 +12,7 @@ class SignUpViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var postalCodeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
@@ -70,7 +71,7 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            FirebaseDatabaseManager().saveClient(lastName: lastName, firstName: firstName, authResult: authResult) { error in
+            FirebaseDatabaseManager().saveClient(lastName: lastName, firstName: firstName, postalCode: self.postalCodeTextField.text!, authResult: authResult) { error in
                 if let error = error {
                     self.errorLabel.text = error
                     return

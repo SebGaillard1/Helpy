@@ -12,15 +12,17 @@ struct Client {
     let key: String
     let lastName: String
     let firstName: String
+    let postalCode: String
     let email: String
     let uid: String
     
     // MARK: Initialize with Raw Data
-    init(lastName: String, firstName: String, email: String,  uid: String, key: String = "") {
+    init(lastName: String, firstName: String, postalCode: String, email: String, uid: String, key: String = "") {
         self.ref = nil
         self.key = key
         self.lastName = lastName
         self.firstName = firstName
+        self.postalCode = postalCode
         self.email = email
         self.uid = uid
     }
@@ -31,6 +33,7 @@ struct Client {
             let value = snapshot.value as? [String: AnyObject],
             let lastName = value["lastName"] as? String,
             let firstName = value["firstName"] as? String,
+            let postalCode = value["postalCode"] as? String,
             let email = value["email"] as? String,
             let uid = value["uid"] as? String
         else {
@@ -40,6 +43,7 @@ struct Client {
         self.key = snapshot.key
         self.lastName = lastName
         self.firstName = firstName
+        self.postalCode = postalCode
         self.email = email
         self.uid = uid
     }
@@ -49,6 +53,7 @@ struct Client {
         return [
             "lastName": lastName,
             "firstName": firstName,
+            "postalCode": postalCode,
             "email": email,
             "uid": uid
         ]
