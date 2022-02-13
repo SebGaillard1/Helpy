@@ -243,6 +243,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Créer mon compte"/>
                                 <connections>
+                                    <action selector="createAccountDidTouch:" destination="WST-jG-DHD" eventType="touchUpInside" id="GUh-fN-COE"/>
                                     <action selector="signUpDidTouch:" destination="IfY-18-BZs" eventType="touchUpInside" id="HtF-bg-ldV"/>
                                 </connections>
                             </button>
@@ -311,7 +312,15 @@
                     <navigationItem key="navigationItem" id="1lO-L8-UUk"/>
                     <connections>
                         <outlet property="chooseJobButton" destination="s3E-5a-zR3" id="Fs2-uB-6fY"/>
+                        <outlet property="createAccountButton" destination="clH-gB-MGN" id="CPO-MD-GRD"/>
+                        <outlet property="emailTextField" destination="Fs8-CH-asB" id="sbf-k1-Whd"/>
+                        <outlet property="errorLabel" destination="SJb-Cp-ht5" id="Yr4-49-CLC"/>
+                        <outlet property="firstNameTextField" destination="YGT-pb-ZYU" id="vPw-sv-c1G"/>
+                        <outlet property="lastNameTextField" destination="KeO-c8-xQh" id="xBt-Xe-jv8"/>
+                        <outlet property="passwordConfirmationTextField" destination="FY2-aI-jev" id="s3g-lT-7RB"/>
+                        <outlet property="passwordTextField" destination="hpW-kn-vdI" id="XDa-SS-Vrl"/>
                         <segue destination="TgL-2B-aWi" kind="show" identifier="proSignUpToJobs" id="GBW-4O-Iud"/>
+                        <segue destination="dwl-6o-Onh" kind="show" identifier="proSignUpToSuccess" id="j4z-av-bPA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k75-wq-duX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -557,7 +566,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uP2-dx-mEf"/>
+        <segue reference="j4z-av-bPA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
