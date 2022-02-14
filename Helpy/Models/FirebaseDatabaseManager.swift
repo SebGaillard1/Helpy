@@ -70,9 +70,30 @@ class FirebaseDatabaseManager {
     }
     
     // When we save a post, the key generated is unique and based on horodatage. So the post's list is in chronological order by default
-    func getRecentPosts() {
+    func getRecentPosts(callback: @escaping (_ posts: [Post]) -> Void) {
+//        refPosts.observe(.value) { snapshot in
+//            for child in snapshot.children {
+//
+//            }
+//        }
+        
+        var posts = [Post]()
         refPosts.observe(.value) { snapshot in
-            print(snapshot.value as Any)
+            let allUidSnaps = snapshot.children.allObjects as! [DataSnapshot] // Put into array to preserve order
+            
+            for uidSnap in allUidSnaps {
+               // let uid = uidSnap.key //get uid for each child
+                posts.append(Post(title: uidSnap.childSnapshot(forPath: "title").value as? String ?? "N/A",
+                                  category: uidSnap.childSnapshot(forPath: "category").value as? String ?? "N/A",
+                                  locality: uidSnap.childSnapshot(forPath: "locality").value as? String ?? "N/A",
+                                  postalCode: uidSnap.childSnapshot(forPath: "postalCode").value as? String ?? "N/A",
+                                  postDate: uidSnap.childSnapshot(forPath: "postDate").value as? Date ?? Date(),
+                                  proUid: uidSnap.childSnapshot(forPath: "proUid").value as? String ?? "N/A",
+                                  description: uidSnap.childSnapshot(forPath: "description").value as? String ?? "N/A",
+                                  imageUrl: uidSnap.childSnapshot(forPath: "imageUrl").value as? String ?? "N/A",
+                                  isOnline: uidSnap.childSnapshot(forPath: "isOnline").value as? Bool ?? false))
+            }
+            callback(posts)
         }
     }
 }

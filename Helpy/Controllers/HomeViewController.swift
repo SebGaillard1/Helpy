@@ -19,8 +19,6 @@ class HomeViewController: UIViewController {
     
     var posts = [Post]()
     
-    var postExemple: Post?
-    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +36,15 @@ class HomeViewController: UIViewController {
                 print("error")
             }
         }
-        
-        FirebaseDatabaseManager.shared.getRecentPosts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        FirebaseDatabaseManager.shared.getRecentPosts { posts in
+            self.posts = posts
+            self.postCollectionView.reloadData()
+        }
 
         handle = Auth.auth().addStateDidChangeListener { _, user in
             if user == nil {
@@ -68,30 +69,28 @@ class HomeViewController: UIViewController {
     
     //MARK: - Actions
     
+    @IBAction func logOutDidTouch(_ sender: Any) {
+                // 1
+                guard let user = Auth.auth().currentUser else { return }
+                let onlineRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "online/\(user.uid)")
+                // 2
+                onlineRef.removeValue { error, _ in
+                  // 3
+                  if let error = error {
+                    print("Removing online failed: \(error)")
+                    return
+                  }
+                  // 4
+                  do {
+                    try Auth.auth().signOut()
+                    self.navigationController?.popViewController(animated: true)
+                  } catch let error {
+                    print("Auth sign out failed: \(error)")
+                  }
+                }
+    }
     
 }
-
-//@IBAction func signOutDidTouch(_ sender: Any) {
-//        // 1
-//        guard let user = Auth.auth().currentUser else { return }
-//        let onlineRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "online/\(user.uid)")
-//        // 2
-//        onlineRef.removeValue { error, _ in
-//          // 3
-//          if let error = error {
-//            print("Removing online failed: \(error)")
-//            return
-//          }
-//          // 4
-//          do {
-//            try Auth.auth().signOut()
-//            self.navigationController?.popViewController(animated: true)
-//          } catch let error {
-//            print("Auth sign out failed: \(error)")
-//          }
-//        }
-//
-//    }
 
 //MARK: - Extension
 extension HomeViewController: UICollectionViewDataSource {
@@ -101,7 +100,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: postCellId, for: indexPath) as? PostCollectionViewCell else { return UICollectionViewCell() }
-        //cell.configure(withPost: postExemple!)
+        cell.configure(withPost: posts[indexPath.row])
         
         return cell
     }

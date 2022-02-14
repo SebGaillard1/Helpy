@@ -47,7 +47,7 @@ struct Post {
             "postDate": postDate.formatted(date: .numeric, time: .shortened),
             "proUid": proUid,
             "description": description,
-            "image": imageUrl,
+            "imageUrl": imageUrl,
             "isOnline": isOnline,
         ]
     }
