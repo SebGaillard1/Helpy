@@ -48,7 +48,7 @@ struct Professional {
         self.uid = uid
     }
     
-    // MARK: Convert Client to AnyObject
+    // MARK: Convert Professional to AnyObject
     func toAnyObject() -> Any {
         return [
             "lastName": lastName,

@@ -22,7 +22,8 @@ class PostCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(withPost post: Post) {
-        postImageView.image = post.image
+        //postImageView.image = post.imageUrl
+        postImageView.image = UIImage(named: "garde-enfant")!
         postTitleLabel.text = post.title
         postCategoryLabel.text = post.category
         postLocalityAndPostalCodeLabel.text = "\(post.locality) \(post.postalCode)"

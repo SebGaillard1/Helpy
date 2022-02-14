@@ -7,10 +7,13 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 class FirebaseDatabaseManager {
     let refClients = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
     let refPros = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForProfessionals)
+    let refPosts = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForPosts)
+
 
     
     func saveClient(lastName: String, firstName: String, adress: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
@@ -46,6 +49,26 @@ class FirebaseDatabaseManager {
             } else {
                 completion(nil)
             }
+        }
+    }
+    
+    func savePost(title: String, category: String, locality: String, postalCode: String, postDate: Date, proUid: String, description: String, imageUrl: String, isOnline: Bool, completion: @escaping (_ error: String?) -> Void) {
+        let post = Post(title: title, category: category, locality: locality, postalCode: postalCode, postDate: postDate, proUid: proUid, description: description, imageUrl: imageUrl, isOnline: isOnline)
+        let postRef = refPosts.childByAutoId()
+        
+        postRef.setValue(post.toAnyObject()) { error, _ in
+            if let error = error {
+                completion(error.localizedDescription)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    // When we save a post, the key generated is unique and based on horodatage. So the post's list is in chronological order by default
+    func getRecentPosts() {
+        refPosts.observe(.value) { snapshot in
+            print(snapshot.value as Any)
         }
     }
 }

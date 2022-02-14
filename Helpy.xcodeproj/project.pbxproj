@@ -218,10 +218,10 @@
 			children = (
 				5765A15727B84C4F0024B828 /* Client.swift */,
 				57C4215527B9752B001A93B1 /* Professional.swift */,
+				57439B3027BA92A5003C12E3 /* Post.swift */,
+				57C4214F27B95152001A93B1 /* Jobs.swift */,
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
-				57C4214F27B95152001A93B1 /* Jobs.swift */,
-				57439B3027BA92A5003C12E3 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

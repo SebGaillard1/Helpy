@@ -12,4 +12,5 @@ struct FirebaseHelper {
     
     static let pathForClients = "clients"
     static let pathForProfessionals = "pros"
+    static let pathForPosts = "posts"
 }

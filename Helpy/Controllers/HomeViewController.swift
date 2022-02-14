@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     
     let postCellId = "postCell"
     
+    var posts = [Post]()
+    
     var postExemple: Post?
     
     //MARK: - View life cycle
@@ -30,7 +32,14 @@ class HomeViewController: UIViewController {
         postCollectionView.delegate = self
         postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
         
-        postExemple = Post(title: "Gardes enfants", category: "Services", locality: "Lyon", postalCode: "69002", postDate: Date(), proUid: "zrerere", description: "Je garde vos enfants", image: UIImage(named: "garde-enfant")!)
+//        postExemple = Post(title: "Gardes enfants", category: "Services", locality: "Lyon", postalCode: "69002", postDate: Date(), proUid: "zrerere", description: "Je garde vos enfants", image: UIImage(named: "garde-enfant")!)
+        FirebaseDatabaseManager().savePost(title: "Gardes enfants", category: "Services", locality: "Paris", postalCode: "75016", postDate: Date(), proUid: "zgeyzyev", description: "Je garde vos enfants", imageUrl: "url", isOnline: true) { error in
+            if error != nil {
+                print("error")
+            }
+        }
+        
+        FirebaseDatabaseManager().getRecentPosts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,12 +96,12 @@ class HomeViewController: UIViewController {
 //MARK: - Extension
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: postCellId, for: indexPath) as? PostCollectionViewCell else { return UICollectionViewCell() }
-        cell.configure(withPost: postExemple!)
+        //cell.configure(withPost: postExemple!)
         
         return cell
     }

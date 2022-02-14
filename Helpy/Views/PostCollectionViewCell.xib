@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="138" height="271"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKt-fc-SIG">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garde-enfant" translatesAutoresizingMaskIntoConstraints="NO" id="XKt-fc-SIG">
                         <rect key="frame" x="0.0" y="0.0" width="138" height="189.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c04-4H-IVc">
@@ -75,4 +75,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="39.174107142857139"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="garde-enfant" width="706" height="414"/>
+    </resources>
 </document>
