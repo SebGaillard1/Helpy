@@ -15,7 +15,8 @@ class WelcomeViewController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    let welcomeToSuccess = "welcomeToHome"
+    //let welcomeToSuccess = "welcomeToHome"
+    let welcomeToSuccess = "welcomeToProHome"
 
     //MARK: - Life cycle
     override func viewDidLoad() {

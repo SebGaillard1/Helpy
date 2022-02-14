@@ -10,6 +10,7 @@
 		57439B3127BA92A5003C12E3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3027BA92A5003C12E3 /* Post.swift */; };
 		57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */; };
 		57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */; };
+		57439B3827BB0B45003C12E3 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3727BB0B45003C12E3 /* NewPostViewController.swift */; };
 		5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696D27B9A484000E93F0 /* ApiKeys.swift */; };
 		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
 		5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */; };
@@ -63,6 +64,7 @@
 		57439B3027BA92A5003C12E3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
+		57439B3727BB0B45003C12E3 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				57439B3627BAED02003C12E3 /* LogProcess */,
 				5765A15F27B8557F0024B828 /* HomeViewController.swift */,
+				57439B3727BB0B45003C12E3 /* NewPostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				5765A16027B8557F0024B828 /* HomeViewController.swift in Sources */,
 				57439B3127BA92A5003C12E3 /* Post.swift in Sources */,
 				57C4215027B95152001A93B1 /* Jobs.swift in Sources */,
+				57439B3827BB0B45003C12E3 /* NewPostViewController.swift in Sources */,
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,
 				57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */,
 				5765A15A27B84E9A0024B828 /* Constants.swift in Sources */,
