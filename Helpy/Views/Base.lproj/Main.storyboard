@@ -544,17 +544,17 @@
                         <outlet property="continueToCategoryButton" destination="da6-jb-gwq" id="gmw-iU-hlB"/>
                         <outlet property="continueToNextPageButton" destination="yxE-XI-92v" id="RHK-4z-nyE"/>
                         <outlet property="titleTextField" destination="NHl-ZY-QfT" id="4VN-NF-Ys2"/>
-                        <segue destination="oDt-xP-oy8" kind="show" id="YyJ-sv-NZY"/>
+                        <segue destination="oDt-xP-oy8" kind="show" identifier="newPostTitleToDescription" id="YyJ-sv-NZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYV-VC-85n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4152.1739130434789" y="728.57142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--New Post Description View Controller-->
         <scene sceneID="psx-zq-NNJ">
             <objects>
-                <viewController id="oDt-xP-oy8" sceneMemberID="viewController">
+                <viewController id="oDt-xP-oy8" customClass="NewPostDescriptionViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VGs-oe-IBf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
