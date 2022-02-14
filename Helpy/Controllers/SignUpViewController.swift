@@ -7,19 +7,20 @@
 
 import UIKit
 import Firebase
+import GooglePlaces
 
 class SignUpViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var postalCodeTextField: UITextField!
+    @IBOutlet weak var adressTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
     //MARK: - Properties
-    let signUpToSuccess = "signUpToSuccess"
+    let signUpToSuccess = "signUpToHome"
     
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -39,6 +40,24 @@ class SignUpViewController: UIViewController {
     }
     
     //MARK: - Actions
+    
+    @IBAction func addressTextFieldTouchDown(_ sender: UITextField) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        // Specify a filter
+        let filter = GMSAutocompleteFilter()
+        filter.country = "FR"
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+        
+        // Place data to return
+        let fields: GMSPlaceField = [.formattedAddress, .addressComponents, .coordinate]
+        autocompleteController.placeFields = fields
+        
+        present(autocompleteController, animated: true, completion: nil)
+    }
+    
     @IBAction func signUpDidTouch(_ sender: Any) {
         if passwordTextField.text != passwordConfirmationTextField.text {
             errorLabel.text = "Le mot de passe et sa confirmation ne correspondent pas."
@@ -71,7 +90,7 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            FirebaseDatabaseManager().saveClient(lastName: lastName, firstName: firstName, postalCode: self.postalCodeTextField.text!, authResult: authResult) { error in
+            FirebaseDatabaseManager().saveClient(lastName: lastName, firstName: firstName, adress: self.adressTextField.text!, authResult: authResult) { error in
                 if let error = error {
                     self.errorLabel.text = error
                     return
@@ -89,4 +108,49 @@ class SignUpViewController: UIViewController {
     }
 }
 
+extension SignUpViewController: GMSAutocompleteViewControllerDelegate {
+    
+  // Handle the user's selection.
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+      print(place.formattedAddress)
+      print(place.addressComponents)
+      print(place.coordinate.latitude)
+      print(place.coordinate.longitude)
+      guard let components = place.addressComponents else { return }
+      for component in components {
+          for type in component.types {
+              switch type {
+              case "locality":
+                  print(component.name)
+              case "postal_code":
+                  print(component.name)
+              default:
+                  break
+              }
+          }
+      }
+      
+    dismiss(animated: true, completion: nil)
+  }
+
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    // TODO: handle the error.
+    print("Error: ", error.localizedDescription)
+  }
+
+  // User canceled the operation.
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    dismiss(animated: true, completion: nil)
+  }
+
+  // Turn the network activity indicator on and off again.
+  func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    //UIApplication.shared.isNetworkActivityIndicatorVisible = true
+  }
+
+  func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    //UIApplication.shared.isNetworkActivityIndicatorVisible = false
+  }
+
+}
 

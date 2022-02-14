@@ -13,13 +13,13 @@ class FirebaseDatabaseManager {
     let refPros = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForProfessionals)
 
     
-    func saveClient(lastName: String, firstName: String, postalCode: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
+    func saveClient(lastName: String, firstName: String, adress: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
         guard let authResult = authResult else {
             completion("Une erreur est survenue lors de la création de votre compte.")
             return
         }
         
-        let client = Client(lastName: lastName, firstName: firstName, postalCode: postalCode, email: authResult.user.email!, uid: authResult.user.uid, key: "")
+        let client = Client(lastName: lastName, firstName: firstName, adress: adress, email: authResult.user.email!, uid: authResult.user.uid, key: "")
         let clientRef = refClients.child(client.uid)
         
         clientRef.setValue(client.toAnyObject()) { error, _ in

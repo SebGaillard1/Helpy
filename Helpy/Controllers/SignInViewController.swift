@@ -15,7 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     //MARK: - Properties
-    let signInToSuccess = "signInToSuccess"
+    let signInToSuccess = "signInToHome"
     
     //MARK: - View life cycle
     override func viewDidLoad() {

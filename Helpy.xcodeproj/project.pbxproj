@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57439B3127BA92A5003C12E3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3027BA92A5003C12E3 /* Post.swift */; };
+		5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696D27B9A484000E93F0 /* ApiKeys.swift */; };
+		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
 		5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */; };
 		5765A15827B84C4F0024B828 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15727B84C4F0024B828 /* Client.swift */; };
 		5765A15A27B84E9A0024B828 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15927B84E9A0024B828 /* Constants.swift */; };
@@ -32,6 +35,7 @@
 		57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215327B965F3001A93B1 /* JobsTableViewController.swift */; };
 		57C4215627B9752B001A93B1 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215527B9752B001A93B1 /* Professional.swift */; };
 		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
+		F328BAB97B2EF30B8A98712E /* libPods-Helpy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB6F48683D630764BDD982C /* libPods-Helpy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06ED8701850691B6CD307F85 /* Pods-Helpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.release.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.release.xcconfig"; sourceTree = "<group>"; };
+		1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.debug.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.debug.xcconfig"; sourceTree = "<group>"; };
+		57439B3027BA92A5003C12E3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		5765A15727B84C4F0024B828 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5765A15927B84E9A0024B828 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -77,6 +86,7 @@
 		57C4215327B965F3001A93B1 /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		57C4215527B9752B001A93B1 /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
+		BAB6F48683D630764BDD982C /* libPods-Helpy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Helpy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,7 @@
 				57BACF8F27B809EB009AE36D /* FirebaseFirestore in Frameworks */,
 				57BACF8927B809EB009AE36D /* FirebaseAppCheck in Frameworks */,
 				57BACF8B27B809EB009AE36D /* FirebaseAuth in Frameworks */,
+				F328BAB97B2EF30B8A98712E /* libPods-Helpy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +119,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42853ACF4C8E30A0EE761A2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAB6F48683D630764BDD982C /* libPods-Helpy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		436F517EEBA6A85EB2CA0769 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */,
+				06ED8701850691B6CD307F85 /* Pods-Helpy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		57BACF4627B7FA58009AE36D = {
 			isa = PBXGroup;
 			children = (
 				57BACF5127B7FA59009AE36D /* Helpy */,
 				57BACF6827B7FA5A009AE36D /* HelpyTests */,
 				57BACF5027B7FA59009AE36D /* Products */,
+				436F517EEBA6A85EB2CA0769 /* Pods */,
+				42853ACF4C8E30A0EE761A2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +171,7 @@
 				57C4215127B95198001A93B1 /* job-list.txt */,
 				57BACF6027B7FA5A009AE36D /* Info.plist */,
 				57BACF8527B807D3009AE36D /* GoogleService-Info.plist */,
+				5753696D27B9A484000E93F0 /* ApiKeys.swift */,
 			);
 			path = Helpy;
 			sourceTree = "<group>";
@@ -162,6 +193,7 @@
 				5765A16127B856FD0024B828 /* SignInViewController.swift */,
 				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
 				57C4215327B965F3001A93B1 /* JobsTableViewController.swift */,
+				5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +215,7 @@
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
 				57C4214F27B95152001A93B1 /* Jobs.swift */,
+				57439B3027BA92A5003C12E3 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57BACF7927B7FA5A009AE36D /* Build configuration list for PBXNativeTarget "Helpy" */;
 			buildPhases = (
+				0A98A473D776CC735E009BA4 /* [CP] Check Pods Manifest.lock */,
 				57BACF4B27B7FA59009AE36D /* Sources */,
 				57BACF4C27B7FA59009AE36D /* Frameworks */,
 				57BACF4D27B7FA59009AE36D /* Resources */,
+				B6ACE4DDD05EFD68667B0E2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +367,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A98A473D776CC735E009BA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Helpy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6ACE4DDD05EFD68667B0E2E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Helpy/Pods-Helpy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Helpy/Pods-Helpy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Helpy/Pods-Helpy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57BACF4B27B7FA59009AE36D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -342,7 +419,9 @@
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				5765A15827B84C4F0024B828 /* Client.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,
+				5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */,
 				5765A16027B8557F0024B828 /* HomeViewController.swift in Sources */,
+				57439B3127BA92A5003C12E3 /* Post.swift in Sources */,
 				57C4215027B95152001A93B1 /* Jobs.swift in Sources */,
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,
 				5765A15A27B84E9A0024B828 /* Constants.swift in Sources */,
@@ -351,6 +430,7 @@
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
 				57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
+				5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +603,7 @@
 		};
 		57BACF7A27B7FA5A009AE36D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -553,6 +634,7 @@
 		};
 		57BACF7B27B7FA5A009AE36D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06ED8701850691B6CD307F85 /* Pods-Helpy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

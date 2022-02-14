@@ -22,7 +22,7 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
     
     //MARK: - Properties
     let segueToJobs = "proSignUpToJobs"
-    let segueToSuccess = "proSignUpToSuccess"
+    let segueToSuccess = "proSignUpToHome"
     
     var defaultButtonTitle: String?
     

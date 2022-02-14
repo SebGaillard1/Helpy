@@ -22,10 +22,8 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // 1
+
         handle = Auth.auth().addStateDidChangeListener { _, user in
-            // 2
             if user == nil {
                 self.navigationController?.popViewController(animated: true)
             }
@@ -47,25 +45,28 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Actions
-    @IBAction func signOutDidTouch(_ sender: Any) {
-        // 1
-        guard let user = Auth.auth().currentUser else { return }
-        let onlineRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "online/\(user.uid)")
-        // 2
-        onlineRef.removeValue { error, _ in
-          // 3
-          if let error = error {
-            print("Removing online failed: \(error)")
-            return
-          }
-          // 4
-          do {
-            try Auth.auth().signOut()
-            self.navigationController?.popViewController(animated: true)
-          } catch let error {
-            print("Auth sign out failed: \(error)")
-          }
-        }
-
-    }
+    
+    
 }
+
+//@IBAction func signOutDidTouch(_ sender: Any) {
+//        // 1
+//        guard let user = Auth.auth().currentUser else { return }
+//        let onlineRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "online/\(user.uid)")
+//        // 2
+//        onlineRef.removeValue { error, _ in
+//          // 3
+//          if let error = error {
+//            print("Removing online failed: \(error)")
+//            return
+//          }
+//          // 4
+//          do {
+//            try Auth.auth().signOut()
+//            self.navigationController?.popViewController(animated: true)
+//          } catch let error {
+//            print("Auth sign out failed: \(error)")
+//          }
+//        }
+//
+//    }
