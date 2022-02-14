@@ -494,6 +494,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Continuer"/>
+                                <connections>
+                                    <action selector="continueToNextPageDidTouch:" destination="ARh-Ok-Pga" eventType="touchUpInside" id="5Tl-Pn-tHb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da6-jb-gwq">
                                 <rect key="frame" x="20" y="253" width="374" height="44"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */; };
 		57439B3127BA92A5003C12E3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3027BA92A5003C12E3 /* Post.swift */; };
 		57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */; };
 		57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		06ED8701850691B6CD307F85 /* Pods-Helpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.release.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.release.xcconfig"; sourceTree = "<group>"; };
 		1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.debug.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.debug.xcconfig"; sourceTree = "<group>"; };
+		570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDescriptionViewController.swift; sourceTree = "<group>"; };
 		57439B3027BA92A5003C12E3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		570FCAA327BB185F00404003 /* NewPostFlow */ = {
+			isa = PBXGroup;
+			children = (
+				570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */,
+			);
+			path = NewPostFlow;
+			sourceTree = "<group>";
+		};
 		57439B3627BAED02003C12E3 /* LogProcess */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 				57439B3627BAED02003C12E3 /* LogProcess */,
 				5765A15F27B8557F0024B828 /* HomeViewController.swift */,
 				57439B3727BB0B45003C12E3 /* NewPostViewController.swift */,
+				570FCAA327BB185F00404003 /* NewPostFlow */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -435,6 +446,7 @@
 				5765A16227B856FD0024B828 /* SignInViewController.swift in Sources */,
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
+				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
 				5765A15827B84C4F0024B828 /* Client.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,
 				5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */,

@@ -19,6 +19,7 @@ class NewPostViewController: UIViewController {
     
     //MARK: - Properties
     let categoryCellId = "categoryCell"
+    let segueIdToDescription = "newPostTitleToDescription"
     
     let categories = Jobs.arrayOfJobs
     
@@ -43,6 +44,12 @@ class NewPostViewController: UIViewController {
         continueToNextPageButton.isHidden = false
         continueToNextPageButton.isEnabled = false
     }
+    
+    //MARK: - Actions
+    @IBAction func continueToNextPageDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: segueIdToDescription, sender: self)
+    }
+    
 }
 
 //MARK: - Extensions
