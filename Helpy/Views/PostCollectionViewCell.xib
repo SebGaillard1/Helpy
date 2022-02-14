@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PostCollectionViewCell" customModule="Helpy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="138" height="271"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="138" height="271"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKt-fc-SIG">
+                        <rect key="frame" x="0.0" y="0.0" width="138" height="189.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c04-4H-IVc">
+                        <rect key="frame" x="7" y="193.5" width="124" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5Z-KG-LPm">
+                        <rect key="frame" x="7" y="214.5" width="124" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locality + postal code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rba-Mi-b6A">
+                        <rect key="frame" x="7" y="233" width="124" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYK-6u-gyX">
+                        <rect key="frame" x="7" y="250.5" width="124" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="c04-4H-IVc" secondAttribute="trailing" constant="7" id="7ic-WV-b6e"/>
+                <constraint firstItem="rYK-6u-gyX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="IW8-NJ-OUj"/>
+                <constraint firstItem="Rba-Mi-b6A" firstAttribute="top" secondItem="E5Z-KG-LPm" secondAttribute="bottom" constant="4" id="KQx-dd-o1c"/>
+                <constraint firstAttribute="trailing" secondItem="XKt-fc-SIG" secondAttribute="trailing" id="Oh9-y0-S71"/>
+                <constraint firstItem="XKt-fc-SIG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Oq1-19-d5M"/>
+                <constraint firstItem="XKt-fc-SIG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QPR-dF-Sp7"/>
+                <constraint firstItem="XKt-fc-SIG" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="SUu-sj-0FY"/>
+                <constraint firstAttribute="trailing" secondItem="E5Z-KG-LPm" secondAttribute="trailing" constant="7" id="TR1-BP-ubY"/>
+                <constraint firstAttribute="trailing" secondItem="rYK-6u-gyX" secondAttribute="trailing" constant="7" id="WbA-5S-fUw"/>
+                <constraint firstItem="Rba-Mi-b6A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="aTU-bU-gom"/>
+                <constraint firstAttribute="trailing" secondItem="Rba-Mi-b6A" secondAttribute="trailing" constant="7" id="cVl-1b-EJi"/>
+                <constraint firstItem="E5Z-KG-LPm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="dl0-aW-xaq"/>
+                <constraint firstItem="c04-4H-IVc" firstAttribute="top" secondItem="XKt-fc-SIG" secondAttribute="bottom" constant="4" id="gYc-Y1-VbQ"/>
+                <constraint firstItem="c04-4H-IVc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="iHw-LP-I7t"/>
+                <constraint firstItem="rYK-6u-gyX" firstAttribute="top" secondItem="Rba-Mi-b6A" secondAttribute="bottom" constant="4" id="m1r-Bz-S3r"/>
+                <constraint firstItem="E5Z-KG-LPm" firstAttribute="top" secondItem="c04-4H-IVc" secondAttribute="bottom" constant="4" id="zUi-PE-7Tn"/>
+            </constraints>
+            <size key="customSize" width="138" height="271"/>
+            <connections>
+                <outlet property="postCategoryLabel" destination="E5Z-KG-LPm" id="gaF-eL-r11"/>
+                <outlet property="postDateLabel" destination="rYK-6u-gyX" id="Qwv-84-zM8"/>
+                <outlet property="postImageView" destination="XKt-fc-SIG" id="IIC-Fq-oPF"/>
+                <outlet property="postLocalityAndPostalCodeLabel" destination="Rba-Mi-b6A" id="Dhi-oi-TSb"/>
+                <outlet property="postTitleLabel" destination="c04-4H-IVc" id="DMU-lu-SSh"/>
+            </connections>
+            <point key="canvasLocation" x="52.173913043478265" y="39.174107142857139"/>
+        </collectionViewCell>
+    </objects>
+</document>

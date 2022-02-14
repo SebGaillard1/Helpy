@@ -9,8 +9,15 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
+    //MARK: - Outlets
+    @IBOutlet weak var postCollectionView: UICollectionView!
+    
     //MARK: - Properties
     var handle: AuthStateDidChangeListenerHandle?
+    
+    let postCellId = "postCell"
+    
+    var postExemple: Post?
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -18,6 +25,12 @@ class HomeViewController: UIViewController {
         
         navigationController?.navigationBar.isHidden = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        postCollectionView.dataSource = self
+        postCollectionView.delegate = self
+        postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
+        
+        postExemple = Post(title: "Gardes enfants", category: "Services", locality: "Lyon", postalCode: "69002", postDate: Date(), proUid: "zrerere", description: "Je garde vos enfants", image: UIImage(named: "garde-enfant")!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,3 +83,27 @@ class HomeViewController: UIViewController {
 //        }
 //
 //    }
+
+//MARK: - Extension
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: postCellId, for: indexPath) as? PostCollectionViewCell else { return UICollectionViewCell() }
+        cell.configure(withPost: postExemple!)
+        
+        return cell
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.bounds.width / 2.2, height: self.view.bounds.height / 3)
+    }
+}
