@@ -140,6 +140,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		57439B3627BAED02003C12E3 /* LogProcess */ = {
+			isa = PBXGroup;
+			children = (
+				57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */,
+				5765A15D27B852830024B828 /* SignUpViewController.swift */,
+				5765A16127B856FD0024B828 /* SignInViewController.swift */,
+				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
+				57C4215327B965F3001A93B1 /* JobsTableViewController.swift */,
+				5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */,
+			);
+			path = LogProcess;
+			sourceTree = "<group>";
+		};
 		57BACF4627B7FA58009AE36D = {
 			isa = PBXGroup;
 			children = (
@@ -191,13 +204,8 @@
 		57BACF8227B7FD6A009AE36D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */,
-				5765A15D27B852830024B828 /* SignUpViewController.swift */,
+				57439B3627BAED02003C12E3 /* LogProcess */,
 				5765A15F27B8557F0024B828 /* HomeViewController.swift */,
-				5765A16127B856FD0024B828 /* SignInViewController.swift */,
-				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
-				57C4215327B965F3001A93B1 /* JobsTableViewController.swift */,
-				5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

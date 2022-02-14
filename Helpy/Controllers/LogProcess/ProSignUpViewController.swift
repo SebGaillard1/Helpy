@@ -74,7 +74,7 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
                 return
             }
             
-            FirebaseDatabaseManager().saveProfessional(lastName: lastName, firstName: firstName, job: job, authResult: authResult) { error in
+            FirebaseDatabaseManager.shared.saveProfessional(lastName: lastName, firstName: firstName, job: job, authResult: authResult) { error in
                 if let error = error {
                     self.errorLabel.text = error
                     return

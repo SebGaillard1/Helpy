@@ -10,11 +10,15 @@ import Firebase
 import UIKit
 
 class FirebaseDatabaseManager {
-    let refClients = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
-    let refPros = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForProfessionals)
-    let refPosts = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForPosts)
+    //MARK: - Singleton
+    static var shared = FirebaseDatabaseManager()
 
+    
+    private let refClients = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
+    private let refPros = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForProfessionals)
+    private let refPosts = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForPosts)
 
+    private init() {}
     
     func saveClient(lastName: String, firstName: String, adress: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
         guard let authResult = authResult else {

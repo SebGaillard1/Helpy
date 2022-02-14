@@ -90,7 +90,7 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            FirebaseDatabaseManager().saveClient(lastName: lastName, firstName: firstName, adress: self.adressTextField.text!, authResult: authResult) { error in
+            FirebaseDatabaseManager.shared.saveClient(lastName: lastName, firstName: firstName, adress: self.adressTextField.text!, authResult: authResult) { error in
                 if let error = error {
                     self.errorLabel.text = error
                     return
