@@ -27,7 +27,7 @@ class PostCollectionViewCell: UICollectionViewCell {
         postTitleLabel.text = post.title
         postCategoryLabel.text = post.category
         postLocalityAndPostalCodeLabel.text = "\(post.locality) \(post.postalCode)"
-        postDateLabel.text = "\(post.postDate)"
+        postDateLabel.text = "\(post.postDate!)"
     }
 
 }

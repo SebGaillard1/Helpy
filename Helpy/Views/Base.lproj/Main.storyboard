@@ -719,7 +719,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom de la ville" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJv-UB-bdX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville inconnue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJv-UB-bdX">
                                 <rect key="frame" x="20" y="346.5" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -731,7 +731,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code postal de la ville" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck5-Jg-jtB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code postal inconnu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck5-Jg-jtB">
                                 <rect key="frame" x="20" y="416" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -785,11 +785,85 @@
                         <outletCollection property="localityAndPostalCodeLabels" destination="GJv-UB-bdX" collectionClass="NSMutableArray" id="p8a-ga-bg4"/>
                         <outletCollection property="localityAndPostalCodeLabels" destination="pez-ki-cTF" collectionClass="NSMutableArray" id="L2n-T2-ti1"/>
                         <outletCollection property="localityAndPostalCodeLabels" destination="Ck5-Jg-jtB" collectionClass="NSMutableArray" id="tL1-r6-yS0"/>
+                        <segue destination="1YN-lr-pZX" kind="show" identifier="newPostAddressToPhoto" id="Vqi-zh-Cyi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x81-Jw-WKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5777" y="729"/>
+        </scene>
+        <!--New Post Photo View Controller-->
+        <scene sceneID="q4s-8q-ryb">
+            <objects>
+                <viewController id="1YN-lr-pZX" customClass="NewPostPhotoViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iMA-nF-o8I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Helpy" translatesAutoresizingMaskIntoConstraints="NO" id="IsJ-4S-NIR">
+                                <rect key="frame" x="-793" y="88" width="2000" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="y1w-ao-ooH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajoutez une photo à l'annonce" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdl-F5-KUI">
+                                <rect key="frame" x="20" y="142" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="RUT-PL-0Q5">
+                                <rect key="frame" x="109" y="313.5" width="196" height="269"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RUT-PL-0Q5" secondAttribute="height" multiplier="46:63" id="8gM-HY-qQ8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajoutez une photo pour illustrer votre annonce. Si vous n'en n'ajoutez pas, une image par défaut sera utilisée." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgM-BN-yTa">
+                                <rect key="frame" x="20" y="174" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Diw-0V-zpS">
+                                <rect key="frame" x="20" y="808" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pml-5x-oHv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continuer"/>
+                                <connections>
+                                    <action selector="continueToNextPageDidTouch:" destination="1YN-lr-pZX" eventType="touchUpInside" id="Elk-6d-dbX"/>
+                                    <action selector="continueToNextPageDidTouch:" destination="DoQ-Qw-nrE" eventType="touchUpInside" id="mu5-zL-ZYR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jQ5-LE-vxp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jQ5-LE-vxp" firstAttribute="trailing" secondItem="VgM-BN-yTa" secondAttribute="trailing" constant="20" id="0ed-8r-mNb"/>
+                            <constraint firstItem="fdl-F5-KUI" firstAttribute="leading" secondItem="jQ5-LE-vxp" secondAttribute="leading" constant="20" id="5TN-pA-H4V"/>
+                            <constraint firstItem="jQ5-LE-vxp" firstAttribute="trailing" secondItem="Diw-0V-zpS" secondAttribute="trailing" constant="20" id="6Pr-Bp-CYw"/>
+                            <constraint firstItem="VgM-BN-yTa" firstAttribute="top" secondItem="fdl-F5-KUI" secondAttribute="bottom" constant="8" symbolic="YES" id="8Mi-7v-p34"/>
+                            <constraint firstItem="VgM-BN-yTa" firstAttribute="leading" secondItem="jQ5-LE-vxp" secondAttribute="leading" constant="20" id="CUQ-Ic-x52"/>
+                            <constraint firstItem="Diw-0V-zpS" firstAttribute="leading" secondItem="jQ5-LE-vxp" secondAttribute="leading" constant="20" id="HNZ-hw-dLy"/>
+                            <constraint firstItem="fdl-F5-KUI" firstAttribute="top" secondItem="IsJ-4S-NIR" secondAttribute="bottom" constant="10" id="NXT-2A-PJS"/>
+                            <constraint firstItem="RUT-PL-0Q5" firstAttribute="centerY" secondItem="iMA-nF-o8I" secondAttribute="centerY" id="ac5-ZL-88c"/>
+                            <constraint firstItem="IsJ-4S-NIR" firstAttribute="top" secondItem="jQ5-LE-vxp" secondAttribute="top" id="cI4-b4-23K"/>
+                            <constraint firstItem="jQ5-LE-vxp" firstAttribute="bottom" secondItem="Diw-0V-zpS" secondAttribute="bottom" constant="10" id="cYS-6q-VgK"/>
+                            <constraint firstItem="RUT-PL-0Q5" firstAttribute="centerX" secondItem="iMA-nF-o8I" secondAttribute="centerX" id="glL-6y-kLF"/>
+                            <constraint firstItem="RUT-PL-0Q5" firstAttribute="height" secondItem="iMA-nF-o8I" secondAttribute="height" multiplier="0.3" id="wrQ-q0-lYc"/>
+                            <constraint firstItem="jQ5-LE-vxp" firstAttribute="trailing" secondItem="fdl-F5-KUI" secondAttribute="trailing" constant="20" id="xGK-cH-UWk"/>
+                            <constraint firstItem="IsJ-4S-NIR" firstAttribute="centerX" secondItem="iMA-nF-o8I" secondAttribute="centerX" id="xcg-PT-RR9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sbY-Fc-CoE"/>
+                    <connections>
+                        <outlet property="newPostImageView" destination="RUT-PL-0Q5" id="DET-iM-qcd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ms-Lg-q8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6580" y="729"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="YAK-4G-Gqc">
@@ -1048,6 +1122,7 @@
         <image name="Helpy" width="2000" height="1000"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="plus" width="1200" height="1200"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

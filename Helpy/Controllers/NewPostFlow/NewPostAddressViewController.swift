@@ -22,6 +22,8 @@ class NewPostAddressViewController: UIViewController {
     //MARK: - Properties
     var newPost: Post!
     
+    let segueIdToPhoto = "newPostAddressToPhoto"
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +36,16 @@ class NewPostAddressViewController: UIViewController {
         continueToNextPageButton.isEnabled = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdToPhoto {
+            let destinationVC = segue.destination as! NewPostPhotoViewController
+            destinationVC.newPost = newPost
+        }
+    }
+    
     //MARK: - Actions
     @IBAction func continueToNextPageDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: segueIdToPhoto, sender: self)
     }
     
     private func presentGooglePlacesAddressViewController() {
@@ -78,6 +88,7 @@ extension NewPostAddressViewController: GMSAutocompleteViewControllerDelegate {
                 case "postal_code":
                     newPost.postalCode = component.name
                     postalCodeLabel.text = component.name
+                    continueToNextPageButton.isEnabled = true
                 default:
                     break
                 }

@@ -16,14 +16,14 @@ struct Post {
     var category: String
     var locality: String
     var postalCode: String
-    var postDate: Date
+    var postDate: Date?
     var proUid: String
     var description: String
     var imageUrl: String
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, postDate: Date, proUid: String, description: String, imageUrl: String, isOnline: Bool, key: String = "") {
+    init(title: String, category: String, locality: String, postalCode: String, postDate: Date?, proUid: String, description: String, imageUrl: String, isOnline: Bool, key: String = "") {
         self.ref = nil
         self.key = key
         self.title = title
@@ -44,7 +44,7 @@ struct Post {
             "category": category,
             "locality": locality,
             "postalCode": postalCode,
-            "postDate": postDate.formatted(date: .numeric, time: .shortened),
+            "postDate": postDate!.formatted(date: .numeric, time: .shortened),
             "proUid": proUid,
             "description": description,
             "imageUrl": imageUrl,
