@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
     //MARK: - Properties
     let signUpToSuccess = "signUpToHome"
     
-    var handle: AuthStateDidChangeListenerHandle?
+    //var handle: AuthStateDidChangeListenerHandle?
     
     //let ref = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
     

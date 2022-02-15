@@ -458,6 +458,9 @@
                                 <rect key="frame" x="20" y="211" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <action selector="titleTextFieldEditingChanged:" destination="ARh-Ok-Pga" eventType="editingChanged" id="cdG-ki-Ebe"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisissez une catégorie" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkd-xB-6lX">
                                 <rect key="frame" x="20" y="265" width="374" height="20.5"/>
@@ -645,6 +648,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dwy-lR-FYe"/>
+                    <connections>
+                        <outlet property="continueToNextPageButton" destination="dyK-Ru-1hV" id="U3f-7k-eMz"/>
+                        <outlet property="descriptionTextView" destination="UcU-VO-prx" id="yU8-f9-7H0"/>
+                        <outlet property="titleTextField" destination="NyI-WZ-VqY" id="UEC-SA-QUJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1p-WV-A3s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

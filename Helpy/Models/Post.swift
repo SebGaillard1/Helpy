@@ -12,15 +12,15 @@ import Firebase
 struct Post {
     let ref: DatabaseReference?
     let key: String
-    let title: String
-    let category: String
-    let locality: String
-    let postalCode: String
-    let postDate: Date
-    let proUid: String
-    let description: String
-    let imageUrl: String
-    let isOnline: Bool
+    var title: String
+    var category: String
+    var locality: String
+    var postalCode: String
+    var postDate: Date
+    var proUid: String
+    var description: String
+    var imageUrl: String
+    var isOnline: Bool
     
     // MARK: Initialize with Raw Data
     init(title: String, category: String, locality: String, postalCode: String, postDate: Date, proUid: String, description: String, imageUrl: String, isOnline: Bool, key: String = "") {
@@ -36,7 +36,7 @@ struct Post {
         self.imageUrl = imageUrl
         self.isOnline = isOnline
     }
-    
+        
     // MARK: Convert Post to AnyObject
     func toAnyObject() -> Any {
         return [

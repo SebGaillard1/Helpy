@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewPostViewController: UIViewController {
     //MARK: - Outlets
@@ -23,20 +24,38 @@ class NewPostViewController: UIViewController {
     
     let categories = Jobs.arrayOfJobs
     
+    var newPost: Post?
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         chooseCategoryLabel.isHidden = true
         categoriesTableView.isHidden = true
+        continueToCategoryButton.isEnabled = false
         continueToNextPageButton.isHidden = true
         
         categoriesTableView.dataSource = self
         categoriesTableView.delegate = self
+        
+        guard let user = Auth.auth().currentUser else { return }
+        
+        newPost = Post(title: "", category: "", locality: "", postalCode: "", postDate: Date(), proUid: user.uid, description: "", imageUrl: "", isOnline: false)
     }
     
+    //MARK: - Actions
+    @IBAction func titleTextFieldEditingChanged(_ sender: UITextField) {
+        guard let title = sender.text else { return }
+        title.isTitleCorrectLenght ? (continueToCategoryButton.isEnabled = true) : (continueToCategoryButton.isEnabled = false)
+    }
+    
+    
     @IBAction func continueToCategoryDidTouch(_ sender: Any) {
+        guard let title = titleTextField.text else { return }
+        newPost?.title = title
+        
         titleTextField.resignFirstResponder()
+        titleTextField.isUserInteractionEnabled = false
         continueToCategoryButton.isHidden = true
         
         chooseCategoryLabel.isHidden = false
@@ -45,11 +64,17 @@ class NewPostViewController: UIViewController {
         continueToNextPageButton.isEnabled = false
     }
     
-    //MARK: - Actions
     @IBAction func continueToNextPageDidTouch(_ sender: Any) {
         performSegue(withIdentifier: segueIdToDescription, sender: self)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdToDescription {
+            let destinationVC = segue.destination as! NewPostDescriptionViewController
+            destinationVC.newPost = newPost
+        }
+    }
 }
 
 //MARK: - Extensions
@@ -72,6 +97,7 @@ extension NewPostViewController: UITableViewDataSource {
 
 extension NewPostViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        newPost?.category = categories[indexPath.row]
         continueToNextPageButton.isEnabled = true
     }
 }

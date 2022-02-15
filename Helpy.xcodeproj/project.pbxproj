@@ -14,6 +14,7 @@
 		57439B3827BB0B45003C12E3 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3727BB0B45003C12E3 /* NewPostViewController.swift */; };
 		5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696D27B9A484000E93F0 /* ApiKeys.swift */; };
 		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
+		575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */; };
 		5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */; };
 		5765A15827B84C4F0024B828 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15727B84C4F0024B828 /* Client.swift */; };
 		5765A15A27B84E9A0024B828 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15927B84E9A0024B828 /* Constants.swift */; };
@@ -69,6 +70,7 @@
 		57439B3727BB0B45003C12E3 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
+		575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isTitleCorrectLenght.swift"; sourceTree = "<group>"; };
 		5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		5765A15727B84C4F0024B828 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5765A15927B84E9A0024B828 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */,
+				575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				57439B3827BB0B45003C12E3 /* NewPostViewController.swift in Sources */,
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,
 				57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */,
+				575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */,
 				5765A15A27B84E9A0024B828 /* Constants.swift in Sources */,
 				5765A15E27B852830024B828 /* SignUpViewController.swift in Sources */,
 				57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */,

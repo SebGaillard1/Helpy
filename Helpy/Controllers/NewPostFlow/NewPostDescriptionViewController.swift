@@ -8,12 +8,22 @@
 import UIKit
 
 class NewPostDescriptionViewController: UIViewController {
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var continueToNextPageButton: UIButton!
+    
+    
+    //MARK: - Properties
+    var newPost: Post!
 
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        titleTextField.text = newPost.title
+        continueToNextPageButton.isEnabled = false
     }
+    
     
 
     /*
