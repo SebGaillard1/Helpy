@@ -15,25 +15,54 @@ class NewPostDescriptionViewController: UIViewController {
     
     //MARK: - Properties
     var newPost: Post!
+    
+    var isTitleCorrectLenght = false
+    var isDescriptionCorrectLenght = false
 
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        descriptionTextView.delegate = self
+        
         titleTextField.text = newPost.title
         continueToNextPageButton.isEnabled = false
+        
+        checkTitleValidity()
     }
     
+    //MARK: - Actions
+     @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
+         checkTitleValidity()
+     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func checkTitleValidity() {
+        guard let title = titleTextField.text else { return }
+        isTitleCorrectLenght = title.isTitleCorrectLenght
+        
+        checkTitleAndDescriptionValidity()
     }
-    */
-
+    
+    private func checkDescriptionValidity(description: String) {
+        let isDescriptionCorrectLenght = (description.count > 10 && description.count < 1000)
+        self.isDescriptionCorrectLenght = isDescriptionCorrectLenght
+        
+        checkTitleAndDescriptionValidity()
+    }
+    
+    private func checkTitleAndDescriptionValidity() {
+        if isDescriptionCorrectLenght && isTitleCorrectLenght {
+            continueToNextPageButton.isEnabled = true
+        } else {
+            continueToNextPageButton.isEnabled = false
+        }
+    }
 }
+
+//MARK: - Extension
+extension NewPostDescriptionViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        checkDescriptionValidity(description: textView.text)
+    }
+}
+
