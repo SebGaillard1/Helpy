@@ -14,6 +14,7 @@ class JobsTableViewController: UITableViewController {
     //MARK: - Properties
     let cellIdentifier = "jobCell"
     
+    
     let allJobs = Jobs.arrayOfJobs
     var filteredJobs = [String]()
     

@@ -19,6 +19,7 @@
 		575C102627BC46540014039A /* NewPostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102527BC46540014039A /* NewPostPhotoViewController.swift */; };
 		575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102727BC53590014039A /* UIImageView+roundedCorners.swift */; };
 		575C102A27BC54910014039A /* NewPostConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102927BC54910014039A /* NewPostConfirmViewController.swift */; };
+		575C102C27BC5DEE0014039A /* NewPostPostedSuccessfullyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102B27BC5DEE0014039A /* NewPostPostedSuccessfullyViewController.swift */; };
 		5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */; };
 		5765A15827B84C4F0024B828 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15727B84C4F0024B828 /* Client.swift */; };
 		5765A15A27B84E9A0024B828 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15927B84E9A0024B828 /* Constants.swift */; };
@@ -79,6 +80,7 @@
 		575C102527BC46540014039A /* NewPostPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPhotoViewController.swift; sourceTree = "<group>"; };
 		575C102727BC53590014039A /* UIImageView+roundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+roundedCorners.swift"; sourceTree = "<group>"; };
 		575C102927BC54910014039A /* NewPostConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostConfirmViewController.swift; sourceTree = "<group>"; };
+		575C102B27BC5DEE0014039A /* NewPostPostedSuccessfullyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPostedSuccessfullyViewController.swift; sourceTree = "<group>"; };
 		5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		5765A15727B84C4F0024B828 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5765A15927B84E9A0024B828 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				575C102327BC18840014039A /* NewPostAddressViewController.swift */,
 				575C102527BC46540014039A /* NewPostPhotoViewController.swift */,
 				575C102927BC54910014039A /* NewPostConfirmViewController.swift */,
+				575C102B27BC5DEE0014039A /* NewPostPostedSuccessfullyViewController.swift */,
 			);
 			path = NewPostFlow;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				57439B3127BA92A5003C12E3 /* Post.swift in Sources */,
 				57C4215027B95152001A93B1 /* Jobs.swift in Sources */,
 				57439B3827BB0B45003C12E3 /* NewPostViewController.swift in Sources */,
+				575C102C27BC5DEE0014039A /* NewPostPostedSuccessfullyViewController.swift in Sources */,
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,
 				57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */,
 				575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */,
