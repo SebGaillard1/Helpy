@@ -17,6 +17,8 @@
 		575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */; };
 		575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102327BC18840014039A /* NewPostAddressViewController.swift */; };
 		575C102627BC46540014039A /* NewPostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102527BC46540014039A /* NewPostPhotoViewController.swift */; };
+		575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102727BC53590014039A /* UIImageView+roundedCorners.swift */; };
+		575C102A27BC54910014039A /* NewPostConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102927BC54910014039A /* NewPostConfirmViewController.swift */; };
 		5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */; };
 		5765A15827B84C4F0024B828 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15727B84C4F0024B828 /* Client.swift */; };
 		5765A15A27B84E9A0024B828 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15927B84E9A0024B828 /* Constants.swift */; };
@@ -75,6 +77,8 @@
 		575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isTitleCorrectLenght.swift"; sourceTree = "<group>"; };
 		575C102327BC18840014039A /* NewPostAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostAddressViewController.swift; sourceTree = "<group>"; };
 		575C102527BC46540014039A /* NewPostPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPhotoViewController.swift; sourceTree = "<group>"; };
+		575C102727BC53590014039A /* UIImageView+roundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+roundedCorners.swift"; sourceTree = "<group>"; };
+		575C102927BC54910014039A /* NewPostConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostConfirmViewController.swift; sourceTree = "<group>"; };
 		5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		5765A15727B84C4F0024B828 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5765A15927B84E9A0024B828 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */,
 				575C102327BC18840014039A /* NewPostAddressViewController.swift */,
 				575C102527BC46540014039A /* NewPostPhotoViewController.swift */,
+				575C102927BC54910014039A /* NewPostConfirmViewController.swift */,
 			);
 			path = NewPostFlow;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			children = (
 				57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */,
 				575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */,
+				575C102727BC53590014039A /* UIImageView+roundedCorners.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
+				575C102A27BC54910014039A /* NewPostConfirmViewController.swift in Sources */,
 				5765A15827B84C4F0024B828 /* Client.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,
 				5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */,
@@ -472,6 +479,7 @@
 				57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */,
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
 				57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */,
+				575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
 				5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,

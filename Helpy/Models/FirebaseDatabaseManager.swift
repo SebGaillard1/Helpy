@@ -57,7 +57,7 @@ class FirebaseDatabaseManager {
     }
     
     func savePost(title: String, category: String, locality: String, postalCode: String, postDate: Date, proUid: String, description: String, imageUrl: String, isOnline: Bool, completion: @escaping (_ error: String?) -> Void) {
-        let post = Post(title: title, category: category, locality: locality, postalCode: postalCode, postDate: postDate, proUid: proUid, description: description, imageUrl: imageUrl, isOnline: isOnline)
+        let post = Post(title: title, category: category, locality: locality, postalCode: postalCode, postDate: postDate, proUid: proUid, description: description, image: nil, imageUrl: imageUrl, isOnline: isOnline)
         let postRef = refPosts.childByAutoId()
         
         postRef.setValue(post.toAnyObject()) { error, _ in
@@ -89,7 +89,7 @@ class FirebaseDatabaseManager {
                                   postalCode: uidSnap.childSnapshot(forPath: "postalCode").value as? String ?? "N/A",
                                   postDate: uidSnap.childSnapshot(forPath: "postDate").value as? Date ?? Date(),
                                   proUid: uidSnap.childSnapshot(forPath: "proUid").value as? String ?? "N/A",
-                                  description: uidSnap.childSnapshot(forPath: "description").value as? String ?? "N/A",
+                                  description: uidSnap.childSnapshot(forPath: "description").value as? String ?? "N/A", image: nil,
                                   imageUrl: uidSnap.childSnapshot(forPath: "imageUrl").value as? String ?? "N/A",
                                   isOnline: uidSnap.childSnapshot(forPath: "isOnline").value as? Bool ?? false))
             }

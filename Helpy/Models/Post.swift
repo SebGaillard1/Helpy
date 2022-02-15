@@ -19,11 +19,12 @@ struct Post {
     var postDate: Date?
     var proUid: String
     var description: String
+    var image: UIImage?
     var imageUrl: String
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, postDate: Date?, proUid: String, description: String, imageUrl: String, isOnline: Bool, key: String = "") {
+    init(title: String, category: String, locality: String, postalCode: String, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool, key: String = "") {
         self.ref = nil
         self.key = key
         self.title = title
@@ -33,6 +34,7 @@ struct Post {
         self.postDate = postDate
         self.proUid = proUid
         self.description = description
+        self.image = image
         self.imageUrl = imageUrl
         self.isOnline = isOnline
     }

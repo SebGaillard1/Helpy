@@ -16,16 +16,17 @@ class NewPostPhotoViewController: UIViewController {
     var image: UIImage? {
         didSet {
             newPostImageView.image = image
-            newPost.imageUrl = "image à gérer"
+            newPost.image = image
         }
     }
+    
+    let segueIdToConfirmation = "newPostPhotoToConfirmation"
 
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        newPostImageView.layer.masksToBounds = true
-        newPostImageView.layer.cornerRadius = 8
+        newPostImageView.roundedCorners()
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(importPicture))
         newPostImageView.addGestureRecognizer(recognizer)
@@ -37,9 +38,11 @@ class NewPostPhotoViewController: UIViewController {
             let ac = UIAlertController(title: "Êtes-vous sûr ?", message: "Ajouter une image permet de vous démarquer ! Si vous n'ajoutez pas de photo, une image par défaut sera utilisée.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Ajouter une photo", style: .default, handler: nil))
             ac.addAction(UIAlertAction(title: "Continuer sans image personnalisée", style: .default, handler: { _ in
-                // perform segue
+                self.performSegue(withIdentifier: self.segueIdToConfirmation, sender: self)
             }))
             present(ac, animated: true)
+        } else {
+            performSegue(withIdentifier: segueIdToConfirmation, sender: self)
         }
     }
     
@@ -48,6 +51,13 @@ class NewPostPhotoViewController: UIViewController {
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdToConfirmation {
+            let destinationVC = segue.destination as! NewPostConfirmViewController
+            destinationVC.newPost = newPost
+        }
     }
 }
 

@@ -39,6 +39,9 @@ class NewPostDescriptionViewController: UIViewController {
     }
     
     @IBAction func continueToNextPageDidTouch(_ sender: Any) {
+        guard let title = titleTextField.text else { return }
+        newPost.title = title
+        newPost.description = descriptionTextView.text
         performSegue(withIdentifier: segueIdToAddress, sender: self)
     }
     
