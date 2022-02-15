@@ -109,11 +109,10 @@ class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController: GMSAutocompleteViewControllerDelegate {
-    
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-      print(place.formattedAddress)
-      print(place.addressComponents)
+      //print(place.formattedAddress)
+      //print(place.addressComponents)
       print(place.coordinate.latitude)
       print(place.coordinate.longitude)
       guard let components = place.addressComponents else { return }
@@ -142,15 +141,5 @@ extension SignUpViewController: GMSAutocompleteViewControllerDelegate {
   func wasCancelled(_ viewController: GMSAutocompleteViewController) {
     dismiss(animated: true, completion: nil)
   }
-
-  // Turn the network activity indicator on and off again.
-  func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-    //UIApplication.shared.isNetworkActivityIndicatorVisible = true
-  }
-
-  func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-    //UIApplication.shared.isNetworkActivityIndicatorVisible = false
-  }
-
 }
 

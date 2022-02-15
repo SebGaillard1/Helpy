@@ -18,7 +18,9 @@ class NewPostDescriptionViewController: UIViewController {
     
     var isTitleCorrectLenght = false
     var isDescriptionCorrectLenght = false
-
+    
+    let segueIdToAddress = "newPostDescriptionToAddress"
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +34,22 @@ class NewPostDescriptionViewController: UIViewController {
     }
     
     //MARK: - Actions
-     @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
-         checkTitleValidity()
-     }
+    @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
+        checkTitleValidity()
+    }
     
+    @IBAction func continueToNextPageDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: segueIdToAddress, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdToAddress {
+            let destinationVC = segue.destination as! NewPostAddressViewController
+            destinationVC.newPost = newPost
+        }
+    }
+    
+    //MARK: - Private
     private func checkTitleValidity() {
         guard let title = titleTextField.text else { return }
         isTitleCorrectLenght = title.isTitleCorrectLenght

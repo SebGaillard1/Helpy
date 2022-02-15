@@ -15,6 +15,7 @@
 		5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696D27B9A484000E93F0 /* ApiKeys.swift */; };
 		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
 		575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */; };
+		575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102327BC18840014039A /* NewPostAddressViewController.swift */; };
 		5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */; };
 		5765A15827B84C4F0024B828 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15727B84C4F0024B828 /* Client.swift */; };
 		5765A15A27B84E9A0024B828 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15927B84E9A0024B828 /* Constants.swift */; };
@@ -71,6 +72,7 @@
 		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isTitleCorrectLenght.swift"; sourceTree = "<group>"; };
+		575C102327BC18840014039A /* NewPostAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostAddressViewController.swift; sourceTree = "<group>"; };
 		5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		5765A15727B84C4F0024B828 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5765A15927B84E9A0024B828 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */,
+				575C102327BC18840014039A /* NewPostAddressViewController.swift */,
 			);
 			path = NewPostFlow;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
 				5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
+				575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

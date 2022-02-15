@@ -599,7 +599,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UcU-VO-prx">
                                 <rect key="frame" x="20" y="300" width="374" height="224"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -617,6 +617,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Continuer"/>
+                                <connections>
+                                    <action selector="continueToNextPageDidTouch:" destination="oDt-xP-oy8" eventType="touchUpInside" id="mMZ-ro-Kaf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0UK-gW-bBc"/>
@@ -655,11 +658,138 @@
                         <outlet property="continueToNextPageButton" destination="dyK-Ru-1hV" id="U3f-7k-eMz"/>
                         <outlet property="descriptionTextView" destination="UcU-VO-prx" id="yU8-f9-7H0"/>
                         <outlet property="titleTextField" destination="NyI-WZ-VqY" id="UEC-SA-QUJ"/>
+                        <segue destination="DoQ-Qw-nrE" kind="show" identifier="newPostDescriptionToAddress" id="vTh-2g-ZZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1p-WV-A3s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4921.739130434783" y="728.57142857142856"/>
+        </scene>
+        <!--New Post Address View Controller-->
+        <scene sceneID="WvN-w1-ema">
+            <objects>
+                <viewController id="DoQ-Qw-nrE" customClass="NewPostAddressViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OAf-zm-SNo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Helpy" translatesAutoresizingMaskIntoConstraints="NO" id="hVG-Zp-cmq">
+                                <rect key="frame" x="-793" y="88" width="2000" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IUe-5l-2XY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Où proposez-vous ce service ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZ1-3T-34u">
+                                <rect key="frame" x="20" y="142" width="384" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse du service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADe-O9-i3g">
+                                <rect key="frame" x="20" y="186" width="374" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd7-Ae-I7Z">
+                                <rect key="frame" x="20" y="808" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="sPu-W3-CMR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continuer"/>
+                                <connections>
+                                    <action selector="continueToNextPageDidTouch:" destination="DoQ-Qw-nrE" eventType="touchUpInside" id="Fkb-L8-Umj"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="12 avenue des lilas, 69002 Lyon" translatesAutoresizingMaskIntoConstraints="NO" id="RoR-ib-Ri1">
+                                <rect key="frame" x="20" y="203" width="374" height="51"/>
+                                <gestureRecognizers/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre adresse précise ne sera pas utilisée. Seuls le code postal et la ville le seront." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXx-mt-aR0">
+                                <rect key="frame" x="20" y="254" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE4-u6-0Yd">
+                                <rect key="frame" x="20" y="317.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom de la ville" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJv-UB-bdX">
+                                <rect key="frame" x="20" y="346.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Postal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pez-ki-cTF">
+                                <rect key="frame" x="20" y="387" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code postal de la ville" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck5-Jg-jtB">
+                                <rect key="frame" x="20" y="416" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dh7-Gw-oQV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="trailing" secondItem="ADe-O9-i3g" secondAttribute="trailing" constant="20" id="1X1-pw-nPJ"/>
+                            <constraint firstItem="xE4-u6-0Yd" firstAttribute="top" secondItem="zXx-mt-aR0" secondAttribute="bottom" constant="30" id="2IX-sT-bfJ"/>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="trailing" secondItem="Ck5-Jg-jtB" secondAttribute="trailing" constant="20" id="2QJ-mJ-xjt"/>
+                            <constraint firstItem="ADe-O9-i3g" firstAttribute="top" secondItem="zZ1-3T-34u" secondAttribute="bottom" constant="20" id="3qx-ST-KG0"/>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="trailing" secondItem="GJv-UB-bdX" secondAttribute="trailing" constant="20" id="77M-NQ-Idj"/>
+                            <constraint firstItem="hVG-Zp-cmq" firstAttribute="centerX" secondItem="OAf-zm-SNo" secondAttribute="centerX" id="9Np-H8-MS5"/>
+                            <constraint firstItem="hVG-Zp-cmq" firstAttribute="top" secondItem="dh7-Gw-oQV" secondAttribute="top" id="DgW-oZ-yPm"/>
+                            <constraint firstItem="GJv-UB-bdX" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="FUB-eZ-tmT"/>
+                            <constraint firstAttribute="trailing" secondItem="zXx-mt-aR0" secondAttribute="trailing" constant="20" id="FXU-J3-SSn"/>
+                            <constraint firstItem="zXx-mt-aR0" firstAttribute="top" secondItem="RoR-ib-Ri1" secondAttribute="bottom" symbolic="YES" id="MEi-MT-O2h"/>
+                            <constraint firstItem="RoR-ib-Ri1" firstAttribute="trailing" secondItem="ADe-O9-i3g" secondAttribute="trailing" id="NTH-2B-KEm"/>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="trailing" secondItem="fd7-Ae-I7Z" secondAttribute="trailing" constant="20" id="Nv8-Hn-d8v"/>
+                            <constraint firstItem="xE4-u6-0Yd" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="PLI-Um-COE"/>
+                            <constraint firstItem="RoR-ib-Ri1" firstAttribute="leading" secondItem="ADe-O9-i3g" secondAttribute="leading" id="QeR-xb-Lwb"/>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="trailing" secondItem="pez-ki-cTF" secondAttribute="trailing" constant="20" id="Tpd-H9-7J3"/>
+                            <constraint firstItem="zZ1-3T-34u" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="V9R-Lt-jWj"/>
+                            <constraint firstItem="GJv-UB-bdX" firstAttribute="top" secondItem="xE4-u6-0Yd" secondAttribute="bottom" constant="8" symbolic="YES" id="VhC-WO-Eul"/>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="bottom" secondItem="fd7-Ae-I7Z" secondAttribute="bottom" constant="10" id="X4z-6g-IKE"/>
+                            <constraint firstItem="zXx-mt-aR0" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="adL-C4-7j4"/>
+                            <constraint firstItem="fd7-Ae-I7Z" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="asE-VM-jCP"/>
+                            <constraint firstItem="RoR-ib-Ri1" firstAttribute="top" secondItem="ADe-O9-i3g" secondAttribute="bottom" symbolic="YES" id="cTI-12-J6D"/>
+                            <constraint firstItem="pez-ki-cTF" firstAttribute="top" secondItem="GJv-UB-bdX" secondAttribute="bottom" constant="20" id="e9n-te-JWl"/>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="trailing" secondItem="xE4-u6-0Yd" secondAttribute="trailing" constant="20" id="fTm-mA-dGc"/>
+                            <constraint firstItem="pez-ki-cTF" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="gZB-Ra-Q1K"/>
+                            <constraint firstItem="Ck5-Jg-jtB" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="nhe-zf-mR5"/>
+                            <constraint firstItem="Ck5-Jg-jtB" firstAttribute="top" secondItem="pez-ki-cTF" secondAttribute="bottom" constant="8" symbolic="YES" id="okk-cn-KlM"/>
+                            <constraint firstItem="dh7-Gw-oQV" firstAttribute="trailing" secondItem="zZ1-3T-34u" secondAttribute="trailing" constant="10" id="qLM-X8-XnM"/>
+                            <constraint firstItem="ADe-O9-i3g" firstAttribute="leading" secondItem="dh7-Gw-oQV" secondAttribute="leading" constant="20" id="spl-1p-zrD"/>
+                            <constraint firstItem="Ck5-Jg-jtB" firstAttribute="top" secondItem="pez-ki-cTF" secondAttribute="bottom" constant="8" symbolic="YES" id="uGr-3k-fXM"/>
+                            <constraint firstItem="zZ1-3T-34u" firstAttribute="top" secondItem="hVG-Zp-cmq" secondAttribute="bottom" constant="10" id="xmt-Jx-PmM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zYQ-Ix-7mT"/>
+                    <connections>
+                        <outlet property="addressSearchBar" destination="RoR-ib-Ri1" id="xqD-CE-7Zp"/>
+                        <outlet property="continueToNextPageButton" destination="fd7-Ae-I7Z" id="lxu-ly-KAF"/>
+                        <outlet property="localityNameLabel" destination="GJv-UB-bdX" id="QuF-1m-tkI"/>
+                        <outlet property="localityTitleLabel" destination="xE4-u6-0Yd" id="84c-dl-Shp"/>
+                        <outlet property="postalCodeLabel" destination="Ck5-Jg-jtB" id="WFq-uA-Nt8"/>
+                        <outlet property="postalCodeTitleLabel" destination="pez-ki-cTF" id="hgx-Jn-eRr"/>
+                        <outletCollection property="localityAndPostalCodeLabels" destination="xE4-u6-0Yd" collectionClass="NSMutableArray" id="wEW-bZ-wmD"/>
+                        <outletCollection property="localityAndPostalCodeLabels" destination="GJv-UB-bdX" collectionClass="NSMutableArray" id="p8a-ga-bg4"/>
+                        <outletCollection property="localityAndPostalCodeLabels" destination="pez-ki-cTF" collectionClass="NSMutableArray" id="L2n-T2-ti1"/>
+                        <outletCollection property="localityAndPostalCodeLabels" destination="Ck5-Jg-jtB" collectionClass="NSMutableArray" id="tL1-r6-yS0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x81-Jw-WKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5777" y="729"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="YAK-4G-Gqc">

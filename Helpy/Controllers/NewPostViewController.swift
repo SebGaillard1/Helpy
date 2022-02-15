@@ -97,6 +97,7 @@ extension NewPostViewController: UITableViewDataSource {
 
 extension NewPostViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       //tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         newPost?.category = categories[indexPath.row]
         continueToNextPageButton.isEnabled = true
     }
