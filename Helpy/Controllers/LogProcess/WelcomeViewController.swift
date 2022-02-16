@@ -10,13 +10,14 @@ import Firebase
 
 class WelcomeViewController: UIViewController {
     //MARK: - Properties
-    let ref = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "client")
+    let clientRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
+    let proRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForProfessionals)
     var refObservers: [DatabaseHandle] = []
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    //let welcomeToSuccess = "welcomeToHome"
-    let welcomeToSuccess = "welcomeToProHome"
+    let segueIdWelcomeToClientHome = "welcomeToClientHome"
+    let segueIdWelcomeToProHome = "welcomeToProHome"
 
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -28,12 +29,23 @@ class WelcomeViewController: UIViewController {
         // 1
         handle = Auth.auth().addStateDidChangeListener { _, user in
           // 2
-          if user == nil {
-            self.navigationController?.popToRootViewController(animated: true)
-          } else {
-            // 3
-            self.performSegue(withIdentifier: self.welcomeToSuccess, sender: nil)
-          }
+            guard let user = user else {
+                self.navigationController?.popToRootViewController(animated: true)
+                return
+            }
+            
+            self.clientRef.observe(.value) { snapshot in
+                if snapshot.hasChild(user.uid) {
+                    self.performSegue(withIdentifier: self.segueIdWelcomeToClientHome, sender: nil)
+                }
+            }
+            
+            self.proRef.observe(.value) { snapshot in
+                if snapshot.hasChild(user.uid) {
+                    self.performSegue(withIdentifier: self.segueIdWelcomeToProHome, sender: nil)
+
+                }
+            }
         }
     }
     

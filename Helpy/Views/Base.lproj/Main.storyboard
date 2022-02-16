@@ -84,8 +84,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zk6-qP-3r0"/>
                     <connections>
-                        <segue destination="bLk-sA-tRa" kind="show" identifier="welcomeToHome" id="55g-uz-0ag"/>
-                        <segue destination="ARh-Ok-Pga" kind="show" identifier="welcomeToProHome" id="paS-9J-wya"/>
+                        <segue destination="bLk-sA-tRa" kind="show" identifier="welcomeToClientHome" id="55g-uz-0ag"/>
+                        <segue destination="0f7-Pp-UxX" kind="show" identifier="welcomeToProHome" id="6cX-2Y-tzc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -469,7 +469,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dWB-hU-aii">
-                                <rect key="frame" x="20" y="293.5" width="374" height="506.5"/>
+                                <rect key="frame" x="20" y="293.5" width="374" height="457.5"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" textLabel="2fS-9c-Gu0" style="IBUITableViewCellStyleDefault" id="AJa-S6-SBm">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
@@ -491,7 +491,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-XI-92v">
-                                <rect key="frame" x="20" y="808" width="374" height="44"/>
+                                <rect key="frame" x="20" y="759" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1GT-3J-Pzb"/>
                                 </constraints>
@@ -1064,11 +1064,44 @@
                                     <constraint firstAttribute="height" constant="44" id="NxX-Zl-mY5"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bravo !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oII-0Y-RhM">
+                                <rect key="frame" x="143" y="251" width="128" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L'annonce est publiée ! 🥳" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYk-za-VeF">
+                                <rect key="frame" x="20" y="323" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVa-ow-iHt">
+                                <rect key="frame" x="20" y="808" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ziD-9J-rZz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Retour à l'acceuil"/>
+                                <connections>
+                                    <action selector="continueToNextPageDidTouch:" destination="1YN-lr-pZX" eventType="touchUpInside" id="3k4-FI-jr2"/>
+                                    <action selector="continueToNextPageDidTouch:" destination="DoQ-Qw-nrE" eventType="touchUpInside" id="aPz-rq-9ME"/>
+                                    <action selector="publishDidTouch:" destination="evV-Qu-pTp" eventType="touchUpInside" id="qMo-sK-yNT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="amn-V2-2wI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="amn-V2-2wI" firstAttribute="trailing" secondItem="DVa-ow-iHt" secondAttribute="trailing" constant="20" id="2jA-hM-48Q"/>
+                            <constraint firstItem="cYk-za-VeF" firstAttribute="leading" secondItem="amn-V2-2wI" secondAttribute="leading" constant="20" id="7Gf-Pb-J8E"/>
+                            <constraint firstItem="oII-0Y-RhM" firstAttribute="centerY" secondItem="amn-V2-2wI" secondAttribute="centerY" constant="-200" id="8tc-wx-TE6"/>
                             <constraint firstItem="kQq-xQ-DCr" firstAttribute="centerX" secondItem="WN7-Ow-8QM" secondAttribute="centerX" id="8vf-Wp-k18"/>
+                            <constraint firstItem="oII-0Y-RhM" firstAttribute="centerX" secondItem="WN7-Ow-8QM" secondAttribute="centerX" id="DYG-OH-EIf"/>
+                            <constraint firstItem="amn-V2-2wI" firstAttribute="bottom" secondItem="DVa-ow-iHt" secondAttribute="bottom" constant="10" id="GDK-xD-hVt"/>
+                            <constraint firstItem="amn-V2-2wI" firstAttribute="trailing" secondItem="cYk-za-VeF" secondAttribute="trailing" constant="20" id="L3K-LV-O7u"/>
+                            <constraint firstItem="cYk-za-VeF" firstAttribute="top" secondItem="oII-0Y-RhM" secondAttribute="bottom" constant="24" id="WRn-x7-lmc"/>
+                            <constraint firstItem="DVa-ow-iHt" firstAttribute="leading" secondItem="amn-V2-2wI" secondAttribute="leading" constant="20" id="ZDM-Mw-0Fm"/>
                             <constraint firstItem="kQq-xQ-DCr" firstAttribute="top" secondItem="amn-V2-2wI" secondAttribute="top" id="bjw-5v-P5o"/>
                         </constraints>
                     </view>
@@ -1328,7 +1361,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="55g-uz-0ag"/>
-        <segue reference="paS-9J-wya"/>
+        <segue reference="6cX-2Y-tzc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54901960780000003" green="0.32156862749999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>

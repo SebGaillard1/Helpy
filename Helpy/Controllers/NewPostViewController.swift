@@ -30,6 +30,8 @@ class NewPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //view.hideKeyboardOnTap()
+        
         chooseCategoryLabel.isHidden = true
         categoriesTableView.isHidden = true
         continueToCategoryButton.isEnabled = false
@@ -37,6 +39,8 @@ class NewPostViewController: UIViewController {
         
         categoriesTableView.dataSource = self
         categoriesTableView.delegate = self
+        
+        titleTextField.delegate = self
         
         guard let user = Auth.auth().currentUser else { return }
         
@@ -48,7 +52,6 @@ class NewPostViewController: UIViewController {
         guard let title = sender.text else { return }
         title.isTitleCorrectLenght ? (continueToCategoryButton.isEnabled = true) : (continueToCategoryButton.isEnabled = false)
     }
-    
     
     @IBAction func continueToCategoryDidTouch(_ sender: Any) {
         guard let title = titleTextField.text else { return }
@@ -100,5 +103,11 @@ extension NewPostViewController: UITableViewDelegate {
        //tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         newPost?.category = categories[indexPath.row]
         continueToNextPageButton.isEnabled = true
+    }
+}
+
+extension NewPostViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
 }

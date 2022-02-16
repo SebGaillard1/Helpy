@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.hideKeyboardOnTap()
     }
     
     override func viewWillAppear(_ animated: Bool) {

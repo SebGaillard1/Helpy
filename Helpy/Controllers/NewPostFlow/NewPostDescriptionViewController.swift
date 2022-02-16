@@ -24,7 +24,8 @@ class NewPostDescriptionViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.hideKeyboardOnTap()
+
         descriptionTextView.delegate = self
         
         titleTextField.text = newPost.title

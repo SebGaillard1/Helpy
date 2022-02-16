@@ -29,7 +29,8 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.hideKeyboardOnTap()
+
         defaultButtonTitle = chooseJobButton.title(for: .normal)
     }
     
