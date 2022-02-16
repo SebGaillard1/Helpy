@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class NewPostViewController: UIViewController {
+class NewPostTitleViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var continueToCategoryButton: UIButton!
@@ -81,7 +81,7 @@ class NewPostViewController: UIViewController {
 }
 
 //MARK: - Extensions
-extension NewPostViewController: UITableViewDataSource {
+extension NewPostTitleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
@@ -98,7 +98,7 @@ extension NewPostViewController: UITableViewDataSource {
     }
 }
 
-extension NewPostViewController: UITableViewDelegate {
+extension NewPostTitleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        //tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         newPost?.category = categories[indexPath.row]
@@ -106,7 +106,7 @@ extension NewPostViewController: UITableViewDelegate {
     }
 }
 
-extension NewPostViewController: UITextFieldDelegate {
+extension NewPostTitleViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }

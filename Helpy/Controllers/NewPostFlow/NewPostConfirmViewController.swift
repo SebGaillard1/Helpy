@@ -39,7 +39,19 @@ class NewPostConfirmViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func publishDidTouch(_ sender: Any) {
-        // if tout est valide
-        performSegue(withIdentifier: segueIdToSuccess, sender: self)
+        newPost.postDate = Date()
+        publishNewPost()
+    }
+    
+    private func publishNewPost() {
+        FirebaseDatabaseManager.shared.savePost(post: newPost) { error in
+            if error == nil {
+                self.performSegue(withIdentifier: self.segueIdToSuccess, sender: self)
+            } else {
+                let ac = UIAlertController(title: "Erreur", message: "Aie, impossible de poster l'annonce. L'erreur suivante vient de se produire : \(error!)", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(ac, animated: true, completion: nil)
+            }
+        }
     }
 }

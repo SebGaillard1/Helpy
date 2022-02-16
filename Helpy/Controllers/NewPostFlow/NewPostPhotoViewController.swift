@@ -27,6 +27,8 @@ class NewPostPhotoViewController: UIViewController {
         super.viewDidLoad()
 
         newPostImageView.roundedCorners()
+        newPostImageView.layer.borderWidth = 2
+        newPostImageView.layer.borderColor = Constants.appAccentUIColor.cgColor
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(importPicture))
         newPostImageView.addGestureRecognizer(recognizer)

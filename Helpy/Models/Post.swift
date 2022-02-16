@@ -46,7 +46,7 @@ struct Post {
             "category": category,
             "locality": locality,
             "postalCode": postalCode,
-            "postDate": postDate!.formatted(date: .numeric, time: .shortened),
+            "postDate": postDate?.formatted(date: .numeric, time: .shortened) ?? "N/A",
             "proUid": proUid,
             "description": description,
             "imageUrl": imageUrl,

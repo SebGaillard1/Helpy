@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
+class ClientHomepageViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var postCollectionView: UICollectionView!
     
@@ -29,12 +29,6 @@ class HomeViewController: UIViewController {
         postCollectionView.dataSource = self
         postCollectionView.delegate = self
         postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
-        
-        FirebaseDatabaseManager.shared.savePost(title: "Gardes enfants", category: "Services", locality: "Montpellier", postalCode: "34080", postDate: Date(), proUid: "zgeyzyev", description: "Je garde vos enfants", imageUrl: "url", isOnline: true) { error in
-            if error != nil {
-                print("error")
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +38,7 @@ class HomeViewController: UIViewController {
             self.posts = posts
             self.postCollectionView.reloadData()
         }
-
+        
         handle = Auth.auth().addStateDidChangeListener { _, user in
             if user == nil {
                 self.navigationController?.popViewController(animated: true)
@@ -61,7 +55,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
+        
         guard let handle = handle else { return }
         Auth.auth().removeStateDidChangeListener(handle)
     }
@@ -69,30 +63,17 @@ class HomeViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func logOutDidTouch(_ sender: Any) {
-                // 1
-                guard let user = Auth.auth().currentUser else { return }
-                let onlineRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: "online/\(user.uid)")
-                // 2
-                onlineRef.removeValue { error, _ in
-                  // 3
-                  if let error = error {
-                    print("Removing online failed: \(error)")
-                    return
-                  }
-                  // 4
-                  do {
-                    try Auth.auth().signOut()
-                    self.navigationController?.popViewController(animated: true)
-                  } catch let error {
-                    print("Auth sign out failed: \(error)")
-                  }
-                }
+        do {
+            try Auth.auth().signOut()
+            self.navigationController?.popViewController(animated: true)
+        } catch let error {
+            print("Auth sign out failed: \(error)")
+        }
     }
-    
 }
 
 //MARK: - Extension
-extension HomeViewController: UICollectionViewDataSource {
+extension ClientHomepageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
@@ -105,11 +86,11 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {
+extension ClientHomepageViewController: UICollectionViewDelegate {
     
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension ClientHomepageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width / 2.2, height: self.view.bounds.height / 3)
     }
