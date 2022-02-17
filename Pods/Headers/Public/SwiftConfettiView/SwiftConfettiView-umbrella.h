@@ -1,0 +1,1 @@
+../../../Target Support Files/SwiftConfettiView/SwiftConfettiView-umbrella.h

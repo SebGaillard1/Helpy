@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import SwiftConfettiView
+//import SwiftConfettiView
 
 class NewPostPostedSuccessfullyViewController: UIViewController {
-    var confettiView: SwiftConfettiView?
+    //var confettiView: SwiftConfettiView?
     var feedbackGenerator: UINotificationFeedbackGenerator?
     
     override func viewDidLoad() {
@@ -17,23 +17,23 @@ class NewPostPostedSuccessfullyViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
 
-        confettiView = SwiftConfettiView(frame: self.view.bounds)
-        confettiView?.intensity = 1
-        self.view.addSubview(confettiView!)
+//        confettiView = SwiftConfettiView(frame: self.view.bounds)
+//        confettiView?.intensity = 1
+        //self.view.addSubview(confettiView!)
         
         feedbackGenerator = UINotificationFeedbackGenerator()
         feedbackGenerator?.prepare()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        confettiView?.startConfetti()
+        //confettiView?.startConfetti()
         feedbackGenerator?.notificationOccurred(.success)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        confettiView?.stopConfetti()
+        //confettiView?.stopConfetti()
         feedbackGenerator = nil
     }
 }

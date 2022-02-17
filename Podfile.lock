@@ -1,0 +1,20 @@
+PODS:
+  - GooglePlaces (6.0.0)
+  - SwiftConfettiView (0.1.0)
+
+DEPENDENCIES:
+  - GooglePlaces (= 6.0.0)
+  - SwiftConfettiView
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - GooglePlaces
+    - SwiftConfettiView
+
+SPEC CHECKSUMS:
+  GooglePlaces: c97d96ae68594acb64035c9ca9f26fbfc1d23af1
+  SwiftConfettiView: 1bdbc2e6913b6b1c76d8070802b212508ad5c352
+
+PODFILE CHECKSUM: 9b75636cdaa8aca5d8641618fd39a0f43ba23cfc
+
+COCOAPODS: 1.11.2
