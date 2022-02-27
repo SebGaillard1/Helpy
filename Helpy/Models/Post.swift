@@ -23,7 +23,7 @@ struct Post {
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, postDate: Date, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
+    init(title: String, category: String, locality: String, postalCode: String, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
         self.title = title
         self.category = category
         self.locality = locality
@@ -44,7 +44,6 @@ struct Post {
             "locality": locality,
             "postalCode": postalCode,
             "postDate": postDate ?? Date(),
-//            "postDate": postDate?.formatted(date: .numeric, time: .shortened) ?? "N/A",
             "proUid": proUid,
             "description": description,
             "imageUrl": imageUrl,
@@ -59,7 +58,7 @@ struct Post {
                 let category = snapshot["category"] as? String,
                 let locality = snapshot["locality"] as? String,
                 let postalCode = snapshot["postalCode"] as? String,
-                let postDate = snapshot["postDate"] as? Date,
+                let postDate = snapshot["postDate"] as? Timestamp,
                 let proUid = snapshot["proUid"] as? String,
                 let description = snapshot["description"] as? String,
                 let imageUrl = snapshot["imageUrl"] as? String,
@@ -72,7 +71,7 @@ struct Post {
             self.category = category
             self.locality = locality
             self.postalCode = postalCode
-            self.postDate = postDate
+            self.postDate = postDate.dateValue()
             self.proUid = proUid
             self.description = description
             self.imageUrl = imageUrl

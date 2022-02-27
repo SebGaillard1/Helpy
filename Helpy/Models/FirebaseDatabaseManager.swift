@@ -73,37 +73,11 @@ class FirebaseDatabaseManager {
             posts.removeAll()
             
             for document in snapshot.documents {
-                posts.append(Post(title: "", category: "", locality: "", postalCode: "", postDate: Date(), proUid: "", description: "", image: nil, imageUrl: "", isOnline: true))
+                if let newPost = Post(snapshot: document) {
+                    posts.append(newPost)
+                }
             }
-            
-//            posts = snapshot.documents.map { document in
-//                return Post(title: "", category: "", locality: "", postalCode: "", postDate: Date(), proUid: "", description: "", image: nil, imageUrl: "", isOnline: true)
-////                return Post(snapshot: document)!
-//            }
-        
-//        let recentPostsQuery = refPosts.queryLimited(toLast: 20)
-//
-//        var posts = [Post]()
-//        recentPostsQuery.observe(.value) { snapshot in
-//            posts.removeAll()
-//            let allUidSnaps = snapshot.children.allObjects as! [DataSnapshot] // Put into array to preserve order
-//
-//            for uidSnap in allUidSnaps {
-//               // let uid = uidSnap.key //get uid for each child
-//                posts.append(Post(title: uidSnap.childSnapshot(forPath: "title").value as? String ?? "N/A",
-//                                  category: uidSnap.childSnapshot(forPath: "category").value as? String ?? "N/A",
-//                                  locality: uidSnap.childSnapshot(forPath: "locality").value as? String ?? "N/A",
-//                                  postalCode: uidSnap.childSnapshot(forPath: "postalCode").value as? String ?? "N/A",
-//                                  postDate: uidSnap.childSnapshot(forPath: "postDate").value as? Date ?? Date(),
-//                                  proUid: uidSnap.childSnapshot(forPath: "proUid").value as? String ?? "N/A",
-//                                  description: uidSnap.childSnapshot(forPath: "description").value as? String ?? "N/A", image: nil,
-//                                  imageUrl: uidSnap.childSnapshot(forPath: "imageUrl").value as? String ?? "N/A",
-//                                  isOnline: uidSnap.childSnapshot(forPath: "isOnline").value as? Bool ?? false))
-//            }
-//            callback(posts.reversed())
-            
+            callback(posts.reversed())
        }
-        
-        callback(posts.reversed())
     }
 }
