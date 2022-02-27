@@ -10,6 +10,10 @@ import UIKit
 
 struct Constants {
     static let appAccentUIColor = UIColor(red: 140/255, green: 82/255, blue: 255/255, alpha: 1)
+    
+    struct StoryBoard {
+        static let clientHomeViewController = "ClientHomeVC"
+    }
 }
 
 struct FirebaseHelper {

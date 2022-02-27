@@ -10,8 +10,7 @@ import UIKit
 import Firebase
 
 struct Post {
-    let ref: DatabaseReference?
-    let key: String
+    var id: String?
     var title: String
     var category: String
     var locality: String
@@ -24,9 +23,7 @@ struct Post {
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool, key: String = "") {
-        self.ref = nil
-        self.key = key
+    init(title: String, category: String, locality: String, postalCode: String, postDate: Date, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
         self.title = title
         self.category = category
         self.locality = locality
@@ -40,46 +37,45 @@ struct Post {
     }
         
     // MARK: Convert Post to AnyObject
-    func toAnyObject() -> Any {
+    func toDictionnary() -> [String: Any] {
         return [
             "title": title,
             "category": category,
             "locality": locality,
             "postalCode": postalCode,
-            "postDate": postDate?.formatted(date: .numeric, time: .shortened) ?? "N/A",
+            "postDate": postDate ?? Date(),
+//            "postDate": postDate?.formatted(date: .numeric, time: .shortened) ?? "N/A",
             "proUid": proUid,
             "description": description,
             "imageUrl": imageUrl,
             "isOnline": isOnline,
         ]
     }
-    
-    //    // MARK: Initialize with Firebase DataSnapshot
-    //    init?(snapshot: DataSnapshot) {
-    //        guard
-    //            let value = snapshot.value as? [String: AnyObject],
-    //            let title = value["lastName"] as? String,
-    //            let category = value["firstName"] as? String,
-    //            let locality = value["email"] as? String,
-    //            let postalCode = value["job"] as? String,
-    //            let postDate = value["uid"] as? String,
-    //            let proUid = value["firstName"] as? String,
-    //            let description = value["email"] as? String,
-    //            let image = value["job"] as? String,
-    //            let isOnline = value["uid"] as? String
-    //        else {
-    //            return nil
-    //        }
-    //        self.ref = snapshot.ref
-    //        self.key = snapshot.key
-    //        self.title = title
-    //        self.category = category
-    //        self.locality = locality
-    //        self.postalCode = postalCode
-    //        self.postDate = postDate
-    //        self.proUid = proUid
-    //        self.description = description
-    //        self.image = image
-    //        self.isOnline = isOnline
-    //    }
+
+        // MARK: Initialize with Firebase DataSnapshot
+        init?(snapshot: QueryDocumentSnapshot) {
+            guard
+                let title = snapshot["title"] as? String,
+                let category = snapshot["category"] as? String,
+                let locality = snapshot["locality"] as? String,
+                let postalCode = snapshot["postalCode"] as? String,
+                let postDate = snapshot["postDate"] as? Date,
+                let proUid = snapshot["proUid"] as? String,
+                let description = snapshot["description"] as? String,
+                let imageUrl = snapshot["imageUrl"] as? String,
+                let isOnline = snapshot["isOnline"] as? Bool
+            else {
+                return nil
+            }
+            self.id = snapshot.documentID
+            self.title = title
+            self.category = category
+            self.locality = locality
+            self.postalCode = postalCode
+            self.postDate = postDate
+            self.proUid = proUid
+            self.description = description
+            self.imageUrl = imageUrl
+            self.isOnline = isOnline
+        }
 }

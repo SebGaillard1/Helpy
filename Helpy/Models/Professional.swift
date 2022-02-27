@@ -49,7 +49,7 @@ struct Professional {
     }
     
     // MARK: Convert Professional to AnyObject
-    func toAnyObject() -> Any {
+    func toDictionnary() -> [String: Any] {
         return [
             "lastName": lastName,
             "firstName": firstName,
