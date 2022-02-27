@@ -10,10 +10,6 @@ import Firebase
 
 class WelcomeViewController: UIViewController {
     //MARK: - Properties
-    let clientRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
-    let proRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForProfessionals)
-    var refObservers: [DatabaseHandle] = []
-    
     var handle: AuthStateDidChangeListenerHandle?
     
     let segueIdWelcomeToClientHome = "welcomeToClientHome"
@@ -34,18 +30,29 @@ class WelcomeViewController: UIViewController {
                 return
             }
             
-            self.clientRef.observe(.value) { snapshot in
-                if snapshot.hasChild(user.uid) {
+            Constants.FirebaseHelper.clientRef.whereField("uid", isEqualTo: user.uid).getDocuments { querySnapshot, error in
+                if querySnapshot?.isEmpty == false && error == nil {
                     self.performSegue(withIdentifier: self.segueIdWelcomeToClientHome, sender: nil)
                 }
             }
             
-            self.proRef.observe(.value) { snapshot in
-                if snapshot.hasChild(user.uid) {
+            Constants.FirebaseHelper.proRef.whereField("uid", isEqualTo: user.uid).getDocuments { querySnapshot, error in
+                if querySnapshot?.isEmpty == false && error == nil {
                     self.performSegue(withIdentifier: self.segueIdWelcomeToProHome, sender: nil)
-
                 }
             }
+//            self.clientRef.observe(.value) { snapshot in
+//                if snapshot.hasChild(user.uid) {
+//                    self.performSegue(withIdentifier: self.segueIdWelcomeToClientHome, sender: nil)
+//                }
+//            }
+//
+//            self.proRef.observe(.value) { snapshot in
+//                if snapshot.hasChild(user.uid) {
+//                    self.performSegue(withIdentifier: self.segueIdWelcomeToProHome, sender: nil)
+//
+//                }
+//            }
         }
     }
     

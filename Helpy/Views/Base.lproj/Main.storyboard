@@ -106,7 +106,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test2@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w38-Jw-atC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tes2@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w38-Jw-atC">
                                 <rect key="frame" x="20" y="197" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
@@ -1470,8 +1470,8 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAh-eD-Yxu">
-                                <rect key="frame" x="321" y="95" width="73" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAh-eD-Yxu">
+                                <rect key="frame" x="300" y="95" width="94" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log out"/>
                                 <connections>
@@ -1482,18 +1482,18 @@
                         <viewLayoutGuide key="safeArea" id="Uzv-cp-3Nz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Uzv-cp-3Nz" firstAttribute="trailing" secondItem="aAh-eD-Yxu" secondAttribute="trailing" constant="20" id="3O9-CB-lb5"/>
                             <constraint firstItem="bRv-8S-tBk" firstAttribute="leading" secondItem="Uzv-cp-3Nz" secondAttribute="leading" constant="20" id="7mH-iz-YMd"/>
                             <constraint firstItem="KHz-ZB-w8S" firstAttribute="top" secondItem="vO3-Q5-PdL" secondAttribute="bottom" constant="10" id="7oX-vb-Scq"/>
-                            <constraint firstItem="Uzv-cp-3Nz" firstAttribute="trailing" secondItem="aAh-eD-Yxu" secondAttribute="trailing" constant="20" id="Ehj-li-VJh"/>
                             <constraint firstItem="Uzv-cp-3Nz" firstAttribute="trailing" secondItem="vO3-Q5-PdL" secondAttribute="trailing" constant="10" id="JQT-4F-61I"/>
                             <constraint firstItem="bRv-8S-tBk" firstAttribute="trailing" secondItem="Uzv-cp-3Nz" secondAttribute="trailing" constant="-20" id="Ksq-lL-DgS"/>
                             <constraint firstItem="Uzv-cp-3Nz" firstAttribute="trailing" secondItem="KHz-ZB-w8S" secondAttribute="trailing" constant="10" id="MU3-H0-1xt"/>
                             <constraint firstItem="bRv-8S-tBk" firstAttribute="top" secondItem="PYf-nq-k9c" secondAttribute="bottom" id="ORQ-0g-S7M"/>
                             <constraint firstItem="vO3-Q5-PdL" firstAttribute="top" secondItem="bRv-8S-tBk" secondAttribute="bottom" constant="30" id="Qgv-kA-l3r"/>
                             <constraint firstItem="KHz-ZB-w8S" firstAttribute="bottom" secondItem="Uzv-cp-3Nz" secondAttribute="bottom" id="Ubp-el-f6M"/>
+                            <constraint firstItem="aAh-eD-Yxu" firstAttribute="leading" secondItem="Uzv-cp-3Nz" secondAttribute="leading" constant="300" id="fkw-HN-J9q"/>
                             <constraint firstItem="aAh-eD-Yxu" firstAttribute="top" secondItem="Uzv-cp-3Nz" secondAttribute="top" constant="7" id="lQe-XN-Rrn"/>
                             <constraint firstItem="PYf-nq-k9c" firstAttribute="top" secondItem="Uzv-cp-3Nz" secondAttribute="top" id="m16-3f-UqC"/>
-                            <constraint firstItem="aAh-eD-Yxu" firstAttribute="leading" secondItem="Uzv-cp-3Nz" secondAttribute="leading" constant="321" id="pMJ-f9-xdS"/>
                             <constraint firstItem="KHz-ZB-w8S" firstAttribute="leading" secondItem="Uzv-cp-3Nz" secondAttribute="leading" constant="10" id="rhk-Bo-uQp"/>
                             <constraint firstItem="PYf-nq-k9c" firstAttribute="centerX" secondItem="60e-KC-RAP" secondAttribute="centerX" id="sCx-1K-h6d"/>
                             <constraint firstItem="vO3-Q5-PdL" firstAttribute="leading" secondItem="Uzv-cp-3Nz" secondAttribute="leading" constant="10" id="z7E-1e-ell"/>

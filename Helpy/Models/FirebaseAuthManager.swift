@@ -11,9 +11,6 @@ import Firebase
 class FirebaseAuthManager {
     //MARK: - Properties
     static let shared = FirebaseAuthManager()
-
-    let clientRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
-    let proRef = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForProfessionals)
     
     var handle: AuthStateDidChangeListenerHandle?
 
@@ -48,17 +45,30 @@ class FirebaseAuthManager {
                             return
                         }
                         
-                        self.clientRef.observe(.value) { snapshot in
-                            print("Vous essayez de vous connecter avec un compte client")
-                            completion(false, nil)
+                        Constants.FirebaseHelper.clientRef.whereField("uid", isEqualTo: user.uid).getDocuments { querySnapshot, error in
+                            if querySnapshot?.isEmpty == true && error == nil {
+                                print("Vous essayez de vous connecter avec un compte client")
+                                completion(false, nil)
+                            }
                         }
                         
-                        self.proRef.observe(.value) { snapshot in
-                            if snapshot.hasChild(user.uid) {
-                                print("Devrait etre connecté")
+                        Constants.FirebaseHelper.proRef.whereField("uid", isEqualTo: user.uid).getDocuments { querySnapshot, error in
+                            if querySnapshot?.isEmpty == false && error == nil {
                                 completion(true, nil)
                             }
                         }
+                        
+//                        self.clientRef.observe(.value) { snapshot in
+//                            print("Vous essayez de vous connecter avec un compte client")
+//                            completion(false, nil)
+//                        }
+//
+//                        self.proRef.observe(.value) { snapshot in
+//                            if snapshot.hasChild(user.uid) {
+//                                print("Devrait etre connecté")
+//                                completion(true, nil)
+//                            }
+//                        }
                     }
                 }
     }

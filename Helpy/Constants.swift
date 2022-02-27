@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 import UIKit
 
 struct Constants {
@@ -14,14 +15,17 @@ struct Constants {
     struct StoryBoard {
         static let clientHomeViewController = "ClientHomeVC"
     }
+    
+    struct FirebaseHelper {
+        static let pathForClients = "clients"
+        static let pathForPros = "professionals"
+        static let pathForPosts = "posts"
+        
+        static let clientRef = Firestore.firestore().collection(pathForClients)
+        static let proRef = Firestore.firestore().collection(pathForPros)
+    }
 }
 
-struct FirebaseHelper {
-    static let databaseUrl = "https://helpy-f4c5d-default-rtdb.europe-west1.firebasedatabase.app/"
-    
-    static let pathForClients = "clients"
-    static let pathForProfessionals = "pros"
-    static let pathForPosts = "posts"
-}
+
 
 
