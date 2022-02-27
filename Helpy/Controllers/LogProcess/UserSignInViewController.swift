@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class UserSignInViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
