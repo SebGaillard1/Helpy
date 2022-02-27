@@ -82,6 +82,16 @@ extension NewPostAddressViewController: UISearchBarDelegate {
 extension NewPostAddressViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        let latitude = place.coordinate.latitude
+        let longitude = place.coordinate.longitude
+        //let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        // Hash is used for firestore querys, lat/long are used for distance comparisons.
+//        let test = GFUtils
+//        newPost.geohash = GFUtils.geoHash(forLocation: location)
+        newPost.latitude = latitude
+        newPost.longitude = longitude
+        
         guard let components = place.addressComponents else { return }
         for component in components {
             for type in component.types {

@@ -4,4 +4,5 @@ platform :ios, '15.0'
 target 'Helpy' do
   pod 'SwiftConfettiView'
   pod 'GooglePlaces', '6.0.0'
+  pod 'GeoFire/Utils'
 end

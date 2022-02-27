@@ -20,81 +20,114 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		14F488C48B91B91E0F1C07C93E05FE12 /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADEF141355456DA99A838C4BA3A5243 /* diamond.png */; };
-		17113EDAF1A3D5240A6BB5695318EC77 /* Pods-Helpy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2DA192C8ADF0EFA1B47D07A1FEF039 /* Pods-Helpy-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		26AEE37C91FB089585F22B6CF62E8E2B /* SwiftConfettiView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A9227EF49C3658C322391CB33E4749 /* SwiftConfettiView-dummy.m */; };
-		3340B19C0303963241F8AF7DD6A2280D /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CF22E76608D767593E403F46A7C240 /* confetti.png */; };
-		964E4ACB605284F1EFB5D0AC28E4C364 /* SwiftConfettiView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A56BD8EE59A276890CAF11FD2DD9815 /* SwiftConfettiView-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9CFF9BD73CA5AC5C9E9CB22F8DDD1D0B /* Pods-Helpy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F971ED1B26142B6B36112625A74BDD6 /* Pods-Helpy-dummy.m */; };
-		CE384468556EB32B78DD882CD0C191B8 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = ED949308CC14A9034BDCD03B86C335AE /* star.png */; };
-		DF3737A44FDCFAC008812546C4472B8A /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF74E62DE94C89EAB3DD58005F1CC17 /* triangle.png */; };
-		EBE6526D19F3E0FA61588350297D0598 /* SwiftConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE6D751EE152600EFA491D2B78FC59 /* SwiftConfettiView.swift */; };
+		08E22BB00DFFCBEA250AC9B417C707E2 /* GFGeoQueryBounds.h in Headers */ = {isa = PBXBuildFile; fileRef = C6ABC39F3394B74D4F587A4C46193D4A /* GFGeoQueryBounds.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0E848C0B8F49198F99F5F32FCC734F7C /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A282DF9B6AF59A61D72AF41C0735C9 /* triangle.png */; };
+		11653B95005109C0AA629F9391D14087 /* GFBase32Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = CC30A1758B1694C7750C49EEE7ECCD41 /* GFBase32Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		14A7C3BC5BFCF4BEC8886C5DE13278DF /* GFGeoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = D38C0EC6A971F81A59FC2A4CA3AD19EC /* GFGeoHash.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		191258D30CB76295FCFD4C54C45FB0BB /* Pods-Helpy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F971ED1B26142B6B36112625A74BDD6 /* Pods-Helpy-dummy.m */; };
+		2033B9C2D424B4CB4294A6CC64272652 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D12C3E6F5BC65E119613BB48FCE18 /* GFGeoHashQuery.m */; };
+		26AEE37C91FB089585F22B6CF62E8E2B /* SwiftConfettiView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E59CEA04501DC1E196C3169E1480E /* SwiftConfettiView-dummy.m */; };
+		38066F690F04E88362018BD165E557F0 /* GFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4F973BC689BE41A91E19EE454B41B /* GFUtils.m */; };
+		436FE02C8226D8E214416ED747810BB0 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A82FDFCB394EE4015FC73646EDE53B8 /* GFBase32Utils.m */; };
+		63B0C875BB244AEF30ABF107E5279F04 /* GeoFire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D36A8DE7523CC5C82DF1F89E90BD8 /* GeoFire-dummy.m */; };
+		70D0049E11D1F278FB18FE10C899AA38 /* GFUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CBE82B3BA966B773544C21DACEA3B0E /* GFUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		964E4ACB605284F1EFB5D0AC28E4C364 /* SwiftConfettiView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B773CF8DE86FC16B23FCFDCF8A30E113 /* SwiftConfettiView-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9F9E00B4595E68D6348E141DCD6E5FBB /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8DF753D54689247BEEDD4E3E8536A /* GFGeoHash.m */; };
+		A57994A7A1CD5A1B68977937ED540353 /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 19955CD2FF6185F2A23ECD09ACC91886 /* diamond.png */; };
+		AA5FFDBC948039A8286500CEBD83CCA8 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 72F58876E57A71D1F348906744D40CFF /* confetti.png */; };
+		B76FBFC45190783A164008DDBA544C89 /* Pods-Helpy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2DA192C8ADF0EFA1B47D07A1FEF039 /* Pods-Helpy-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CF5EFA5A8BAED5CF406FE61A9E54CC52 /* GFGeoHashQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 162DDA3D1084C8F8ED6B99009B7DC756 /* GFGeoHashQuery.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E406C8465E5D3B40665132F0DCDAEEB9 /* GFGeoQueryBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC8744B86960202A9AFB5BEC7EC170 /* GFGeoQueryBounds.m */; };
+		EBE6526D19F3E0FA61588350297D0598 /* SwiftConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CC67C6E5631EA655AB00C3DE940BA /* SwiftConfettiView.swift */; };
+		F647CF3C4E9176E0683AA8AF7A1D7719 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = E15A4B1EAE6EBB300CF46AAAB05A70EE /* star.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0CE5B0BCBA70246B7500FC1DC264FD09 /* PBXContainerItemProxy */ = {
+		2E8F16169B029DDE224F122222992677 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
-			remoteInfo = GooglePlaces;
+			remoteGlobalIDString = A683E1D2568F05EE13B122A5D0FB567D;
+			remoteInfo = GeoFire;
 		};
-		3381DFF0463589CE1211C027A0102A04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A2707A967B4DAC43D79339A5EE4E534C;
-			remoteInfo = "SwiftConfettiView-SwiftConfettiView";
-		};
-		595D12200B91A454BF39EAF85B4B0CD2 /* PBXContainerItemProxy */ = {
+		327C31FB0DB6D0B70EC336C4E984EADC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F22CCBE4FECBA8F92492577B4E52497C;
 			remoteInfo = SwiftConfettiView;
 		};
+		7B5A140434FE7DAF0D7C7D41ED17098D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2707A967B4DAC43D79339A5EE4E534C;
+			remoteInfo = "SwiftConfettiView-SwiftConfettiView";
+		};
+		A8A1370F08B4A338976F833EAA33B96A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
+			remoteInfo = GooglePlaces;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03CF22E76608D767593E403F46A7C240 /* confetti.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = confetti.png; path = SwiftConfettiView/Assets/confetti.png; sourceTree = "<group>"; };
 		0F971ED1B26142B6B36112625A74BDD6 /* Pods-Helpy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Helpy-dummy.m"; sourceTree = "<group>"; };
+		162DDA3D1084C8F8ED6B99009B7DC756 /* GFGeoHashQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHashQuery.h; path = GeoFire/Utils/GFGeoHashQuery.h; sourceTree = "<group>"; };
+		19955CD2FF6185F2A23ECD09ACC91886 /* diamond.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = diamond.png; path = SwiftConfettiView/Assets/diamond.png; sourceTree = "<group>"; };
+		1A82FDFCB394EE4015FC73646EDE53B8 /* GFBase32Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFBase32Utils.m; path = GeoFire/Utils/GFBase32Utils.m; sourceTree = "<group>"; };
 		1B56BCDB5C7A7C74E7A4748521A69D04 /* Pods-Helpy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Helpy.modulemap"; sourceTree = "<group>"; };
-		1E2A095EDDC4C5FB196C8EEDCBE22DDF /* SwiftConfettiView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftConfettiView-prefix.pch"; sourceTree = "<group>"; };
-		28EE6D751EE152600EFA491D2B78FC59 /* SwiftConfettiView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftConfettiView.swift; path = SwiftConfettiView/Classes/SwiftConfettiView.swift; sourceTree = "<group>"; };
-		3ADEF141355456DA99A838C4BA3A5243 /* diamond.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = diamond.png; path = SwiftConfettiView/Assets/diamond.png; sourceTree = "<group>"; };
-		3C6008250D81ECB2AD470F313002B352 /* ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist"; sourceTree = "<group>"; };
-		3D2A010CC2B77B6446C77151F83C77A1 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		1C4CC67C6E5631EA655AB00C3DE940BA /* SwiftConfettiView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftConfettiView.swift; path = SwiftConfettiView/Classes/SwiftConfettiView.swift; sourceTree = "<group>"; };
+		1CBE82B3BA966B773544C21DACEA3B0E /* GFUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFUtils.h; path = GeoFire/Utils/GFUtils.h; sourceTree = "<group>"; };
+		2B3D12C3E6F5BC65E119613BB48FCE18 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHashQuery.m; path = GeoFire/Utils/GFGeoHashQuery.m; sourceTree = "<group>"; };
+		2F7E59CEA04501DC1E196C3169E1480E /* SwiftConfettiView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftConfettiView-dummy.m"; sourceTree = "<group>"; };
+		32085B729B4ECA6DA3830C8A2D49D970 /* ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist"; sourceTree = "<group>"; };
+		3C4D36A8DE7523CC5C82DF1F89E90BD8 /* GeoFire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GeoFire-dummy.m"; sourceTree = "<group>"; };
+		41BBD122F6D2CD836E75BCA32CE8D2F2 /* GeoFire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoFire.release.xcconfig; sourceTree = "<group>"; };
 		4D720611A0F651A2844447A6D52D21C7 /* Pods-Helpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Helpy.release.xcconfig"; sourceTree = "<group>"; };
 		4DC9A595BC276DD77E5080354EFFE74F /* libSwiftConfettiView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwiftConfettiView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A282DF9B6AF59A61D72AF41C0735C9 /* triangle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = triangle.png; path = SwiftConfettiView/Assets/triangle.png; sourceTree = "<group>"; };
 		569A8BF1D0101E8C32969DC38850EA74 /* Pods-Helpy-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Helpy-resources.sh"; sourceTree = "<group>"; };
-		5CF74E62DE94C89EAB3DD58005F1CC17 /* triangle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = triangle.png; path = SwiftConfettiView/Assets/triangle.png; sourceTree = "<group>"; };
-		64AEC700F87E4F5B30D816E44AB4096F /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
-		7A56BD8EE59A276890CAF11FD2DD9815 /* SwiftConfettiView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftConfettiView-umbrella.h"; sourceTree = "<group>"; };
+		65825864A138E0218F546E9850CD163D /* SwiftConfettiView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftConfettiView.modulemap; sourceTree = "<group>"; };
+		68A104CC58596237BCA69DB747AE8989 /* GeoFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoFire.debug.xcconfig; sourceTree = "<group>"; };
+		6EFC13B0F1DCE1F8D74B4B0A14163F43 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		72F58876E57A71D1F348906744D40CFF /* confetti.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = confetti.png; path = SwiftConfettiView/Assets/confetti.png; sourceTree = "<group>"; };
 		7B5B6DA880ADA4130BCC09196858DDAD /* SwiftConfettiView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftConfettiView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CDC8744B86960202A9AFB5BEC7EC170 /* GFGeoQueryBounds.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoQueryBounds.m; path = GeoFire/Utils/GFGeoQueryBounds.m; sourceTree = "<group>"; };
+		88510BE8992D2F34389EA8F56854152E /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
+		8ACA55DA879404F37CDD8D40527A1ABA /* SwiftConfettiView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftConfettiView.debug.xcconfig; sourceTree = "<group>"; };
+		8B69A61DD0A981ED74D44315D9788C50 /* SwiftConfettiView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftConfettiView.release.xcconfig; sourceTree = "<group>"; };
+		999F88B7EE91461124FD77C49727B7D5 /* SwiftConfettiView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftConfettiView-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FC8DF753D54689247BEEDD4E3E8536A /* GFGeoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHash.m; path = GeoFire/Utils/GFGeoHash.m; sourceTree = "<group>"; };
+		A35B470CFCB3B5B274943926B9E358AC /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
 		A9541AEC08F7AC099162BDCCC4402FC4 /* Pods-Helpy-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Helpy-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A9A9227EF49C3658C322391CB33E4749 /* SwiftConfettiView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftConfettiView-dummy.m"; sourceTree = "<group>"; };
+		B773CF8DE86FC16B23FCFDCF8A30E113 /* SwiftConfettiView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftConfettiView-umbrella.h"; sourceTree = "<group>"; };
 		B9001984F8D42A7CFD5A7AC01CE24DF2 /* Pods-Helpy-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Helpy-acknowledgements.plist"; sourceTree = "<group>"; };
-		BB078BD2AAEC99B3FEA511CF01CE4A9C /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
-		C7B597DA2485E78695F54C6BBFAE29D5 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		C6ABC39F3394B74D4F587A4C46193D4A /* GFGeoQueryBounds.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoQueryBounds.h; path = GeoFire/Utils/GFGeoQueryBounds.h; sourceTree = "<group>"; };
 		C7B7368A2EE09D7D72A0B39C3615C874 /* Pods-Helpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Helpy.debug.xcconfig"; sourceTree = "<group>"; };
-		D10614D2549A66E97A90590D6F3702C3 /* SwiftConfettiView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftConfettiView.modulemap; sourceTree = "<group>"; };
-		ED949308CC14A9034BDCD03B86C335AE /* star.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = star.png; path = SwiftConfettiView/Assets/star.png; sourceTree = "<group>"; };
+		CC30A1758B1694C7750C49EEE7ECCD41 /* GFBase32Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFBase32Utils.h; path = GeoFire/Utils/GFBase32Utils.h; sourceTree = "<group>"; };
+		D38C0EC6A971F81A59FC2A4CA3AD19EC /* GFGeoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHash.h; path = GeoFire/Utils/GFGeoHash.h; sourceTree = "<group>"; };
+		D449099C9456E9F8C3CDC1324C09DF0B /* GeoFire */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = GeoFire; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB4F973BC689BE41A91E19EE454B41B /* GFUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFUtils.m; path = GeoFire/Utils/GFUtils.m; sourceTree = "<group>"; };
+		E14014D0BBCF43AE8CF08486C2BD5F5E /* GeoFire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoFire-prefix.pch"; sourceTree = "<group>"; };
+		E15A4B1EAE6EBB300CF46AAAB05A70EE /* star.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = star.png; path = SwiftConfettiView/Assets/star.png; sourceTree = "<group>"; };
+		F2F471222D141B02AE504E97469DE344 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		FA2DA192C8ADF0EFA1B47D07A1FEF039 /* Pods-Helpy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Helpy-umbrella.h"; sourceTree = "<group>"; };
-		FAC46ADF1A0E57407FF6582A8536F017 /* SwiftConfettiView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftConfettiView.debug.xcconfig; sourceTree = "<group>"; };
 		FB59AF45B99BC76BB0806364C4E7C493 /* Pods-Helpy */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-Helpy"; path = "libPods-Helpy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC416489B92E1ACAD49A623745C9F5C6 /* SwiftConfettiView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftConfettiView.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		116CA2AB6D63A2D8373161FA097CE874 /* Frameworks */ = {
+		51ACE7F563EF8E54303825A7991B5017 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56650811766FB6E9DF8B020566B7DD03 /* Frameworks */ = {
+		5D259748A55B750B1A96887EA2C4D07B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,6 +135,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		835FB38E2AEBA39E183FAB6F0B453C28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3CA98DB325509EFBD300FFED7444D8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,59 +167,82 @@
 			path = "Target Support Files/Pods-Helpy";
 			sourceTree = "<group>";
 		};
-		3594F7B443B7165F27CDC2281387024D /* SwiftConfettiView */ = {
+		126D5168348A84766D06C9B21E354483 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				28EE6D751EE152600EFA491D2B78FC59 /* SwiftConfettiView.swift */,
-				4BFEF6759F5F6DC5CAA6D29706B3CE37 /* Resources */,
-				B4EC83840AE34D25213F7A8E9CD998A7 /* Support Files */,
+				8EBA2B63098BCA9799E7005F53D6A5B3 /* Frameworks */,
+				D981F2A60D42B1A7B616A7F3ED84A812 /* Resources */,
+				ADFB41E9CE0BFFA2E816A244200EA14F /* Support Files */,
+			);
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		22EF2CE97C07AE25D131CEF5D623A373 /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				EAACAF8EE6156A2AC0BC72B864B58A19 /* Support Files */,
+				60074A92FBB023FDF49F7D9A3DB50B58 /* Utils */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		357CAEA7C73EEB4379FFF9CFF8F114EA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				32085B729B4ECA6DA3830C8A2D49D970 /* ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist */,
+				65825864A138E0218F546E9850CD163D /* SwiftConfettiView.modulemap */,
+				2F7E59CEA04501DC1E196C3169E1480E /* SwiftConfettiView-dummy.m */,
+				999F88B7EE91461124FD77C49727B7D5 /* SwiftConfettiView-prefix.pch */,
+				B773CF8DE86FC16B23FCFDCF8A30E113 /* SwiftConfettiView-umbrella.h */,
+				8ACA55DA879404F37CDD8D40527A1ABA /* SwiftConfettiView.debug.xcconfig */,
+				8B69A61DD0A981ED74D44315D9788C50 /* SwiftConfettiView.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftConfettiView";
+			sourceTree = "<group>";
+		};
+		47A1C0AD1430676B92698365CF03D47B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72F58876E57A71D1F348906744D40CFF /* confetti.png */,
+				19955CD2FF6185F2A23ECD09ACC91886 /* diamond.png */,
+				E15A4B1EAE6EBB300CF46AAAB05A70EE /* star.png */,
+				54A282DF9B6AF59A61D72AF41C0735C9 /* triangle.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5462AD13268D32501C389C2D3DB61855 /* SwiftConfettiView */ = {
+			isa = PBXGroup;
+			children = (
+				1C4CC67C6E5631EA655AB00C3DE940BA /* SwiftConfettiView.swift */,
+				47A1C0AD1430676B92698365CF03D47B /* Resources */,
+				357CAEA7C73EEB4379FFF9CFF8F114EA /* Support Files */,
 			);
 			path = SwiftConfettiView;
 			sourceTree = "<group>";
 		};
-		3893CCFEEA4D6A146E8CDDD8DC7B2EB5 /* Support Files */ = {
+		60074A92FBB023FDF49F7D9A3DB50B58 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				64AEC700F87E4F5B30D816E44AB4096F /* GooglePlaces.debug.xcconfig */,
-				BB078BD2AAEC99B3FEA511CF01CE4A9C /* GooglePlaces.release.xcconfig */,
+				CC30A1758B1694C7750C49EEE7ECCD41 /* GFBase32Utils.h */,
+				1A82FDFCB394EE4015FC73646EDE53B8 /* GFBase32Utils.m */,
+				D38C0EC6A971F81A59FC2A4CA3AD19EC /* GFGeoHash.h */,
+				9FC8DF753D54689247BEEDD4E3E8536A /* GFGeoHash.m */,
+				162DDA3D1084C8F8ED6B99009B7DC756 /* GFGeoHashQuery.h */,
+				2B3D12C3E6F5BC65E119613BB48FCE18 /* GFGeoHashQuery.m */,
+				C6ABC39F3394B74D4F587A4C46193D4A /* GFGeoQueryBounds.h */,
+				7CDC8744B86960202A9AFB5BEC7EC170 /* GFGeoQueryBounds.m */,
+				1CBE82B3BA966B773544C21DACEA3B0E /* GFUtils.h */,
+				DFB4F973BC689BE41A91E19EE454B41B /* GFUtils.m */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GooglePlaces";
+			name = Utils;
 			sourceTree = "<group>";
 		};
-		40F1FB2E7CFB103DC2535ECA22E364F0 /* Products */ = {
+		8EBA2B63098BCA9799E7005F53D6A5B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FB59AF45B99BC76BB0806364C4E7C493 /* Pods-Helpy */,
-				4DC9A595BC276DD77E5080354EFFE74F /* libSwiftConfettiView.a */,
-				7B5B6DA880ADA4130BCC09196858DDAD /* SwiftConfettiView.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4BFEF6759F5F6DC5CAA6D29706B3CE37 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				03CF22E76608D767593E403F46A7C240 /* confetti.png */,
-				3ADEF141355456DA99A838C4BA3A5243 /* diamond.png */,
-				ED949308CC14A9034BDCD03B86C335AE /* star.png */,
-				5CF74E62DE94C89EAB3DD58005F1CC17 /* triangle.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		63BA0158A688651C2CB69A5B24719AC0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3D2A010CC2B77B6446C77151F83C77A1 /* GooglePlaces.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		92AA442936D2DF0D7D35290E93A1FE8D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C7B597DA2485E78695F54C6BBFAE29D5 /* GooglePlaces.framework */,
+				F2F471222D141B02AE504E97469DE344 /* GooglePlaces.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,29 +255,35 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B4EC83840AE34D25213F7A8E9CD998A7 /* Support Files */ = {
+		963644FFE23DBDECC68A625E85993425 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C6008250D81ECB2AD470F313002B352 /* ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist */,
-				D10614D2549A66E97A90590D6F3702C3 /* SwiftConfettiView.modulemap */,
-				A9A9227EF49C3658C322391CB33E4749 /* SwiftConfettiView-dummy.m */,
-				1E2A095EDDC4C5FB196C8EEDCBE22DDF /* SwiftConfettiView-prefix.pch */,
-				7A56BD8EE59A276890CAF11FD2DD9815 /* SwiftConfettiView-umbrella.h */,
-				FAC46ADF1A0E57407FF6582A8536F017 /* SwiftConfettiView.debug.xcconfig */,
-				FC416489B92E1ACAD49A623745C9F5C6 /* SwiftConfettiView.release.xcconfig */,
+				22EF2CE97C07AE25D131CEF5D623A373 /* GeoFire */,
+				126D5168348A84766D06C9B21E354483 /* GooglePlaces */,
+				5462AD13268D32501C389C2D3DB61855 /* SwiftConfettiView */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftConfettiView";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		CD488E9222411FD39B71CF04877F5A21 /* GooglePlaces */ = {
+		ADFB41E9CE0BFFA2E816A244200EA14F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				92AA442936D2DF0D7D35290E93A1FE8D /* Frameworks */,
-				63BA0158A688651C2CB69A5B24719AC0 /* Resources */,
-				3893CCFEEA4D6A146E8CDDD8DC7B2EB5 /* Support Files */,
+				88510BE8992D2F34389EA8F56854152E /* GooglePlaces.debug.xcconfig */,
+				A35B470CFCB3B5B274943926B9E358AC /* GooglePlaces.release.xcconfig */,
 			);
-			path = GooglePlaces;
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
+			sourceTree = "<group>";
+		};
+		AEB7486FCDF9B995B98471499A36C277 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D449099C9456E9F8C3CDC1324C09DF0B /* GeoFire */,
+				FB59AF45B99BC76BB0806364C4E7C493 /* Pods-Helpy */,
+				4DC9A595BC276DD77E5080354EFFE74F /* libSwiftConfettiView.a */,
+				7B5B6DA880ADA4130BCC09196858DDAD /* SwiftConfettiView.bundle */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -222,8 +291,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				E7153712961409438564477D66561C30 /* Pods */,
-				40F1FB2E7CFB103DC2535ECA22E364F0 /* Products */,
+				963644FFE23DBDECC68A625E85993425 /* Pods */,
+				AEB7486FCDF9B995B98471499A36C277 /* Products */,
 				94B022716313D94FD3371621A8BD1E3A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -235,13 +304,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E7153712961409438564477D66561C30 /* Pods */ = {
+		D981F2A60D42B1A7B616A7F3ED84A812 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CD488E9222411FD39B71CF04877F5A21 /* GooglePlaces */,
-				3594F7B443B7165F27CDC2281387024D /* SwiftConfettiView */,
+				6EFC13B0F1DCE1F8D74B4B0A14163F43 /* GooglePlaces.bundle */,
 			);
-			name = Pods;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EAACAF8EE6156A2AC0BC72B864B58A19 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C4D36A8DE7523CC5C82DF1F89E90BD8 /* GeoFire-dummy.m */,
+				E14014D0BBCF43AE8CF08486C2BD5F5E /* GeoFire-prefix.pch */,
+				68A104CC58596237BCA69DB747AE8989 /* GeoFire.debug.xcconfig */,
+				41BBD122F6D2CD836E75BCA32CE8D2F2 /* GeoFire.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GeoFire";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,11 +335,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE72A434D1909751A897D3B881EE2F80 /* Headers */ = {
+		CDA93EA068D28F011C3EAFF6154F2597 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17113EDAF1A3D5240A6BB5695318EC77 /* Pods-Helpy-umbrella.h in Headers */,
+				B76FBFC45190783A164008DDBA544C89 /* Pods-Helpy-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4E13AE7C5EEDD32B2FDB6A5288D851 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11653B95005109C0AA629F9391D14087 /* GFBase32Utils.h in Headers */,
+				14A7C3BC5BFCF4BEC8886C5DE13278DF /* GFGeoHash.h in Headers */,
+				CF5EFA5A8BAED5CF406FE61A9E54CC52 /* GFGeoHashQuery.h in Headers */,
+				08E22BB00DFFCBEA250AC9B417C707E2 /* GFGeoQueryBounds.h in Headers */,
+				70D0049E11D1F278FB18FE10C899AA38 /* GFUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,11 +360,11 @@
 /* Begin PBXNativeTarget section */
 		A2707A967B4DAC43D79339A5EE4E534C /* SwiftConfettiView-SwiftConfettiView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9584E1E9B38C1064E027718B2C0182A4 /* Build configuration list for PBXNativeTarget "SwiftConfettiView-SwiftConfettiView" */;
+			buildConfigurationList = 9434AE1334B23E637BB0A6BA7F22F549 /* Build configuration list for PBXNativeTarget "SwiftConfettiView-SwiftConfettiView" */;
 			buildPhases = (
-				328DC0AD0CE14B214DDB5412D1976E00 /* Sources */,
-				116CA2AB6D63A2D8373161FA097CE874 /* Frameworks */,
-				FF8DDC75D564ECFCBF229301BB5D7FC1 /* Resources */,
+				4AA24F714BA23DD235C8BB73DBC8343D /* Sources */,
+				51ACE7F563EF8E54303825A7991B5017 /* Frameworks */,
+				E6C2BA60EFA680E39E3AB022B1979996 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -283,19 +375,37 @@
 			productReference = 7B5B6DA880ADA4130BCC09196858DDAD /* SwiftConfettiView.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		B893A1B158F2CAD235F8472C3270B438 /* Pods-Helpy */ = {
+		A683E1D2568F05EE13B122A5D0FB567D /* GeoFire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D1D67B10615D32B9C41423F0EF09053 /* Build configuration list for PBXNativeTarget "Pods-Helpy" */;
+			buildConfigurationList = A47EADA18B358C23550B799A856DBF99 /* Build configuration list for PBXNativeTarget "GeoFire" */;
 			buildPhases = (
-				DE72A434D1909751A897D3B881EE2F80 /* Headers */,
-				AFE042AD965B342DD6DCDF83E4C5DAE4 /* Sources */,
-				56650811766FB6E9DF8B020566B7DD03 /* Frameworks */,
+				EE4E13AE7C5EEDD32B2FDB6A5288D851 /* Headers */,
+				D9518CC89DBBC3F599E2A8D400ED74BE /* Sources */,
+				5D259748A55B750B1A96887EA2C4D07B /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				134A4C419D2F271A5C61FFAA55343307 /* PBXTargetDependency */,
-				56A53DC35374E6C90A2171A71E151C93 /* PBXTargetDependency */,
+			);
+			name = GeoFire;
+			productName = GeoFire;
+			productReference = D449099C9456E9F8C3CDC1324C09DF0B /* GeoFire */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B893A1B158F2CAD235F8472C3270B438 /* Pods-Helpy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2538B101188F948E58B3B1EB1DA4C5 /* Build configuration list for PBXNativeTarget "Pods-Helpy" */;
+			buildPhases = (
+				CDA93EA068D28F011C3EAFF6154F2597 /* Headers */,
+				03769BFE72ED095D77EA38B34C93CB62 /* Sources */,
+				B3CA98DB325509EFBD300FFED7444D8C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7E7C1FB031D75B0B05BEF2F5ECEE940 /* PBXTargetDependency */,
+				BA321E0543C5F6D53A2127851B66BB32 /* PBXTargetDependency */,
+				7E4A4A41D28A91022873C1148B795F2C /* PBXTargetDependency */,
 			);
 			name = "Pods-Helpy";
 			productName = "Pods-Helpy";
@@ -314,7 +424,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6E8981ADEC4EE0D71D5DD309F0BE4D8E /* PBXTargetDependency */,
+				11EDC32D3E95DFFFFC8A22621D0E5680 /* PBXTargetDependency */,
 			);
 			name = SwiftConfettiView;
 			productName = SwiftConfettiView;
@@ -328,7 +438,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -339,10 +449,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 40F1FB2E7CFB103DC2535ECA22E364F0 /* Products */;
+			productRefGroup = AEB7486FCDF9B995B98471499A36C277 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				A683E1D2568F05EE13B122A5D0FB567D /* GeoFire */,
 				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
 				B893A1B158F2CAD235F8472C3270B438 /* Pods-Helpy */,
 				F22CCBE4FECBA8F92492577B4E52497C /* SwiftConfettiView */,
@@ -352,14 +463,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FF8DDC75D564ECFCBF229301BB5D7FC1 /* Resources */ = {
+		E6C2BA60EFA680E39E3AB022B1979996 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3340B19C0303963241F8AF7DD6A2280D /* confetti.png in Resources */,
-				14F488C48B91B91E0F1C07C93E05FE12 /* diamond.png in Resources */,
-				CE384468556EB32B78DD882CD0C191B8 /* star.png in Resources */,
-				DF3737A44FDCFAC008812546C4472B8A /* triangle.png in Resources */,
+				AA5FFDBC948039A8286500CEBD83CCA8 /* confetti.png in Resources */,
+				A57994A7A1CD5A1B68977937ED540353 /* diamond.png in Resources */,
+				F647CF3C4E9176E0683AA8AF7A1D7719 /* star.png in Resources */,
+				0E848C0B8F49198F99F5F32FCC734F7C /* triangle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +504,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		03769BFE72ED095D77EA38B34C93CB62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				191258D30CB76295FCFD4C54C45FB0BB /* Pods-Helpy-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C91A060357781551CF7744BDF31D50C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,94 +521,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		328DC0AD0CE14B214DDB5412D1976E00 /* Sources */ = {
+		4AA24F714BA23DD235C8BB73DBC8343D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFE042AD965B342DD6DCDF83E4C5DAE4 /* Sources */ = {
+		D9518CC89DBBC3F599E2A8D400ED74BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CFF9BD73CA5AC5C9E9CB22F8DDD1D0B /* Pods-Helpy-dummy.m in Sources */,
+				63B0C875BB244AEF30ABF107E5279F04 /* GeoFire-dummy.m in Sources */,
+				436FE02C8226D8E214416ED747810BB0 /* GFBase32Utils.m in Sources */,
+				9F9E00B4595E68D6348E141DCD6E5FBB /* GFGeoHash.m in Sources */,
+				2033B9C2D424B4CB4294A6CC64272652 /* GFGeoHashQuery.m in Sources */,
+				E406C8465E5D3B40665132F0DCDAEEB9 /* GFGeoQueryBounds.m in Sources */,
+				38066F690F04E88362018BD165E557F0 /* GFUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		134A4C419D2F271A5C61FFAA55343307 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GooglePlaces;
-			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
-			targetProxy = 0CE5B0BCBA70246B7500FC1DC264FD09 /* PBXContainerItemProxy */;
-		};
-		56A53DC35374E6C90A2171A71E151C93 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftConfettiView;
-			target = F22CCBE4FECBA8F92492577B4E52497C /* SwiftConfettiView */;
-			targetProxy = 595D12200B91A454BF39EAF85B4B0CD2 /* PBXContainerItemProxy */;
-		};
-		6E8981ADEC4EE0D71D5DD309F0BE4D8E /* PBXTargetDependency */ = {
+		11EDC32D3E95DFFFFC8A22621D0E5680 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SwiftConfettiView-SwiftConfettiView";
 			target = A2707A967B4DAC43D79339A5EE4E534C /* SwiftConfettiView-SwiftConfettiView */;
-			targetProxy = 3381DFF0463589CE1211C027A0102A04 /* PBXContainerItemProxy */;
+			targetProxy = 7B5A140434FE7DAF0D7C7D41ED17098D /* PBXContainerItemProxy */;
+		};
+		7E4A4A41D28A91022873C1148B795F2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftConfettiView;
+			target = F22CCBE4FECBA8F92492577B4E52497C /* SwiftConfettiView */;
+			targetProxy = 327C31FB0DB6D0B70EC336C4E984EADC /* PBXContainerItemProxy */;
+		};
+		A7E7C1FB031D75B0B05BEF2F5ECEE940 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GeoFire;
+			target = A683E1D2568F05EE13B122A5D0FB567D /* GeoFire */;
+			targetProxy = 2E8F16169B029DDE224F122222992677 /* PBXContainerItemProxy */;
+		};
+		BA321E0543C5F6D53A2127851B66BB32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GooglePlaces;
+			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
+			targetProxy = A8A1370F08B4A338976F833EAA33B96A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2D76017E42597889B350A176E1B38699 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC416489B92E1ACAD49A623745C9F5C6 /* SwiftConfettiView.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftConfettiView/SwiftConfettiView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MODULEMAP_FILE = Headers/Public/SwiftConfettiView/SwiftConfettiView.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SwiftConfettiView;
-				PRODUCT_NAME = SwiftConfettiView;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		452A1FF968BB653F4D3189F34D9F5B57 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D720611A0F651A2844447A6D52D21C7 /* Pods-Helpy.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Helpy/Pods-Helpy.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		45AF468DFCE4B173CFE064A4CA7C49FA /* Debug */ = {
+		2A29EEFFBF4B4D0B9D9D0356ADF7239D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C7B7368A2EE09D7D72A0B39C3615C874 /* Pods-Helpy.debug.xcconfig */;
 			buildSettings = {
@@ -511,15 +593,40 @@
 			};
 			name = Debug;
 		};
-		480B90AEF3DFC2BA225A215228808507 /* Debug */ = {
+		2D76017E42597889B350A176E1B38699 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAC46ADF1A0E57407FF6582A8536F017 /* SwiftConfettiView.debug.xcconfig */;
+			baseConfigurationReference = 8B69A61DD0A981ED74D44315D9788C50 /* SwiftConfettiView.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftConfettiView/SwiftConfettiView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MODULEMAP_FILE = Headers/Public/SwiftConfettiView/SwiftConfettiView.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftConfettiView;
+				PRODUCT_NAME = SwiftConfettiView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		480B90AEF3DFC2BA225A215228808507 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ACA55DA879404F37CDD8D40527A1ABA /* SwiftConfettiView.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftConfettiView/SwiftConfettiView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MODULEMAP_FILE = Headers/Public/SwiftConfettiView/SwiftConfettiView.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -535,9 +642,50 @@
 			};
 			name = Debug;
 		};
+		49DB46373CD7099587B098EAE2DFD98D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41BBD122F6D2CD836E75BCA32CE8D2F2 /* GeoFire.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/GeoFire/GeoFire-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = GeoFire;
+				PRODUCT_NAME = GeoFire;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D6A80AAC82D2629164B62D7C0F01884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B69A61DD0A981ED74D44315D9788C50 /* SwiftConfettiView.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftConfettiView";
+				IBSC_MODULE = SwiftConfettiView;
+				INFOPLIST_FILE = "Target Support Files/SwiftConfettiView/ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_NAME = SwiftConfettiView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		88BF77687BFC2BC2FB3F8F329A47B311 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB078BD2AAEC99B3FEA511CF01CE4A9C /* GooglePlaces.release.xcconfig */;
+			baseConfigurationReference = A35B470CFCB3B5B274943926B9E358AC /* GooglePlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -552,6 +700,22 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		908086CC6CB068E1B544F23E54A5BE38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ACA55DA879404F37CDD8D40527A1ABA /* SwiftConfettiView.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftConfettiView";
+				IBSC_MODULE = SwiftConfettiView;
+				INFOPLIST_FILE = "Target Support Files/SwiftConfettiView/ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_NAME = SwiftConfettiView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -681,25 +845,56 @@
 			};
 			name = Release;
 		};
-		96881526C648A78BC9D9BCDEFCEC4634 /* Release */ = {
+		982C84E129AD4AD9D411494C0B1457D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC416489B92E1ACAD49A623745C9F5C6 /* SwiftConfettiView.release.xcconfig */;
+			baseConfigurationReference = 4D720611A0F651A2844447A6D52D21C7 /* Pods-Helpy.release.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftConfettiView";
-				IBSC_MODULE = SwiftConfettiView;
-				INFOPLIST_FILE = "Target Support Files/SwiftConfettiView/ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = SwiftConfettiView;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Helpy/Pods-Helpy.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
+		A534A3F6373EDDBFC20BACFEFF3E0ADD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68A104CC58596237BCA69DB747AE8989 /* GeoFire.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/GeoFire/GeoFire-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = GeoFire;
+				PRODUCT_NAME = GeoFire;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		E2C5D149DE277CA85397A039B337B44C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64AEC700F87E4F5B30D816E44AB4096F /* GooglePlaces.debug.xcconfig */;
+			baseConfigurationReference = 88510BE8992D2F34389EA8F56854152E /* GooglePlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -714,34 +909,9 @@
 			};
 			name = Debug;
 		};
-		E7419BE59F67089BB4E792E09E6E9E8A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAC46ADF1A0E57407FF6582A8536F017 /* SwiftConfettiView.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftConfettiView";
-				IBSC_MODULE = SwiftConfettiView;
-				INFOPLIST_FILE = "Target Support Files/SwiftConfettiView/ResourceBundle-SwiftConfettiView-SwiftConfettiView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = SwiftConfettiView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D1D67B10615D32B9C41423F0EF09053 /* Build configuration list for PBXNativeTarget "Pods-Helpy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45AF468DFCE4B173CFE064A4CA7C49FA /* Debug */,
-				452A1FF968BB653F4D3189F34D9F5B57 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -751,11 +921,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9584E1E9B38C1064E027718B2C0182A4 /* Build configuration list for PBXNativeTarget "SwiftConfettiView-SwiftConfettiView" */ = {
+		9434AE1334B23E637BB0A6BA7F22F549 /* Build configuration list for PBXNativeTarget "SwiftConfettiView-SwiftConfettiView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E7419BE59F67089BB4E792E09E6E9E8A /* Debug */,
-				96881526C648A78BC9D9BCDEFCEC4634 /* Release */,
+				908086CC6CB068E1B544F23E54A5BE38 /* Debug */,
+				7D6A80AAC82D2629164B62D7C0F01884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -769,11 +939,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A47EADA18B358C23550B799A856DBF99 /* Build configuration list for PBXNativeTarget "GeoFire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A534A3F6373EDDBFC20BACFEFF3E0ADD /* Debug */,
+				49DB46373CD7099587B098EAE2DFD98D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B0BD36EEED845459E8DF3AD0E717D2EB /* Build configuration list for PBXNativeTarget "SwiftConfettiView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				480B90AEF3DFC2BA225A215228808507 /* Debug */,
 				2D76017E42597889B350A176E1B38699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2538B101188F948E58B3B1EB1DA4C5 /* Build configuration list for PBXNativeTarget "Pods-Helpy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A29EEFFBF4B4D0B9D9D0356ADF7239D /* Debug */,
+				982C84E129AD4AD9D411494C0B1457D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

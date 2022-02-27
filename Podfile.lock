@@ -1,20 +1,24 @@
 PODS:
+  - GeoFire/Utils (4.3.0)
   - GooglePlaces (6.0.0)
   - SwiftConfettiView (0.1.0)
 
 DEPENDENCIES:
+  - GeoFire/Utils
   - GooglePlaces (= 6.0.0)
   - SwiftConfettiView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - GeoFire
     - GooglePlaces
     - SwiftConfettiView
 
 SPEC CHECKSUMS:
+  GeoFire: c34927b5c81ab614f611c79aa8d074cfa9780f07
   GooglePlaces: c97d96ae68594acb64035c9ca9f26fbfc1d23af1
   SwiftConfettiView: 1bdbc2e6913b6b1c76d8070802b212508ad5c352
 
-PODFILE CHECKSUM: 71d1d968d36423621e6d04bf8f6b12c4c83914ac
+PODFILE CHECKSUM: 81389cb4f6cac392604853e6b338d1be7b84b1d4
 
 COCOAPODS: 1.11.2

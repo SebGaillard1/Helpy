@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Firebase
+import CoreLocation
 
 struct Post {
     var id: String?
@@ -15,6 +16,9 @@ struct Post {
     var category: String
     var locality: String
     var postalCode: String
+    var latitude: CLLocationDegrees
+    var longitude: CLLocationDegrees
+   // var geohash: Any?
     var postDate: Date?
     var proUid: String
     var description: String
@@ -23,11 +27,13 @@ struct Post {
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
+    init(title: String, category: String, locality: String, postalCode: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
         self.title = title
         self.category = category
         self.locality = locality
         self.postalCode = postalCode
+        self.latitude = latitude
+        self.longitude = longitude
         self.postDate = postDate
         self.proUid = proUid
         self.description = description
@@ -43,6 +49,9 @@ struct Post {
             "category": category,
             "locality": locality,
             "postalCode": postalCode,
+            "latitude": Double(latitude),
+            "longitude": Double(longitude),
+            //"geohash": geohash,
             "postDate": postDate ?? Date(),
             "proUid": proUid,
             "description": description,
@@ -58,6 +67,8 @@ struct Post {
                 let category = snapshot["category"] as? String,
                 let locality = snapshot["locality"] as? String,
                 let postalCode = snapshot["postalCode"] as? String,
+                let latitude = snapshot["latitude"] as? Double,
+                let longitude = snapshot["longitude"] as? Double,
                 let postDate = snapshot["postDate"] as? Timestamp,
                 let proUid = snapshot["proUid"] as? String,
                 let description = snapshot["description"] as? String,
@@ -71,6 +82,8 @@ struct Post {
             self.category = category
             self.locality = locality
             self.postalCode = postalCode
+            self.latitude = latitude
+            self.longitude = longitude
             self.postDate = postDate.dateValue()
             self.proUid = proUid
             self.description = description

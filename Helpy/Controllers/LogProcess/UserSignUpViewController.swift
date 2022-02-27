@@ -97,13 +97,6 @@ class UserSignUpViewController: UIViewController {
                     return
                 }
                 self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
-//                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-//                    if let error = error, authResult == nil {
-//                        self.errorLabel.text = error.localizedDescription
-//                    } else {
-//                        self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
-//                    }
-//                }
             }
         }
     }
