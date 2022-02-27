@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-//import GooglePlaces
+import GooglePlaces
 
 class UserSignUpViewController: UIViewController {
     //MARK: - Outlets
@@ -42,22 +42,22 @@ class UserSignUpViewController: UIViewController {
     
     //MARK: - Actions
     
-//    @IBAction func addressTextFieldTouchDown(_ sender: UITextField) {
-//        let autocompleteController = GMSAutocompleteViewController()
-//        autocompleteController.delegate = self
-//
-//        // Specify a filter
-//        let filter = GMSAutocompleteFilter()
-//        filter.country = "FR"
-//        filter.type = .address
-//        autocompleteController.autocompleteFilter = filter
-//
-//        // Place data to return
-//        let fields: GMSPlaceField = [.formattedAddress, .addressComponents, .coordinate]
-//        autocompleteController.placeFields = fields
-//
-//        present(autocompleteController, animated: true, completion: nil)
-//    }
+    @IBAction func addressTextFieldTouchDown(_ sender: UITextField) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+
+        // Specify a filter
+        let filter = GMSAutocompleteFilter()
+        filter.country = "FR"
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+
+        // Place data to return
+        let fields: GMSPlaceField = [.formattedAddress, .addressComponents, .coordinate]
+        autocompleteController.placeFields = fields
+
+        present(autocompleteController, animated: true, completion: nil)
+    }
     
     @IBAction func signUpDidTouch(_ sender: Any) {
         if passwordTextField.text != passwordConfirmationTextField.text {
@@ -109,38 +109,38 @@ class UserSignUpViewController: UIViewController {
     }
 }
 
-//extension SignUpViewController: GMSAutocompleteViewControllerDelegate {
-//  // Handle the user's selection.
-//  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-//      //print(place.formattedAddress)
-//      //print(place.addressComponents)
-//      print(place.coordinate.latitude)
-//      print(place.coordinate.longitude)
-//      guard let components = place.addressComponents else { return }
-//      for component in components {
-//          for type in component.types {
-//              switch type {
-//              case "locality":
-//                  print(component.name)
-//              case "postal_code":
-//                  print(component.name)
-//              default:
-//                  break
-//              }
-//          }
-//      }
-//
-//    dismiss(animated: true, completion: nil)
-//  }
-//
-//  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-//    // TODO: handle the error.
-//    print("Error: ", error.localizedDescription)
-//  }
-//
-//  // User canceled the operation.
-//  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-//    dismiss(animated: true, completion: nil)
-//  }
-//}
-//
+extension UserSignUpViewController: GMSAutocompleteViewControllerDelegate {
+  // Handle the user's selection.
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+      //print(place.formattedAddress)
+      //print(place.addressComponents)
+      print(place.coordinate.latitude)
+      print(place.coordinate.longitude)
+      guard let components = place.addressComponents else { return }
+      for component in components {
+          for type in component.types {
+              switch type {
+              case "locality":
+                  print(component.name)
+              case "postal_code":
+                  print(component.name)
+              default:
+                  break
+              }
+          }
+      }
+
+    dismiss(animated: true, completion: nil)
+  }
+
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    // TODO: handle the error.
+    print("Error: ", error.localizedDescription)
+  }
+
+  // User canceled the operation.
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    dismiss(animated: true, completion: nil)
+  }
+}
+

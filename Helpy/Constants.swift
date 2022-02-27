@@ -10,7 +10,6 @@ import UIKit
 
 struct Constants {
     static let appAccentUIColor = UIColor(red: 140/255, green: 82/255, blue: 255/255, alpha: 1)
-    //UIColor(red: 140, green: 82, blue: 255, alpha: 1)
 }
 
 struct FirebaseHelper {

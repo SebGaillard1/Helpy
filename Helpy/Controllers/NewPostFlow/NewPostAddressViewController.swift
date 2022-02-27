@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import GooglePlaces
+import GooglePlaces
 
 class NewPostAddressViewController: UIViewController {
     //MARK: - Outlets
@@ -52,66 +52,66 @@ class NewPostAddressViewController: UIViewController {
         performSegue(withIdentifier: segueIdToPhoto, sender: self)
     }
     
-//    private func presentGooglePlacesAddressViewController() {
-//        let autocompleteController = GMSAutocompleteViewController()
-//        autocompleteController.delegate = self
-//
-//        // Specify a filter
-//        let filter = GMSAutocompleteFilter()
-//        filter.country = "FR"
-//        filter.type = .address
-//        autocompleteController.autocompleteFilter = filter
-//
-//        // Place data to return
-//        let fields: GMSPlaceField = [.formattedAddress, .addressComponents, .coordinate]
-//        autocompleteController.placeFields = fields
-//
-//        present(autocompleteController, animated: true, completion: nil)
-//    }
+    private func presentGooglePlacesAddressViewController() {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+
+        // Specify a filter
+        let filter = GMSAutocompleteFilter()
+        filter.country = "FR"
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+
+        // Place data to return
+        let fields: GMSPlaceField = [.formattedAddress, .addressComponents, .coordinate]
+        autocompleteController.placeFields = fields
+
+        present(autocompleteController, animated: true, completion: nil)
+    }
 }
 
 //MARK: - Extensions
 extension NewPostAddressViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        //presentGooglePlacesAddressViewController()
+        presentGooglePlacesAddressViewController()
     }
 }
 
 
-//extension NewPostAddressViewController: GMSAutocompleteViewControllerDelegate {
-//    // Handle the user's selection.
-//    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-//        guard let components = place.addressComponents else { return }
-//        for component in components {
-//            for type in component.types {
-//                switch type {
-//                case "locality":
-//                    newPost.locality = component.name
-//                    localityNameLabel.text = component.name
-//                case "postal_code":
-//                    newPost.postalCode = component.name
-//                    postalCodeLabel.text = component.name
-//                    continueToNextPageButton.isEnabled = true
-//                default:
-//                    break
-//                }
-//            }
-//        }
-//
-//        for label in localityAndPostalCodeLabels {
-//            label.isHidden = false
-//        }
-//
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-//        // TODO: handle the error.
-//        print("Error: ", error.localizedDescription)
-//    }
-//
-//    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
+extension NewPostAddressViewController: GMSAutocompleteViewControllerDelegate {
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        guard let components = place.addressComponents else { return }
+        for component in components {
+            for type in component.types {
+                switch type {
+                case "locality":
+                    newPost.locality = component.name
+                    localityNameLabel.text = component.name
+                case "postal_code":
+                    newPost.postalCode = component.name
+                    postalCodeLabel.text = component.name
+                    continueToNextPageButton.isEnabled = true
+                default:
+                    break
+                }
+            }
+        }
+
+        for label in localityAndPostalCodeLabels {
+            label.isHidden = false
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
+
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
