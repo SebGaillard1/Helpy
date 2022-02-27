@@ -13,12 +13,14 @@
 		5736C93227BDA1B200970DE9 /* ProHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */; };
 		5736C93427BDA57200970DE9 /* ProTapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */; };
 		5736C93627BDA5E700970DE9 /* ProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C93527BDA5E700970DE9 /* ProSettingsViewController.swift */; };
+		5737A05D27BDE85C00AF6651 /* libPods-Helpy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */; };
 		57439B3127BA92A5003C12E3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3027BA92A5003C12E3 /* Post.swift */; };
 		57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */; };
 		57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */; };
 		57439B3827BB0B45003C12E3 /* NewPostTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */; };
 		5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696D27B9A484000E93F0 /* ApiKeys.swift */; };
 		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
+		5759673327BEA71F007F0F54 /* ProSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5759673227BEA71F007F0F54 /* ProSignInViewController.swift */; };
 		575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */; };
 		575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102327BC18840014039A /* NewPostAddressViewController.swift */; };
 		575C102627BC46540014039A /* NewPostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102527BC46540014039A /* NewPostPhotoViewController.swift */; };
@@ -29,9 +31,9 @@
 		5765A15827B84C4F0024B828 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15727B84C4F0024B828 /* Client.swift */; };
 		5765A15A27B84E9A0024B828 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15927B84E9A0024B828 /* Constants.swift */; };
 		5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */; };
-		5765A15E27B852830024B828 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15D27B852830024B828 /* SignUpViewController.swift */; };
+		5765A15E27B852830024B828 /* UserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15D27B852830024B828 /* UserSignUpViewController.swift */; };
 		5765A16027B8557F0024B828 /* ClientHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */; };
-		5765A16227B856FD0024B828 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A16127B856FD0024B828 /* SignInViewController.swift */; };
+		5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A16127B856FD0024B828 /* UserSignInViewController.swift */; };
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
 		57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */; };
@@ -50,7 +52,6 @@
 		57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215327B965F3001A93B1 /* JobsTableViewController.swift */; };
 		57C4215627B9752B001A93B1 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215527B9752B001A93B1 /* Professional.swift */; };
 		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
-		F328BAB97B2EF30B8A98712E /* libPods-Helpy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB6F48683D630764BDD982C /* libPods-Helpy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,12 +80,14 @@
 		5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProHomepageViewController.swift; sourceTree = "<group>"; };
 		5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProTapBarViewController.swift; sourceTree = "<group>"; };
 		5736C93527BDA5E700970DE9 /* ProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSettingsViewController.swift; sourceTree = "<group>"; };
+		5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-Helpy.a"; sourceTree = "<group>"; };
 		57439B3027BA92A5003C12E3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostTitleViewController.swift; sourceTree = "<group>"; };
 		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
+		5759673227BEA71F007F0F54 /* ProSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSignInViewController.swift; sourceTree = "<group>"; };
 		575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isTitleCorrectLenght.swift"; sourceTree = "<group>"; };
 		575C102327BC18840014039A /* NewPostAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostAddressViewController.swift; sourceTree = "<group>"; };
 		575C102527BC46540014039A /* NewPostPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPhotoViewController.swift; sourceTree = "<group>"; };
@@ -95,9 +98,9 @@
 		5765A15727B84C4F0024B828 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5765A15927B84E9A0024B828 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
-		5765A15D27B852830024B828 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5765A15D27B852830024B828 /* UserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewController.swift; sourceTree = "<group>"; };
 		5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomepageViewController.swift; sourceTree = "<group>"; };
-		5765A16127B856FD0024B828 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5765A16127B856FD0024B828 /* UserSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BACF5427B7FA59009AE36D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +119,6 @@
 		57C4215327B965F3001A93B1 /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		57C4215527B9752B001A93B1 /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
-		BAB6F48683D630764BDD982C /* libPods-Helpy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Helpy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 				57BACF8F27B809EB009AE36D /* FirebaseFirestore in Frameworks */,
 				57BACF8927B809EB009AE36D /* FirebaseAppCheck in Frameworks */,
 				57BACF8B27B809EB009AE36D /* FirebaseAuth in Frameworks */,
-				F328BAB97B2EF30B8A98712E /* libPods-Helpy.a in Frameworks */,
+				5737A05D27BDE85C00AF6651 /* libPods-Helpy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +154,7 @@
 		42853ACF4C8E30A0EE761A2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BAB6F48683D630764BDD982C /* libPods-Helpy.a */,
+				5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,13 +185,23 @@
 			isa = PBXGroup;
 			children = (
 				57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */,
-				5765A15D27B852830024B828 /* SignUpViewController.swift */,
-				5765A16127B856FD0024B828 /* SignInViewController.swift */,
-				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
+				5765A15D27B852830024B828 /* UserSignUpViewController.swift */,
+				5765A16127B856FD0024B828 /* UserSignInViewController.swift */,
 				57C4215327B965F3001A93B1 /* JobsTableViewController.swift */,
 				5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */,
 			);
 			path = LogProcess;
+			sourceTree = "<group>";
+		};
+		5759673427BEA74E007F0F54 /* Pro */ = {
+			isa = PBXGroup;
+			children = (
+				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
+				5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */,
+				5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */,
+				5736C93527BDA5E700970DE9 /* ProSettingsViewController.swift */,
+			);
+			path = Pro;
 			sourceTree = "<group>";
 		};
 		57BACF4627B7FA58009AE36D = {
@@ -243,12 +255,11 @@
 		57BACF8227B7FD6A009AE36D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5759673227BEA71F007F0F54 /* ProSignInViewController.swift */,
+				5759673427BEA74E007F0F54 /* Pro */,
 				57439B3627BAED02003C12E3 /* LogProcess */,
 				5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */,
 				570FCAA327BB185F00404003 /* NewPostFlow */,
-				5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */,
-				5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */,
-				5736C93527BDA5E700970DE9 /* ProSettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -476,7 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5765A16227B856FD0024B828 /* SignInViewController.swift in Sources */,
+				5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */,
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
@@ -494,7 +505,7 @@
 				57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */,
 				575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */,
 				5765A15A27B84E9A0024B828 /* Constants.swift in Sources */,
-				5765A15E27B852830024B828 /* SignUpViewController.swift in Sources */,
+				5765A15E27B852830024B828 /* UserSignUpViewController.swift in Sources */,
 				575C102627BC46540014039A /* NewPostPhotoViewController.swift in Sources */,
 				57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */,
 				5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */,
@@ -503,6 +514,7 @@
 				575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
 				5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */,
+				5759673327BEA71F007F0F54 /* ProSignInViewController.swift in Sources */,
 				5736C93627BDA5E700970DE9 /* ProSettingsViewController.swift in Sources */,
 				5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
@@ -598,7 +610,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -617,6 +628,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -660,7 +672,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -672,6 +683,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -701,12 +713,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sebios.Helpy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -732,12 +749,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sebios.Helpy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
