@@ -88,6 +88,7 @@
 		57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostTitleViewController.swift; sourceTree = "<group>"; };
 		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
+		5755BE8227CC28A70007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5759673227BEA71F007F0F54 /* ProSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSignInViewController.swift; sourceTree = "<group>"; };
 		575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isTitleCorrectLenght.swift"; sourceTree = "<group>"; };
 		575C102327BC18840014039A /* NewPostAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostAddressViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		42853ACF4C8E30A0EE761A2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5755BE8227CC28A70007F86A /* libGeoFire.a */,
 				5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */,
 			);
 			name = Frameworks;
@@ -379,6 +381,7 @@
 				TargetAttributes = {
 					57BACF4E27B7FA59009AE36D = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 					57BACF6427B7FA5A009AE36D = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -700,6 +703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C56BCY6PTD;
@@ -724,6 +728,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sebios.Helpy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = NO;
@@ -736,6 +741,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C56BCY6PTD;

@@ -7,6 +7,7 @@
 
 import UIKit
 import GooglePlaces
+//import GeoFire
 
 class NewPostAddressViewController: UIViewController {
     //MARK: - Outlets
@@ -84,10 +85,10 @@ extension NewPostAddressViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         let latitude = place.coordinate.latitude
         let longitude = place.coordinate.longitude
-        //let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         // Hash is used for firestore querys, lat/long are used for distance comparisons.
-//        let test = GFUtils
+//let test = GFUtils.geoHash(forLocation: location)
 //        newPost.geohash = GFUtils.geoHash(forLocation: location)
         newPost.latitude = latitude
         newPost.longitude = longitude
