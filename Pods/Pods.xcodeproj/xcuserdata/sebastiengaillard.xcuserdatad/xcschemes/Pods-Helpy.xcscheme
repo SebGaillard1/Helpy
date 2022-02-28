@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1240"
+   LastUpgradeVersion = "1320"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B893A1B158F2CAD235F8472C3270B438"
-               BuildableName = "libPods-Helpy.a"
+               BuildableName = "Pods_Helpy.framework"
                BlueprintName = "Pods-Helpy"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AF3A9ACC381CCC1E539E5A0 /* Pods_Helpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */; };
 		570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */; };
 		5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */; };
 		5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */; };
 		5736C93227BDA1B200970DE9 /* ProHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */; };
 		5736C93427BDA57200970DE9 /* ProTapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */; };
 		5736C93627BDA5E700970DE9 /* ProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C93527BDA5E700970DE9 /* ProSettingsViewController.swift */; };
-		5737A05D27BDE85C00AF6651 /* libPods-Helpy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */; };
 		57439B3127BA92A5003C12E3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3027BA92A5003C12E3 /* Post.swift */; };
 		57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */; };
 		57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */; };
 		57439B3827BB0B45003C12E3 /* NewPostTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */; };
-		5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696D27B9A484000E93F0 /* ApiKeys.swift */; };
 		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
 		5755BE7927CC24F00007F86A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 5755BE7827CC24F00007F86A /* FirebaseAppCheck */; };
 		5755BE7B27CC24F00007F86A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5755BE7A27CC24F00007F86A /* FirebaseAuth */; };
@@ -54,6 +53,7 @@
 		57C4215627B9752B001A93B1 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215527B9752B001A93B1 /* Professional.swift */; };
 		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
 		57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */; };
+		57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEF227CD66F700700E6A /* ApiKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		06ED8701850691B6CD307F85 /* Pods-Helpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.release.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.release.xcconfig"; sourceTree = "<group>"; };
+		077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.debug.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.debug.xcconfig"; sourceTree = "<group>"; };
 		570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDescriptionViewController.swift; sourceTree = "<group>"; };
 		5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+resignFirstResponser.swift"; sourceTree = "<group>"; };
@@ -82,12 +83,10 @@
 		5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProHomepageViewController.swift; sourceTree = "<group>"; };
 		5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProTapBarViewController.swift; sourceTree = "<group>"; };
 		5736C93527BDA5E700970DE9 /* ProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSettingsViewController.swift; sourceTree = "<group>"; };
-		5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-Helpy.a"; sourceTree = "<group>"; };
 		57439B3027BA92A5003C12E3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostTitleViewController.swift; sourceTree = "<group>"; };
-		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		5755BE8227CC28A70007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5755BE8827CC2DFD0007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +123,7 @@
 		57C4215527B9752B001A93B1 /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
 		57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		57CACEF227CD66F700700E6A /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +135,8 @@
 				5755BE7B27CC24F00007F86A /* FirebaseAuth in Frameworks */,
 				5755BE7D27CC24F00007F86A /* FirebaseDatabase in Frameworks */,
 				5755BE7F27CC24F00007F86A /* FirebaseFirestore in Frameworks */,
-				5737A05D27BDE85C00AF6651 /* libPods-Helpy.a in Frameworks */,
 				5755BE8127CC24F00007F86A /* FirebaseStorage in Frameworks */,
+				4AF3A9ACC381CCC1E539E5A0 /* Pods_Helpy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			children = (
 				5755BE8827CC2DFD0007F86A /* libGeoFire.a */,
 				5755BE8227CC28A70007F86A /* libGeoFire.a */,
-				5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */,
+				077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,6 +241,7 @@
 				57BACF8427B8077B009AE36D /* Models */,
 				57BACF8227B7FD6A009AE36D /* Controllers */,
 				57BACF8327B7FD78009AE36D /* Views */,
+				57CACEF227CD66F700700E6A /* ApiKeys.swift */,
 				57BACF5227B7FA59009AE36D /* AppDelegate.swift */,
 				57BACF5427B7FA59009AE36D /* SceneDelegate.swift */,
 				5765A15927B84E9A0024B828 /* Constants.swift */,
@@ -248,7 +249,6 @@
 				57C4215127B95198001A93B1 /* job-list.txt */,
 				57BACF6027B7FA5A009AE36D /* Info.plist */,
 				57BACF8527B807D3009AE36D /* GoogleService-Info.plist */,
-				5753696D27B9A484000E93F0 /* ApiKeys.swift */,
 			);
 			path = Helpy;
 			sourceTree = "<group>";
@@ -329,6 +329,7 @@
 				57BACF4C27B7FA59009AE36D /* Frameworks */,
 				57BACF4D27B7FA59009AE36D /* Resources */,
 				B6ACE4DDD05EFD68667B0E2E /* [CP] Copy Pods Resources */,
+				45EAA85184E1587521DC3C6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,7 +417,7 @@
 			);
 			mainGroup = 57BACF4627B7FA58009AE36D;
 			packageReferences = (
-				5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
 			);
 			productRefGroup = 57BACF5027B7FA59009AE36D /* Products */;
 			projectDirPath = "";
@@ -482,6 +483,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		45EAA85184E1587521DC3C6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Helpy/Pods-Helpy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Helpy/Pods-Helpy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Helpy/Pods-Helpy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B6ACE4DDD05EFD68667B0E2E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,9 +552,9 @@
 				575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
 				5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */,
+				57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */,
 				5759673327BEA71F007F0F54 /* ProSignInViewController.swift in Sources */,
 				5736C93627BDA5E700970DE9 /* ProSettingsViewController.swift in Sources */,
-				5753696E27B9A484000E93F0 /* ApiKeys.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
 				5736C93427BDA57200970DE9 /* ProTapBarViewController.swift in Sources */,
 				575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */,
@@ -904,7 +922,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -917,27 +935,27 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5755BE7827CC24F00007F86A /* FirebaseAppCheck */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseAppCheck;
 		};
 		5755BE7A27CC24F00007F86A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseAuth;
 		};
 		5755BE7C27CC24F00007F86A /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseDatabase;
 		};
 		5755BE7E27CC24F00007F86A /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseFirestore;
 		};
 		5755BE8027CC24F00007F86A /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */

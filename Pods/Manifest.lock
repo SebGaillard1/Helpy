@@ -1,24 +1,28 @@
 PODS:
+  - Alamofire (5.5.0)
   - GeoFire/Utils (4.3.0)
   - GooglePlaces (6.0.0)
   - SwiftConfettiView (0.1.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.5)
   - GeoFire/Utils
   - GooglePlaces (= 6.0.0)
   - SwiftConfettiView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - GeoFire
     - GooglePlaces
     - SwiftConfettiView
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   GeoFire: c34927b5c81ab614f611c79aa8d074cfa9780f07
   GooglePlaces: c97d96ae68594acb64035c9ca9f26fbfc1d23af1
   SwiftConfettiView: 1bdbc2e6913b6b1c76d8070802b212508ad5c352
 
-PODFILE CHECKSUM: 81389cb4f6cac392604853e6b338d1be7b84b1d4
+PODFILE CHECKSUM: aebf2cd7d93db32bf7166993326987705ff0f347
 
 COCOAPODS: 1.11.2

@@ -18,7 +18,7 @@ struct Post {
     var postalCode: String
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
-   // var geohash: Any?
+    var geohash: String
     var postDate: Date?
     var proUid: String
     var description: String
@@ -27,13 +27,14 @@ struct Post {
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
+    init(title: String, category: String, locality: String, postalCode: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, geohash: String, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
         self.title = title
         self.category = category
         self.locality = locality
         self.postalCode = postalCode
         self.latitude = latitude
         self.longitude = longitude
+        self.geohash = geohash
         self.postDate = postDate
         self.proUid = proUid
         self.description = description
@@ -51,7 +52,7 @@ struct Post {
             "postalCode": postalCode,
             "latitude": Double(latitude),
             "longitude": Double(longitude),
-            //"geohash": geohash,
+            "geohash": geohash,
             "postDate": postDate ?? Date(),
             "proUid": proUid,
             "description": description,
@@ -69,6 +70,7 @@ struct Post {
                 let postalCode = snapshot["postalCode"] as? String,
                 let latitude = snapshot["latitude"] as? Double,
                 let longitude = snapshot["longitude"] as? Double,
+                let geohash = snapshot["geohash"] as? String,
                 let postDate = snapshot["postDate"] as? Timestamp,
                 let proUid = snapshot["proUid"] as? String,
                 let description = snapshot["description"] as? String,
@@ -77,6 +79,7 @@ struct Post {
             else {
                 return nil
             }
+            
             self.id = snapshot.documentID
             self.title = title
             self.category = category
@@ -84,6 +87,7 @@ struct Post {
             self.postalCode = postalCode
             self.latitude = latitude
             self.longitude = longitude
+            self.geohash = geohash
             self.postDate = postDate.dateValue()
             self.proUid = proUid
             self.description = description

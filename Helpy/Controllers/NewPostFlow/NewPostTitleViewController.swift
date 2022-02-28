@@ -44,7 +44,7 @@ class NewPostTitleViewController: UIViewController {
         
         guard let user = Auth.auth().currentUser else { return }
         
-        newPost = Post(title: "", category: "", locality: "", postalCode: "", latitude: 0, longitude: 0, postDate: Date(), proUid: user.uid, description: "", image: nil, imageUrl: "", isOnline: false)
+        newPost = Post(title: "", category: "", locality: "", postalCode: "", latitude: 0, longitude: 0, geohash: "", postDate: Date(), proUid: user.uid, description: "", image: nil, imageUrl: "", isOnline: false)
     }
     
     //MARK: - Actions

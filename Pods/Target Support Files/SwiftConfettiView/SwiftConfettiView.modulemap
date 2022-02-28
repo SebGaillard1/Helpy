@@ -1,4 +1,4 @@
-module SwiftConfettiView {
+framework module SwiftConfettiView {
   umbrella header "SwiftConfettiView-umbrella.h"
 
   export *

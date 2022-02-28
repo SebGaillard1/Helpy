@@ -1,4 +1,4 @@
-module Pods_Helpy {
+framework module Pods_Helpy {
   umbrella header "Pods-Helpy-umbrella.h"
 
   export *

@@ -41,18 +41,6 @@ class WelcomeViewController: UIViewController {
                     self.performSegue(withIdentifier: self.segueIdWelcomeToProHome, sender: nil)
                 }
             }
-//            self.clientRef.observe(.value) { snapshot in
-//                if snapshot.hasChild(user.uid) {
-//                    self.performSegue(withIdentifier: self.segueIdWelcomeToClientHome, sender: nil)
-//                }
-//            }
-//
-//            self.proRef.observe(.value) { snapshot in
-//                if snapshot.hasChild(user.uid) {
-//                    self.performSegue(withIdentifier: self.segueIdWelcomeToProHome, sender: nil)
-//
-//                }
-//            }
         }
     }
     
@@ -62,7 +50,4 @@ class WelcomeViewController: UIViewController {
         guard let handle = handle else { return }
         Auth.auth().removeStateDidChangeListener(handle)
     }
-
-
 }
-
