@@ -12,10 +12,10 @@ import UIKit
 class FirebaseDatabaseManager {
     //MARK: - Singleton
     static var shared = FirebaseDatabaseManager()
-
+    
     private let db = Firestore.firestore()
     private let storageRef = Storage.storage().reference()
-
+    
     private init() {}
     
     func saveClient(lastName: String, firstName: String, adress: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
@@ -56,7 +56,7 @@ class FirebaseDatabaseManager {
         let image = post.image ?? UIImage(named: "garde-enfant")!
         
         savePostImage(image: image) { imageDowndloadLink, error in
-            guard let imageDowndloadLink = imageDowndloadLink, error == nil else {
+            guard !imageDowndloadLink.isEmpty, error == nil else {
                 // Failed to save or get the image url
                 completion(error)
                 return
@@ -74,12 +74,12 @@ class FirebaseDatabaseManager {
             }
         }
         
-
+        
     }
     
-    func savePostImage(image: UIImage, completion: @escaping (_ imageDowndloadLink: String?, _ error: String?) -> Void) {
+    func savePostImage(image: UIImage, completion: @escaping (_ imageDowndloadLink: String, _ error: String?) -> Void) {
         guard let imageData = image.pngData() else {
-            completion(nil, "Failed to get png data")
+            completion("", "Failed to get png data")
             return
         }
         
@@ -88,14 +88,14 @@ class FirebaseDatabaseManager {
         
         ref.putData(imageData, metadata: nil) { _, error in
             if let error = error {
-                completion(nil, error.localizedDescription)
+                completion("", error.localizedDescription)
             } else {
                 self.storageRef.child(path).downloadURL { url, error in
-                    guard let url = url?.absoluteString, error != nil else {
-                        completion(nil, error?.localizedDescription)
+                    guard let url = url, error == nil else {
+                        completion("", error?.localizedDescription)
                         return
                     }
-                    completion(url, nil)
+                    completion(url.absoluteString, nil)
                 }
             }
         }
@@ -117,7 +117,12 @@ class FirebaseDatabaseManager {
                     posts.append(newPost)
                 }
             }
+            
             callback(posts.reversed())
-       }
+        }
+    }
+    
+    func getImages() {
+        
     }
 }
