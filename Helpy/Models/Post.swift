@@ -94,4 +94,37 @@ struct Post {
             self.imageUrl = imageUrl
             self.isOnline = isOnline
         }
+    
+    init?(dictionnary: [String: Any]) {
+        guard
+            let title = dictionnary["title"] as? String,
+            let category = dictionnary["category"] as? String,
+            let locality = dictionnary["locality"] as? String,
+            let postalCode = dictionnary["postalCode"] as? String,
+            let latitude = dictionnary["latitude"] as? Double,
+            let longitude = dictionnary["longitude"] as? Double,
+            let geohash = dictionnary["geohash"] as? String,
+            let postDate = dictionnary["postDate"] as? Timestamp,
+            let proUid = dictionnary["proUid"] as? String,
+            let description = dictionnary["description"] as? String,
+            let imageUrl = dictionnary["imageUrl"] as? String,
+            let isOnline = dictionnary["isOnline"] as? Bool
+        else {
+            return nil
+        }
+        
+        //self.id = snapshot.documentID
+        self.title = title
+        self.category = category
+        self.locality = locality
+        self.postalCode = postalCode
+        self.latitude = latitude
+        self.longitude = longitude
+        self.geohash = geohash
+        self.postDate = postDate.dateValue()
+        self.proUid = proUid
+        self.description = description
+        self.imageUrl = imageUrl
+        self.isOnline = isOnline
+    }
 }

@@ -79,12 +79,12 @@ class FirebaseDatabaseManager {
     }
     
     func savePostImage(image: UIImage, completion: @escaping (_ imageDowndloadLink: String, _ error: String?) -> Void) {
-        guard let imageData = image.pngData() else {
-            completion("", "Failed to get png data")
+        guard let imageData = image.jpegData(compressionQuality: 0.1) else {
+            completion("", "Failed to get jpeg data")
             return
         }
         
-        let path = "images/\(UUID().uuidString)/image.png"
+        let path = "images/\(UUID().uuidString)/image.jpeg"
         let ref = storageRef.child(path)
         
         ref.putData(imageData, metadata: nil) { _, error in
@@ -111,12 +111,21 @@ class FirebaseDatabaseManager {
                 callback([])
                 return
             }
-            posts.removeAll()
             
-            for document in snapshot.documents {
-                if let newPost = Post(snapshot: document) {
-                    posts.append(newPost)
+            snapshot.documentChanges.forEach { diff in
+                if (diff.type == .added) {
+                    if let newPost = Post(dictionnary: diff.document.data()) {
+                        posts.append(newPost)
+                    }
+                    
+                    //                    for document in snapshot.documents {
+                    //                        if let newPost = Post(snapshot: document) {
+                    //                            posts.append(newPost)
+                    //                        }
+                    //                    }
                 }
+                
+                //                callback(posts.reversed())
             }
             
             callback(posts.reversed())
