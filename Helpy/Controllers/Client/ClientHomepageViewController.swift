@@ -31,14 +31,19 @@ class ClientHomepageViewController: UIViewController {
         postCollectionView.dataSource = self
         postCollectionView.delegate = self
         postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         FirebaseDatabaseManager.shared.getRecentPosts { posts in
             self.posts = posts
             self.postCollectionView.reloadData()
+            
+            for (index, post) in posts.enumerated() {
+                FirebaseDatabaseManager.shared.downloadImage(from: post.imageUrl) { postImage in
+                    var post = post
+                    post.image = postImage
+                    self.posts[index] = post
+                    self.postCollectionView.reloadData()
+                }
+            }
         }
         
         handle = Auth.auth().addStateDidChangeListener { _, user in
@@ -46,6 +51,11 @@ class ClientHomepageViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,8 +68,8 @@ class ClientHomepageViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        guard let handle = handle else { return }
-        Auth.auth().removeStateDidChangeListener(handle)
+//        guard let handle = handle else { return }
+//        Auth.auth().removeStateDidChangeListener(handle)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

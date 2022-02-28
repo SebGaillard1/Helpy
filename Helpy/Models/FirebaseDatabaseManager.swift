@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import Alamofire
 import UIKit
 
 class FirebaseDatabaseManager {
@@ -122,7 +123,15 @@ class FirebaseDatabaseManager {
         }
     }
     
-    func getImages() {
-        
+    func downloadImage(from url: String, completion: @escaping (_ postImage: UIImage) -> Void) {
+        AF.request(url).responseData { response in
+            if response.error == nil {
+                if let data = response.data {
+                    completion(UIImage(data: data)!)
+                }
+            } else {
+                completion(UIImage(named: "garde-enfant")!)
+            }
+        }
     }
 }

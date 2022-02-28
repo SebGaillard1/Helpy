@@ -1519,7 +1519,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8N-p8-WoJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9pO-O9-fhQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -1588,7 +1588,7 @@
                             <constraint firstItem="9pO-O9-fhQ" firstAttribute="width" secondItem="5NO-2k-Ds5" secondAttribute="width" id="6bR-hQ-y8i"/>
                             <constraint firstItem="Y8N-p8-WoJ" firstAttribute="leading" secondItem="Dnm-mq-gti" secondAttribute="leading" id="Cm4-Gd-nkD"/>
                             <constraint firstItem="Dnm-mq-gti" firstAttribute="bottom" secondItem="Y8N-p8-WoJ" secondAttribute="bottom" id="EZS-ZI-5TN"/>
-                            <constraint firstItem="Y8N-p8-WoJ" firstAttribute="top" secondItem="5NO-2k-Ds5" secondAttribute="top" id="fzs-eQ-UBO"/>
+                            <constraint firstItem="Y8N-p8-WoJ" firstAttribute="top" secondItem="Dnm-mq-gti" secondAttribute="top" id="fzs-eQ-UBO"/>
                             <constraint firstItem="Dnm-mq-gti" firstAttribute="trailing" secondItem="Y8N-p8-WoJ" secondAttribute="trailing" id="mjl-5G-oj8"/>
                         </constraints>
                     </view>
