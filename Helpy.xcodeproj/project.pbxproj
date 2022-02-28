@@ -53,6 +53,7 @@
 		57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215327B965F3001A93B1 /* JobsTableViewController.swift */; };
 		57C4215627B9752B001A93B1 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215527B9752B001A93B1 /* Professional.swift */; };
 		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
+		57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		5753696D27B9A484000E93F0 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		5755BE8227CC28A70007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5755BE8827CC2DFD0007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5759673227BEA71F007F0F54 /* ProSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSignInViewController.swift; sourceTree = "<group>"; };
 		575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isTitleCorrectLenght.swift"; sourceTree = "<group>"; };
 		575C102327BC18840014039A /* NewPostAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostAddressViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		57C4215327B965F3001A93B1 /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		57C4215527B9752B001A93B1 /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
+		57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 		42853ACF4C8E30A0EE761A2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5755BE8827CC2DFD0007F86A /* libGeoFire.a */,
 				5755BE8227CC28A70007F86A /* libGeoFire.a */,
 				5737A05C27BDE85C00AF6651 /* libPods-Helpy.a */,
 			);
@@ -200,6 +204,7 @@
 		5759673427BEA74E007F0F54 /* Pro */ = {
 			isa = PBXGroup;
 			children = (
+				5759673227BEA71F007F0F54 /* ProSignInViewController.swift */,
 				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
 				5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */,
 				5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */,
@@ -259,10 +264,9 @@
 		57BACF8227B7FD6A009AE36D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5759673227BEA71F007F0F54 /* ProSignInViewController.swift */,
-				5759673427BEA74E007F0F54 /* Pro */,
 				57439B3627BAED02003C12E3 /* LogProcess */,
-				5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */,
+				5759673427BEA74E007F0F54 /* Pro */,
+				57CACEEA27CD1C5500700E6A /* Client */,
 				570FCAA327BB185F00404003 /* NewPostFlow */,
 			);
 			path = Controllers;
@@ -302,6 +306,15 @@
 				5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		57CACEEA27CD1C5500700E6A /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */,
+				57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +523,7 @@
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,
 				57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */,
 				575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */,
+				57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */,
 				5765A15A27B84E9A0024B828 /* Constants.swift in Sources */,
 				5765A15E27B852830024B828 /* UserSignUpViewController.swift in Sources */,
 				575C102627BC46540014039A /* NewPostPhotoViewController.swift in Sources */,

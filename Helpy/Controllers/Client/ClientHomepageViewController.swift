@@ -16,8 +16,10 @@ class ClientHomepageViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle?
     
     let postCellId = "postCell"
+    let segueIdToPostDetails = "homeToPostDetails"
     
     var posts = [Post]()
+    var selectedPost: Post?
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -60,6 +62,13 @@ class ClientHomepageViewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdToPostDetails {
+            let destinationVC = segue.destination as! PostDetailsViewController
+            destinationVC.post = selectedPost
+        }
+    }
+    
     //MARK: - Actions
     
     @IBAction func logOutDidTouch(_ sender: Any) {
@@ -87,7 +96,10 @@ extension ClientHomepageViewController: UICollectionViewDataSource {
 }
 
 extension ClientHomepageViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPost = posts[indexPath.row]
+        performSegue(withIdentifier: segueIdToPostDetails, sender: self)
+    }
 }
 
 extension ClientHomepageViewController: UICollectionViewDelegateFlowLayout {

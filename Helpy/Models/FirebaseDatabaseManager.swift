@@ -7,12 +7,14 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 class FirebaseDatabaseManager {
     //MARK: - Singleton
     static var shared = FirebaseDatabaseManager()
 
     private let db = Firestore.firestore()
+    private let storageRef = Storage.storage().reference()
 
     private init() {}
     
@@ -51,11 +53,50 @@ class FirebaseDatabaseManager {
     }
     
     func savePost(post: Post ,completion: @escaping (_ error: String?) -> Void) {
-        db.collection("posts").addDocument(data: post.toDictionnary()) { error in
+        let image = post.image ?? UIImage(named: "garde-enfant")!
+        
+        savePostImage(image: image) { imageDowndloadLink, error in
+            guard let imageDowndloadLink = imageDowndloadLink, error == nil else {
+                // Failed to save or get the image url
+                completion(error)
+                return
+            }
+            
+            var post = post
+            post.imageUrl = imageDowndloadLink
+            
+            self.db.collection("posts").addDocument(data: post.toDictionnary()) { error in
+                if let error = error {
+                    completion(error.localizedDescription)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+        
+
+    }
+    
+    func savePostImage(image: UIImage, completion: @escaping (_ imageDowndloadLink: String?, _ error: String?) -> Void) {
+        guard let imageData = image.pngData() else {
+            completion(nil, "Failed to get png data")
+            return
+        }
+        
+        let path = "images/\(UUID().uuidString)/image.png"
+        let ref = storageRef.child(path)
+        
+        ref.putData(imageData, metadata: nil) { _, error in
             if let error = error {
-                completion(error.localizedDescription)
+                completion(nil, error.localizedDescription)
             } else {
-                completion(nil)
+                self.storageRef.child(path).downloadURL { url, error in
+                    guard let url = url?.absoluteString, error != nil else {
+                        completion(nil, error?.localizedDescription)
+                        return
+                    }
+                    completion(url, nil)
+                }
             }
         }
     }
