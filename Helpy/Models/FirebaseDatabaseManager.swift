@@ -136,10 +136,10 @@ class FirebaseDatabaseManager {
         AF.request(url).responseData { response in
             if response.error == nil {
                 if let data = response.data {
-                    completion(UIImage(data: data)!)
+                    completion(UIImage(data: data) ?? UIImage(named: "placeholder-purple")!)
                 }
             } else {
-                completion(UIImage(named: "garde-enfant")!)
+                completion(UIImage(named: "placeholder-purple")!)
             }
         }
     }

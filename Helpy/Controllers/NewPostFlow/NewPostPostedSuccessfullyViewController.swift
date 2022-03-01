@@ -43,6 +43,11 @@ class NewPostPostedSuccessfullyViewController: UIViewController {
     }
     
     @IBAction func goHomeDidTouch(_ sender: Any) {
-        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+        for aViewController in viewControllers {
+            if aViewController is ProTapBarViewController {
+                self.navigationController!.popToViewController(aViewController, animated: true)
+            }
+        }
     }
 }

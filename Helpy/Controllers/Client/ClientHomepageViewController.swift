@@ -114,6 +114,7 @@ extension ClientHomepageViewController: UICollectionViewDelegate {
 
 extension ClientHomepageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width / 2.2, height: self.view.bounds.height / 3)
+        let width = (self.view.bounds.width / 2) - 16
+        return CGSize(width: width, height: width * 1.4)
     }
 }

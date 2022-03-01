@@ -38,6 +38,7 @@
 		5765A15E27B852830024B828 /* UserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15D27B852830024B828 /* UserSignUpViewController.swift */; };
 		5765A16027B8557F0024B828 /* ClientHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */; };
 		5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A16127B856FD0024B828 /* UserSignInViewController.swift */; };
+		578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */; };
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
 		57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */; };
@@ -104,6 +105,7 @@
 		5765A15D27B852830024B828 /* UserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewController.swift; sourceTree = "<group>"; };
 		5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomepageViewController.swift; sourceTree = "<group>"; };
 		5765A16127B856FD0024B828 /* UserSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
+		578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostSplashScreenViewController.swift; sourceTree = "<group>"; };
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BACF5427B7FA59009AE36D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		570FCAA327BB185F00404003 /* NewPostFlow */ = {
 			isa = PBXGroup;
 			children = (
+				578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */,
 				57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */,
 				570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */,
 				575C102327BC18840014039A /* NewPostAddressViewController.swift */,
@@ -524,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */,
 				5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */,
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
