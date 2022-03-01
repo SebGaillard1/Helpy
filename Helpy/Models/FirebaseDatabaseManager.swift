@@ -103,12 +103,12 @@ class FirebaseDatabaseManager {
     }
     
     // When we save a post, the key generated is unique and based on horodatage. So the post's list is in chronological order by default
-    func getRecentPosts(callback: @escaping (_ posts: [Post]) -> Void) {
+    func getRecentPosts(completion: @escaping (_ posts: [Post]) -> Void) {
         var posts = [Post]()
         
         db.collection("posts").addSnapshotListener { snapshot, error in
             guard let snapshot = snapshot, !snapshot.isEmpty else {
-                callback([])
+                completion([])
                 return
             }
             
@@ -117,20 +117,34 @@ class FirebaseDatabaseManager {
                     if let newPost = Post(dictionnary: diff.document.data()) {
                         posts.append(newPost)
                     }
-                    
-                    //                    for document in snapshot.documents {
-                    //                        if let newPost = Post(snapshot: document) {
-                    //                            posts.append(newPost)
-                    //                        }
-                    //                    }
                 }
-                
-                //                callback(posts.reversed())
             }
             
-            callback(posts.reversed())
+            completion(posts.reversed())
         }
     }
+    
+    func getPostFrom(pro: String, completion: @escaping (_ posts : [Post]) -> Void) {
+        var posts = [Post]()
+        
+        db.collection("posts").whereField("proUid", isEqualTo: pro).addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot, !snapshot.isEmpty else {
+                completion([])
+                return
+            }
+            
+            snapshot.documentChanges.forEach { diff in
+                if (diff.type == .added) {
+                    if let newPost = Post(dictionnary: diff.document.data()) {
+                        posts.append(newPost)
+                    }
+                }
+            }
+            
+            completion(posts.reversed())
+        }
+    }
+    
     
     func downloadImage(from url: String, completion: @escaping (_ postImage: UIImage) -> Void) {
         AF.request(url).responseData { response in

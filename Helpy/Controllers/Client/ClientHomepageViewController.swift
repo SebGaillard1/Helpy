@@ -32,19 +32,7 @@ class ClientHomepageViewController: UIViewController {
         postCollectionView.delegate = self
         postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
         
-        FirebaseDatabaseManager.shared.getRecentPosts { posts in
-            self.posts = posts
-            self.postCollectionView.reloadData()
-            
-            for (index, post) in posts.enumerated() {
-                FirebaseDatabaseManager.shared.downloadImage(from: post.imageUrl) { postImage in
-                    var post = post
-                    post.image = postImage
-                    self.posts[index] = post
-                    self.postCollectionView.reloadData()
-                }
-            }
-        }
+        getRecentPosts()
         
         handle = Auth.auth().addStateDidChangeListener { _, user in
             if user == nil {
@@ -76,6 +64,22 @@ class ClientHomepageViewController: UIViewController {
         if segue.identifier == segueIdToPostDetails {
             let destinationVC = segue.destination as! PostDetailsViewController
             destinationVC.post = selectedPost
+        }
+    }
+    
+    private func getRecentPosts() {
+        FirebaseDatabaseManager.shared.getRecentPosts { posts in
+            self.posts = posts
+            self.postCollectionView.reloadData()
+            
+            for (index, post) in posts.enumerated() {
+                FirebaseDatabaseManager.shared.downloadImage(from: post.imageUrl) { postImage in
+                    var post = post
+                    post.image = postImage
+                    self.posts[index] = post
+                    self.postCollectionView.reloadData()
+                }
+            }
         }
     }
     
