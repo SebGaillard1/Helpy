@@ -9,9 +9,14 @@ import UIKit
 import SwiftConfettiView
 
 class NewPostPostedSuccessfullyViewController: UIViewController {
+    //MARK: - Outlets
+    @IBOutlet weak var confettiUIView: UIView!
+    
+    //MARK: - Properties
     var confettiView: SwiftConfettiView?
     var feedbackGenerator: UINotificationFeedbackGenerator?
     
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +24,7 @@ class NewPostPostedSuccessfullyViewController: UIViewController {
 
         confettiView = SwiftConfettiView(frame: self.view.bounds)
         confettiView?.intensity = 1
-        self.view.addSubview(confettiView!)
+        self.confettiUIView.addSubview(confettiView!)
         
         feedbackGenerator = UINotificationFeedbackGenerator()
         feedbackGenerator?.prepare()
@@ -35,5 +40,9 @@ class NewPostPostedSuccessfullyViewController: UIViewController {
         
         confettiView?.stopConfetti()
         feedbackGenerator = nil
+    }
+    
+    @IBAction func goHomeDidTouch(_ sender: Any) {
+        
     }
 }

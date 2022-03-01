@@ -11,10 +11,11 @@ class NewPostConfirmViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var localityLabel: UILabel!
     @IBOutlet weak var postalCodeLabel: UILabel!
     @IBOutlet weak var newPostImageView: UIImageView!
+    @IBOutlet weak var publishUIButton: UIButton!
     
     //MARK: - Properties
     var newPost: Post!
@@ -31,7 +32,7 @@ class NewPostConfirmViewController: UIViewController {
     private func fillAllFields() {
         titleLabel.text = newPost.title
         categoryLabel.text = newPost.category
-        descriptionTextView.text = newPost.description
+        descriptionLabel.text = newPost.description
         localityLabel.text = newPost.locality
         postalCodeLabel.text = newPost.postalCode
         newPostImageView.image = newPost.image
@@ -39,6 +40,7 @@ class NewPostConfirmViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func publishDidTouch(_ sender: Any) {
+        publishUIButton.isEnabled = false
         newPost.postDate = Date()
         publishNewPost()
     }
@@ -51,6 +53,8 @@ class NewPostConfirmViewController: UIViewController {
                 let ac = UIAlertController(title: "Erreur", message: "Aie, impossible de poster l'annonce. L'erreur suivante vient de se produire : \(error!)", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(ac, animated: true, completion: nil)
+                
+                self.publishUIButton.isEnabled = true
             }
         }
     }
