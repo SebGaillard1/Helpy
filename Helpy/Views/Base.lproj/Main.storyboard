@@ -594,7 +594,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ImX-Cd-98k">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ImX-Cd-98k">
                                         <rect key="frame" x="10" y="51" width="404" height="220"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -1822,7 +1822,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Iof-7a-S4v"/>
+        <segue reference="xCK-M5-sqh"/>
         <segue reference="6cX-2Y-tzc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54901960780000003" green="0.32156862749999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

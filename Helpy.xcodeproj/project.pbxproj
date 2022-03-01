@@ -39,6 +39,7 @@
 		5765A16027B8557F0024B828 /* ClientHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */; };
 		5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A16127B856FD0024B828 /* UserSignInViewController.swift */; };
 		578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */; };
+		578E07AF27CEE67E00CAF760 /* UIViewController+loadLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AE27CEE67E00CAF760 /* UIViewController+loadLogo.swift */; };
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
 		57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */; };
@@ -106,6 +107,7 @@
 		5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomepageViewController.swift; sourceTree = "<group>"; };
 		5765A16127B856FD0024B828 /* UserSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
 		578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostSplashScreenViewController.swift; sourceTree = "<group>"; };
+		578E07AE27CEE67E00CAF760 /* UIViewController+loadLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadLogo.swift"; sourceTree = "<group>"; };
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BACF5427B7FA59009AE36D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				575C102727BC53590014039A /* UIImageView+roundedCorners.swift */,
 				5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */,
 				5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */,
+				578E07AE27CEE67E00CAF760 /* UIViewController+loadLogo.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */,
 				57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */,
 				5759673327BEA71F007F0F54 /* ProSignInViewController.swift in Sources */,
+				578E07AF27CEE67E00CAF760 /* UIViewController+loadLogo.swift in Sources */,
 				5736C93627BDA5E700970DE9 /* ProSettingsViewController.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
 				5736C93427BDA57200970DE9 /* ProTapBarViewController.swift in Sources */,
