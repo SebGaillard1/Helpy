@@ -1600,14 +1600,29 @@
         <!--Mon compte-->
         <scene sceneID="bXP-iM-L4B">
             <objects>
-                <viewController id="ACe-ga-Mcb" sceneMemberID="viewController">
+                <viewController id="ACe-ga-Mcb" customClass="ClientMyAccountViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mtC-BM-H9N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WK0-h0-VYa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eRr-Eo-M0K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eRr-Eo-M0K" firstAttribute="bottom" secondItem="WK0-h0-VYa" secondAttribute="bottom" id="2Kq-Qa-N95"/>
+                            <constraint firstItem="WK0-h0-VYa" firstAttribute="leading" secondItem="eRr-Eo-M0K" secondAttribute="leading" id="95a-4e-cmd"/>
+                            <constraint firstItem="WK0-h0-VYa" firstAttribute="top" secondItem="mtC-BM-H9N" secondAttribute="top" id="Obc-wB-Tcd"/>
+                            <constraint firstItem="eRr-Eo-M0K" firstAttribute="trailing" secondItem="WK0-h0-VYa" secondAttribute="trailing" id="jd1-5i-KeU"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mon compte" image="person" catalog="system" id="iYQ-t4-CyX"/>
+                    <connections>
+                        <outlet property="myAccountTableView" destination="WK0-h0-VYa" id="oan-Is-v7k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23R-U3-5Fi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
