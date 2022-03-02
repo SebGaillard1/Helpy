@@ -48,6 +48,7 @@
 		57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5D27B7FA5A009AE36D /* LaunchScreen.storyboard */; };
 		57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF6927B7FA5A009AE36D /* HelpyTests.swift */; };
 		57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF8527B807D3009AE36D /* GoogleService-Info.plist */; };
+		57C00DD327CFC73A00B468DB /* launchVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 57C00DD227CFC54800B468DB /* launchVideo.mp4 */; };
 		57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */; };
 		57C4215027B95152001A93B1 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214F27B95152001A93B1 /* Jobs.swift */; };
 		57C4215227B95198001A93B1 /* job-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57C4215127B95198001A93B1 /* job-list.txt */; };
@@ -120,6 +121,7 @@
 		57BACF6927B7FA5A009AE36D /* HelpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpyTests.swift; sourceTree = "<group>"; };
 		57BACF6F27B7FA5A009AE36D /* HelpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF8527B807D3009AE36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57C00DD227CFC54800B468DB /* launchVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = launchVideo.mp4; sourceTree = "<group>"; };
 		57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSignUpViewController.swift; sourceTree = "<group>"; };
 		57C4214F27B95152001A93B1 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
 		57C4215127B95198001A93B1 /* job-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "job-list.txt"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				57BACF5427B7FA59009AE36D /* SceneDelegate.swift */,
 				5765A15927B84E9A0024B828 /* Constants.swift */,
 				57BACF5B27B7FA5A009AE36D /* Assets.xcassets */,
+				57C00DD227CFC54800B468DB /* launchVideo.mp4 */,
 				57C4215127B95198001A93B1 /* job-list.txt */,
 				57BACF6027B7FA5A009AE36D /* Info.plist */,
 				57BACF8527B807D3009AE36D /* GoogleService-Info.plist */,
@@ -441,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C00DD327CFC73A00B468DB /* launchVideo.mp4 in Resources */,
 				57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */,
 				57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */,
 				57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */,

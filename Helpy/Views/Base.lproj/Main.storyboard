@@ -62,6 +62,9 @@
                                     <segue destination="FM3-So-UnZ" kind="show" id="hpS-ws-3xG"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-or-wdJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -69,14 +72,18 @@
                             <constraint firstItem="X80-Pz-t3K" firstAttribute="width" secondItem="4DI-TP-oM4" secondAttribute="width" id="8g3-0Q-qVv"/>
                             <constraint firstItem="nS4-IM-ymR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9uR-wC-95f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DI-TP-oM4" secondAttribute="trailing" constant="70" id="BBm-L6-zeM"/>
+                            <constraint firstAttribute="bottom" secondItem="jyh-or-wdJ" secondAttribute="bottom" id="BnG-rg-AbE"/>
                             <constraint firstItem="ahw-Gk-VMU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CqR-wG-UlA"/>
                             <constraint firstItem="shV-tt-a4r" firstAttribute="width" secondItem="4DI-TP-oM4" secondAttribute="width" id="FgI-qL-jSE"/>
                             <constraint firstItem="X80-Pz-t3K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hww-gB-JbM"/>
                             <constraint firstItem="4DI-TP-oM4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="MbN-Ki-HAK"/>
                             <constraint firstItem="ahw-Gk-VMU" firstAttribute="top" secondItem="nS4-IM-ymR" secondAttribute="bottom" constant="48" id="N6b-t6-WAd"/>
+                            <constraint firstAttribute="trailing" secondItem="jyh-or-wdJ" secondAttribute="trailing" id="Vhj-Tl-R1A"/>
                             <constraint firstAttribute="trailing" secondItem="ahw-Gk-VMU" secondAttribute="trailing" constant="10" id="cdW-Qm-Ooo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X80-Pz-t3K" secondAttribute="bottom" constant="100" id="g4V-wj-WLf"/>
+                            <constraint firstItem="jyh-or-wdJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kgV-wU-OhQ"/>
                             <constraint firstItem="shV-tt-a4r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m9l-L2-goO"/>
+                            <constraint firstItem="jyh-or-wdJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pY8-sG-uMb"/>
                             <constraint firstItem="shV-tt-a4r" firstAttribute="top" secondItem="4DI-TP-oM4" secondAttribute="bottom" constant="10" id="syS-dg-zBa"/>
                             <constraint firstItem="nS4-IM-ymR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uCa-K9-PwP"/>
                             <constraint firstItem="shV-tt-a4r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y8o-Rs-aEY"/>
@@ -84,6 +91,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zk6-qP-3r0"/>
                     <connections>
+                        <outlet property="videoUIImageView" destination="jyh-or-wdJ" id="jSl-jf-tl4"/>
                         <segue destination="0f7-Pp-UxX" kind="show" identifier="welcomeToProHome" id="6cX-2Y-tzc"/>
                         <segue destination="hGa-D0-lig" kind="show" identifier="welcomeToClientHome" id="xCK-M5-sqh"/>
                     </connections>
@@ -1838,6 +1846,7 @@
     <resources>
         <image name="Helpy" width="2000" height="1000"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="launchscreen" width="1170" height="2532"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" width="1200" height="1200"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
