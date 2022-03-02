@@ -45,9 +45,6 @@ class ClientHomepageViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -82,14 +79,6 @@ class ClientHomepageViewController: UIViewController {
     
     //MARK: - Actions
     
-    @IBAction func logOutDidTouch(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            self.navigationController?.popViewController(animated: true)
-        } catch let error {
-            print("Auth sign out failed: \(error)")
-        }
-    }
 }
 
 //MARK: - Extension

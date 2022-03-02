@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 struct Section {
     let title: String
@@ -68,15 +69,17 @@ class ClientMyAccountViewController: UIViewController {
             })
         ]))
         
-        models.append(Section(title: "Apps", options: [
-            MyAccountOption(title: "Titre 1", icon: UIImage(systemName: "house"), iconBackground: .systemRed, handler: {
-                
-            }),
-            MyAccountOption(title: "Titre 2", icon: UIImage(systemName: "airplane"), iconBackground: .systemBlue, handler: {
-                
-            }),
-            MyAccountOption(title: "Titre 3", icon: UIImage(systemName: "cloud"), iconBackground: .systemGreen, handler: {
-                
+        models.append(Section(title: "Gestion", options: [
+            MyAccountOption(title: "Se déconnecter", icon: UIImage(systemName: "rectangle.portrait.and.arrow.right"), iconBackground: .systemRed, handler: {
+                do {
+                    try Auth.auth().signOut()
+                    self.navigationController?.popToRootViewController(animated: true)
+                } catch let error {
+                    let alert = UIAlertController(title: "Error", message: "Impossible de vous déconnecter : \(error)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    
+                    self.present(alert, animated: true)
+                }
             })
         ]))
     }

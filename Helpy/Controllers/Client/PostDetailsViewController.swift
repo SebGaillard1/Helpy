@@ -26,6 +26,13 @@ class PostDetailsViewController: UIViewController {
 
         setupUi()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
 
     private func setupUi() {
         postImageView.image = post.image

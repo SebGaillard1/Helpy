@@ -1606,7 +1606,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WK0-h0-VYa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1615,7 +1615,7 @@
                         <constraints>
                             <constraint firstItem="eRr-Eo-M0K" firstAttribute="bottom" secondItem="WK0-h0-VYa" secondAttribute="bottom" id="2Kq-Qa-N95"/>
                             <constraint firstItem="WK0-h0-VYa" firstAttribute="leading" secondItem="eRr-Eo-M0K" secondAttribute="leading" id="95a-4e-cmd"/>
-                            <constraint firstItem="WK0-h0-VYa" firstAttribute="top" secondItem="mtC-BM-H9N" secondAttribute="top" id="Obc-wB-Tcd"/>
+                            <constraint firstItem="WK0-h0-VYa" firstAttribute="top" secondItem="eRr-Eo-M0K" secondAttribute="top" constant="10" id="Obc-wB-Tcd"/>
                             <constraint firstItem="eRr-Eo-M0K" firstAttribute="trailing" secondItem="WK0-h0-VYa" secondAttribute="trailing" id="jd1-5i-KeU"/>
                         </constraints>
                     </view>
@@ -1631,7 +1631,7 @@
         <!--Favoris-->
         <scene sceneID="geo-Rw-QQQ">
             <objects>
-                <viewController id="GU0-tX-bSm" sceneMemberID="viewController">
+                <viewController id="GU0-tX-bSm" customClass="ClientFavoritesViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BAU-Bc-Vm6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1699,14 +1699,6 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAh-eD-Yxu">
-                                <rect key="frame" x="344.5" y="95" width="49.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.right" catalog="system"/>
-                                <connections>
-                                    <action selector="logOutDidTouch:" destination="bLk-sA-tRa" eventType="touchUpInside" id="Jgb-zD-2sG"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uzv-cp-3Nz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1719,9 +1711,6 @@
                             <constraint firstItem="bRv-8S-tBk" firstAttribute="top" secondItem="PYf-nq-k9c" secondAttribute="bottom" id="ORQ-0g-S7M"/>
                             <constraint firstItem="vO3-Q5-PdL" firstAttribute="top" secondItem="bRv-8S-tBk" secondAttribute="bottom" constant="30" id="Qgv-kA-l3r"/>
                             <constraint firstItem="KHz-ZB-w8S" firstAttribute="bottom" secondItem="Uzv-cp-3Nz" secondAttribute="bottom" id="Ubp-el-f6M"/>
-                            <constraint firstItem="aAh-eD-Yxu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Uzv-cp-3Nz" secondAttribute="leading" symbolic="YES" id="cea-UA-Jmg"/>
-                            <constraint firstItem="Uzv-cp-3Nz" firstAttribute="trailing" secondItem="aAh-eD-Yxu" secondAttribute="trailing" constant="20" id="lIT-S7-bhV"/>
-                            <constraint firstItem="aAh-eD-Yxu" firstAttribute="top" secondItem="Uzv-cp-3Nz" secondAttribute="top" constant="7" id="lQe-XN-Rrn"/>
                             <constraint firstItem="PYf-nq-k9c" firstAttribute="top" secondItem="Uzv-cp-3Nz" secondAttribute="top" id="m16-3f-UqC"/>
                             <constraint firstItem="KHz-ZB-w8S" firstAttribute="leading" secondItem="Uzv-cp-3Nz" secondAttribute="leading" constant="10" id="rhk-Bo-uQp"/>
                             <constraint firstItem="PYf-nq-k9c" firstAttribute="centerX" secondItem="60e-KC-RAP" secondAttribute="centerX" id="sCx-1K-h6d"/>
@@ -1865,7 +1854,6 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" width="1200" height="1200"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
