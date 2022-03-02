@@ -1629,10 +1629,10 @@
             </objects>
             <point key="canvasLocation" x="4070" y="-320"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Client Tab Bar View Controller-->
         <scene sceneID="k8O-ie-5yK">
             <objects>
-                <tabBarController id="hGa-D0-lig" sceneMemberID="viewController">
+                <tabBarController id="hGa-D0-lig" customClass="ClientTabBarViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cWk-be-uqw"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2fA-iP-KYc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

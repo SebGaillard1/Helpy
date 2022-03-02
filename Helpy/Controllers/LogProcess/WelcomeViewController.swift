@@ -71,6 +71,7 @@ class WelcomeViewController: UIViewController {
         let player = AVPlayer(url: URL(fileURLWithPath: path))
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = videoUIImageView.bounds
+        playerLayer.videoGravity = .resize
         videoUIImageView.layer.addSublayer(playerLayer)
         player.play()
     }

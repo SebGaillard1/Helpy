@@ -49,6 +49,7 @@
 		57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF6927B7FA5A009AE36D /* HelpyTests.swift */; };
 		57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF8527B807D3009AE36D /* GoogleService-Info.plist */; };
 		57C00DD327CFC73A00B468DB /* launchVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 57C00DD227CFC54800B468DB /* launchVideo.mp4 */; };
+		57C00DD527D00AE300B468DB /* ClientTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */; };
 		57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */; };
 		57C4215027B95152001A93B1 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214F27B95152001A93B1 /* Jobs.swift */; };
 		57C4215227B95198001A93B1 /* job-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57C4215127B95198001A93B1 /* job-list.txt */; };
@@ -122,6 +123,7 @@
 		57BACF6F27B7FA5A009AE36D /* HelpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF8527B807D3009AE36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57C00DD227CFC54800B468DB /* launchVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = launchVideo.mp4; sourceTree = "<group>"; };
+		57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTabBarViewController.swift; sourceTree = "<group>"; };
 		57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSignUpViewController.swift; sourceTree = "<group>"; };
 		57C4214F27B95152001A93B1 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
 		57C4215127B95198001A93B1 /* job-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "job-list.txt"; sourceTree = "<group>"; };
@@ -213,8 +215,8 @@
 			children = (
 				5759673227BEA71F007F0F54 /* ProSignInViewController.swift */,
 				57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */,
-				5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */,
 				5736C93327BDA57200970DE9 /* ProTapBarViewController.swift */,
+				5736C93127BDA1B200970DE9 /* ProHomepageViewController.swift */,
 				5736C93527BDA5E700970DE9 /* ProSettingsViewController.swift */,
 			);
 			path = Pro;
@@ -320,6 +322,7 @@
 		57CACEEA27CD1C5500700E6A /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */,
 				5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */,
 				57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */,
 			);
@@ -560,6 +563,7 @@
 				5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */,
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
 				57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */,
+				57C00DD527D00AE300B468DB /* ClientTabBarViewController.swift in Sources */,
 				575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
 				5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */,
