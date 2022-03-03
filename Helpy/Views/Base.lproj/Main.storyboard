@@ -1786,14 +1786,23 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Szi-Ag-yA3">
+                                        <rect key="frame" x="0.0" y="621.5" width="414" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="82o-Qu-GOw"/>
+                                        </constraints>
+                                    </mapView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="CLX-dO-6f6" secondAttribute="bottom" constant="210.5" id="62h-qf-VOj"/>
+                                    <constraint firstItem="LsM-gk-S0X" firstAttribute="trailing" secondItem="Szi-Ag-yA3" secondAttribute="trailing" id="551-hi-GEd"/>
                                     <constraint firstItem="CLX-dO-6f6" firstAttribute="top" secondItem="9pO-O9-fhQ" secondAttribute="bottom" constant="20" id="65T-l5-8Zd"/>
                                     <constraint firstItem="CLX-dO-6f6" firstAttribute="leading" secondItem="LsM-gk-S0X" secondAttribute="leading" constant="20" id="Fs8-3K-xSG"/>
+                                    <constraint firstItem="Szi-Ag-yA3" firstAttribute="leading" secondItem="LsM-gk-S0X" secondAttribute="leading" id="Qad-Pp-qdp"/>
                                     <constraint firstItem="9pO-O9-fhQ" firstAttribute="leading" secondItem="Y8N-p8-WoJ" secondAttribute="leading" id="Rea-DV-IMh"/>
                                     <constraint firstItem="LsM-gk-S0X" firstAttribute="trailing" secondItem="CLX-dO-6f6" secondAttribute="trailing" constant="20" id="RzE-7U-Jnk"/>
+                                    <constraint firstItem="Szi-Ag-yA3" firstAttribute="top" secondItem="CLX-dO-6f6" secondAttribute="bottom" constant="10" id="SFG-Gr-WmP"/>
                                     <constraint firstItem="9pO-O9-fhQ" firstAttribute="top" secondItem="Y8N-p8-WoJ" secondAttribute="top" id="TXj-fH-fNI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Szi-Ag-yA3" secondAttribute="bottom" constant="10" id="qzo-m4-OU1"/>
                                     <constraint firstAttribute="trailing" secondItem="9pO-O9-fhQ" secondAttribute="trailing" id="vJK-IM-WwI"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="mYZ-F8-eWc"/>
@@ -1817,6 +1826,7 @@
                         <outlet property="postDateLabel" destination="eRX-3R-l7R" id="fDi-5C-j6P"/>
                         <outlet property="postDescriptionLabel" destination="PnS-Nf-cvo" id="Bj4-JF-qVD"/>
                         <outlet property="postImageView" destination="9pO-O9-fhQ" id="qpR-4w-kmk"/>
+                        <outlet property="postMKMapView" destination="Szi-Ag-yA3" id="R69-cZ-3xO"/>
                         <outlet property="postPostedByLabel" destination="F6l-2T-fKa" id="Wpy-tu-sBf"/>
                         <outlet property="postTitleLabel" destination="Xpx-7v-UdA" id="cAu-vr-RKv"/>
                     </connections>
