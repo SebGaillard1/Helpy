@@ -16,7 +16,6 @@ struct Section {
 struct MyAccountOption {
     let title: String
     let icon: UIImage?
-    let iconBackground: UIColor
     let handler: (() -> Void)
 }
 
@@ -46,31 +45,19 @@ class ClientMyAccountViewController: UIViewController {
     
     private func configure() {
         models.append(Section(title: "Item", options: [
-            MyAccountOption(title: "Titre 1", icon: UIImage(systemName: "house"), iconBackground: .systemRed, handler: {
+            MyAccountOption(title: "Titre 1", icon: UIImage(systemName: "house"), handler: {
                 print("tapped")
             }),
-            MyAccountOption(title: "Titre 2", icon: UIImage(systemName: "airplane"), iconBackground: .systemBlue, handler: {
+            MyAccountOption(title: "Titre 2", icon: UIImage(systemName: "airplane"), handler: {
                 
             }),
-            MyAccountOption(title: "Titre 3", icon: UIImage(systemName: "cloud"), iconBackground: .systemGreen, handler: {
-                
-            })
-        ]))
-        
-        models.append(Section(title: "Informations", options: [
-            MyAccountOption(title: "Titre 1", icon: UIImage(systemName: "house"), iconBackground: .systemRed, handler: {
-                
-            }),
-            MyAccountOption(title: "Titre 2", icon: UIImage(systemName: "airplane"), iconBackground: .systemBlue, handler: {
-                
-            }),
-            MyAccountOption(title: "Titre 3", icon: UIImage(systemName: "cloud"), iconBackground: .systemGreen, handler: {
+            MyAccountOption(title: "Titre 3", icon: UIImage(systemName: "cloud"), handler: {
                 
             })
         ]))
         
         models.append(Section(title: "Gestion", options: [
-            MyAccountOption(title: "Se déconnecter", icon: UIImage(systemName: "rectangle.portrait.and.arrow.right"), iconBackground: .systemRed, handler: {
+            MyAccountOption(title: "Se déconnecter", icon: UIImage(systemName: "rectangle.portrait.and.arrow.right")?.withTintColor(.red, renderingMode: .alwaysOriginal), handler: {
                 do {
                     try Auth.auth().signOut()
                     self.navigationController?.popToRootViewController(animated: true)

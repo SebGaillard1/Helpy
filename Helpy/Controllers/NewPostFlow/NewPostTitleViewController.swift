@@ -47,6 +47,11 @@ class NewPostTitleViewController: UIViewController {
         newPost = Post(title: "", category: "", locality: "", postalCode: "", latitude: 0, longitude: 0, geohash: "", postDate: Date(), proUid: user.uid, description: "", image: nil, imageUrl: "", isOnline: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     //MARK: - Actions
     @IBAction func titleTextFieldEditingChanged(_ sender: UITextField) {
         guard let title = sender.text else { return }

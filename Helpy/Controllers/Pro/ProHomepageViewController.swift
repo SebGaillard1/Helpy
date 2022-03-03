@@ -28,6 +28,11 @@ class ProHomepageViewController: UIViewController {
         getMyPosts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     private func getMyPosts() {
         guard let userUid = Auth.auth().currentUser?.uid else { return }
         

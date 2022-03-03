@@ -21,6 +21,11 @@ class NewPostSplashScreenViewController: UIViewController {
         descriptionLabel.text = "Postez votre annonce et devenez helper !\nDevenir helper c'est rejoindre une communauté et proposer son savoir faire à des xxxxx personnes 🤝"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     @IBAction func startDidTouch(_ sender: Any) {
         performSegue(withIdentifier: segueIdToTitle, sender: self)
     }

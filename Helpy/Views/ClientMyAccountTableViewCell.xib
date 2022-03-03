@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,15 +16,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSf-IF-oBQ">
-                        <rect key="frame" x="15" y="6" width="32" height="32"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="HSf-IF-oBQ" secondAttribute="height" id="QtG-ss-Bqa"/>
-                        </constraints>
-                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-j1-RdL">
                         <rect key="frame" x="15" y="6" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="fY0-j1-RdL" secondAttribute="height" id="hEt-V4-O2r"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFy-bF-XaY">
                         <rect key="frame" x="67" y="0.0" width="243" height="44"/>
@@ -35,31 +30,21 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="HSf-IF-oBQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="0ct-D1-a47"/>
-                    <constraint firstItem="fY0-j1-RdL" firstAttribute="bottom" secondItem="HSf-IF-oBQ" secondAttribute="bottom" id="3UQ-e3-KVO"/>
-                    <constraint firstItem="nFy-bF-XaY" firstAttribute="leading" secondItem="HSf-IF-oBQ" secondAttribute="trailing" constant="20" id="B7U-zF-vm8"/>
+                    <constraint firstItem="fY0-j1-RdL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="2Ul-Qm-d8f"/>
+                    <constraint firstAttribute="bottom" secondItem="fY0-j1-RdL" secondAttribute="bottom" constant="6" id="G5h-Ni-Qvh"/>
                     <constraint firstAttribute="bottom" secondItem="nFy-bF-XaY" secondAttribute="bottom" id="KgG-J6-AhW"/>
-                    <constraint firstItem="fY0-j1-RdL" firstAttribute="leading" secondItem="HSf-IF-oBQ" secondAttribute="leading" id="baO-HU-jfU"/>
                     <constraint firstItem="nFy-bF-XaY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="c6K-om-AiC"/>
-                    <constraint firstItem="fY0-j1-RdL" firstAttribute="top" secondItem="HSf-IF-oBQ" secondAttribute="top" id="clo-Lz-alA"/>
-                    <constraint firstItem="fY0-j1-RdL" firstAttribute="trailing" secondItem="HSf-IF-oBQ" secondAttribute="trailing" id="fdy-Py-6fe"/>
-                    <constraint firstAttribute="bottom" secondItem="HSf-IF-oBQ" secondAttribute="bottom" constant="6" id="ubX-Ze-wSc"/>
-                    <constraint firstItem="HSf-IF-oBQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="zSB-y1-ZO7"/>
+                    <constraint firstItem="nFy-bF-XaY" firstAttribute="leading" secondItem="fY0-j1-RdL" secondAttribute="trailing" constant="20" id="l7L-Se-hQX"/>
+                    <constraint firstItem="fY0-j1-RdL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="wPQ-DY-Mf3"/>
                     <constraint firstAttribute="trailing" secondItem="nFy-bF-XaY" secondAttribute="trailing" constant="10" id="zaz-8p-hAP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="iconContainerUIView" destination="HSf-IF-oBQ" id="eeZ-Kg-7Fb"/>
                 <outlet property="iconImageView" destination="fY0-j1-RdL" id="pck-dl-LQs"/>
                 <outlet property="titleLabel" destination="nFy-bF-XaY" id="r5f-NT-aM9"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

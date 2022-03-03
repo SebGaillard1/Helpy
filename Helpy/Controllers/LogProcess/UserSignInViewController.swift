@@ -13,6 +13,8 @@ class UserSignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var signInButton: UIButton!
     
     //MARK: - Properties
     let signInToSuccess = "signInToHome"
@@ -28,8 +30,12 @@ class UserSignInViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        signInButton.isEnabled = true
+    }
+    
     //MARK: - Actions
-    @IBAction func loginDidTouch(_ sender: Any) {
+    @IBAction func signInDidTouch(_ sender: UIButton) {
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text,
@@ -39,15 +45,19 @@ class UserSignInViewController: UIViewController {
             errorLabel.text = "Le mot de passe ou l'e-mail ne peuvent être vide"
             return
         }
+        sender.isEnabled = false
+        activityIndicator.isHidden = false
         
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             if let error = error, user == nil {
                 self.errorLabel.text = error.localizedDescription
+                sender.isEnabled = true
             } else {
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 self.performSegue(withIdentifier: self.signInToSuccess, sender: self)
             }
+            self.activityIndicator.isHidden = true
         }
     }
 }
