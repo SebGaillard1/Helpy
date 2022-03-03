@@ -22,7 +22,7 @@ class NewPostTitleViewController: UIViewController {
     let categoryCellId = "categoryCell"
     let segueIdToDescription = "newPostTitleToDescription"
     
-    let categories = Jobs.arrayOfJobs
+    let categories = Categories.categoriesArray
     
     var newPost: Post?
     

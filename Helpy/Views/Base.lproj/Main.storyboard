@@ -1671,6 +1671,76 @@
             </objects>
             <point key="canvasLocation" x="2861" y="-246"/>
         </scene>
+        <!--Post Search View Controller-->
+        <scene sceneID="oHC-iT-fOX">
+            <objects>
+                <viewController id="fHV-9S-iTm" customClass="PostSearchViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VWy-G9-W8U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Catégorie" translatesAutoresizingMaskIntoConstraints="NO" id="QMK-8r-OXh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-Mn-Wac">
+                                <rect key="frame" x="0.0" y="189" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="xTY-Qn-U7e" style="IBUITableViewCellStyleDefault" id="5g3-Jw-cl2">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5g3-Jw-cl2" id="HvG-3x-gAW">
+                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xTY-Qn-U7e">
+                                                    <rect key="frame" x="20" y="0.0" width="357.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-ew-imj">
+                                <rect key="frame" x="60" y="149" width="294" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UGA-BX-GBm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Où chercher ?"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kNI-rr-hTK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kNI-rr-hTK" firstAttribute="trailing" secondItem="Ksn-ew-imj" secondAttribute="trailing" constant="60" id="42V-GZ-Jf1"/>
+                            <constraint firstItem="Ksn-ew-imj" firstAttribute="top" secondItem="QMK-8r-OXh" secondAttribute="bottom" constant="10" id="5uU-nz-yI5"/>
+                            <constraint firstItem="kNI-rr-hTK" firstAttribute="trailing" secondItem="K8S-Mn-Wac" secondAttribute="trailing" id="F55-OP-M3v"/>
+                            <constraint firstItem="kNI-rr-hTK" firstAttribute="bottom" secondItem="K8S-Mn-Wac" secondAttribute="bottom" id="Gcp-Ll-vVO"/>
+                            <constraint firstItem="K8S-Mn-Wac" firstAttribute="leading" secondItem="kNI-rr-hTK" secondAttribute="leading" id="J7n-hN-QA1"/>
+                            <constraint firstItem="K8S-Mn-Wac" firstAttribute="top" secondItem="Ksn-ew-imj" secondAttribute="bottom" constant="10" id="UqF-mg-YHr"/>
+                            <constraint firstItem="Ksn-ew-imj" firstAttribute="leading" secondItem="kNI-rr-hTK" secondAttribute="leading" constant="60" id="bqF-LE-6ff"/>
+                            <constraint firstItem="QMK-8r-OXh" firstAttribute="leading" secondItem="kNI-rr-hTK" secondAttribute="leading" id="cpb-y5-IHH"/>
+                            <constraint firstItem="QMK-8r-OXh" firstAttribute="trailing" secondItem="kNI-rr-hTK" secondAttribute="trailing" id="dJ2-BT-LT4"/>
+                            <constraint firstItem="QMK-8r-OXh" firstAttribute="top" secondItem="kNI-rr-hTK" secondAttribute="top" id="zOc-4m-ZKD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mra-2Y-SWG"/>
+                    <connections>
+                        <outlet property="categoryTableView" destination="K8S-Mn-Wac" id="DCE-1O-Qpq"/>
+                        <outlet property="locationButton" destination="Ksn-ew-imj" id="qzk-I2-70e"/>
+                        <outlet property="searchBar" destination="QMK-8r-OXh" id="KKT-3i-FRF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQs-iT-kk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4064" y="-1777"/>
+        </scene>
         <!--Accueil-->
         <scene sceneID="SqL-Jo-v6W">
             <objects>
@@ -1728,7 +1798,9 @@
                     <navigationItem key="navigationItem" id="9HR-zI-qj4"/>
                     <connections>
                         <outlet property="postCollectionView" destination="KHz-ZB-w8S" id="DkZ-JE-bnl"/>
+                        <outlet property="searchBar" destination="bRv-8S-tBk" id="2pR-DD-7yK"/>
                         <segue destination="wzO-Jn-h8g" kind="show" identifier="homeToPostDetails" id="zEV-Pg-VI9"/>
+                        <segue destination="fHV-9S-iTm" kind="show" identifier="clientHomeToSearch" id="Quc-x6-gt8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnT-Ck-KQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

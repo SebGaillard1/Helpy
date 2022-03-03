@@ -55,13 +55,14 @@
 		57C00DDD27D011CD00B468DB /* ClientMyAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57C00DDB27D011CD00B468DB /* ClientMyAccountTableViewCell.xib */; };
 		57C00DDF27D022E200B468DB /* ClientFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C00DDE27D022E200B468DB /* ClientFavoritesViewController.swift */; };
 		57C4214E27B94CF3001A93B1 /* ProSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */; };
-		57C4215027B95152001A93B1 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214F27B95152001A93B1 /* Jobs.swift */; };
-		57C4215227B95198001A93B1 /* job-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57C4215127B95198001A93B1 /* job-list.txt */; };
+		57C4215027B95152001A93B1 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4214F27B95152001A93B1 /* Categories.swift */; };
+		57C4215227B95198001A93B1 /* categories.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57C4215127B95198001A93B1 /* categories.txt */; };
 		57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215327B965F3001A93B1 /* JobsTableViewController.swift */; };
 		57C4215627B9752B001A93B1 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215527B9752B001A93B1 /* Professional.swift */; };
 		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
 		57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */; };
 		57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEF227CD66F700700E6A /* ApiKeys.swift */; };
+		57CEFAB827D13A3D00F0D630 /* PostSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,13 +134,14 @@
 		57C00DDB27D011CD00B468DB /* ClientMyAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientMyAccountTableViewCell.xib; sourceTree = "<group>"; };
 		57C00DDE27D022E200B468DB /* ClientFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFavoritesViewController.swift; sourceTree = "<group>"; };
 		57C4214D27B94CF3001A93B1 /* ProSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSignUpViewController.swift; sourceTree = "<group>"; };
-		57C4214F27B95152001A93B1 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
-		57C4215127B95198001A93B1 /* job-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "job-list.txt"; sourceTree = "<group>"; };
+		57C4214F27B95152001A93B1 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		57C4215127B95198001A93B1 /* categories.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = categories.txt; sourceTree = "<group>"; };
 		57C4215327B965F3001A93B1 /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		57C4215527B9752B001A93B1 /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
 		57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		57CACEF227CD66F700700E6A /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,7 +266,7 @@
 				5765A15927B84E9A0024B828 /* Constants.swift */,
 				57BACF5B27B7FA5A009AE36D /* Assets.xcassets */,
 				57C00DD227CFC54800B468DB /* launchVideo.mp4 */,
-				57C4215127B95198001A93B1 /* job-list.txt */,
+				57C4215127B95198001A93B1 /* categories.txt */,
 				57BACF6027B7FA5A009AE36D /* Info.plist */,
 				57BACF8527B807D3009AE36D /* GoogleService-Info.plist */,
 			);
@@ -309,7 +311,7 @@
 				5765A15727B84C4F0024B828 /* Client.swift */,
 				57C4215527B9752B001A93B1 /* Professional.swift */,
 				57439B3027BA92A5003C12E3 /* Post.swift */,
-				57C4214F27B95152001A93B1 /* Jobs.swift */,
+				57C4214F27B95152001A93B1 /* Categories.swift */,
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
 			);
@@ -335,6 +337,7 @@
 				57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */,
 				5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */,
 				57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */,
+				57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */,
 				57C00DD627D00D1F00B468DB /* ClientMyAccountViewController.swift */,
 				57C00DDE27D022E200B468DB /* ClientFavoritesViewController.swift */,
 			);
@@ -466,7 +469,7 @@
 				57C00DDD27D011CD00B468DB /* ClientMyAccountTableViewCell.xib in Resources */,
 				57BACF5C27B7FA5A009AE36D /* Assets.xcassets in Resources */,
 				57BACF5A27B7FA59009AE36D /* Main.storyboard in Resources */,
-				57C4215227B95198001A93B1 /* job-list.txt in Resources */,
+				57C4215227B95198001A93B1 /* categories.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +555,7 @@
 			files = (
 				578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */,
 				5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */,
+				57CEFAB827D13A3D00F0D630 /* PostSearchViewController.swift in Sources */,
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
@@ -562,7 +566,7 @@
 				5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */,
 				5765A16027B8557F0024B828 /* ClientHomepageViewController.swift in Sources */,
 				57439B3127BA92A5003C12E3 /* Post.swift in Sources */,
-				57C4215027B95152001A93B1 /* Jobs.swift in Sources */,
+				57C4215027B95152001A93B1 /* Categories.swift in Sources */,
 				57439B3827BB0B45003C12E3 /* NewPostTitleViewController.swift in Sources */,
 				575C102C27BC5DEE0014039A /* NewPostPostedSuccessfullyViewController.swift in Sources */,
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,

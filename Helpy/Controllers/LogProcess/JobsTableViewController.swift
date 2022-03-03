@@ -15,7 +15,7 @@ class JobsTableViewController: UITableViewController {
     let cellIdentifier = "jobCell"
     
     
-    let allJobs = Jobs.arrayOfJobs
+    let allJobs = Categories.categoriesArray
     var filteredJobs = [String]()
     
     var delegate: JobsTableViewControllerDelegate!

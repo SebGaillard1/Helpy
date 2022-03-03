@@ -11,12 +11,14 @@ import Firebase
 class ClientHomepageViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var postCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: - Properties
     var handle: AuthStateDidChangeListenerHandle?
     
     let postCellId = "postCell"
     let segueIdToPostDetails = "homeToPostDetails"
+    let segueIDToSearch = "clientHomeToSearch"
     
     var posts = [Post]()
     var selectedPost: Post?
@@ -28,6 +30,7 @@ class ClientHomepageViewController: UIViewController {
         postCollectionView.dataSource = self
         postCollectionView.delegate = self
         postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
+        searchBar.delegate = self
         
         getRecentPosts()
         
@@ -106,5 +109,12 @@ extension ClientHomepageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (self.view.bounds.width / 2) - 16
         return CGSize(width: width, height: width * 1.4)
+    }
+}
+
+extension ClientHomepageViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        performSegue(withIdentifier: segueIDToSearch, sender: self)
     }
 }
