@@ -4,6 +4,8 @@
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>L&apos;accès aux photos est nécessaire pour ajouter une photo à votre annonce.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>L&apos;accès à la localisation est nécessaire pour trouver les annonces autour de vous.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

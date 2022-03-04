@@ -18,8 +18,11 @@ class PostSearchViewController: UIViewController {
     private var categories = Categories.categoriesArray
     private var filteredCategories = [String]()
     
-    private var radiusInMeters: CLLocationDistance?
+    private var radiusInKm: CLLocationDistance?
     private var center: CLLocationCoordinate2D?
+    
+    private var locality: String?
+    private var postalCode: String?
     
     private var postsSearchResult = [Post]()
     private let segueIdToSearchLocation = "segueSearchToSearchLocation"
@@ -40,7 +43,7 @@ class PostSearchViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func searchDidTouch(_ sender: Any) {
-        guard let radius = radiusInMeters, let center = center else {
+        guard let radius = radiusInKm, let center = center else {
             // Gerer erreur
             return
         }
@@ -55,6 +58,9 @@ class PostSearchViewController: UIViewController {
         if segue.identifier == segueIdToSearchLocation {
             let destinationVC = segue.destination as! PostSearchLocationViewController
             destinationVC.delegate = self
+            destinationVC.locality = self.locality
+            destinationVC.postalCode = self.postalCode
+            destinationVC.radiusInKm = (Int(radiusInKm ?? 1))
         }
         if segue.identifier == segueIdToSearchResult {
             if !postsSearchResult.isEmpty {
@@ -105,8 +111,8 @@ extension PostSearchViewController: PostSearchLocationViewControllerDelegate {
         self.center = center
     }
     
-    func send(radiusInMeters: CLLocationDistance) {
-        self.radiusInMeters = radiusInMeters
+    func send(radiusInKm: CLLocationDistance) {
+        self.radiusInKm = radiusInKm
     }
     
     func enableSearchButton() {

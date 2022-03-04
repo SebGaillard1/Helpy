@@ -17,26 +17,22 @@ class PostSearchLocationViewController: UIViewController {
     //MARK: - Properties
     var postalCode: String? {
         didSet {
-            if postalCode != nil && locality != nil {
-                locationLabel.text = "\(locality!) \(postalCode!)"
-            }
+            setLocationLabelText()
         }
     }
     var locality: String? {
         didSet {
-            if postalCode != nil && locality != nil {
-                locationLabel.text = "\(locality!) \(postalCode!)"
-            }
+            setLocationLabelText()
         }
     }
-    var radiusInKm = 1 {
+    var radiusInKm: Int? {
         didSet {
-            delegate.send(radiusInMeters: CLLocationDistance(radiusInKm * 1000))
-            radiusLabel.text = "\(radiusInKm) km"
+            delegate.send(radiusInKm: CLLocationDistance(radiusInKm ?? 1))
         }
     }
     
     var delegate: PostSearchLocationViewControllerDelegate!
+    private let locationManager = CLLocationManager()
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
@@ -46,7 +42,23 @@ class PostSearchLocationViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
         
+        locationManager.delegate = self
+
         presentPlacesAutocompleteSearchController()
+        
+        locationLabel.layer.borderColor = UIColor.label.cgColor
+        locationLabel.layer.borderWidth = 2.0
+        locationLabel.layer.cornerRadius = 8
+        setLocationLabelText()
+        
+        radiusLabel.text = "\(radiusInKm ?? 1) km"
+    }
+    
+    private func setLocationLabelText() {
+        if postalCode != nil && locality != nil {
+            locationLabel.isHidden = false
+            locationLabel.text = "   \(locality!) \(postalCode!)   "
+        }
     }
     
     private func presentPlacesAutocompleteSearchController() {
@@ -83,6 +95,7 @@ class PostSearchLocationViewController: UIViewController {
     //MARK: - Actions
     @IBAction func distanceSliderDidChange(_ sender: UISlider) {
         radiusInKm = Int(sender.value)
+        radiusLabel.text = "\(radiusInKm ?? 1) km"
     }
     
     @IBAction func validLocationDidTouch(_ sender: Any) {
@@ -91,6 +104,12 @@ class PostSearchLocationViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    @IBAction func getCurrentLocationDidTouch(_ sender: UIButton) {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+    }
+    
 }
 
 //MARK: - Extensions
@@ -116,10 +135,37 @@ extension PostSearchLocationViewController: GMSAutocompleteResultsViewController
         print("Error: ", error.localizedDescription)
     }
 }
+
+extension PostSearchLocationViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            GooglePlacesService.shared.getPostalCodeAndLocality(fromLatitude: String(latitude), fromLongitude: String(longitude)) { success, locality, postalCode in
+                if success {
+                    self.locality = locality
+                    self.postalCode = postalCode
+                    self.delegate.send(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                } else {
+                    self.locality = nil
+                    self.postalCode = nil
+                    // Gerer localisation impossible
+                }
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error with your location: \(error)")
+    }
+}
+
 //MARK: - Protocol
 protocol PostSearchLocationViewControllerDelegate {
     func send(center: CLLocationCoordinate2D)
-    func send(radiusInMeters: CLLocationDistance)
+    func send(radiusInKm: CLLocationDistance)
     func send(locality: String, postalCode: String)
     func enableSearchButton()
 }
