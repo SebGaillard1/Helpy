@@ -17,6 +17,9 @@ class PostSearchViewController: UIViewController {
     private var categories = Categories.categoriesArray
     private var filteredCategories = [String]()
     
+    private var radius = 0
+    private var postalCode: String?
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()

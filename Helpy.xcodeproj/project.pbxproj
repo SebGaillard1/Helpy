@@ -63,6 +63,9 @@
 		57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */; };
 		57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEF227CD66F700700E6A /* ApiKeys.swift */; };
 		57CEFAB827D13A3D00F0D630 /* PostSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */; };
+		57CEFABA27D1646700F0D630 /* PostSearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFAB927D1646700F0D630 /* PostSearchLocationViewController.swift */; };
+		57CEFABC27D17FBB00F0D630 /* GooglePlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */; };
+		57CEFABE27D1866B00F0D630 /* GeocodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFABD27D1866B00F0D630 /* GeocodingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,9 @@
 		57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		57CACEF227CD66F700700E6A /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchViewController.swift; sourceTree = "<group>"; };
+		57CEFAB927D1646700F0D630 /* PostSearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchLocationViewController.swift; sourceTree = "<group>"; };
+		57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesService.swift; sourceTree = "<group>"; };
+		57CEFABD27D1866B00F0D630 /* GeocodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +320,8 @@
 				57C4214F27B95152001A93B1 /* Categories.swift */,
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
+				57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */,
+				57CEFABD27D1866B00F0D630 /* GeocodingData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +348,7 @@
 				57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */,
 				57C00DD627D00D1F00B468DB /* ClientMyAccountViewController.swift */,
 				57C00DDE27D022E200B468DB /* ClientFavoritesViewController.swift */,
+				57CEFAB927D1646700F0D630 /* PostSearchLocationViewController.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -560,6 +569,8 @@
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
 				575C102A27BC54910014039A /* NewPostConfirmViewController.swift in Sources */,
+				57CEFABE27D1866B00F0D630 /* GeocodingData.swift in Sources */,
+				57CEFABA27D1646700F0D630 /* PostSearchLocationViewController.swift in Sources */,
 				5765A15827B84C4F0024B828 /* Client.swift in Sources */,
 				5736C93227BDA1B200970DE9 /* ProHomepageViewController.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,
@@ -590,6 +601,7 @@
 				5759673327BEA71F007F0F54 /* ProSignInViewController.swift in Sources */,
 				578E07AF27CEE67E00CAF760 /* UIViewController+loadLogo.swift in Sources */,
 				5736C93627BDA5E700970DE9 /* ProSettingsViewController.swift in Sources */,
+				57CEFABC27D17FBB00F0D630 /* GooglePlacesService.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
 				5736C93427BDA57200970DE9 /* ProTapBarViewController.swift in Sources */,
 				575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */,
