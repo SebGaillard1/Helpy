@@ -13,6 +13,7 @@ class PostSearchLocationViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var radiusLabel: UILabel!
     @IBOutlet weak var distanceSlider: UISlider!
+    @IBOutlet weak var locationActivityIndicator: UIActivityIndicatorView!
     
     //MARK: - Properties
     var delegate: PostSearchLocationViewControllerDelegate!
@@ -35,12 +36,17 @@ class PostSearchLocationViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         
         locationManager.delegate = self
-
-        presentPlacesAutocompleteSearchController()
         
+        presentPlacesAutocompleteSearchController()
+        setupUi()
+    }
+    
+    private func setupUi() {
         locationLabel.layer.borderColor = UIColor.label.cgColor
         locationLabel.layer.borderWidth = 2.0
         locationLabel.layer.cornerRadius = 8
+        view.addSeparator(x: 0, y: locationLabel.layer.position.y - CGFloat(30))
+        view.addSeparator(x: 0, y: locationLabel.layer.position.y + CGFloat(30))
         setLocationLabelText()
         
         radiusLabel.text = "\(radiusInKm) km"
@@ -52,6 +58,12 @@ class PostSearchLocationViewController: UIViewController {
             locationLabel.isHidden = false
             locationLabel.text = "   \(locality!) \(postalCode!)   "
         }
+    }
+    
+    private func errorMessageLocationManager() {
+        let ac = UIAlertController(title: "Erreur", message: "Impossible d'utiliser votre localisation", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(ac, animated: true, completion: nil)
     }
     
     private func presentPlacesAutocompleteSearchController() {
@@ -71,7 +83,7 @@ class PostSearchLocationViewController: UIViewController {
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
         
-        let subView = UIView(frame: CGRect(x: 0, y: 30, width: view.bounds.width, height: 45.0))
+        let subView = UIView(frame: CGRect(x: 0, y: 50, width: view.bounds.width, height: 45.0))
         searchController?.searchBar.searchBarStyle = .minimal
         searchController?.searchBar.placeholder = "Saisissez une ville ou un code postal"
         
@@ -84,7 +96,7 @@ class PostSearchLocationViewController: UIViewController {
         // this view controller, not one further up the chain.
         definesPresentationContext = true
     }
-
+    
     //MARK: - Actions
     @IBAction func distanceSliderDidChange(_ sender: UISlider) {
         radiusInKm = Int(sender.value)
@@ -95,12 +107,27 @@ class PostSearchLocationViewController: UIViewController {
         if postalCode != nil && locality != nil {
             delegate.send(locality: locality!, postalCode: postalCode!)
             self.dismiss(animated: true, completion: nil)
+        } else {
+            let ac = UIAlertController(title: nil, message: "Veuillez sélectionner une localisation", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(ac, animated: true, completion: nil)
         }
     }
     
     @IBAction func getCurrentLocationDidTouch(_ sender: UIButton) {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        switch locationManager.authorizationStatus {
+        case .restricted, .denied:
+            errorMessageLocationManager()
+            return
+        case .authorizedAlways, .authorized, .authorizedWhenInUse:
+            locationManager.requestLocation()
+            locationActivityIndicator.isHidden = false
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        @unknown default:
+            errorMessageLocationManager()
+            return
+        }
     }
 }
 
@@ -119,6 +146,9 @@ extension PostSearchLocationViewController: GMSAutocompleteResultsViewController
             } else {
                 self.locality = nil
                 self.postalCode = nil
+                let ac = UIAlertController(title: "Erreur", message: "Impossible d'utiliser cette localisation, veuillez sélectionner une autre localisation", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(ac, animated: true, completion: nil)
             }
         }
     }
@@ -134,25 +164,32 @@ extension PostSearchLocationViewController: CLLocationManagerDelegate {
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
             
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
-            GooglePlacesService.shared.getPostalCodeAndLocality(fromLatitude: String(latitude), fromLongitude: String(longitude)) { success, locality, postalCode in
-                if success {
-                    self.locality = locality
-                    self.postalCode = postalCode
-                    self.setLocationLabelText()
-                    self.delegate.send(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-                } else {
-                    self.locality = nil
-                    self.postalCode = nil
-                    // Gerer localisation impossible
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                guard let placemarks = placemarks,
+                      error == nil else {
+                          self.errorMessageLocationManager()
+                          self.locationActivityIndicator.isHidden = true
+                          return
+                      }
+                guard let placemark = placemarks.first else {
+                    self.errorMessageLocationManager()
+                    self.locationActivityIndicator.isHidden = true
+                    return
                 }
+                self.locality = placemark.locality
+                self.postalCode = placemark.postalCode
+                self.setLocationLabelText()
+                self.delegate.send(center: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+                self.locationActivityIndicator.isHidden = true
             }
+        } else {
+            errorMessageLocationManager()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error with your location: \(error)")
+        locationActivityIndicator.isHidden = true
+        errorMessageLocationManager()
     }
 }
 

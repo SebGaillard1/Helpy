@@ -18,6 +18,7 @@
 		57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */; };
 		57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */; };
 		57439B3827BB0B45003C12E3 /* NewPostTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */; };
+		57458DFA27D2C11600D51356 /* UIView+addSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57458DF927D2C11600D51356 /* UIView+addSeparator.swift */; };
 		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
 		5755BE7927CC24F00007F86A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 5755BE7827CC24F00007F86A /* FirebaseAppCheck */; };
 		5755BE7B27CC24F00007F86A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5755BE7A27CC24F00007F86A /* FirebaseAuth */; };
@@ -39,7 +40,6 @@
 		5765A16027B8557F0024B828 /* ClientHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */; };
 		5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A16127B856FD0024B828 /* UserSignInViewController.swift */; };
 		578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */; };
-		578E07AF27CEE67E00CAF760 /* UIViewController+loadLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AE27CEE67E00CAF760 /* UIViewController+loadLogo.swift */; };
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
 		57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5627B7FA59009AE36D /* WelcomeViewController.swift */; };
@@ -100,6 +100,7 @@
 		57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostTitleViewController.swift; sourceTree = "<group>"; };
+		57458DF927D2C11600D51356 /* UIView+addSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSeparator.swift"; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		5755BE8227CC28A70007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5755BE8827CC2DFD0007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,7 +119,6 @@
 		5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomepageViewController.swift; sourceTree = "<group>"; };
 		5765A16127B856FD0024B828 /* UserSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
 		578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostSplashScreenViewController.swift; sourceTree = "<group>"; };
-		578E07AE27CEE67E00CAF760 /* UIViewController+loadLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadLogo.swift"; sourceTree = "<group>"; };
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BACF5427B7FA59009AE36D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 				575C102727BC53590014039A /* UIImageView+roundedCorners.swift */,
 				5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */,
 				5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */,
-				578E07AE27CEE67E00CAF760 /* UIViewController+loadLogo.swift */,
+				57458DF927D2C11600D51356 /* UIView+addSeparator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -602,13 +602,13 @@
 				5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */,
 				57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */,
 				5759673327BEA71F007F0F54 /* ProSignInViewController.swift in Sources */,
-				578E07AF27CEE67E00CAF760 /* UIViewController+loadLogo.swift in Sources */,
 				5736C93627BDA5E700970DE9 /* ProSettingsViewController.swift in Sources */,
 				57CEFABC27D17FBB00F0D630 /* GooglePlacesService.swift in Sources */,
 				57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */,
 				5736C93427BDA57200970DE9 /* ProTapBarViewController.swift in Sources */,
 				575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */,
 				57CEFAC027D1A3A400F0D630 /* PostSearchResultViewController.swift in Sources */,
+				57458DFA27D2C11600D51356 /* UIView+addSeparator.swift in Sources */,
 				57C00DDF27D022E200B468DB /* ClientFavoritesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
