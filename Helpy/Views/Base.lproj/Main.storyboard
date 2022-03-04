@@ -1882,11 +1882,12 @@
                     <navigationItem key="navigationItem" id="n7J-6A-zMf"/>
                     <connections>
                         <outlet property="postCollectionView" destination="yhH-DE-Mmb" id="pCc-4S-7sR"/>
+                        <segue destination="wzO-Jn-h8g" kind="show" identifier="segueSearchResultToPostDetail" id="LDW-cs-JHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QR-sC-NYC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4965" y="-1777"/>
+            <point key="canvasLocation" x="4928" y="-1824"/>
         </scene>
         <!--Accueil-->
         <scene sceneID="SqL-Jo-v6W">
@@ -2079,6 +2080,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="LDW-cs-JHc"/>
         <segue reference="Iof-7a-S4v"/>
         <segue reference="6cX-2Y-tzc"/>
     </inferredMetricsTieBreakers>

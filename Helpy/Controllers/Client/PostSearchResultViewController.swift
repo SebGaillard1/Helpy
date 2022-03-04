@@ -13,7 +13,7 @@ class PostSearchResultViewController: UIViewController {
     
     //MARK: - Properties
     let postCellId = "postCell"
-    let segueIdToPostDetails = "homeToPostDetails"
+    let segueIdToPostDetails = "segueSearchResultToPostDetail"
     
     var posts = [Post]()
     var selectedPost: Post?
@@ -24,12 +24,26 @@ class PostSearchResultViewController: UIViewController {
 
         postCollectionView.dataSource = self
         postCollectionView.delegate = self
-        postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)    }
+        postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
+        
+        getImages()
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdToPostDetails {
             let destinationVC = segue.destination as! PostDetailsViewController
             destinationVC.post = selectedPost
+        }
+    }
+    
+    private func getImages() {
+        for (index, post) in posts.enumerated() {
+            FirebaseDatabaseManager.shared.downloadImage(from: post.imageUrl) { postImage in
+                var post = post
+                post.image = postImage
+                self.posts[index] = post
+                self.postCollectionView.reloadData()
+            }
         }
     }
 }
