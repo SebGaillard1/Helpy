@@ -24,7 +24,7 @@ class PostSearchLocationViewController: UIViewController {
     
     var postalCode: String?
     var locality: String?
-    var radiusInKm = 1 {
+    var radiusInKm = 5 {
         didSet {
             delegate.send(radiusInKm: CLLocationDistance(radiusInKm))
         }
@@ -50,6 +50,7 @@ class PostSearchLocationViewController: UIViewController {
         setLocationLabelText()
         
         radiusLabel.text = "\(radiusInKm) km"
+        radiusLabel.textColor = Constants.appAccentUIColor
         distanceSlider.setValue(Float(radiusInKm), animated: true)
     }
     

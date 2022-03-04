@@ -1730,13 +1730,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb5-yb-414">
-                                <rect key="frame" x="137.5" y="309" width="139.5" height="50"/>
+                                <rect key="frame" x="40" y="309" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="S9f-DS-qTr"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="location.circle" catalog="system" title=" Autour de moi"/>
+                                <buttonConfiguration key="configuration" style="gray" image="location.circle" catalog="system" title=" Autour de moi" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="getCurrentLocationDidTouch:" destination="wOL-Pt-xEm" eventType="touchUpInside" id="FUQ-s6-Hse"/>
                                 </connections>
@@ -1755,6 +1755,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zb5-yb-414" firstAttribute="centerX" secondItem="5J9-je-8DS" secondAttribute="centerX" id="0dz-9p-f4T"/>
+                            <constraint firstItem="Zb5-yb-414" firstAttribute="leading" secondItem="48S-Ww-nrY" secondAttribute="leading" constant="40" id="1Rx-Zv-cGj"/>
                             <constraint firstItem="Y5S-d1-lpA" firstAttribute="top" secondItem="48S-Ww-nrY" secondAttribute="top" constant="130" id="1gA-cw-MDY"/>
                             <constraint firstItem="joV-Sv-Lu1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RCP-VS-3zY" secondAttribute="trailing" constant="8" symbolic="YES" id="57E-j9-Bar"/>
                             <constraint firstItem="48S-Ww-nrY" firstAttribute="trailing" secondItem="mfH-Tq-Wuh" secondAttribute="trailing" constant="20" id="77b-VO-2vx"/>
@@ -1765,6 +1766,7 @@
                             <constraint firstItem="z1r-lT-yez" firstAttribute="leading" secondItem="48S-Ww-nrY" secondAttribute="leading" constant="20" id="DAR-CL-kjb"/>
                             <constraint firstItem="RCP-VS-3zY" firstAttribute="leading" secondItem="8wv-w7-Fsl" secondAttribute="leading" id="Ic1-7p-Uua"/>
                             <constraint firstItem="48S-Ww-nrY" firstAttribute="bottom" secondItem="mfH-Tq-Wuh" secondAttribute="bottom" constant="30" id="JoU-zI-T2F"/>
+                            <constraint firstItem="48S-Ww-nrY" firstAttribute="trailing" secondItem="Zb5-yb-414" secondAttribute="trailing" constant="40" id="Lsb-qi-wf9"/>
                             <constraint firstItem="8wv-w7-Fsl" firstAttribute="leading" secondItem="48S-Ww-nrY" secondAttribute="leading" constant="20" id="O4H-xd-34v"/>
                             <constraint firstItem="8wv-w7-Fsl" firstAttribute="top" secondItem="T8M-8e-OVY" secondAttribute="bottom" constant="8" symbolic="YES" id="SfN-Py-D6r"/>
                             <constraint firstItem="Zb5-yb-414" firstAttribute="top" secondItem="8wv-w7-Fsl" secondAttribute="bottom" constant="60" id="Ugc-cW-TnK"/>

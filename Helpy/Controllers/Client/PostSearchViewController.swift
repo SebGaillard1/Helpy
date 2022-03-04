@@ -60,7 +60,7 @@ class PostSearchViewController: UIViewController {
             destinationVC.delegate = self
             destinationVC.locality = self.locality
             destinationVC.postalCode = self.postalCode
-            destinationVC.radiusInKm = (Int(radiusInKm ?? 1))
+            destinationVC.radiusInKm = (Int(radiusInKm ?? 5))
         }
         if segue.identifier == segueIdToSearchResult {
             if !postsSearchResult.isEmpty {
