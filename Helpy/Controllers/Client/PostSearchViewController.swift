@@ -105,6 +105,8 @@ extension PostSearchViewController: UISearchBarDelegate {
 extension PostSearchViewController: PostSearchLocationViewControllerDelegate {
     func send(locality: String, postalCode: String) {
         locationButton.setTitle("\(locality) \(postalCode)", for: .normal)
+        self.locality = locality
+        self.postalCode = postalCode
     }
     
     func send(center: CLLocationCoordinate2D) {

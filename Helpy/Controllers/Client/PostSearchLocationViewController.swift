@@ -15,27 +15,19 @@ class PostSearchLocationViewController: UIViewController {
     @IBOutlet weak var distanceSlider: UISlider!
     
     //MARK: - Properties
-    var postalCode: String? {
-        didSet {
-            setLocationLabelText()
-        }
-    }
-    var locality: String? {
-        didSet {
-            setLocationLabelText()
-        }
-    }
-    var radiusInKm: Int? {
-        didSet {
-            delegate.send(radiusInKm: CLLocationDistance(radiusInKm ?? 1))
-        }
-    }
-    
     var delegate: PostSearchLocationViewControllerDelegate!
     private let locationManager = CLLocationManager()
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
+    
+    var postalCode: String?
+    var locality: String?
+    var radiusInKm = 1 {
+        didSet {
+            delegate.send(radiusInKm: CLLocationDistance(radiusInKm))
+        }
+    }
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -51,7 +43,8 @@ class PostSearchLocationViewController: UIViewController {
         locationLabel.layer.cornerRadius = 8
         setLocationLabelText()
         
-        radiusLabel.text = "\(radiusInKm ?? 1) km"
+        radiusLabel.text = "\(radiusInKm) km"
+        distanceSlider.setValue(Float(radiusInKm), animated: true)
     }
     
     private func setLocationLabelText() {
@@ -95,7 +88,7 @@ class PostSearchLocationViewController: UIViewController {
     //MARK: - Actions
     @IBAction func distanceSliderDidChange(_ sender: UISlider) {
         radiusInKm = Int(sender.value)
-        radiusLabel.text = "\(radiusInKm ?? 1) km"
+        radiusLabel.text = "\(radiusInKm) km"
     }
     
     @IBAction func validLocationDidTouch(_ sender: Any) {
@@ -109,7 +102,6 @@ class PostSearchLocationViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
-    
 }
 
 //MARK: - Extensions
@@ -122,6 +114,7 @@ extension PostSearchLocationViewController: GMSAutocompleteResultsViewController
             if success && !locality.isEmpty && !postalCode.isEmpty {
                 self.locality = locality
                 self.postalCode = postalCode
+                self.setLocationLabelText()
                 self.delegate.send(center: CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude))
             } else {
                 self.locality = nil
@@ -147,6 +140,7 @@ extension PostSearchLocationViewController: CLLocationManagerDelegate {
                 if success {
                     self.locality = locality
                     self.postalCode = postalCode
+                    self.setLocationLabelText()
                     self.delegate.send(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
                 } else {
                     self.locality = nil
