@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PostSearchViewController: UIViewController {
     //MARK: - Outlets
@@ -17,19 +18,52 @@ class PostSearchViewController: UIViewController {
     private var categories = Categories.categoriesArray
     private var filteredCategories = [String]()
     
-    private var radius = 0
-    private var postalCode: String?
+    private var radiusInMeters: CLLocationDistance?
+    private var center: CLLocationCoordinate2D?
+    
+    private var postsSearchResult = [Post]()
+    private let segueIdToSearchLocation = "segueSearchToSearchLocation"
+    private let segueIdToSearchResult = "segueSearchToSearchResult"
     
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.navigationBar.isHidden = false
+        
         categoryTableView.dataSource = self
         categoryTableView.delegate = self
         searchBar.delegate = self
         
         categories = categories.map { $0.lowercased() }
         filteredCategories = categories
+    }
+    
+    //MARK: - Actions
+    @IBAction func searchDidTouch(_ sender: Any) {
+        guard let radius = radiusInMeters, let center = center else {
+            // Gerer erreur
+            return
+        }
+        FirebaseDatabaseManager.shared.getPostWithin(center: center, radius: radius) { posts in
+            self.postsSearchResult = posts
+            self.performSegue(withIdentifier: self.segueIdToSearchResult, sender: self)
+        }
+    }
+    
+    //MARK: - Segue preparation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdToSearchLocation {
+            let destinationVC = segue.destination as! PostSearchLocationViewController
+            destinationVC.delegate = self
+        }
+        if segue.identifier == segueIdToSearchResult {
+            if !postsSearchResult.isEmpty {
+            let destinationVC = segue.destination as! PostSearchResultViewController
+            destinationVC.posts = postsSearchResult
+            } else {
+                // Afficher qu'il n'y a pas de résultats !
+            }
+        }
     }
 }
 
@@ -61,3 +95,22 @@ extension PostSearchViewController: UISearchBarDelegate {
         categoryTableView.reloadData()
     }
 }
+
+extension PostSearchViewController: PostSearchLocationViewControllerDelegate {
+    func send(locality: String, postalCode: String) {
+        locationButton.setTitle("\(locality) \(postalCode)", for: .normal)
+    }
+    
+    func send(center: CLLocationCoordinate2D) {
+        self.center = center
+    }
+    
+    func send(radiusInMeters: CLLocationDistance) {
+        self.radiusInMeters = radiusInMeters
+    }
+    
+    func enableSearchButton() {
+        
+    }
+}
+

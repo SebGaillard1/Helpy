@@ -17,24 +17,26 @@ class PostSearchLocationViewController: UIViewController {
     //MARK: - Properties
     var postalCode: String? {
         didSet {
-            if postalCode != nil && city != nil {
-                locationLabel.text = "\(city!) \(postalCode!)"
+            if postalCode != nil && locality != nil {
+                locationLabel.text = "\(locality!) \(postalCode!)"
             }
         }
     }
-    var city: String? {
+    var locality: String? {
         didSet {
-            if postalCode != nil && city != nil {
-                locationLabel.text = "\(city!) \(postalCode!)"
+            if postalCode != nil && locality != nil {
+                locationLabel.text = "\(locality!) \(postalCode!)"
             }
         }
     }
-    var radius = 0 {
+    var radiusInKm = 1 {
         didSet {
-            radiusLabel.text = "\(radius) km"
+            delegate.send(radiusInMeters: CLLocationDistance(radiusInKm * 1000))
+            radiusLabel.text = "\(radiusInKm) km"
         }
     }
     
+    var delegate: PostSearchLocationViewControllerDelegate!
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
@@ -77,13 +79,17 @@ class PostSearchLocationViewController: UIViewController {
         // this view controller, not one further up the chain.
         definesPresentationContext = true
     }
-    
+
     //MARK: - Actions
     @IBAction func distanceSliderDidChange(_ sender: UISlider) {
-        radius = Int(sender.value)
+        radiusInKm = Int(sender.value)
     }
     
     @IBAction func validLocationDidTouch(_ sender: Any) {
+        if postalCode != nil && locality != nil {
+            delegate.send(locality: locality!, postalCode: postalCode!)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
@@ -92,13 +98,14 @@ class PostSearchLocationViewController: UIViewController {
 extension PostSearchLocationViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         searchController?.isActive = false
-        print(place.coordinate)
+        
         GooglePlacesService.shared.getPostalCodeAndLocality(fromLatitude: String(place.coordinate.latitude), fromLongitude: String(place.coordinate.longitude)) { success, locality, postalCode in
             if success && !locality.isEmpty && !postalCode.isEmpty {
-                self.city = locality
+                self.locality = locality
                 self.postalCode = postalCode
+                self.delegate.send(center: CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude))
             } else {
-                self.city = nil
+                self.locality = nil
                 self.postalCode = nil
             }
         }
@@ -109,4 +116,14 @@ extension PostSearchLocationViewController: GMSAutocompleteResultsViewController
         print("Error: ", error.localizedDescription)
     }
 }
+//MARK: - Protocol
+protocol PostSearchLocationViewControllerDelegate {
+    func send(center: CLLocationCoordinate2D)
+    func send(radiusInMeters: CLLocationDistance)
+    func send(locality: String, postalCode: String)
+    func enableSearchButton()
+}
+
+
+
 
