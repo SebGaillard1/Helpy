@@ -1754,7 +1754,6 @@
                         <viewLayoutGuide key="safeArea" id="48S-Ww-nrY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Zb5-yb-414" firstAttribute="centerX" secondItem="5J9-je-8DS" secondAttribute="centerX" id="0dz-9p-f4T"/>
                             <constraint firstItem="Zb5-yb-414" firstAttribute="leading" secondItem="48S-Ww-nrY" secondAttribute="leading" constant="40" id="1Rx-Zv-cGj"/>
                             <constraint firstItem="Y5S-d1-lpA" firstAttribute="top" secondItem="48S-Ww-nrY" secondAttribute="top" constant="130" id="1gA-cw-MDY"/>
                             <constraint firstItem="joV-Sv-Lu1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RCP-VS-3zY" secondAttribute="trailing" constant="8" symbolic="YES" id="57E-j9-Bar"/>
@@ -1776,8 +1775,8 @@
                             <constraint firstItem="DDb-bQ-qxP" firstAttribute="top" secondItem="Zb5-yb-414" secondAttribute="bottom" constant="8" symbolic="YES" id="gLV-bu-aWl"/>
                             <constraint firstItem="joV-Sv-Lu1" firstAttribute="trailing" secondItem="8wv-w7-Fsl" secondAttribute="trailing" id="hMo-Pe-Uwh"/>
                             <constraint firstItem="z1r-lT-yez" firstAttribute="trailing" secondItem="8wv-w7-Fsl" secondAttribute="trailing" id="i6Z-Wg-8Ax"/>
+                            <constraint firstItem="DDb-bQ-qxP" firstAttribute="centerX" secondItem="5J9-je-8DS" secondAttribute="centerX" id="jMR-ye-skd"/>
                             <constraint firstItem="48S-Ww-nrY" firstAttribute="trailing" secondItem="8wv-w7-Fsl" secondAttribute="trailing" constant="20" id="r0d-bF-lZq"/>
-                            <constraint firstItem="DDb-bQ-qxP" firstAttribute="centerX" secondItem="Zb5-yb-414" secondAttribute="centerX" id="rNB-gi-l4J"/>
                             <constraint firstItem="mfH-Tq-Wuh" firstAttribute="leading" secondItem="48S-Ww-nrY" secondAttribute="leading" constant="20" id="sQ7-yz-riZ"/>
                             <constraint firstItem="RCP-VS-3zY" firstAttribute="top" secondItem="8wv-w7-Fsl" secondAttribute="bottom" constant="8" symbolic="YES" id="ubg-xJ-ZDb"/>
                             <constraint firstItem="48S-Ww-nrY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y5S-d1-lpA" secondAttribute="trailing" symbolic="YES" id="vPe-xb-3ke"/>
@@ -1808,7 +1807,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-Mn-Wac">
-                                <rect key="frame" x="0.0" y="203" width="414" height="585"/>
+                                <rect key="frame" x="0.0" y="193" width="414" height="595"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="xTY-Qn-U7e" style="IBUITableViewCellStyleDefault" id="5g3-Jw-cl2">
@@ -1831,12 +1830,12 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-ew-imj">
-                                <rect key="frame" x="60" y="149" width="294" height="44"/>
+                                <rect key="frame" x="60" y="149" width="294" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="UGA-BX-GBm"/>
+                                    <constraint firstAttribute="height" constant="34" id="UGA-BX-GBm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Où chercher ?"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Où chercher ?" cornerStyle="capsule"/>
                                 <connections>
                                     <segue destination="wOL-Pt-xEm" kind="presentation" identifier="segueSearchToSearchLocation" id="omR-Mx-vTI"/>
                                 </connections>

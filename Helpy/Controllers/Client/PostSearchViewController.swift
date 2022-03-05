@@ -22,7 +22,11 @@ class PostSearchViewController: UIViewController {
     private var center: CLLocationCoordinate2D?
     
     private var locality: String?
-    private var postalCode: String?
+    private var postalCode: String? {
+        didSet {
+            locationButton.setTitle("\(locality!) \(postalCode!) ~ \(Int(radiusInKm!)) km", for: .normal)
+        }
+    }
     
     private var postsSearchResult = [Post]()
     private let segueIdToSearchLocation = "segueSearchToSearchLocation"
@@ -43,13 +47,21 @@ class PostSearchViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func searchDidTouch(_ sender: Any) {
-        guard let radius = radiusInKm, let center = center else {
+        guard let radiusInKm = radiusInKm, let center = center else {
             // Gerer erreur
             return
         }
-        FirebaseDatabaseManager.shared.getPostWithin(center: center, radius: radius) { posts in
-            self.postsSearchResult = posts
-            self.performSegue(withIdentifier: self.segueIdToSearchResult, sender: self)
+        
+        let radiusInMeters = CLLocationDistance(Int(radiusInKm) * 1000)
+        FirebaseDatabaseManager.shared.getPostByLocation(center: center, radiusInMeters: radiusInMeters) { posts in
+            if !posts.isEmpty {
+                self.postsSearchResult = posts
+                self.performSegue(withIdentifier: self.segueIdToSearchResult, sender: self)
+            } else {
+                let ac = UIAlertController(title: "Pas de resultat", message: "Il n'y a aucun résultat pour votre recherche :(", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(ac, animated: true, completion: nil)
+            }
         }
     }
     
@@ -63,12 +75,8 @@ class PostSearchViewController: UIViewController {
             destinationVC.radiusInKm = (Int(radiusInKm ?? 5))
         }
         if segue.identifier == segueIdToSearchResult {
-            if !postsSearchResult.isEmpty {
             let destinationVC = segue.destination as! PostSearchResultViewController
             destinationVC.posts = postsSearchResult
-            } else {
-                // Afficher qu'il n'y a pas de résultats !
-            }
         }
     }
 }
@@ -104,7 +112,6 @@ extension PostSearchViewController: UISearchBarDelegate {
 
 extension PostSearchViewController: PostSearchLocationViewControllerDelegate {
     func send(locality: String, postalCode: String) {
-        locationButton.setTitle("\(locality) \(postalCode)", for: .normal)
         self.locality = locality
         self.postalCode = postalCode
     }

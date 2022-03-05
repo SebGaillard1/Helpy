@@ -160,11 +160,11 @@ class FirebaseDatabaseManager {
         }
     }
     
-    func getPostWithin(center: CLLocationCoordinate2D, radius: CLLocationDistance, completion: @escaping (_ posts: [Post]) -> Void) {
+    func getPostByLocation(center: CLLocationCoordinate2D, radiusInMeters: CLLocationDistance, completion: @escaping (_ posts: [Post]) -> Void) {
         // Each item in 'bounds' represents a startAt/endAt pair. We have to issue
         // a separate query for each pair. There can be up to 9 pairs of bounds
         // depending on overlap, but in most cases there are 4.
-        let queryBounds = GFUtils.queryBounds(forLocation: center, withRadius: radius)
+        let queryBounds = GFUtils.queryBounds(forLocation: center, withRadius: radiusInMeters)
         let queries = queryBounds.map { bound -> Query in
             return db.collection("posts")
                 .order(by: "geohash")
@@ -191,7 +191,7 @@ class FirebaseDatabaseManager {
                 // We have to filter out a few false positives due to GeoHash accuracy, but
                 // most will match
                 let distance = GFUtils.distance(from: centerPoint, to: coordinates)
-                if distance <= radius {
+                if distance <= radiusInMeters {
                     matchingDocs.append(document)
                 }
             }
