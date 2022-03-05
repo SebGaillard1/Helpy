@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 // MARK: - Welcome
 struct Welcome: Codable {
     let plusCode: PlusCode

@@ -17,8 +17,8 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var postDescriptionLabel: UILabel!
     @IBOutlet weak var postCityAndPostalCodeLabel: UILabel!
     @IBOutlet weak var postPostedByLabel: UILabel!
-    
     @IBOutlet weak var postMKMapView: MKMapView!
+    
     //MARK: - Properties
     var post: Post!
     
@@ -44,26 +44,27 @@ class PostDetailsViewController: UIViewController {
         postImageView.image = post.image
         postTitleLabel.text = post.title
         postCategoryLabel.text = post.category
+        postDescriptionLabel.superview?.addSeparator(x: 0, y: postDescriptionLabel.layer.position.y - CGFloat(20))
+        postDescriptionLabel.superview?.addSeparator(x: 0, y: postDescriptionLabel.layer.position.y + CGFloat(20))
         postDescriptionLabel.text = post.description
         postCityAndPostalCodeLabel.text = "\(post.locality) \(post.postalCode)"
         postPostedByLabel.text = post.proUid // A remplacer par le nom du pro
-        postDateLabel.text = post.postDate
+        postDateLabel.text = "Posté le \(post.postDate)"
     }
     
     // Radius is measured in meters
     private func centerMapOnLocation(_ location: CLLocation, mapView: MKMapView) {
         mapView.isUserInteractionEnabled = false
         let regionRadius: CLLocationDistance = 2000
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-                                                  latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
         
         let location2d = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        showCircle(coordinate: location2d, radius: 1000)
+        addCircleOnMap(coordinate: location2d, radius: 1000)
     }
     
     // Radius is measured in meters
-    func showCircle(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) {
+    private func addCircleOnMap(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) {
         let circle = MKCircle(center: coordinate, radius: radius)
         postMKMapView.addOverlay(circle)
     }
