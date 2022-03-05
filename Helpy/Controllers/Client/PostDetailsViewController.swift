@@ -47,9 +47,7 @@ class PostDetailsViewController: UIViewController {
         postDescriptionLabel.text = post.description
         postCityAndPostalCodeLabel.text = "\(post.locality) \(post.postalCode)"
         postPostedByLabel.text = post.proUid // A remplacer par le nom du pro
-        if let date = post.postDate {
-            postDateLabel.text = "\(date)"
-        }
+        postDateLabel.text = post.postDate
     }
     
     // Radius is measured in meters

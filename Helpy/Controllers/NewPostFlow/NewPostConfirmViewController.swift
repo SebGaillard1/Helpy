@@ -41,7 +41,6 @@ class NewPostConfirmViewController: UIViewController {
     //MARK: - Actions
     @IBAction func publishDidTouch(_ sender: Any) {
         publishUIButton.isEnabled = false
-        newPost.postDate = Date()
         publishNewPost()
     }
     

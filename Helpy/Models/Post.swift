@@ -19,7 +19,7 @@ struct Post {
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
     var geohash: String
-    var postDate: Date?
+    var postDate: String
     var proUid: String
     var description: String
     var image: UIImage?
@@ -27,7 +27,7 @@ struct Post {
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, geohash: String, postDate: Date?, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
+    init(title: String, category: String, locality: String, postalCode: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, geohash: String, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
         self.title = title
         self.category = category
         self.locality = locality
@@ -35,7 +35,7 @@ struct Post {
         self.latitude = latitude
         self.longitude = longitude
         self.geohash = geohash
-        self.postDate = postDate
+        self.postDate = ""
         self.proUid = proUid
         self.description = description
         self.image = image
@@ -53,7 +53,6 @@ struct Post {
             "latitude": Double(latitude),
             "longitude": Double(longitude),
             "geohash": geohash,
-            "postDate": postDate ?? Date(),
             "proUid": proUid,
             "description": description,
             "imageUrl": imageUrl,
@@ -88,7 +87,7 @@ struct Post {
             self.latitude = latitude
             self.longitude = longitude
             self.geohash = geohash
-            self.postDate = postDate.dateValue()
+            self.postDate = postDate.dateValue().formatted(date: .numeric, time: .shortened)
             self.proUid = proUid
             self.description = description
             self.imageUrl = imageUrl
@@ -113,7 +112,6 @@ struct Post {
             return nil
         }
         
-        //self.id = snapshot.documentID
         self.title = title
         self.category = category
         self.locality = locality
@@ -121,7 +119,7 @@ struct Post {
         self.latitude = latitude
         self.longitude = longitude
         self.geohash = geohash
-        self.postDate = postDate.dateValue()
+        self.postDate = postDate.dateValue().formatted(date: .numeric, time: .shortened)
         self.proUid = proUid
         self.description = description
         self.imageUrl = imageUrl

@@ -68,13 +68,15 @@ class FirebaseDatabaseManager {
             var post = post
             post.imageUrl = imageDowndloadLink
             
-            self.db.collection("posts").addDocument(data: post.toDictionnary()) { error in
+            let ref = self.db.collection("posts").addDocument(data: post.toDictionnary()) { error in
                 if let error = error {
                     completion(error.localizedDescription)
                 } else {
                     completion(nil)
                 }
             }
+            // Add time
+            ref.updateData(["postDate": FieldValue.serverTimestamp()])
         }
         
         
