@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4AF3A9ACC381CCC1E539E5A0 /* Pods_Helpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */; };
 		5703EF1327D5183000541577 /* UIView+addGradientOnButtonTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */; };
+		5703EF1527D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */; };
+		5703EF1827D52A6900541577 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5703EF1727D52A6900541577 /* MessageKit */; };
+		5703EF1A27D52BD500541577 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1927D52BD500541577 /* ConversationsViewController.swift */; };
+		5703EF1D27D52EC700541577 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 5703EF1C27D52EC700541577 /* JGProgressHUD */; };
+		5703EF1F27D5300E00541577 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1E27D5300E00541577 /* ChatViewController.swift */; };
 		570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */; };
 		5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */; };
 		5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */; };
@@ -92,6 +97,9 @@
 		077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.debug.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.debug.xcconfig"; sourceTree = "<group>"; };
 		5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addGradientOnButtonTop.swift"; sourceTree = "<group>"; };
+		5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabaseManager.swift; sourceTree = "<group>"; };
+		5703EF1927D52BD500541577 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		5703EF1E27D5300E00541577 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDescriptionViewController.swift; sourceTree = "<group>"; };
 		5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+resignFirstResponser.swift"; sourceTree = "<group>"; };
 		5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+hideKeyboardOnTap.swift"; sourceTree = "<group>"; };
@@ -162,6 +170,8 @@
 				5755BE7927CC24F00007F86A /* FirebaseAppCheck in Frameworks */,
 				5755BE7B27CC24F00007F86A /* FirebaseAuth in Frameworks */,
 				5755BE7D27CC24F00007F86A /* FirebaseDatabase in Frameworks */,
+				5703EF1827D52A6900541577 /* MessageKit in Frameworks */,
+				5703EF1D27D52EC700541577 /* JGProgressHUD in Frameworks */,
 				5755BE7F27CC24F00007F86A /* FirebaseFirestore in Frameworks */,
 				5755BE8127CC24F00007F86A /* FirebaseStorage in Frameworks */,
 				4AF3A9ACC381CCC1E539E5A0 /* Pods_Helpy.framework in Frameworks */,
@@ -298,6 +308,8 @@
 				5759673427BEA74E007F0F54 /* Pro */,
 				57CACEEA27CD1C5500700E6A /* Client */,
 				570FCAA327BB185F00404003 /* NewPostFlow */,
+				5703EF1927D52BD500541577 /* ConversationsViewController.swift */,
+				5703EF1E27D5300E00541577 /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +336,7 @@
 				57C4214F27B95152001A93B1 /* Categories.swift */,
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
+				5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */,
 				57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */,
 				57CEFABD27D1866B00F0D630 /* GeocodingData.swift */,
 			);
@@ -384,6 +397,8 @@
 				5755BE7C27CC24F00007F86A /* FirebaseDatabase */,
 				5755BE7E27CC24F00007F86A /* FirebaseFirestore */,
 				5755BE8027CC24F00007F86A /* FirebaseStorage */,
+				5703EF1727D52A6900541577 /* MessageKit */,
+				5703EF1C27D52EC700541577 /* JGProgressHUD */,
 			);
 			productName = Helpy;
 			productReference = 57BACF4F27B7FA59009AE36D /* Helpy.app */;
@@ -460,6 +475,8 @@
 			mainGroup = 57BACF4627B7FA58009AE36D;
 			packageReferences = (
 				5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5703EF1627D52A6900541577 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				5703EF1B27D52EC700541577 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 57BACF5027B7FA59009AE36D /* Products */;
 			projectDirPath = "";
@@ -571,6 +588,7 @@
 				578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */,
 				5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */,
 				57CEFAB827D13A3D00F0D630 /* PostSearchViewController.swift in Sources */,
+				5703EF1F27D5300E00541577 /* ChatViewController.swift in Sources */,
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
@@ -595,6 +613,7 @@
 				5765A15E27B852830024B828 /* UserSignUpViewController.swift in Sources */,
 				575C102627BC46540014039A /* NewPostPhotoViewController.swift in Sources */,
 				57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */,
+				5703EF1A27D52BD500541577 /* ConversationsViewController.swift in Sources */,
 				57C00DDC27D011CD00B468DB /* ClientMyAccountTableViewCell.swift in Sources */,
 				5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */,
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
@@ -602,6 +621,7 @@
 				57C00DD527D00AE300B468DB /* ClientTabBarViewController.swift in Sources */,
 				57C00DD727D00D1F00B468DB /* ClientMyAccountViewController.swift in Sources */,
 				575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */,
+				5703EF1527D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
 				5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */,
 				57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */,
@@ -978,6 +998,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5703EF1627D52A6900541577 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		5703EF1B27D52EC700541577 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -989,6 +1025,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5703EF1727D52A6900541577 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5703EF1627D52A6900541577 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+		5703EF1C27D52EC700541577 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5703EF1B27D52EC700541577 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		5755BE7827CC24F00007F86A /* FirebaseAppCheck */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5755BE7727CC24F00007F86A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

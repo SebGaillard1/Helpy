@@ -23,6 +23,12 @@ struct Constants {
         
         static let clientRef = Firestore.firestore().collection(pathForClients)
         static let proRef = Firestore.firestore().collection(pathForPros)
+        
+        static let realtimeDbUrl = "https://helpy-f4c5d-default-rtdb.europe-west1.firebasedatabase.app/"
+    }
+    
+    struct SegueId {
+        static let conversationsToChat = "segueToChat"
     }
 }
 

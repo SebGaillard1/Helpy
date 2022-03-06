@@ -12,7 +12,7 @@ import UIKit
 import CoreLocation
 import GeoFire
 
-class FirebaseDatabaseManager {
+final class FirebaseDatabaseManager {
     //MARK: - Singleton
     static var shared = FirebaseDatabaseManager()
     

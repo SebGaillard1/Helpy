@@ -26,7 +26,8 @@ class ClientHomepageViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+//        FirebaseRealtimeDatabaseManager.shared.test()
+        
         postCollectionView.dataSource = self
         postCollectionView.delegate = self
         postCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
