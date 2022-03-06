@@ -44,11 +44,13 @@ class PostDetailsViewController: UIViewController {
         postImageView.image = post.image
         postTitleLabel.text = post.title
         postCategoryLabel.text = post.category
-        postDescriptionLabel.superview?.addSeparator(x: 0, y: postDescriptionLabel.layer.position.y - CGFloat(20))
-        postDescriptionLabel.superview?.addSeparator(x: 0, y: postDescriptionLabel.layer.position.y + CGFloat(20))
+        if let superview = postDescriptionLabel.superview {
+            superview.addSeparator(x: 0, y: superview.bounds.minY - CGFloat(20))
+            superview.addSeparator(x: 0, y: superview.bounds.maxY + CGFloat(20))
+        }
         postDescriptionLabel.text = post.description
         postCityAndPostalCodeLabel.text = "\(post.locality) \(post.postalCode)"
-        postPostedByLabel.text = post.proUid // A remplacer par le nom du pro
+        postPostedByLabel.text = "Par \(post.proUid)" // A remplacer par le nom du pro
         postDateLabel.text = "Posté le \(post.postDate)"
     }
     
