@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4AF3A9ACC381CCC1E539E5A0 /* Pods_Helpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */; };
+		5703EF1327D5183000541577 /* UIView+addGradientOnButtonTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */; };
 		570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */; };
 		5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */; };
 		5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */; };
@@ -90,6 +91,7 @@
 		06ED8701850691B6CD307F85 /* Pods-Helpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.release.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.release.xcconfig"; sourceTree = "<group>"; };
 		077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.debug.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.debug.xcconfig"; sourceTree = "<group>"; };
+		5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addGradientOnButtonTop.swift"; sourceTree = "<group>"; };
 		570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDescriptionViewController.swift; sourceTree = "<group>"; };
 		5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+resignFirstResponser.swift"; sourceTree = "<group>"; };
 		5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+hideKeyboardOnTap.swift"; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */,
 				5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */,
 				57458DF927D2C11600D51356 /* UIView+addSeparator.swift */,
+				5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				57439B3827BB0B45003C12E3 /* NewPostTitleViewController.swift in Sources */,
 				575C102C27BC5DEE0014039A /* NewPostPostedSuccessfullyViewController.swift in Sources */,
 				57C4215627B9752B001A93B1 /* Professional.swift in Sources */,
+				5703EF1327D5183000541577 /* UIView+addGradientOnButtonTop.swift in Sources */,
 				57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */,
 				575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */,
 				57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */,

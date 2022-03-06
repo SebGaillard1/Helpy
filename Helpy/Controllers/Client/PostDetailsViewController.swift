@@ -18,6 +18,7 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var postCityAndPostalCodeLabel: UILabel!
     @IBOutlet weak var postPostedByLabel: UILabel!
     @IBOutlet weak var postMKMapView: MKMapView!
+    @IBOutlet weak var bottomContainerView: UIView!
     
     //MARK: - Properties
     var post: Post!
@@ -44,14 +45,16 @@ class PostDetailsViewController: UIViewController {
         postImageView.image = post.image
         postTitleLabel.text = post.title
         postCategoryLabel.text = post.category
-        if let superview = postDescriptionLabel.superview {
-            superview.addSeparator(x: 0, y: superview.bounds.minY - CGFloat(20))
-            superview.addSeparator(x: 0, y: superview.bounds.maxY + CGFloat(20))
-        }
         postDescriptionLabel.text = post.description
         postCityAndPostalCodeLabel.text = "\(post.locality) \(post.postalCode)"
         postPostedByLabel.text = "Par \(post.proUid)" // A remplacer par le nom du pro
         postDateLabel.text = "Posté le \(post.postDate)"
+        
+        if let superview = postDescriptionLabel.superview {
+            superview.addSeparator(x: 0, y: superview.bounds.minY - CGFloat(20))
+            superview.addSeparator(x: 0, y: superview.bounds.maxY + CGFloat(20))
+        }
+        view.addGradientOnButtonTop(buttonContainerView: bottomContainerView)
     }
     
     // Radius is measured in meters
