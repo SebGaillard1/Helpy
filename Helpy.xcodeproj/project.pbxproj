@@ -14,6 +14,7 @@
 		5703EF1A27D52BD500541577 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1927D52BD500541577 /* ConversationsViewController.swift */; };
 		5703EF1D27D52EC700541577 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 5703EF1C27D52EC700541577 /* JGProgressHUD */; };
 		5703EF1F27D5300E00541577 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1E27D5300E00541577 /* ChatViewController.swift */; };
+		5703EF2127D5427A00541577 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF2027D5427A00541577 /* Message.swift */; };
 		570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */; };
 		5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */; };
 		5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */; };
@@ -100,6 +101,7 @@
 		5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabaseManager.swift; sourceTree = "<group>"; };
 		5703EF1927D52BD500541577 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		5703EF1E27D5300E00541577 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5703EF2027D5427A00541577 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDescriptionViewController.swift; sourceTree = "<group>"; };
 		5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+resignFirstResponser.swift"; sourceTree = "<group>"; };
 		5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+hideKeyboardOnTap.swift"; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */,
 				57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */,
 				57CEFABD27D1866B00F0D630 /* GeocodingData.swift */,
+				5703EF2027D5427A00541577 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
+				5703EF2127D5427A00541577 /* Message.swift in Sources */,
 				575C102A27BC54910014039A /* NewPostConfirmViewController.swift in Sources */,
 				57CEFABE27D1866B00F0D630 /* GeocodingData.swift in Sources */,
 				57CEFABA27D1646700F0D630 /* PostSearchLocationViewController.swift in Sources */,

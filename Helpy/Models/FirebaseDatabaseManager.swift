@@ -173,7 +173,7 @@ final class FirebaseDatabaseManager {
                 .start(at: [bound.startValue])
                 .end(at: [bound.endValue])
         }
-
+        
         var matchingDocs = [QueryDocumentSnapshot]()
         let myGroup = DispatchGroup()
         // Collect all the query results together into a single list
@@ -183,13 +183,13 @@ final class FirebaseDatabaseManager {
                 completion([])
                 return
             }
-
+            
             for document in documents {
                 let lat = document.data()["latitude"] as? Double ?? 0
                 let lng = document.data()["longitude"] as? Double ?? 0
                 let coordinates = CLLocation(latitude: lat, longitude: lng)
                 let centerPoint = CLLocation(latitude: center.latitude, longitude: center.longitude)
-
+                
                 // We have to filter out a few false positives due to GeoHash accuracy, but
                 // most will match
                 let distance = GFUtils.distance(from: centerPoint, to: coordinates)
@@ -199,7 +199,7 @@ final class FirebaseDatabaseManager {
             }
             myGroup.leave()
         }
-
+        
         // After all callbacks have executed, matchingDocs contains the result.
         // We wait for all callbacks to finish
         for query in queries {
