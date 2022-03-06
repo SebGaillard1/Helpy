@@ -631,7 +631,7 @@
                     <connections>
                         <outlet property="conversationsTableView" destination="COy-j1-PW6" id="sDD-es-zvP"/>
                         <outlet property="noConvLabel" destination="VHf-L4-PQa" id="LcY-0k-Kmc"/>
-                        <segue destination="gnD-ti-kbs" kind="show" identifier="segueToChat" id="V0c-Q9-6v7"/>
+                        <segue destination="gnD-ti-kbs" kind="show" identifier="conversationsToChat" id="V0c-Q9-6v7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9u4-0O-Syl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2153,6 +2153,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Contacter"/>
+                                <connections>
+                                    <segue destination="gnD-ti-kbs" kind="show" identifier="postDetailsToChat" id="cn5-cJ-Llj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dnm-mq-gti"/>
@@ -2223,6 +2226,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="V0c-Q9-6v7"/>
         <segue reference="zEV-Pg-VI9"/>
         <segue reference="KGL-gP-Zup"/>
         <segue reference="RVc-dH-LVX"/>

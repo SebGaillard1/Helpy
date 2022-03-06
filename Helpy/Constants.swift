@@ -28,7 +28,8 @@ struct Constants {
     }
     
     struct SegueId {
-        static let conversationsToChat = "segueToChat"
+        static let conversationsToChat = "conversationsToChat"
+        static let postDetailsToChat = "postDetailsToChat"
     }
 }
 
