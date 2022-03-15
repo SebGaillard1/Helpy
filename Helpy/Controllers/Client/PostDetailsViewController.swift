@@ -20,6 +20,7 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var postMKMapView: MKMapView!
     @IBOutlet weak var bottomContainerView: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     //MARK: - Properties
     var post: Post!
     

@@ -16,6 +16,7 @@ class ProHomepageViewController: UIViewController {
     let postCellId = "postCell"
     
     var myPosts = [Post]()
+    var selectedPost: Post?
 
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -50,6 +51,13 @@ class ProHomepageViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.SegueId.proHomeToPostDetails {
+            let destinationVC = segue.destination as! PostDetailsViewController
+            destinationVC.post = selectedPost
+        }
+    }
 }
 
 //MARK: - Extensions
@@ -67,7 +75,10 @@ extension ProHomepageViewController: UICollectionViewDataSource {
 }
 
 extension ProHomepageViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPost = myPosts[indexPath.row]
+        performSegue(withIdentifier: Constants.SegueId.proHomeToPostDetails, sender: self)
+    }
 }
 
 extension ProHomepageViewController: UICollectionViewDelegateFlowLayout {

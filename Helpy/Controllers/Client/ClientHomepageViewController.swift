@@ -17,8 +17,6 @@ class ClientHomepageViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle?
     
     let postCellId = "postCell"
-    let segueIdToPostDetails = "homeToPostDetails"
-    let segueIDToSearch = "clientHomeToSearch"
     
     var posts = [Post]()
     var selectedPost: Post?
@@ -26,7 +24,6 @@ class ClientHomepageViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        FirebaseRealtimeDatabaseManager.shared.test()
         
         postCollectionView.dataSource = self
         postCollectionView.delegate = self
@@ -59,7 +56,7 @@ class ClientHomepageViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdToPostDetails {
+        if segue.identifier == Constants.SegueId.clientHomeToPostDetails {
             let destinationVC = segue.destination as! PostDetailsViewController
             destinationVC.post = selectedPost
         }
@@ -102,7 +99,7 @@ extension ClientHomepageViewController: UICollectionViewDataSource {
 extension ClientHomepageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPost = posts[indexPath.row]
-        performSegue(withIdentifier: segueIdToPostDetails, sender: self)
+        performSegue(withIdentifier: Constants.SegueId.clientHomeToPostDetails, sender: self)
     }
 }
 
@@ -116,6 +113,6 @@ extension ClientHomepageViewController: UICollectionViewDelegateFlowLayout {
 extension ClientHomepageViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        performSegue(withIdentifier: segueIDToSearch, sender: self)
+        performSegue(withIdentifier: Constants.SegueId.clientHomeToSearch, sender: self)
     }
 }

@@ -30,6 +30,10 @@ struct Constants {
     struct SegueId {
         static let conversationsToChat = "conversationsToChat"
         static let postDetailsToChat = "postDetailsToChat"
+        static let clientHomeToPostDetails = "homeToPostDetails"
+        static let clientHomeToSearch = "clientHomeToSearch"
+        
+        static let proHomeToPostDetails = "proHomeToPostDetails"
     }
 }
 

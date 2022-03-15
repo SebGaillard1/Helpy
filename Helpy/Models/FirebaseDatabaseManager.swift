@@ -57,17 +57,9 @@ final class FirebaseDatabaseManager {
     
     func getProName(forUid uid: String, completion: @escaping (_ name: String?) -> Void) {
         db.collection("professionals").whereField("uid", isEqualTo: uid).getDocuments { snapshot, error in
-            guard error == nil else {
-                completion(nil)
-                return
-            }
-            
-            guard let doc = snapshot?.documents[0] else {
-                completion(nil)
-                return
-            }
-            
-            guard let name = doc["firstName"] as? String else {
+            guard error == nil,
+                  let doc = snapshot?.documents[0],
+                  let name = doc["firstName"] as? String else {
                 completion(nil)
                 return
             }
