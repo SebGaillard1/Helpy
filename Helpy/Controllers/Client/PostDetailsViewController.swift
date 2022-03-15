@@ -47,7 +47,7 @@ class PostDetailsViewController: UIViewController {
         postCategoryLabel.text = post.category
         postDescriptionLabel.text = post.description
         postCityAndPostalCodeLabel.text = "\(post.locality) \(post.postalCode)"
-        postPostedByLabel.text = "Par \(post.proUid)" // A remplacer par le nom du pro
+        postPostedByLabel.text = "Par \(post.postedBy)" // A remplacer par le nom du pro
         postDateLabel.text = "Posté le \(post.postDate)"
         
         if let superview = postDescriptionLabel.superview {

@@ -21,13 +21,14 @@ struct Post {
     var geohash: String
     var postDate: String
     var proUid: String
+    var postedBy: String
     var description: String
     var image: UIImage?
     var imageUrl: String
     var isOnline: Bool
     
     // MARK: Initialize with Raw Data
-    init(title: String, category: String, locality: String, postalCode: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, geohash: String, proUid: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
+    init(title: String, category: String, locality: String, postalCode: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, geohash: String, proUid: String, postedBy: String, description: String, image: UIImage?, imageUrl: String, isOnline: Bool) {
         self.title = title
         self.category = category
         self.locality = locality
@@ -37,6 +38,7 @@ struct Post {
         self.geohash = geohash
         self.postDate = ""
         self.proUid = proUid
+        self.postedBy = postedBy
         self.description = description
         self.image = image
         self.imageUrl = imageUrl
@@ -54,6 +56,7 @@ struct Post {
             "longitude": Double(longitude),
             "geohash": geohash,
             "proUid": proUid,
+            "postedBy": postedBy,
             "description": description,
             "imageUrl": imageUrl,
             "isOnline": isOnline,
@@ -72,6 +75,7 @@ struct Post {
                 let geohash = snapshot["geohash"] as? String,
                 let postDate = snapshot["postDate"] as? Timestamp,
                 let proUid = snapshot["proUid"] as? String,
+                let postedBy = snapshot["postedBy"] as? String,
                 let description = snapshot["description"] as? String,
                 let imageUrl = snapshot["imageUrl"] as? String,
                 let isOnline = snapshot["isOnline"] as? Bool
@@ -89,6 +93,7 @@ struct Post {
             self.geohash = geohash
             self.postDate = postDate.dateValue().formatted(date: .numeric, time: .shortened)
             self.proUid = proUid
+            self.postedBy = postedBy
             self.description = description
             self.imageUrl = imageUrl
             self.isOnline = isOnline
@@ -105,6 +110,7 @@ struct Post {
             let geohash = dictionnary["geohash"] as? String,
             let postDate = dictionnary["postDate"] as? Timestamp,
             let proUid = dictionnary["proUid"] as? String,
+            let postedBy = dictionnary["postedBy"] as? String,
             let description = dictionnary["description"] as? String,
             let imageUrl = dictionnary["imageUrl"] as? String,
             let isOnline = dictionnary["isOnline"] as? Bool
@@ -121,6 +127,7 @@ struct Post {
         self.geohash = geohash
         self.postDate = postDate.dateValue().formatted(date: .numeric, time: .shortened)
         self.proUid = proUid
+        self.postedBy = postedBy
         self.description = description
         self.imageUrl = imageUrl
         self.isOnline = isOnline

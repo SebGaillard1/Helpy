@@ -55,6 +55,27 @@ final class FirebaseDatabaseManager {
         }
     }
     
+    func getProName(forUid uid: String, completion: @escaping (_ name: String?) -> Void) {
+        db.collection("professionals").whereField("uid", isEqualTo: uid).getDocuments { snapshot, error in
+            guard error == nil else {
+                completion(nil)
+                return
+            }
+            
+            guard let doc = snapshot?.documents[0] else {
+                completion(nil)
+                return
+            }
+            
+            guard let name = doc["firstName"] as? String else {
+                completion(nil)
+                return
+            }
+            
+            completion(name)
+        }
+    }
+    
     func savePost(post: Post ,completion: @escaping (_ error: String?) -> Void) {
         let image = post.image ?? UIImage(named: "garde-enfant")!
         

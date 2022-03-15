@@ -24,7 +24,7 @@ class NewPostConfirmViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         newPostImageView.roundedCorners()
         fillAllFields()
     }
@@ -45,16 +45,28 @@ class NewPostConfirmViewController: UIViewController {
     }
     
     private func publishNewPost() {
-        FirebaseDatabaseManager.shared.savePost(post: newPost) { error in
-            if error == nil {
-                self.performSegue(withIdentifier: self.segueIdToSuccess, sender: self)
-            } else {
-                let ac = UIAlertController(title: "Erreur", message: "Aie, impossible de poster l'annonce. L'erreur suivante vient de se produire : \(error!)", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(ac, animated: true, completion: nil)
-                
-                self.publishUIButton.isEnabled = true
+        FirebaseDatabaseManager.shared.getProName(forUid: newPost.proUid) { name in
+            guard let name = name, name.isEmpty == false else {
+                self.presentError("Votre nom ne peut être récupéré.")
+                return
+            }
+            
+            self.newPost.postedBy = name
+            FirebaseDatabaseManager.shared.savePost(post: self.newPost) { error in
+                if error == nil {
+                    self.performSegue(withIdentifier: self.segueIdToSuccess, sender: self)
+                } else {
+                    self.presentError(error)
+                }
             }
         }
+    }
+    
+    private func presentError(_ error: String?) {
+        let ac = UIAlertController(title: "Erreur", message: "Aie, impossible de poster l'annonce. L'erreur suivante vient de se produire : \(error!)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(ac, animated: true, completion: nil)
+        
+        self.publishUIButton.isEnabled = true
     }
 }
