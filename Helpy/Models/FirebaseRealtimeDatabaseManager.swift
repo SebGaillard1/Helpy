@@ -66,6 +66,7 @@ final class FirebaseRealtimeDatabaseManager {
                         return
                     }
                     
+                    
                     ref.setValue(newConversationData) { error, _ in
                         guard error == nil else {
                             completion(false)
