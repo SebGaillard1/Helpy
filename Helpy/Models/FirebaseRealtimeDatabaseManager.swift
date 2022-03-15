@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseDatabase
+import Firebase
 import FirebaseAuth
 
 final class FirebaseRealtimeDatabaseManager {
@@ -20,57 +20,92 @@ final class FirebaseRealtimeDatabaseManager {
             return
         }
         
-        db.child(currentUid).setValue(currentUid) { error, ref in
-            guard error == nil else {
-                completion(false)
-                return
-            }
-            
-            let conversationId = "conversation_\(firstMessage.messageId)"
-            let messageDate = firstMessage.sentDate
-            let dateString = messageDate.formatted(date: .numeric, time: .shortened)
-            var message = ""
-            
-            switch firstMessage.kind {
-            case .text(let messageText):
-                message = messageText
-            case .attributedText(_):
-                break
-            case .photo(_):
-                break
-            case .video(_):
-                break
-            case .location(_):
-                break
-            case .emoji(_):
-                break
-            case .audio(_):
-                break
-            case .contact(_):
-                break
-            case .linkPreview(_):
-                break
-            case .custom(_):
-                break
-            }
-            
-            let newConversationData: [String: Any] = [
-                "id": "conversation_\(conversationId)",
-                "other_user_uid": otherUid,
-                "latest_message": [
-                    "date": dateString,
-                    "message": message,
-                    "is_read": false
-                ]
+        let conversationId = "conversation_\(firstMessage.messageId)"
+        let messageDate = firstMessage.sentDate
+        let dateString = messageDate.formatted(date: .numeric, time: .shortened)
+        var message = ""
+        
+        switch firstMessage.kind {
+        case .text(let messageText):
+            message = messageText
+        case .attributedText(_):
+            break
+        case .photo(_):
+            break
+        case .video(_):
+            break
+        case .location(_):
+            break
+        case .emoji(_):
+            break
+        case .audio(_):
+            break
+        case .contact(_):
+            break
+        case .linkPreview(_):
+            break
+        case .custom(_):
+            break
+        }
+        
+        let newConversationData: [String: Any] = [
+            "id": conversationId,
+            "other_user_uid": otherUid,
+            "latest_message": [
+                "date": dateString,
+                "message": message,
+                "is_read": false
             ]
-            
-            ref.setValue(newConversationData) { error, _ in
-                guard error == nil else {
+        ]
+        
+        db.child(currentUid).observeSingleEvent(of: .value) { snapshot in
+            if !snapshot.exists() {
+                self.db.child(currentUid).setValue(currentUid) { error, ref in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                    
+                    ref.setValue(newConversationData) { error, _ in
+                        guard error == nil else {
+                            completion(false)
+                            return
+                        }
+                        let messageDict: [String: Any] = [
+                            "id": conversationId,
+                            "type": firstMessage.kind.messageKindString,
+                            "content": message,
+                            "date": dateString,
+                            "sender_uid": currentUid,
+                            "is_read": false
+                        ]
+                        
+                        let value: [String: Any] = [
+                            "conversations": [
+                                messageDict
+                            ]
+                        ]
+                        
+                        self.db.child(conversationId).setValue(value) { error, _ in
+                            guard error == nil else {
+                                completion(false)
+                                return
+                            }
+                            completion(true)
+                        }
+                    }
+                }
+            } else {
+                guard var userNode = snapshot.value as? [String: Any] else {
                     completion(false)
                     return
                 }
-                let messageDict: [String: Any] = [
-                    "id": conversationId,
+                guard let conversationIdNode = userNode["id"] as? String else {
+                    completion(false)
+                    return
+                }
+                let collectionMessage: [String: Any] = [
+                    "id": firstMessage.messageId,
                     "type": firstMessage.kind.messageKindString,
                     "content": message,
                     "date": dateString,
@@ -80,16 +115,29 @@ final class FirebaseRealtimeDatabaseManager {
                 
                 let value: [String: Any] = [
                     "messages": [
-                        messageDict
+                        collectionMessage
                     ]
                 ]
                 
-                self.db.child(conversationId).setValue(value) { error, _ in
+                self.db.child(conversationIdNode).setValue(value) { error, _ in
                     guard error == nil else {
                         completion(false)
                         return
                     }
                     completion(true)
+
+                }
+                
+                if var conversations = userNode["conversations"] as? [[String: Any]] {
+                    conversations.append(newConversationData)
+                    userNode["conversations"] = conversations
+                    self.db.child(currentUid).setValue(userNode) { error, _ in
+                        guard error == nil else {
+                            completion(false)
+                            return
+                        }
+                        completion(true)
+                    }
                 }
             }
         }
