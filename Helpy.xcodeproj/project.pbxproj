@@ -47,6 +47,7 @@
 		57881EDB27E21D0D007C2BB0 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EDA27E21D0D007C2BB0 /* MessageCell.swift */; };
 		57881EDD27E24596007C2BB0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EDC27E24596007C2BB0 /* Message.swift */; };
 		57881EDF27E24982007C2BB0 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57881EDE27E24982007C2BB0 /* MessageCell.xib */; };
+		57881EE127E258A6007C2BB0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EE027E258A6007C2BB0 /* Conversation.swift */; };
 		578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */; };
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
@@ -133,6 +134,7 @@
 		57881EDA27E21D0D007C2BB0 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		57881EDC27E24596007C2BB0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		57881EDE27E24982007C2BB0 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		57881EE027E258A6007C2BB0 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostSplashScreenViewController.swift; sourceTree = "<group>"; };
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				57FFBA4227E208A0005DAE09 /* FirebaseFirestoreChatManager.swift */,
 				57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */,
 				57CEFABD27D1866B00F0D630 /* GeocodingData.swift */,
+				57881EE027E258A6007C2BB0 /* Conversation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				57CEFABE27D1866B00F0D630 /* GeocodingData.swift in Sources */,
 				57CEFABA27D1646700F0D630 /* PostSearchLocationViewController.swift in Sources */,
 				5765A15827B84C4F0024B828 /* Client.swift in Sources */,
+				57881EE127E258A6007C2BB0 /* Conversation.swift in Sources */,
 				57881EDB27E21D0D007C2BB0 /* MessageCell.swift in Sources */,
 				5736C93227BDA1B200970DE9 /* ProHomepageViewController.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,

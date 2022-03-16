@@ -2156,7 +2156,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Contacter"/>
                                 <connections>
-                                    <segue destination="gnD-ti-kbs" kind="show" identifier="postDetailsToChat" id="cn5-cJ-Llj"/>
+                                    <action selector="contactDidTouch:" destination="wzO-Jn-h8g" eventType="touchUpInside" id="dYB-An-lUG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2180,6 +2180,7 @@
                     <navigationItem key="navigationItem" id="gBM-tK-Tjg"/>
                     <connections>
                         <outlet property="bottomContainerView" destination="Zlv-st-6CX" id="0KY-6K-AS0"/>
+                        <outlet property="contactButton" destination="ecq-fh-FYO" id="8iy-Kn-AbG"/>
                         <outlet property="postCategoryLabel" destination="oF3-c6-Lyv" id="2La-Ij-pDX"/>
                         <outlet property="postCityAndPostalCodeLabel" destination="qaX-mw-DQo" id="eZv-1R-lr2"/>
                         <outlet property="postDateLabel" destination="eRX-3R-l7R" id="fDi-5C-j6P"/>
@@ -2189,6 +2190,7 @@
                         <outlet property="postPostedByLabel" destination="F6l-2T-fKa" id="Wpy-tu-sBf"/>
                         <outlet property="postTitleLabel" destination="Xpx-7v-UdA" id="cAu-vr-RKv"/>
                         <outlet property="scrollView" destination="Y8N-p8-WoJ" id="bsy-Bs-u79"/>
+                        <segue destination="gnD-ti-kbs" kind="show" identifier="postDetailsToChat" id="xMB-87-K83"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXX-a3-OrU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2285,7 +2287,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V0c-Q9-6v7"/>
+        <segue reference="xMB-87-K83"/>
         <segue reference="3As-6b-uVd"/>
         <segue reference="KGL-gP-Zup"/>
         <segue reference="RVc-dH-LVX"/>

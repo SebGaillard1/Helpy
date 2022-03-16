@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import FirebaseAuth
 
 class PostDetailsViewController: UIViewController {
     //MARK: - Outlets
@@ -19,6 +20,7 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var postPostedByLabel: UILabel!
     @IBOutlet weak var postMKMapView: MKMapView!
     @IBOutlet weak var bottomContainerView: UIView!
+    @IBOutlet weak var contactButton: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
     //MARK: - Properties
@@ -42,6 +44,17 @@ class PostDetailsViewController: UIViewController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.SegueId.postDetailsToChat {
+            let destinationVc = segue.destination as! ChatViewController
+            destinationVc.otherUid = post.proUid
+        }
+    }
+        
+    @IBAction func contactDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: Constants.SegueId.postDetailsToChat, sender: self)
+    }
+    
     private func setupUi() {
         postImageView.image = post.image
         postTitleLabel.text = post.title
@@ -51,11 +64,18 @@ class PostDetailsViewController: UIViewController {
         postPostedByLabel.text = "Par \(post.postedBy)" // A remplacer par le nom du pro
         postDateLabel.text = "Posté le \(post.postDate)"
         
-        if let superview = postDescriptionLabel.superview {
-            superview.addSeparator(x: 0, y: superview.bounds.minY - CGFloat(20))
-            superview.addSeparator(x: 0, y: superview.bounds.maxY + CGFloat(20))
+        if Auth.auth().currentUser?.uid == post.proUid {
+            bottomContainerView.isHidden = true
+            contactButton.isHidden = true
+            let constraint = scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            NSLayoutConstraint.activate([constraint])
+        } else {
+            if let superview = postDescriptionLabel.superview {
+                superview.addSeparator(x: 0, y: superview.bounds.minY - CGFloat(20))
+                superview.addSeparator(x: 0, y: superview.bounds.maxY + CGFloat(20))
+            }
+            view.addGradientOnButtonTop(buttonContainerView: bottomContainerView)
         }
-        view.addGradientOnButtonTop(buttonContainerView: bottomContainerView)
     }
     
     // Radius is measured in meters

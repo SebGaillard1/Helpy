@@ -32,6 +32,13 @@ final class FirebaseFirestoreChatManager {
         }
         
         ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true)
+        setLastMessage(message: message, with: otherUid)
+    }
+    
+    private func setLastMessage(message: Message, with otherUid: String) {
+        var dictionnary = message.toDictionnary()
+        dictionnary["receiverUid"] = otherUid
+        db.collection("chats").document(message.sender).collection("lastsMessages").addDocument(data: dictionnary)
     }
     
     func getConversationMessages(with otherUid: String, completion: @escaping (_ error: String?, _ messages: [Message]) -> Void) {
@@ -41,7 +48,7 @@ final class FirebaseFirestoreChatManager {
         }
         
         db.collection("chats").document(currentUid).collection("receiversUid").document(otherUid).collection("messages").order(by: "timestamp", descending: true).addSnapshotListener { snapshot, error in
-            guard let snapshot = snapshot, !snapshot.isEmpty else {
+            guard let snapshot = snapshot, !snapshot.isEmpty, error == nil else {
                 completion("Impossible de récupérer les messages !", [])
                 return
             }
@@ -56,4 +63,20 @@ final class FirebaseFirestoreChatManager {
             completion(nil, messages.reversed())
         }
     }
+    
+//    func getAllConversationsWithLastMessage(forUid uid: String, completion: @escaping (_ error: String?, _ conversations: Conversation?) -> Void) {
+//        guard let currentUid = Auth.auth().currentUser?.uid else {
+//            completion("Vous n'êtes pas authentifié !", nil)
+//            return
+//        }
+//
+//        db.collection("chat").document(currentUid).addSnapshotListener { snapshot, error in
+//            guard let snapshot = snapshot, error == nil else {
+//                completion("Impossible de récupérer les conversations !", nil)
+//                return
+//            }
+//
+//            for doc in snapshot
+//        }
+//    }
 }
