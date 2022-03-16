@@ -16,14 +16,14 @@ final class FirebaseFirestoreChatManager {
     
     private init() {}
     
-    func sendMessage(message: String, to otherUid: String, completion: @escaping (_ error: String?) -> Void) {
+    func sendMessage(message: String, receiverUid: String, receiverName: String, completion: @escaping (_ error: String?) -> Void) {
         guard let currentUid = Auth.auth().currentUser?.uid else {
             completion("Vous n'êtes pas authentifié !")
             return
         }
-        let message = Message(sender: currentUid, content: message)
+        let message = Message(sender: currentUid, content: message, receiverUid: receiverUid, receiverName: receiverName)
         
-        let ref = db.collection("chats").document(currentUid).collection("receiversUid").document(otherUid).collection("messages").addDocument(data: message.toDictionnary()) { error in
+        let ref = db.collection("chats").document(currentUid).collection("receiversUid").document(receiverUid).collection("messages").addDocument(data: message.toDictionnary()) { error in
             guard error == nil else {
                 completion(error?.localizedDescription ?? "Impossible d'envoyer votre message")
                 return
@@ -32,13 +32,19 @@ final class FirebaseFirestoreChatManager {
         }
         
         ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true)
-        setLastMessage(message: message, with: otherUid)
+        setLastMessage(message: message)
     }
     
-    private func setLastMessage(message: Message, with otherUid: String) {
-        var dictionnary = message.toDictionnary()
-        dictionnary["receiverUid"] = otherUid
-        db.collection("chats").document(message.sender).collection("lastsMessages").addDocument(data: dictionnary)
+    private func setLastMessage(message: Message) {
+        db.collection("chats").document(message.sender).collection("lastsMessages").whereField("receiverUid", isEqualTo: message.receiverUid).getDocuments { snapshot, error in
+            guard let snapshot = snapshot, !snapshot.documents.isEmpty, error == nil else {
+                self.db.collection("chats").document(message.sender).collection("lastsMessages").addDocument(data: message.toDictionnary())
+                return
+            }
+            
+            let ref = snapshot.documents[0].reference
+            ref.setData(message.toDictionnary())
+        }
     }
     
     func getConversationMessages(with otherUid: String, completion: @escaping (_ error: String?, _ messages: [Message]) -> Void) {
@@ -64,19 +70,30 @@ final class FirebaseFirestoreChatManager {
         }
     }
     
-//    func getAllConversationsWithLastMessage(forUid uid: String, completion: @escaping (_ error: String?, _ conversations: Conversation?) -> Void) {
-//        guard let currentUid = Auth.auth().currentUser?.uid else {
-//            completion("Vous n'êtes pas authentifié !", nil)
-//            return
-//        }
-//
-//        db.collection("chat").document(currentUid).addSnapshotListener { snapshot, error in
-//            guard let snapshot = snapshot, error == nil else {
-//                completion("Impossible de récupérer les conversations !", nil)
-//                return
-//            }
-//
-//            for doc in snapshot
-//        }
-//    }
+    func getAllConversationsWithLastMessage(completion: @escaping (_ error: String?, _ conversations: [Conversation]) -> Void) {
+        guard let currentUid = Auth.auth().currentUser?.uid else {
+            completion("Vous n'êtes pas authentifié !", [])
+            return
+        }
+        print(currentUid)
+        
+        db.collection("chats").document(currentUid).collection("lastsMessages").addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot, error == nil else {
+                completion("Impossible de récupérer les conversations !", [])
+                return
+            }
+            print(snapshot.isEmpty)
+            var conversations = [Conversation]()
+            for doc in snapshot.documents {
+                print(doc.data())
+                if let receiverName = doc.data()["receiverName"] as? String,
+                   let receiverUid = doc.data()["receiverUid"] as? String,
+                   let message = doc.data()["content"] as? String {
+                    conversations.append(Conversation(receiverUid: receiverUid, receiverName: receiverName, lastMessage: message))
+                }
+            }
+            
+            completion(nil, conversations)
+        }
+    }
 }

@@ -15,15 +15,20 @@ class ChatViewController: UIViewController {
     //MARK: - Properties
     var messages = [Message]()
     var otherUid = ""
+    var otherName = ""
     
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
         messageTableView.dataSource = self
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
-        print(otherUid)
+        title = otherName
+        
         FirebaseFirestoreChatManager.shared.getConversationMessages(with: otherUid) { error, messages in
             if error == nil {
                 self.messages = messages
@@ -39,7 +44,7 @@ class ChatViewController: UIViewController {
             return
         }
         
-        FirebaseFirestoreChatManager.shared.sendMessage(message: message, to: otherUid) { error in
+        FirebaseFirestoreChatManager.shared.sendMessage(message: message, receiverUid: otherUid, receiverName: otherName) { error in
             if let error = error {
                 self.presentError(error: error)
             } else {

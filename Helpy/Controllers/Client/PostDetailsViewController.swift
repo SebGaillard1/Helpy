@@ -48,6 +48,7 @@ class PostDetailsViewController: UIViewController {
         if segue.identifier == Constants.SegueId.postDetailsToChat {
             let destinationVc = segue.destination as! ChatViewController
             destinationVc.otherUid = post.proUid
+            destinationVc.otherName = post.postedBy
         }
     }
         

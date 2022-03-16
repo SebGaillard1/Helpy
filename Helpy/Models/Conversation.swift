@@ -8,5 +8,7 @@
 import Foundation
 
 struct Conversation {
-    let conversations = [[Message]]()
+    let receiverUid: String
+    let receiverName: String
+    let lastMessage: String
 }

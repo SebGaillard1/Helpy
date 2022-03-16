@@ -48,6 +48,8 @@
 		57881EDD27E24596007C2BB0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EDC27E24596007C2BB0 /* Message.swift */; };
 		57881EDF27E24982007C2BB0 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57881EDE27E24982007C2BB0 /* MessageCell.xib */; };
 		57881EE127E258A6007C2BB0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EE027E258A6007C2BB0 /* Conversation.swift */; };
+		57881EE627E27DA7007C2BB0 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EE427E27DA7007C2BB0 /* ConversationTableViewCell.swift */; };
+		57881EE727E27DA7007C2BB0 /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57881EE527E27DA7007C2BB0 /* ConversationTableViewCell.xib */; };
 		578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */; };
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
@@ -135,6 +137,8 @@
 		57881EDC27E24596007C2BB0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		57881EDE27E24982007C2BB0 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		57881EE027E258A6007C2BB0 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		57881EE427E27DA7007C2BB0 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		57881EE527E27DA7007C2BB0 /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversationTableViewCell.xib; sourceTree = "<group>"; };
 		578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostSplashScreenViewController.swift; sourceTree = "<group>"; };
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 				57C00DDB27D011CD00B468DB /* ClientMyAccountTableViewCell.xib */,
 				57881EDA27E21D0D007C2BB0 /* MessageCell.swift */,
 				57881EDE27E24982007C2BB0 /* MessageCell.xib */,
+				57881EE427E27DA7007C2BB0 /* ConversationTableViewCell.swift */,
+				57881EE527E27DA7007C2BB0 /* ConversationTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57881EE727E27DA7007C2BB0 /* ConversationTableViewCell.xib in Resources */,
 				57C00DD327CFC73A00B468DB /* launchVideo.mp4 in Resources */,
 				57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */,
 				57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */,
@@ -650,6 +657,7 @@
 				57CEFAC027D1A3A400F0D630 /* PostSearchResultViewController.swift in Sources */,
 				57458DFA27D2C11600D51356 /* UIView+addSeparator.swift in Sources */,
 				57C00DDF27D022E200B468DB /* ClientFavoritesViewController.swift in Sources */,
+				57881EE627E27DA7007C2BB0 /* ConversationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
