@@ -45,7 +45,7 @@ struct Post {
         self.isOnline = isOnline
     }
         
-    // MARK: Convert Post to AnyObject
+    // MARK: Convert Post to Dictionnary
     func toDictionnary() -> [String: Any] {
         return [
             "title": title,

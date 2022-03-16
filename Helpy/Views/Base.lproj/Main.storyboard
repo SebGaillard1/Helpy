@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -2201,10 +2202,66 @@
                     <view key="view" contentMode="scaleToFill" id="bDW-ov-Yl6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-9Z-cOy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="714"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSE-PR-PQM">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ecrivez votre message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLs-Zx-oV7">
+                                        <rect key="frame" x="20" y="20" width="314" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="SoK-5B-oSC"/>
+                                        </constraints>
+                                        <color key="textColor" name="BrandPurple"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbG-6X-by0">
+                                        <rect key="frame" x="354" y="20" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6to-Tn-I2j"/>
+                                            <constraint firstAttribute="width" constant="40" id="8J5-Zy-BiB"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ZOd-4T-dZc"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="eCx-8f-01w"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendDidTouch:" destination="gnD-ti-kbs" eventType="touchUpInside" id="Sxr-mi-krb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.61070382599999995" green="0.31954550739999998" blue="0.87734234330000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NbG-6X-by0" firstAttribute="leading" secondItem="TLs-Zx-oV7" secondAttribute="trailing" constant="20" id="Aex-Fs-Tmt"/>
+                                    <constraint firstItem="TLs-Zx-oV7" firstAttribute="leading" secondItem="GSE-PR-PQM" secondAttribute="leading" constant="20" id="a9m-al-y3q"/>
+                                    <constraint firstAttribute="height" constant="60" id="dRu-iC-3hz"/>
+                                    <constraint firstAttribute="trailing" secondItem="NbG-6X-by0" secondAttribute="trailing" constant="20" id="frY-uH-xYg"/>
+                                    <constraint firstItem="NbG-6X-by0" firstAttribute="top" secondItem="GSE-PR-PQM" secondAttribute="top" constant="20" id="xuY-Fa-ITg"/>
+                                    <constraint firstItem="TLs-Zx-oV7" firstAttribute="top" secondItem="GSE-PR-PQM" secondAttribute="top" constant="20" id="yZd-xh-EGc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8hp-91-Ib0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.61070382599999995" green="0.31954550739999998" blue="0.87734234330000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8hp-91-Ib0" firstAttribute="bottom" secondItem="GSE-PR-PQM" secondAttribute="bottom" id="CKf-W3-8wJ"/>
+                            <constraint firstItem="hvO-9Z-cOy" firstAttribute="trailing" secondItem="8hp-91-Ib0" secondAttribute="trailing" id="FyL-oJ-bjh"/>
+                            <constraint firstItem="hvO-9Z-cOy" firstAttribute="leading" secondItem="8hp-91-Ib0" secondAttribute="leading" id="H1l-Kz-61s"/>
+                            <constraint firstItem="GSE-PR-PQM" firstAttribute="trailing" secondItem="8hp-91-Ib0" secondAttribute="trailing" id="W5k-nE-aNd"/>
+                            <constraint firstItem="hvO-9Z-cOy" firstAttribute="top" secondItem="8hp-91-Ib0" secondAttribute="top" id="aHK-KB-20Z"/>
+                            <constraint firstItem="GSE-PR-PQM" firstAttribute="leading" secondItem="8hp-91-Ib0" secondAttribute="leading" id="fk0-oe-IfH"/>
+                            <constraint firstItem="GSE-PR-PQM" firstAttribute="top" secondItem="hvO-9Z-cOy" secondAttribute="bottom" id="fpu-SB-bjH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hzh-O4-v7h"/>
+                    <connections>
+                        <outlet property="messageTableView" destination="hvO-9Z-cOy" id="fvq-1L-4aU"/>
+                        <outlet property="messageTextField" destination="TLs-Zx-oV7" id="CKD-YR-ww7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkj-Dn-zUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2228,23 +2285,27 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cn5-cJ-Llj"/>
+        <segue reference="V0c-Q9-6v7"/>
         <segue reference="3As-6b-uVd"/>
         <segue reference="KGL-gP-Zup"/>
         <segue reference="RVc-dH-LVX"/>
         <segue reference="6cX-2Y-tzc"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.54901960780000003" green="0.32156862749999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.61070382599999995" green="0.31954550739999998" blue="0.87734234330000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="Helpy" width="2000" height="1000"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="launchscreen" width="1170" height="2532"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="message" catalog="system" width="128" height="113"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" width="1200" height="1200"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <namedColor name="BrandPurple">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

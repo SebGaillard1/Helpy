@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		4AF3A9ACC381CCC1E539E5A0 /* Pods_Helpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */; };
 		5703EF1327D5183000541577 /* UIView+addGradientOnButtonTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */; };
-		5703EF1527D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */; };
 		5703EF1827D52A6900541577 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5703EF1727D52A6900541577 /* MessageKit */; };
 		5703EF1A27D52BD500541577 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1927D52BD500541577 /* ConversationsViewController.swift */; };
 		5703EF1D27D52EC700541577 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 5703EF1C27D52EC700541577 /* JGProgressHUD */; };
-		5703EF1F27D5300E00541577 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF1E27D5300E00541577 /* ChatViewController.swift */; };
-		5703EF2127D5427A00541577 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703EF2027D5427A00541577 /* Message.swift */; };
 		570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */; };
 		5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */; };
 		5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */; };
@@ -46,6 +43,10 @@
 		5765A15E27B852830024B828 /* UserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15D27B852830024B828 /* UserSignUpViewController.swift */; };
 		5765A16027B8557F0024B828 /* ClientHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */; };
 		5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A16127B856FD0024B828 /* UserSignInViewController.swift */; };
+		57881ED727E21C6D007C2BB0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881ED627E21C6D007C2BB0 /* ChatViewController.swift */; };
+		57881EDB27E21D0D007C2BB0 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EDA27E21D0D007C2BB0 /* MessageCell.swift */; };
+		57881EDD27E24596007C2BB0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EDC27E24596007C2BB0 /* Message.swift */; };
+		57881EDF27E24982007C2BB0 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57881EDE27E24982007C2BB0 /* MessageCell.xib */; };
 		578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */; };
 		57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5227B7FA59009AE36D /* AppDelegate.swift */; };
 		57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF5427B7FA59009AE36D /* SceneDelegate.swift */; };
@@ -74,6 +75,7 @@
 		57CEFABC27D17FBB00F0D630 /* GooglePlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */; };
 		57CEFABE27D1866B00F0D630 /* GeocodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFABD27D1866B00F0D630 /* GeocodingData.swift */; };
 		57CEFAC027D1A3A400F0D630 /* PostSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFABF27D1A3A400F0D630 /* PostSearchResultViewController.swift */; };
+		57FFBA4327E208A0005DAE09 /* FirebaseFirestoreChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFBA4227E208A0005DAE09 /* FirebaseFirestoreChatManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,10 +100,7 @@
 		077BDCE2C1522547ED83CCA0 /* Pods_Helpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Helpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3902642F4340597E00BDA0 /* Pods-Helpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Helpy.debug.xcconfig"; path = "Target Support Files/Pods-Helpy/Pods-Helpy.debug.xcconfig"; sourceTree = "<group>"; };
 		5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addGradientOnButtonTop.swift"; sourceTree = "<group>"; };
-		5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabaseManager.swift; sourceTree = "<group>"; };
 		5703EF1927D52BD500541577 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
-		5703EF1E27D5300E00541577 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		5703EF2027D5427A00541577 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		570FCAA127BB185A00404003 /* NewPostDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDescriptionViewController.swift; sourceTree = "<group>"; };
 		5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+resignFirstResponser.swift"; sourceTree = "<group>"; };
 		5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+hideKeyboardOnTap.swift"; sourceTree = "<group>"; };
@@ -130,6 +129,10 @@
 		5765A15D27B852830024B828 /* UserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewController.swift; sourceTree = "<group>"; };
 		5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomepageViewController.swift; sourceTree = "<group>"; };
 		5765A16127B856FD0024B828 /* UserSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
+		57881ED627E21C6D007C2BB0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		57881EDA27E21D0D007C2BB0 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		57881EDC27E24596007C2BB0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		57881EDE27E24982007C2BB0 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		578E07AC27CE711E00CAF760 /* NewPostSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostSplashScreenViewController.swift; sourceTree = "<group>"; };
 		57BACF4F27B7FA59009AE36D /* Helpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF5227B7FA59009AE36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 		57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesService.swift; sourceTree = "<group>"; };
 		57CEFABD27D1866B00F0D630 /* GeocodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingData.swift; sourceTree = "<group>"; };
 		57CEFABF27D1A3A400F0D630 /* PostSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchResultViewController.swift; sourceTree = "<group>"; };
+		57FFBA4227E208A0005DAE09 /* FirebaseFirestoreChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreChatManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,7 +315,7 @@
 				57CACEEA27CD1C5500700E6A /* Client */,
 				570FCAA327BB185F00404003 /* NewPostFlow */,
 				5703EF1927D52BD500541577 /* ConversationsViewController.swift */,
-				5703EF1E27D5300E00541577 /* ChatViewController.swift */,
+				57881ED627E21C6D007C2BB0 /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +329,8 @@
 				57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */,
 				57C00DDA27D011CD00B468DB /* ClientMyAccountTableViewCell.swift */,
 				57C00DDB27D011CD00B468DB /* ClientMyAccountTableViewCell.xib */,
+				57881EDA27E21D0D007C2BB0 /* MessageCell.swift */,
+				57881EDE27E24982007C2BB0 /* MessageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,13 +341,13 @@
 				5765A15727B84C4F0024B828 /* Client.swift */,
 				57C4215527B9752B001A93B1 /* Professional.swift */,
 				57439B3027BA92A5003C12E3 /* Post.swift */,
+				57881EDC27E24596007C2BB0 /* Message.swift */,
 				57C4214F27B95152001A93B1 /* Categories.swift */,
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
-				5703EF1427D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift */,
+				57FFBA4227E208A0005DAE09 /* FirebaseFirestoreChatManager.swift */,
 				57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */,
 				57CEFABD27D1866B00F0D630 /* GeocodingData.swift */,
-				5703EF2027D5427A00541577 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 				57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */,
 				57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */,
 				57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */,
+				57881EDF27E24982007C2BB0 /* MessageCell.xib in Resources */,
 				57C00DDD27D011CD00B468DB /* ClientMyAccountTableViewCell.xib in Resources */,
 				57BACF5C27B7FA5A009AE36D /* Assets.xcassets in Resources */,
 				57BACF5A27B7FA59009AE36D /* Main.storyboard in Resources */,
@@ -591,15 +598,16 @@
 				578E07AD27CE711E00CAF760 /* NewPostSplashScreenViewController.swift in Sources */,
 				5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */,
 				57CEFAB827D13A3D00F0D630 /* PostSearchViewController.swift in Sources */,
-				5703EF1F27D5300E00541577 /* ChatViewController.swift in Sources */,
+				57881EDD27E24596007C2BB0 /* Message.swift in Sources */,
+				57881ED727E21C6D007C2BB0 /* ChatViewController.swift in Sources */,
 				5765A15C27B850A30024B828 /* FirebaseDatabaseManager.swift in Sources */,
 				57BACF5727B7FA59009AE36D /* WelcomeViewController.swift in Sources */,
 				570FCAA227BB185A00404003 /* NewPostDescriptionViewController.swift in Sources */,
-				5703EF2127D5427A00541577 /* Message.swift in Sources */,
 				575C102A27BC54910014039A /* NewPostConfirmViewController.swift in Sources */,
 				57CEFABE27D1866B00F0D630 /* GeocodingData.swift in Sources */,
 				57CEFABA27D1646700F0D630 /* PostSearchLocationViewController.swift in Sources */,
 				5765A15827B84C4F0024B828 /* Client.swift in Sources */,
+				57881EDB27E21D0D007C2BB0 /* MessageCell.swift in Sources */,
 				5736C93227BDA1B200970DE9 /* ProHomepageViewController.swift in Sources */,
 				57BACF5327B7FA59009AE36D /* AppDelegate.swift in Sources */,
 				5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */,
@@ -618,6 +626,7 @@
 				575C102627BC46540014039A /* NewPostPhotoViewController.swift in Sources */,
 				57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */,
 				5703EF1A27D52BD500541577 /* ConversationsViewController.swift in Sources */,
+				57FFBA4327E208A0005DAE09 /* FirebaseFirestoreChatManager.swift in Sources */,
 				57C00DDC27D011CD00B468DB /* ClientMyAccountTableViewCell.swift in Sources */,
 				5736C92E27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift in Sources */,
 				57BACF5527B7FA59009AE36D /* SceneDelegate.swift in Sources */,
@@ -625,7 +634,6 @@
 				57C00DD527D00AE300B468DB /* ClientTabBarViewController.swift in Sources */,
 				57C00DD727D00D1F00B468DB /* ClientMyAccountViewController.swift in Sources */,
 				575C102827BC53590014039A /* UIImageView+roundedCorners.swift in Sources */,
-				5703EF1527D5235C00541577 /* FirebaseRealtimeDatabaseManager.swift in Sources */,
 				5765A15627B84AA80024B828 /* FirebaseAuthManager.swift in Sources */,
 				5736C93027BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift in Sources */,
 				57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */,
