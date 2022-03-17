@@ -8,7 +8,9 @@
 import Foundation
 
 struct Conversation {
-    let receiverUid: String
-    let receiverName: String
+    let otherUid: String
+    let otherName: String
     let lastMessage: String
+    let myUid: String
+    let myName: String
 }

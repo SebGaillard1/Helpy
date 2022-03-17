@@ -350,13 +350,13 @@
 				57C4215527B9752B001A93B1 /* Professional.swift */,
 				57439B3027BA92A5003C12E3 /* Post.swift */,
 				57881EDC27E24596007C2BB0 /* Message.swift */,
+				57881EE027E258A6007C2BB0 /* Conversation.swift */,
 				57C4214F27B95152001A93B1 /* Categories.swift */,
 				5765A15527B84AA80024B828 /* FirebaseAuthManager.swift */,
 				5765A15B27B850A30024B828 /* FirebaseDatabaseManager.swift */,
 				57FFBA4227E208A0005DAE09 /* FirebaseFirestoreChatManager.swift */,
 				57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */,
 				57CEFABD27D1866B00F0D630 /* GeocodingData.swift */,
-				57881EE027E258A6007C2BB0 /* Conversation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

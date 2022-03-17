@@ -32,6 +32,8 @@ class ClientHomepageViewController: UIViewController {
         
         getRecentPosts()
         
+        FirebaseDatabaseManager.shared.saveUserNameToUserDefaults()
+        
         handle = Auth.auth().addStateDidChangeListener { _, user in
             if user == nil {
                 self.navigationController?.popViewController(animated: true)
@@ -77,7 +79,6 @@ class ClientHomepageViewController: UIViewController {
             }
         }
     }
-    
     //MARK: - Actions
     
 }

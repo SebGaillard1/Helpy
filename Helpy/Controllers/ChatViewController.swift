@@ -43,8 +43,12 @@ class ChatViewController: UIViewController {
             presentError(error: "Message vide !")
             return
         }
+        guard let senderName = UserDefaults.standard.value(forKey: "username") as? String else {
+            presentError(error: "Impossible de récupérer votre nom !")
+            return
+        }
         
-        FirebaseFirestoreChatManager.shared.sendMessage(message: message, receiverUid: otherUid, receiverName: otherName) { error in
+        FirebaseFirestoreChatManager.shared.sendMessage(message: message, senderName: senderName, receiverUid: otherUid, receiverName: otherName) { error in
             if let error = error {
                 self.presentError(error: error)
             } else {

@@ -79,8 +79,8 @@ extension ConversationsViewController: UITableViewDataSource {
 extension ConversationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        receiverUid = conversations[indexPath.row].receiverUid
-        receiverName = conversations[indexPath.row].receiverName
+        receiverUid = conversations[indexPath.row].otherUid
+        receiverName = conversations[indexPath.row].otherName
         performSegue(withIdentifier: Constants.SegueId.conversationsToChat, sender: self)
     }
 }

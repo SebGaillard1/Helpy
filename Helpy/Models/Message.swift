@@ -9,13 +9,15 @@ import Foundation
 import FirebaseFirestore
 
 struct Message {
-    let sender: String
+    let senderUid: String
+    let senderName: String
     let content: String
     let receiverUid: String
     let receiverName: String
     
-    init(sender: String, content: String, receiverUid: String, receiverName: String) {
-        self.sender = sender
+    init(senderUid: String, senderName: String, content: String, receiverUid: String, receiverName: String) {
+        self.senderUid = senderUid
+        self.senderName = senderName
         self.content = content
         self.receiverUid = receiverUid
         self.receiverName = receiverName
@@ -24,7 +26,8 @@ struct Message {
     // MARK: Convert Message to Dictionnary
     func toDictionnary() -> [String: Any] {
         return [
-            "sender": sender,
+            "senderUid": senderUid,
+            "senderName": senderName,
             "content": content,
             "receiverUid": receiverUid,
             "receiverName": receiverName
@@ -34,7 +37,8 @@ struct Message {
     // MARK: Initialize with Firebase DataSnapshot
     init?(snapshot: QueryDocumentSnapshot) {
         guard
-            let sender = snapshot["sender"] as? String,
+            let senderUid = snapshot["senderUid"] as? String,
+            let senderName = snapshot["senderName"] as? String,
             let content = snapshot["content"] as? String,
             let receiverUid = snapshot["receiverUid"] as? String,
             let receiverName = snapshot["receiverName"] as? String
@@ -42,7 +46,8 @@ struct Message {
             return nil
         }
         
-        self.sender = sender
+        self.senderUid = senderUid
+        self.senderName = senderName
         self.content = content
         self.receiverUid = receiverUid
         self.receiverName = receiverName

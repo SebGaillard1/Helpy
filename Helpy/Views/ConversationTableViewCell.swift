@@ -23,7 +23,7 @@ class ConversationTableViewCell: UITableViewCell {
     }
     
     func configure(with conversation: Conversation) {
-        nameLabel.text = conversation.receiverName
+        nameLabel.text = conversation.otherName
         messageLabel.text = conversation.lastMessage
     }
 }

@@ -68,6 +68,22 @@ final class FirebaseDatabaseManager {
         }
     }
     
+    func saveUserNameToUserDefaults() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        db.collection("clients").whereField("uid", isEqualTo: uid).getDocuments { snapshot, error in
+            guard error == nil,
+                  let doc = snapshot?.documents[0],
+                  let name = doc["firstName"] as? String else {
+                return
+            }
+            
+            UserDefaults.standard.set(name, forKey: "username")
+        }
+    }
+    
     func savePost(post: Post ,completion: @escaping (_ error: String?) -> Void) {
         let image = post.image ?? UIImage(named: "garde-enfant")!
         

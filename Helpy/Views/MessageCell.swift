@@ -31,9 +31,14 @@ class MessageCell: UITableViewCell {
     }
     
     func configure(with message: Message) {
+        guard let currentUid = Auth.auth().currentUser?.uid else {
+            return
+        }
         messageLabel.text = message.content
 
-        if message.sender == Auth.auth().currentUser?.email {
+//        print(message.receiverUid)
+//        print(currentUid)
+        if message.receiverUid == currentUid {
             leftView.isHidden = true
             rightView.isHidden = false
             messageBuble.backgroundColor = Constants.appAccentUIColor
