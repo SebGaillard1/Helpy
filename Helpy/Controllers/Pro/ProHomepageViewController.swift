@@ -27,6 +27,7 @@ class ProHomepageViewController: UIViewController {
         myPostsCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
         
         getMyPosts()
+        FirebaseDatabaseManager.shared.saveUserNameToUserDefaults(userType: .pro)
     }
     
     override func viewWillAppear(_ animated: Bool) {

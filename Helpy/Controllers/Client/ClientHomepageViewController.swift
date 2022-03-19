@@ -32,7 +32,7 @@ class ClientHomepageViewController: UIViewController {
         
         getRecentPosts()
         
-        FirebaseDatabaseManager.shared.saveUserNameToUserDefaults()
+        FirebaseDatabaseManager.shared.saveUserNameToUserDefaults(userType: .client)
         
         handle = Auth.auth().addStateDidChangeListener { _, user in
             if user == nil {

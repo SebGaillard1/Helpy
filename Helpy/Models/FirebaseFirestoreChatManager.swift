@@ -49,9 +49,7 @@ final class FirebaseFirestoreChatManager {
     }
     
     private func saveMessageInReceiverCollection(message: Message) {
-        let messageInversed = Message(senderUid: message.receiverUid, senderName: message.receiverName, content: message.content, receiverUid: message.senderUid, receiverName: message.senderName)
-
-        let ref = db.collection("chats").document(message.receiverUid).collection("receiversUid").document(message.senderUid).collection("messages").addDocument(data: messageInversed.toDictionnary()) { error in
+        let ref = db.collection("chats").document(message.receiverUid).collection("receiversUid").document(message.senderUid).collection("messages").addDocument(data: message.toDictionnary()) { error in
     //            guard error == nil else {
     //                completion(error?.localizedDescription ?? "Impossible d'envoyer votre message")
     //                return

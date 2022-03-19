@@ -68,12 +68,19 @@ final class FirebaseDatabaseManager {
         }
     }
     
-    func saveUserNameToUserDefaults() {
+    func saveUserNameToUserDefaults(userType: UserType) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
         
-        db.collection("clients").whereField("uid", isEqualTo: uid).getDocuments { snapshot, error in
+        var collectionName = ""
+        if userType == .client {
+            collectionName = "clients"
+        } else {
+            collectionName = "professionals"
+        }
+        
+        db.collection(collectionName).whereField("uid", isEqualTo: uid).getDocuments { snapshot, error in
             guard error == nil,
                   let doc = snapshot?.documents[0],
                   let name = doc["firstName"] as? String else {

@@ -73,6 +73,7 @@
 		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
 		57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */; };
 		57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEF227CD66F700700E6A /* ApiKeys.swift */; };
+		57CD9A6727E6110300B9E8D9 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD9A6627E6110300B9E8D9 /* UserType.swift */; };
 		57CEFAB827D13A3D00F0D630 /* PostSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */; };
 		57CEFABA27D1646700F0D630 /* PostSearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFAB927D1646700F0D630 /* PostSearchLocationViewController.swift */; };
 		57CEFABC27D17FBB00F0D630 /* GooglePlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */; };
@@ -166,6 +167,7 @@
 		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
 		57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		57CACEF227CD66F700700E6A /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		57CD9A6627E6110300B9E8D9 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchViewController.swift; sourceTree = "<group>"; };
 		57CEFAB927D1646700F0D630 /* PostSearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchLocationViewController.swift; sourceTree = "<group>"; };
 		57CEFABB27D17FBB00F0D630 /* GooglePlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesService.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			children = (
 				5765A15727B84C4F0024B828 /* Client.swift */,
 				57C4215527B9752B001A93B1 /* Professional.swift */,
+				57CD9A6627E6110300B9E8D9 /* UserType.swift */,
 				57439B3027BA92A5003C12E3 /* Post.swift */,
 				57881EDC27E24596007C2BB0 /* Message.swift */,
 				57881EE027E258A6007C2BB0 /* Conversation.swift */,
@@ -655,6 +658,7 @@
 				5736C93427BDA57200970DE9 /* ProTapBarViewController.swift in Sources */,
 				575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */,
 				57CEFAC027D1A3A400F0D630 /* PostSearchResultViewController.swift in Sources */,
+				57CD9A6727E6110300B9E8D9 /* UserType.swift in Sources */,
 				57458DFA27D2C11600D51356 /* UIView+addSeparator.swift in Sources */,
 				57C00DDF27D022E200B468DB /* ClientFavoritesViewController.swift in Sources */,
 				57881EE627E27DA7007C2BB0 /* ConversationTableViewCell.swift in Sources */,
