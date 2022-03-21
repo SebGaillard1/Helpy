@@ -69,25 +69,12 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: email, password: password, lastName: lastName, firstName: firstName) { authResult, error in
             if let error = error, authResult == nil {
-                self.errorLabel.text = error.localizedDescription
+                self.errorLabel.text = error
                 return
-            }
-            
-            FirebaseDatabaseManager.shared.saveProfessional(lastName: lastName, firstName: firstName, job: job, authResult: authResult) { error in
-                if let error = error {
-                    self.errorLabel.text = error
-                    return
-                }
-                
-                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                    if let error = error, authResult == nil {
-                        self.errorLabel.text = error.localizedDescription
-                    } else {
-                        self.performSegue(withIdentifier: self.segueToSuccess, sender: self)
-                    }
-                }
+            } else {
+                self.performSegue(withIdentifier: self.segueToSuccess, sender: self)
             }
         }
     }

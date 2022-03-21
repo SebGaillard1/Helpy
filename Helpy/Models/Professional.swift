@@ -13,17 +13,15 @@ struct Professional {
     let lastName: String
     let firstName: String
     let email: String
-    let job: String
     let uid: String
     
     // MARK: Initialize with Raw Data
-    init(lastName: String, firstName: String, email: String, job: String, uid: String, key: String = "") {
+    init(lastName: String, firstName: String, email: String, uid: String, key: String = "") {
         self.ref = nil
         self.key = key
         self.lastName = lastName
         self.firstName = firstName
         self.email = email
-        self.job = job
         self.uid = uid
     }
     
@@ -34,7 +32,6 @@ struct Professional {
             let lastName = value["lastName"] as? String,
             let firstName = value["firstName"] as? String,
             let email = value["email"] as? String,
-            let job = value["job"] as? String,
             let uid = value["uid"] as? String
         else {
             return nil
@@ -44,7 +41,6 @@ struct Professional {
         self.lastName = lastName
         self.firstName = firstName
         self.email = email
-        self.job = job
         self.uid = uid
     }
     
@@ -54,7 +50,6 @@ struct Professional {
             "lastName": lastName,
             "firstName": firstName,
             "email": email,
-            "job": job,
             "uid": uid
         ]
     }

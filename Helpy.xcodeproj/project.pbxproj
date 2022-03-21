@@ -72,6 +72,8 @@
 		57CC97CB27E8828300C1C551 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC97CA27E8828300C1C551 /* MockURLProtocol.swift */; };
 		57CC97CD27E8837D00C1C551 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC97CC27E8837D00C1C551 /* FakeResponseData.swift */; };
 		57CC97CF27E8937C00C1C551 /* Location.json in Resources */ = {isa = PBXBuildFile; fileRef = 57CC97CE27E8937C00C1C551 /* Location.json */; };
+		57CC97D727E8B33B00C1C551 /* AuthTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC97D627E8B33B00C1C551 /* AuthTestCase.swift */; };
+		57CC97D927E8B39800C1C551 /* XCTestCase+Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC97D827E8B39800C1C551 /* XCTestCase+Firestore.swift */; };
 		57CD9A6727E6110300B9E8D9 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD9A6627E6110300B9E8D9 /* UserType.swift */; };
 		57CD9A6A27E61BCA00B9E8D9 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 57CD9A6927E61BCA00B9E8D9 /* FirebaseAppCheck */; };
 		57CD9A6C27E61BCA00B9E8D9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 57CD9A6B27E61BCA00B9E8D9 /* FirebaseAuth */; };
@@ -167,6 +169,8 @@
 		57CC97CA27E8828300C1C551 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		57CC97CC27E8837D00C1C551 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		57CC97CE27E8937C00C1C551 /* Location.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Location.json; sourceTree = "<group>"; };
+		57CC97D627E8B33B00C1C551 /* AuthTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTestCase.swift; sourceTree = "<group>"; };
+		57CC97D827E8B39800C1C551 /* XCTestCase+Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Firestore.swift"; sourceTree = "<group>"; };
 		57CD9A6627E6110300B9E8D9 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		57CEFAB727D13A3D00F0D630 /* PostSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchViewController.swift; sourceTree = "<group>"; };
 		57CEFAB927D1646700F0D630 /* PostSearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchLocationViewController.swift; sourceTree = "<group>"; };
@@ -303,10 +307,12 @@
 			isa = PBXGroup;
 			children = (
 				57BACF6927B7FA5A009AE36D /* HelpyTests.swift */,
+				57CC97D627E8B33B00C1C551 /* AuthTestCase.swift */,
 				57CC97C827E881AD00C1C551 /* GooglePlacesServiceTestCase.swift */,
 				57CC97CA27E8828300C1C551 /* MockURLProtocol.swift */,
 				57CC97CC27E8837D00C1C551 /* FakeResponseData.swift */,
 				57CC97CE27E8937C00C1C551 /* Location.json */,
+				57CC97D827E8B39800C1C551 /* XCTestCase+Firestore.swift */,
 			);
 			path = HelpyTests;
 			sourceTree = "<group>";
@@ -636,7 +642,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CC97D727E8B33B00C1C551 /* AuthTestCase.swift in Sources */,
 				57CC97CB27E8828300C1C551 /* MockURLProtocol.swift in Sources */,
+				57CC97D927E8B39800C1C551 /* XCTestCase+Firestore.swift in Sources */,
 				57CC97CD27E8837D00C1C551 /* FakeResponseData.swift in Sources */,
 				57CC97C927E881AD00C1C551 /* GooglePlacesServiceTestCase.swift in Sources */,
 				57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */,

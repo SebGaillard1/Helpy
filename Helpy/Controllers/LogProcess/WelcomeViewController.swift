@@ -50,6 +50,8 @@ class WelcomeViewController: UIViewController {
                     UIView.setAnimationsEnabled(false)
                     self.performSegue(withIdentifier: self.segueIdWelcomeToProHome, sender: nil)
                     self.videoUIImageView.isHidden = true
+                } else {
+                    self.videoUIImageView.isHidden = true
                 }
             }
         }

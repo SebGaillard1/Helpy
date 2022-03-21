@@ -26,11 +26,12 @@ class ProSignInViewController: UIViewController {
         else {
             return
         }
-        FirebaseAuthManager.shared.signInPro(withEmail: email, password: password) { connected, error in
-            if connected && error == nil {
+        
+        FirebaseAuthManager.shared.signInUser(userType: .pro, withEmail: email, password: password) { error in
+            if error == nil {
                 self.performSegue(withIdentifier: self.segueIdToProHome, sender: self)
             } else {
-                self.errorLabel.text = "Impossible de se connecter"
+                self.errorLabel.text = error
             }
         }
     }

@@ -12,49 +12,62 @@ class FirebaseAuthManager {
     //MARK: - Properties
     static let shared = FirebaseAuthManager()
     
-    var handle: AuthStateDidChangeListenerHandle?
+    //var handle: AuthStateDidChangeListenerHandle?
     
     private init() {}
     
-    func createUser(withEmail email: String, password: String, completion: @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void) {
+    func createUser(userType: UserType, withEmail email: String, password: String, lastName: String?, firstName: String?, completion: @escaping (_ authResult: AuthDataResult?, _ error: String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error, authResult == nil {
-                completion(nil, error)
+                completion(nil, error.localizedDescription)
             } else {
-                completion(authResult, nil)
-            }
-        }
-    }
-    
-    func signInUser(withEmail email: String, password: String, completion: @escaping (_ error: Error?) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error, authResult == nil {
-                completion(error)
-            } else {
-                completion(nil)
-            }
-        }
-    }
-    
-    func signInPro(withEmail email: String, password: String, completion: @escaping (_ connected: Bool, _ error: Error?) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            self.handle = Auth.auth().addStateDidChangeListener { _, user in
-                // 2
-                guard let user = user else {
-                    completion(false, nil)
-                    return
+                if userType == .pro {
+                    FirebaseDatabaseManager.shared.saveProfessional(lastName: lastName ?? "", firstName: firstName ?? "", authResult: authResult) { error in
+                        if let error = error {
+                            completion(nil, error)
+                        } else {
+                            completion(authResult, nil)
+                        }
+                    }
+                } else {
+                    completion(authResult, nil)
                 }
-                
-                Constants.FirebaseHelper.clientRef.whereField("uid", isEqualTo: user.uid).getDocuments { querySnapshot, error in
+            }
+        }
+    }
+    
+    func signInUser(userType: UserType, withEmail email: String, password: String, completion: @escaping (_ error: String?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            guard let authResult = authResult, error == nil else {
+                completion(error?.localizedDescription ?? "Compte introuvable")
+                return
+            }
+            
+            switch userType {
+            case .client:
+                Constants.FirebaseHelper.clientRef.whereField("uid", isEqualTo: authResult.user.uid).getDocuments { querySnapshot, error in
                     if querySnapshot?.isEmpty == true && error == nil {
-                        print("Vous essayez de vous connecter avec un compte client")
-                        completion(false, nil)
+                        do {
+                            try Auth.auth().signOut()
+                        } catch let error {
+                            print("Auth sign out failed: \(error)")
+                        }
+                        completion("Compte introuvable")
+                    } else {
+                        completion(nil)
                     }
                 }
-                
-                Constants.FirebaseHelper.proRef.whereField("uid", isEqualTo: user.uid).getDocuments { querySnapshot, error in
-                    if querySnapshot?.isEmpty == false && error == nil {
-                        completion(true, nil)
+            case .pro:
+                Constants.FirebaseHelper.proRef.whereField("uid", isEqualTo: authResult.user.uid).getDocuments { querySnapshot, error in
+                    if querySnapshot?.isEmpty == true && error == nil {
+                        do {
+                            try Auth.auth().signOut()
+                        } catch let error {
+                            print("Auth sign out failed: \(error)")
+                        }
+                        completion("Compte introuvable")
+                    } else {
+                        completion(nil)
                     }
                 }
             }

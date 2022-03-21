@@ -48,14 +48,14 @@ class UserSignInViewController: UIViewController {
         sender.isEnabled = false
         activityIndicator.isHidden = false
         
-        Auth.auth().signIn(withEmail: email, password: password) { user, error in
-            if let error = error, user == nil {
-                self.errorLabel.text = error.localizedDescription
-                sender.isEnabled = true
-            } else {
+        FirebaseAuthManager.shared.signInUser(userType: .client, withEmail: email, password: password) { error in
+            if error == nil {
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 self.performSegue(withIdentifier: self.signInToSuccess, sender: self)
+            } else {
+                self.errorLabel.text = error
+                sender.isEnabled = true
             }
             self.activityIndicator.isHidden = true
         }

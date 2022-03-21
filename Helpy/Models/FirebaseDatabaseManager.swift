@@ -38,13 +38,13 @@ final class FirebaseDatabaseManager {
         }
     }
     
-    func saveProfessional(lastName: String, firstName: String, job: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
+    func saveProfessional(lastName: String, firstName: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
         guard let authResult = authResult else {
             completion("Une erreur est survenue lors de la création de votre compte.")
             return
         }
         
-        let professional = Professional(lastName: lastName, firstName: firstName, email: authResult.user.email!, job: job, uid: authResult.user.uid, key: "")
+        let professional = Professional(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid, key: "")
         
         db.collection("professionals").addDocument(data: professional.toDictionnary()) { error in
             if let error = error {
