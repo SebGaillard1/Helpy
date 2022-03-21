@@ -1,0 +1,1036 @@
+{
+    "plus_code": {
+        "compound_code": "QR7P+J77 Lyon, France",
+        "global_code": "8FQ6QR7P+J77"
+    },
+    "results": [
+        {
+            "address_components": [
+                {
+                    "long_name": "20",
+                    "short_name": "20",
+                    "types": [
+                        "street_number"
+                    ]
+                },
+                {
+                    "long_name": "Rue de la Poulaillerie",
+                    "short_name": "Rue de la Poulaillerie",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "69002",
+                    "short_name": "69002",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "20 Rue de la Poulaillerie, 69002 Lyon, France",
+            "geometry": {
+                "location": {
+                    "lat": 45.764043,
+                    "lng": 4.835659
+                },
+                "location_type": "ROOFTOP",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.7653919802915,
+                        "lng": 4.837007980291502
+                    },
+                    "southwest": {
+                        "lat": 45.7626940197085,
+                        "lng": 4.834310019708497
+                    }
+                }
+            },
+            "place_id": "ChIJ5xwdq_jq9EcRY3fUqZ5dezs",
+            "plus_code": {
+                "compound_code": "QR7P+J7 Lyon, France",
+                "global_code": "8FQ6QR7P+J7"
+            },
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "18",
+                    "short_name": "18",
+                    "types": [
+                        "street_number"
+                    ]
+                },
+                {
+                    "long_name": "Rue de la République",
+                    "short_name": "Rue de la République",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "69002",
+                    "short_name": "69002",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "18 Rue de la République, 69002 Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.7640903,
+                        "lng": 4.835707
+                    },
+                    "southwest": {
+                        "lat": 45.7638802,
+                        "lng": 4.835341
+                    }
+                },
+                "location": {
+                    "lat": 45.7639596,
+                    "lng": 4.835603499999999
+                },
+                "location_type": "ROOFTOP",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.7653342302915,
+                        "lng": 4.836872980291502
+                    },
+                    "southwest": {
+                        "lat": 45.7626362697085,
+                        "lng": 4.834175019708497
+                    }
+                }
+            },
+            "place_id": "ChIJtbR8qPjq9EcRfmzQmzKBI-c",
+            "types": [
+                "premise"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Cordeliers",
+                    "short_name": "Cordeliers",
+                    "types": [
+                        "establishment",
+                        "point_of_interest",
+                        "transit_station"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "69002",
+                    "short_name": "69002",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "Cordeliers, 69002 Lyon, France",
+            "geometry": {
+                "location": {
+                    "lat": 45.763927,
+                    "lng": 4.835808000000001
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.7652759802915,
+                        "lng": 4.837156980291503
+                    },
+                    "southwest": {
+                        "lat": 45.7625780197085,
+                        "lng": 4.8344590197085
+                    }
+                }
+            },
+            "place_id": "ChIJ7yA-p_jq9EcRm8xdc_x8vLs",
+            "plus_code": {
+                "compound_code": "QR7P+H8 Lyon, France",
+                "global_code": "8FQ6QR7P+H8"
+            },
+            "types": [
+                "establishment",
+                "point_of_interest",
+                "transit_station"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "20",
+                    "short_name": "20",
+                    "types": [
+                        "street_number"
+                    ]
+                },
+                {
+                    "long_name": "Rue de la Poulaillerie",
+                    "short_name": "Rue de la Poulaillerie",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "69002",
+                    "short_name": "69002",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "20 Rue de la Poulaillerie, 69002 Lyon, France",
+            "geometry": {
+                "location": {
+                    "lat": 45.7641067,
+                    "lng": 4.8356715
+                },
+                "location_type": "RANGE_INTERPOLATED",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.7654556802915,
+                        "lng": 4.837020480291502
+                    },
+                    "southwest": {
+                        "lat": 45.7627577197085,
+                        "lng": 4.834322519708498
+                    }
+                }
+            },
+            "place_id": "Ei0yMCBSdWUgZGUgbGEgUG91bGFpbGxlcmllLCA2OTAwMiBMeW9uLCBGcmFuY2UiGhIYChQKEgnNjg-m-Or0RxFMs-1qj_WFuBAU",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "QR7P+J7",
+                    "short_name": "QR7P+J7",
+                    "types": [
+                        "plus_code"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "QR7P+J7 Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.76412500000001,
+                        "lng": 4.83575
+                    },
+                    "southwest": {
+                        "lat": 45.764,
+                        "lng": 4.835624999999999
+                    }
+                },
+                "location": {
+                    "lat": 45.76404309999999,
+                    "lng": 4.835659
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.76541148029151,
+                        "lng": 4.837036480291503
+                    },
+                    "southwest": {
+                        "lat": 45.76271351970851,
+                        "lng": 4.834338519708498
+                    }
+                }
+            },
+            "place_id": "GhIJAp4PKszhRkARqG4u_rZXE0A",
+            "plus_code": {
+                "compound_code": "QR7P+J7 Lyon, France",
+                "global_code": "8FQ6QR7P+J7"
+            },
+            "types": [
+                "plus_code"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "20-18",
+                    "short_name": "20-18",
+                    "types": [
+                        "street_number"
+                    ]
+                },
+                {
+                    "long_name": "Rue de la Poulaillerie",
+                    "short_name": "Rue de la Poulaillerie",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "69002",
+                    "short_name": "69002",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "20-18 Rue de la Poulaillerie, 69002 Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.7641228,
+                        "lng": 4.8358149
+                    },
+                    "southwest": {
+                        "lat": 45.764093,
+                        "lng": 4.835502099999999
+                    }
+                },
+                "location": {
+                    "lat": 45.7641079,
+                    "lng": 4.8356585
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.7654568802915,
+                        "lng": 4.837007480291502
+                    },
+                    "southwest": {
+                        "lat": 45.7627589197085,
+                        "lng": 4.834309519708498
+                    }
+                }
+            },
+            "place_id": "ChIJzY4Ppvjq9EcRTLPtao_1hbg",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Cordeliers - Jacobins",
+                    "short_name": "Cordeliers - Jacobins",
+                    "types": [
+                        "neighborhood",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Cordeliers - Jacobins, Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.76616200000001,
+                        "lng": 4.8407581
+                    },
+                    "southwest": {
+                        "lat": 45.759201,
+                        "lng": 4.829422099999999
+                    }
+                },
+                "location": {
+                    "lat": 45.7626435,
+                    "lng": 4.8360094
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.76616200000001,
+                        "lng": 4.8407581
+                    },
+                    "southwest": {
+                        "lat": 45.759201,
+                        "lng": 4.829422099999999
+                    }
+                }
+            },
+            "place_id": "ChIJ-2azdFbq9EcRJzchX-X74dY",
+            "types": [
+                "neighborhood",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "69002",
+                    "short_name": "69002",
+                    "types": [
+                        "postal_code"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "69002 Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.7662756,
+                        "lng": 4.8398385
+                    },
+                    "southwest": {
+                        "lat": 45.7264764,
+                        "lng": 4.8130659
+                    }
+                },
+                "location": {
+                    "lat": 45.7477113,
+                    "lng": 4.8240999
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.7662756,
+                        "lng": 4.8398385
+                    },
+                    "southwest": {
+                        "lat": 45.7264764,
+                        "lng": 4.8130659
+                    }
+                }
+            },
+            "place_id": "ChIJy8-WSrXr9EcRIHzkQS6rCBw",
+            "types": [
+                "postal_code"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "2nd arrondissement of Lyon",
+                    "short_name": "2nd arrondissement of Lyon",
+                    "types": [
+                        "political",
+                        "sublocality",
+                        "sublocality_level_1"
+                    ]
+                },
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "2nd arrondissement of Lyon, Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.766268,
+                        "lng": 4.8399467
+                    },
+                    "southwest": {
+                        "lat": 45.7264722,
+                        "lng": 4.813034399999999
+                    }
+                },
+                "location": {
+                    "lat": 45.7462739,
+                    "lng": 4.822199599999999
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.766268,
+                        "lng": 4.8399467
+                    },
+                    "southwest": {
+                        "lat": 45.7264722,
+                        "lng": 4.813034399999999
+                    }
+                }
+            },
+            "place_id": "ChIJy8-WSrXr9EcR0BjC5CqrCAU",
+            "types": [
+                "political",
+                "sublocality",
+                "sublocality_level_1"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Lyon",
+                    "short_name": "Lyon",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.8084202,
+                        "lng": 4.8983957
+                    },
+                    "southwest": {
+                        "lat": 45.7074812,
+                        "lng": 4.7718645
+                    }
+                },
+                "location": {
+                    "lat": 45.764043,
+                    "lng": 4.835659
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.8084202,
+                        "lng": 4.8983957
+                    },
+                    "southwest": {
+                        "lat": 45.7074812,
+                        "lng": 4.7718645
+                    }
+                }
+            },
+            "place_id": "ChIJl4foalHq9EcR8CG75CqrCAQ",
+            "types": [
+                "locality",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Arrondissement de Lyon",
+                    "short_name": "Arrondissement de Lyon",
+                    "types": [
+                        "administrative_area_level_3",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Arrondissement de Lyon, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 45.9391827,
+                        "lng": 5.160110899999999
+                    },
+                    "southwest": {
+                        "lat": 45.4541235,
+                        "lng": 4.3479835
+                    }
+                },
+                "location": {
+                    "lat": 45.7640596,
+                    "lng": 4.8356224
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.9391827,
+                        "lng": 5.160110899999999
+                    },
+                    "southwest": {
+                        "lat": 45.4541235,
+                        "lng": 4.3479835
+                    }
+                }
+            },
+            "place_id": "ChIJlbXhKTju9EcR5e3or0Ly3kw",
+            "types": [
+                "administrative_area_level_3",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Rhône",
+                    "short_name": "Rhône",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Rhône, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 46.3064837,
+                        "lng": 5.160110899999999
+                    },
+                    "southwest": {
+                        "lat": 45.4541235,
+                        "lng": 4.2436609
+                    }
+                },
+                "location": {
+                    "lat": 45.7351456,
+                    "lng": 4.6108043
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 46.3064837,
+                        "lng": 5.160110899999999
+                    },
+                    "southwest": {
+                        "lat": 45.4541235,
+                        "lng": 4.2436609
+                    }
+                }
+            },
+            "place_id": "ChIJcf_obOGN9EcR0Cm55CqrCAM",
+            "types": [
+                "administrative_area_level_2",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Auvergne-Rhône-Alpes, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 46.804287,
+                        "lng": 7.1855661
+                    },
+                    "southwest": {
+                        "lat": 44.1154926,
+                        "lng": 2.0628781
+                    }
+                },
+                "location": {
+                    "lat": 45.5126545,
+                    "lng": 4.4904519
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 46.804287,
+                        "lng": 7.1855661
+                    },
+                    "southwest": {
+                        "lat": 44.1154926,
+                        "lng": 2.0628781
+                    }
+                }
+            },
+            "place_id": "ChIJ_fju9ukE9UcROuOAIn5wRjk",
+            "types": [
+                "administrative_area_level_1",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 51.1241999,
+                        "lng": 9.6624999
+                    },
+                    "southwest": {
+                        "lat": 41.31433,
+                        "lng": -5.5591
+                    }
+                },
+                "location": {
+                    "lat": 46.227638,
+                    "lng": 2.213749
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 51.1241999,
+                        "lng": 9.6624999
+                    },
+                    "southwest": {
+                        "lat": 41.31433,
+                        "lng": -5.5591
+                    }
+                }
+            },
+            "place_id": "ChIJMVd4MymgVA0R99lHx5Y__Ws",
+            "types": [
+                "country",
+                "political"
+            ]
+        }
+    ],
+    "status": "OK"
+}

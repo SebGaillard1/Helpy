@@ -36,9 +36,6 @@ class MessageCell: UITableViewCell {
         }
         messageLabel.text = message.content
 
-//        print(message.receiverUid)
-//        print(currentUid)
-        print("Receiver UID : \(message.receiverUid),  Current Id : \(currentUid)")
         if message.receiverUid == currentUid {
             leftView.isHidden = true
             rightView.isHidden = false

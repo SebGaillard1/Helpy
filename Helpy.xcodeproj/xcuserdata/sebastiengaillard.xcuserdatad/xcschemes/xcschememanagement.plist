@@ -7,7 +7,7 @@
 		<key>Helpy.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Promises (Playground) 1.xcscheme</key>
 		<dict>
@@ -50,6 +50,24 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>57BACF4E27B7FA59009AE36D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57BACF6427B7FA5A009AE36D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57BACF6E27B7FA5A009AE36D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -47,8 +47,8 @@ class GooglePlacesService {
                     return
                 }
                 
-                var postalCode: String?
-                var locality: String?
+                var postalCode = ""
+                var locality = ""
                 for result in responseJSON.results[0].addressComponents {
                     if result.types[0] == "locality" {
                         locality = result.shortName
@@ -56,10 +56,6 @@ class GooglePlacesService {
                     if result.types[0] == "postal_code" {
                         postalCode = result.shortName
                     }
-                }
-                guard let postalCode = postalCode, let locality = locality else {
-                    completion(false, "", "")
-                    return
                 }
 
                 completion(true, locality, postalCode)

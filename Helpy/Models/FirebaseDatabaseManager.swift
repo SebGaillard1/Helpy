@@ -173,11 +173,9 @@ final class FirebaseDatabaseManager {
                 return
             }
             
-            snapshot.documentChanges.forEach { diff in
-                if (diff.type == .added) {
-                    if let newPost = Post(dictionnary: diff.document.data()) {
-                        posts.append(newPost)
-                    }
+            snapshot.documents.forEach { doc in
+                if let newPost = Post(dictionnary: doc.data()) {
+                    posts.append(newPost)
                 }
             }
             
