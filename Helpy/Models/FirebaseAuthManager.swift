@@ -16,21 +16,20 @@ class FirebaseAuthManager {
     
     private init() {}
     
-    func createUser(userType: UserType, withEmail email: String, password: String, lastName: String?, firstName: String?, completion: @escaping (_ authResult: AuthDataResult?, _ error: String?) -> Void) {
+    func createUser(userType: UserType, withEmail email: String, password: String, lastName: String, firstName: String, completion: @escaping (_ authResult: AuthDataResult?, _ error: String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error, authResult == nil {
                 completion(nil, error.localizedDescription)
             } else {
-                if userType == .pro {
-                    FirebaseDatabaseManager.shared.saveProfessional(lastName: lastName ?? "", firstName: firstName ?? "", authResult: authResult) { error in
-                        if let error = error {
-                            completion(nil, error)
-                        } else {
-                            completion(authResult, nil)
-                        }
+                switch userType {
+                case .client:
+                    FirebaseDatabaseManager.shared.saveUser(userType: .client, lastName: lastName, firstName: firstName, authResult: authResult) { error in
+                        error != nil ? completion(nil, error) : completion(authResult, nil)
                     }
-                } else {
-                    completion(authResult, nil)
+                case .pro:
+                    FirebaseDatabaseManager.shared.saveUser(userType: .pro, lastName: lastName, firstName: firstName, authResult: authResult) { error in
+                        error != nil ? completion(nil, error) : completion(authResult, nil)
+                    }
                 }
             }
         }

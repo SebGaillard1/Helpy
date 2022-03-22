@@ -66,6 +66,7 @@
 		57C4215427B965F3001A93B1 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215327B965F3001A93B1 /* JobsTableViewController.swift */; };
 		57C4215627B9752B001A93B1 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215527B9752B001A93B1 /* Professional.swift */; };
 		57C4215827B9999A001A93B1 /* String+onlyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */; };
+		57C72EDE27E8F49C00A95EC1 /* FirestoreChatTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C72EDD27E8F49C00A95EC1 /* FirestoreChatTestCase.swift */; };
 		57CACEEC27CD1FE500700E6A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */; };
 		57CACEF327CD66F700700E6A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CACEF227CD66F700700E6A /* ApiKeys.swift */; };
 		57CC97C927E881AD00C1C551 /* GooglePlacesServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC97C827E881AD00C1C551 /* GooglePlacesServiceTestCase.swift */; };
@@ -163,6 +164,7 @@
 		57C4215327B965F3001A93B1 /* JobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		57C4215527B9752B001A93B1 /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		57C4215727B9999A001A93B1 /* String+onlyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+onlyNumbers.swift"; sourceTree = "<group>"; };
+		57C72EDD27E8F49C00A95EC1 /* FirestoreChatTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreChatTestCase.swift; sourceTree = "<group>"; };
 		57CACEEB27CD1FE500700E6A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		57CACEF227CD66F700700E6A /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		57CC97C827E881AD00C1C551 /* GooglePlacesServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesServiceTestCase.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			children = (
 				57BACF6927B7FA5A009AE36D /* HelpyTests.swift */,
 				57CC97D627E8B33B00C1C551 /* AuthTestCase.swift */,
+				57C72EDD27E8F49C00A95EC1 /* FirestoreChatTestCase.swift */,
 				57CC97C827E881AD00C1C551 /* GooglePlacesServiceTestCase.swift */,
 				57CC97CA27E8828300C1C551 /* MockURLProtocol.swift */,
 				57CC97CC27E8837D00C1C551 /* FakeResponseData.swift */,
@@ -647,6 +650,7 @@
 				57CC97D927E8B39800C1C551 /* XCTestCase+Firestore.swift in Sources */,
 				57CC97CD27E8837D00C1C551 /* FakeResponseData.swift in Sources */,
 				57CC97C927E881AD00C1C551 /* GooglePlacesServiceTestCase.swift in Sources */,
+				57C72EDE27E8F49C00A95EC1 /* FirestoreChatTestCase.swift in Sources */,
 				57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

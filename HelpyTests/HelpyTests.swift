@@ -14,25 +14,29 @@ class HelpyTests: XCTestCase {
     var post: Post!
     
     override func setUp() {
+        super.setUp()
+        
         post = Post(title: "Post Exemple", category: "Exemple", locality: "Lyon", postalCode: "69002", latitude: CLLocationDegrees(43.6216533), longitude: CLLocationDegrees(3.6216533), geohash: "spf8pm14t3", proUid: "UmFHryyZ4qWG2cps41OFWB43NTC3", postedBy: "Seb", description: "Description exemple", image: UIImage(named: "garde-enfant"), imageUrl: "urlexemple.com", isOnline: true)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        self.clearFirestore()
+        //self.clearFirestore()
     }
     
-//    func testGivenNoRecentPostsWhenFetchingRecentPostsThenShouldReturnNothing() {
-//        let exp = self.expectation(description: "Waiting for async operation")
-//
-//        FirebaseDatabaseManager.shared.getRecentPosts { posts in
-//            print(posts.count)
-//            XCTAssertEqual(posts.count, 0)
-//            exp.fulfill()
-//        }
-//
-//        self.waitForExpectations(timeout: 5, handler: nil)
-//    }
+    
+    
+    func testGivenNoRecentPostsWhenFetchingRecentPostsThenShouldReturnNothing() {
+        let exp = self.expectation(description: "Waiting for async operation")
+
+        FirebaseDatabaseManager.shared.getRecentPosts { posts in
+            print(posts.count)
+            XCTAssertEqual(posts.count, 0)
+            exp.fulfill()
+        }
+
+        wait(for: [exp], timeout: 3)
+    }
     
     func testGivenAPostToSaveWhenSavingItToFirestoreThenShouldHaveOnePost() {
         let exp = self.expectation(description: "Waiting for async operation")
@@ -49,7 +53,13 @@ class HelpyTests: XCTestCase {
             }
         }
         
-        self.waitForExpectations(timeout: 5, handler: nil)
+        wait(for: [exp], timeout: 3)
+    }
+    
+    
+    override class func tearDown() {
+        super.tearDown()
+        
     }
 
 //    func testGetRecentPosts() {
@@ -59,7 +69,7 @@ class HelpyTests: XCTestCase {
 //            exp.fulfill()
 //        }
 //
-//        self.waitForExpectations(timeout: 5, handler: nil)
+//        wait(for: [exp], timeout: 3)
 //    }
 
 }

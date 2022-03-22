@@ -85,17 +85,10 @@ class UserSignUpViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        FirebaseAuthManager.shared.createUser(userType: .client, withEmail: email, password: password, lastName: lastName, firstName: firstName) { authResult, error in
             if let error = error, authResult == nil {
-                self.errorLabel.text = error.localizedDescription
-                return
-            }
-            
-            FirebaseDatabaseManager.shared.saveClient(lastName: lastName, firstName: firstName, adress: self.adressTextField.text!, authResult: authResult) { error in
-                if let error = error {
-                    self.errorLabel.text = error
-                    return
-                }
+                self.errorLabel.text = error
+            } else {
                 self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
             }
         }

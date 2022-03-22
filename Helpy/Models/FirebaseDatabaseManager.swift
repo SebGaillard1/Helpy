@@ -21,36 +21,24 @@ final class FirebaseDatabaseManager {
     
     private init() {}
     
-    func saveClient(lastName: String, firstName: String, adress: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
+    func saveUser(userType: UserType, lastName: String, firstName: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
         guard let authResult = authResult else {
             completion("Une erreur est survenue lors de la création de votre compte.")
             return
         }
         
-        let client = Client(lastName: lastName, firstName: firstName, adress: adress, email: authResult.user.email!, uid: authResult.user.uid, key: "")
-        
-        db.collection("clients").addDocument(data: client.toDictionnary()) { error in
-            if let error = error {
-                completion(error.localizedDescription)
-            } else {
-                completion(nil)
+        switch userType {
+        case .client:
+            let client = Client(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid, key: "")
+            
+            db.collection("clients").addDocument(data: client.toDictionnary()) { error in
+                error != nil ? completion(error?.localizedDescription ?? "Impossible de créer le compte") : completion(nil)
             }
-        }
-    }
-    
-    func saveProfessional(lastName: String, firstName: String, authResult: AuthDataResult?, completion: @escaping (_ error: String?) -> Void) {
-        guard let authResult = authResult else {
-            completion("Une erreur est survenue lors de la création de votre compte.")
-            return
-        }
-        
-        let professional = Professional(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid, key: "")
-        
-        db.collection("professionals").addDocument(data: professional.toDictionnary()) { error in
-            if let error = error {
-                completion(error.localizedDescription)
-            } else {
-                completion(nil)
+        case .pro:
+            let professional = Professional(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid, key: "")
+            
+            db.collection("professionals").addDocument(data: professional.toDictionnary()) { error in
+                error != nil ? completion(error?.localizedDescription ?? "Impossible de créer le compte") : completion(nil)
             }
         }
     }
@@ -82,6 +70,7 @@ final class FirebaseDatabaseManager {
         
         db.collection(collectionName).whereField("uid", isEqualTo: uid).getDocuments { snapshot, error in
             guard error == nil,
+                  snapshot?.isEmpty == false,
                   let doc = snapshot?.documents[0],
                   let name = doc["firstName"] as? String else {
                 return
