@@ -34,6 +34,7 @@ struct Constants {
         static let clientHomeToSearch = "clientHomeToSearch"
         
         static let proHomeToPostDetails = "proHomeToPostDetails"
+        static let proHomepageToChat = "proHomepageToChat"
     }
 }
 

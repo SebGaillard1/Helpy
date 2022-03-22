@@ -11,13 +11,18 @@ import Firebase
 class ProHomepageViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var myPostsCollectionView: UICollectionView!
+    @IBOutlet weak var myConversationsTableView: UITableView!
     
     //MARK: - Properties
     let postCellId = "postCell"
+    let messageCellId = "conversationCell"
     
     var myPosts = [Post]()
     var selectedPost: Post?
-
+    
+    var myConversations = [Conversation]()
+    var selectedConversation: Conversation?
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +31,12 @@ class ProHomepageViewController: UIViewController {
         myPostsCollectionView.delegate = self
         myPostsCollectionView.register(UINib.init(nibName: "PostCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: postCellId)
         
+        myConversationsTableView.dataSource = self
+        myConversationsTableView.delegate = self
+        myConversationsTableView.register(UINib.init(nibName: "ConversationTableViewCell", bundle: nil), forCellReuseIdentifier: messageCellId)
+        
         getMyPosts()
+        getRecentMessages()
         FirebaseDatabaseManager.shared.saveUserNameToUserDefaults(userType: .pro)
     }
     
@@ -53,10 +63,26 @@ class ProHomepageViewController: UIViewController {
         }
     }
     
+    private func getRecentMessages() {
+        FirebaseFirestoreChatManager.shared.getAllConversationsWithLastMessage { error, conversations in
+            if error == nil && !conversations.isEmpty {
+                self.myConversations = conversations
+                self.myConversationsTableView.reloadData()
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.SegueId.proHomeToPostDetails {
             let destinationVC = segue.destination as! PostDetailsViewController
             destinationVC.post = selectedPost
+        } else if segue.identifier == Constants.SegueId.proHomepageToChat {
+            guard let otherName = selectedConversation?.otherName,
+                  let otherUid = selectedConversation?.otherUid else { return }
+            
+            let destinationVc = segue.destination as! ChatViewController
+            destinationVc.otherName = otherName
+            destinationVc.otherUid = otherUid
         }
     }
 }
@@ -86,6 +112,28 @@ extension ProHomepageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height
         return CGSize(width: height * 0.65, height: height)
+    }
+}
+
+extension ProHomepageViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myConversations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: messageCellId, for: indexPath) as? ConversationTableViewCell else { return UITableViewCell() }
+    
+        cell.nameLabel.text = myConversations[indexPath.row].otherName
+        cell.messageLabel.text = myConversations[indexPath.row].lastMessage
+        return cell
+    }
+}
+
+extension ProHomepageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedConversation = myConversations[indexPath.row]
+        performSegue(withIdentifier: Constants.SegueId.proHomepageToChat, sender: self)
     }
 }
 

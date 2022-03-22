@@ -687,12 +687,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VFm-gM-U4C">
+                                        <rect key="frame" x="10" y="355.5" width="394" height="315.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="6SW-DF-jiU" secondAttribute="bottom" constant="20" id="1d6-wt-pkZ"/>
                                     <constraint firstItem="ImX-Cd-98k" firstAttribute="top" secondItem="BcI-iW-EFM" secondAttribute="bottom" constant="8" symbolic="YES" id="B9E-sx-DzU"/>
                                     <constraint firstItem="BcI-iW-EFM" firstAttribute="leading" secondItem="0OV-k0-JLg" secondAttribute="leading" constant="20" id="Hic-xN-0za"/>
                                     <constraint firstItem="6SW-DF-jiU" firstAttribute="leading" secondItem="0OV-k0-JLg" secondAttribute="leading" constant="20" id="SuM-rG-mOX"/>
+                                    <constraint firstItem="VFm-gM-U4C" firstAttribute="top" secondItem="6SW-DF-jiU" secondAttribute="bottom" constant="8" symbolic="YES" id="UGC-2e-4Ow"/>
+                                    <constraint firstItem="VFm-gM-U4C" firstAttribute="leading" secondItem="0OV-k0-JLg" secondAttribute="leading" constant="10" id="eJE-8Y-HwJ"/>
                                     <constraint firstAttribute="trailing" secondItem="BcI-iW-EFM" secondAttribute="trailing" constant="20" id="lG9-7G-Vly"/>
                                     <constraint firstItem="4QH-Ec-hVR" firstAttribute="top" secondItem="Eeb-yL-d5g" secondAttribute="top" constant="20" id="pHZ-DV-4Ud"/>
                                     <constraint firstItem="BcI-iW-EFM" firstAttribute="top" secondItem="4QH-Ec-hVR" secondAttribute="bottom" constant="20" id="rRl-JE-1QW"/>
@@ -711,23 +717,27 @@
                         <constraints>
                             <constraint firstItem="9TR-oy-wKx" firstAttribute="trailing" secondItem="0OV-k0-JLg" secondAttribute="trailing" id="96d-hI-nbE"/>
                             <constraint firstItem="0OV-k0-JLg" firstAttribute="top" secondItem="Kkm-pq-2zO" secondAttribute="bottom" id="A34-27-RLe"/>
+                            <constraint firstItem="9TR-oy-wKx" firstAttribute="bottom" secondItem="VFm-gM-U4C" secondAttribute="bottom" id="MeZ-M0-p7r"/>
                             <constraint firstItem="Kkm-pq-2zO" firstAttribute="top" secondItem="9TR-oy-wKx" secondAttribute="top" constant="10" id="bwg-Hu-e46"/>
                             <constraint firstItem="0OV-k0-JLg" firstAttribute="leading" secondItem="9TR-oy-wKx" secondAttribute="leading" id="dsD-AZ-dT9"/>
                             <constraint firstItem="Kkm-pq-2zO" firstAttribute="centerX" secondItem="N2R-xa-meX" secondAttribute="centerX" id="j2N-Qx-8aA"/>
                             <constraint firstItem="9TR-oy-wKx" firstAttribute="trailing" secondItem="ImX-Cd-98k" secondAttribute="trailing" id="rJ0-1W-O3P"/>
                             <constraint firstItem="9TR-oy-wKx" firstAttribute="bottom" secondItem="0OV-k0-JLg" secondAttribute="bottom" id="xBn-oa-6mU"/>
+                            <constraint firstItem="9TR-oy-wKx" firstAttribute="trailing" secondItem="VFm-gM-U4C" secondAttribute="trailing" constant="10" id="ylv-dE-PrS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Accueil" image="house" catalog="system" id="v22-Mx-6Zs"/>
                     <navigationItem key="navigationItem" id="dP6-do-MfH"/>
                     <connections>
+                        <outlet property="myConversationsTableView" destination="VFm-gM-U4C" id="iBs-0i-bOn"/>
                         <outlet property="myPostsCollectionView" destination="ImX-Cd-98k" id="nE4-NM-DJJ"/>
                         <segue destination="wzO-Jn-h8g" kind="show" identifier="proHomeToPostDetails" id="3As-6b-uVd"/>
+                        <segue destination="gnD-ti-kbs" kind="show" identifier="proHomepageToChat" id="fsK-PG-A5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifb-ks-cqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3425" y="964"/>
+            <point key="canvasLocation" x="3424.6376811594205" y="963.61607142857133"/>
         </scene>
         <!--Publier-->
         <scene sceneID="AVp-ur-JdX">
@@ -2294,7 +2304,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V0c-Q9-6v7"/>
+        <segue reference="fsK-PG-A5i"/>
         <segue reference="3As-6b-uVd"/>
         <segue reference="KGL-gP-Zup"/>
         <segue reference="RVc-dH-LVX"/>
