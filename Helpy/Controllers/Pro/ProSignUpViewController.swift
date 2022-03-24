@@ -34,9 +34,11 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
         defaultButtonTitle = chooseJobButton.title(for: .normal)
     }
     
+    
     @IBAction func createAccountDidTouch(_ sender: Any) {
         if passwordTextField.text != passwordConfirmationTextField.text {
             errorLabel.text = "Le mot de passe et sa confirmation ne correspondent pas."
+            errorLabel.isHidden = false
             return
         }
         
@@ -47,6 +49,7 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
             !lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         else {
             errorLabel.text = "Votre nom et prénom ne peuvent être vides."
+            errorLabel.isHidden = false
             return
         }
         
@@ -57,11 +60,13 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
             !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         else {
             errorLabel.text = "L'adresse mail et/ou le mot de passe ne peuvent être vides."
+            errorLabel.isHidden = false
             return
         }
         
         if chooseJobButton.title(for: .normal) == defaultButtonTitle || chooseJobButton.title(for: .normal) == "" {
             errorLabel.text = "Veuillez choisir votre métier."
+            errorLabel.isHidden = false
             return
         }
         
@@ -72,6 +77,7 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: email, password: password, lastName: lastName, firstName: firstName) { authResult, error in
             if let error = error, authResult == nil {
                 self.errorLabel.text = error
+                self.errorLabel.isHidden = false
                 return
             } else {
                 self.performSegue(withIdentifier: self.segueToSuccess, sender: self)

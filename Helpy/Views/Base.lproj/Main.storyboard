@@ -66,10 +66,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-or-wdJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="cb2-aP-IVi">
+                                <rect key="frame" x="40" y="281" width="334" height="334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cb2-aP-IVi" secondAttribute="height" id="m59-Rx-kgc"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cb2-aP-IVi" secondAttribute="trailing" constant="40" id="3Hd-Iq-hpB"/>
                             <constraint firstItem="X80-Pz-t3K" firstAttribute="width" secondItem="4DI-TP-oM4" secondAttribute="width" id="8g3-0Q-qVv"/>
                             <constraint firstItem="nS4-IM-ymR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9uR-wC-95f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DI-TP-oM4" secondAttribute="trailing" constant="70" id="BBm-L6-zeM"/>
@@ -79,6 +86,7 @@
                             <constraint firstItem="X80-Pz-t3K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hww-gB-JbM"/>
                             <constraint firstItem="4DI-TP-oM4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="MbN-Ki-HAK"/>
                             <constraint firstItem="ahw-Gk-VMU" firstAttribute="top" secondItem="nS4-IM-ymR" secondAttribute="bottom" constant="48" id="N6b-t6-WAd"/>
+                            <constraint firstItem="cb2-aP-IVi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QeL-0L-br3"/>
                             <constraint firstAttribute="trailing" secondItem="jyh-or-wdJ" secondAttribute="trailing" id="Vhj-Tl-R1A"/>
                             <constraint firstAttribute="trailing" secondItem="ahw-Gk-VMU" secondAttribute="trailing" constant="10" id="cdW-Qm-Ooo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X80-Pz-t3K" secondAttribute="bottom" constant="100" id="g4V-wj-WLf"/>
@@ -87,12 +95,14 @@
                             <constraint firstItem="jyh-or-wdJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pY8-sG-uMb"/>
                             <constraint firstItem="shV-tt-a4r" firstAttribute="top" secondItem="4DI-TP-oM4" secondAttribute="bottom" constant="10" id="syS-dg-zBa"/>
                             <constraint firstItem="nS4-IM-ymR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uCa-K9-PwP"/>
+                            <constraint firstItem="cb2-aP-IVi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="vnr-9f-GMj"/>
                             <constraint firstItem="shV-tt-a4r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y8o-Rs-aEY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zk6-qP-3r0"/>
                     <connections>
-                        <outlet property="videoUIImageView" destination="jyh-or-wdJ" id="jSl-jf-tl4"/>
+                        <outlet property="backgroundImageView" destination="jyh-or-wdJ" id="jSl-jf-tl4"/>
+                        <outlet property="logoImageView" destination="cb2-aP-IVi" id="DA2-Lw-B1F"/>
                         <segue destination="0f7-Pp-UxX" kind="show" identifier="welcomeToProHome" id="6cX-2Y-tzc"/>
                         <segue destination="hGa-D0-lig" kind="show" identifier="welcomeToClientHome" id="xCK-M5-sqh"/>
                     </connections>
@@ -142,7 +152,7 @@
                                     <action selector="signInDidTouch:" destination="1vW-kh-md8" eventType="touchUpInside" id="L2T-ee-0wu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-BK-ozl">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-BK-ozl">
                                 <rect key="frame" x="20" y="332" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -324,7 +334,7 @@
                                     <action selector="signUpDidTouch:" destination="IfY-18-BZs" eventType="touchUpInside" id="HtF-bg-ldV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJb-Cp-ht5">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJb-Cp-ht5">
                                 <rect key="frame" x="20" y="757.5" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -525,7 +535,7 @@
                                     <action selector="signInDidTouch:" destination="RfC-oR-nfb" eventType="touchUpInside" id="1fO-2g-IgW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD5-iR-4NC">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD5-iR-4NC">
                                 <rect key="frame" x="20" y="332" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -681,6 +691,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pas d'annonces en cours" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InB-HJ-5Zv">
+                                        <rect key="frame" x="95" y="194" width="234" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon tableau de bord" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QH-Ec-hVR">
                                         <rect key="frame" x="20" y="20" width="374" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
@@ -691,19 +707,29 @@
                                         <rect key="frame" x="10" y="355.5" width="394" height="315.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pas de conversations récentes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFs-5j-bxY">
+                                        <rect key="frame" x="64" y="500.5" width="286" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="6SW-DF-jiU" secondAttribute="bottom" constant="20" id="1d6-wt-pkZ"/>
+                                    <constraint firstItem="YFs-5j-bxY" firstAttribute="centerX" secondItem="VFm-gM-U4C" secondAttribute="centerX" id="4t3-Yk-Twr"/>
                                     <constraint firstItem="ImX-Cd-98k" firstAttribute="top" secondItem="BcI-iW-EFM" secondAttribute="bottom" constant="8" symbolic="YES" id="B9E-sx-DzU"/>
                                     <constraint firstItem="BcI-iW-EFM" firstAttribute="leading" secondItem="0OV-k0-JLg" secondAttribute="leading" constant="20" id="Hic-xN-0za"/>
                                     <constraint firstItem="6SW-DF-jiU" firstAttribute="leading" secondItem="0OV-k0-JLg" secondAttribute="leading" constant="20" id="SuM-rG-mOX"/>
+                                    <constraint firstItem="InB-HJ-5Zv" firstAttribute="centerX" secondItem="ImX-Cd-98k" secondAttribute="centerX" id="TaE-QA-hTF"/>
                                     <constraint firstItem="VFm-gM-U4C" firstAttribute="top" secondItem="6SW-DF-jiU" secondAttribute="bottom" constant="8" symbolic="YES" id="UGC-2e-4Ow"/>
+                                    <constraint firstItem="YFs-5j-bxY" firstAttribute="centerY" secondItem="VFm-gM-U4C" secondAttribute="centerY" id="Xpv-I4-s1u"/>
                                     <constraint firstItem="VFm-gM-U4C" firstAttribute="leading" secondItem="0OV-k0-JLg" secondAttribute="leading" constant="10" id="eJE-8Y-HwJ"/>
                                     <constraint firstAttribute="trailing" secondItem="BcI-iW-EFM" secondAttribute="trailing" constant="20" id="lG9-7G-Vly"/>
                                     <constraint firstItem="4QH-Ec-hVR" firstAttribute="top" secondItem="Eeb-yL-d5g" secondAttribute="top" constant="20" id="pHZ-DV-4Ud"/>
                                     <constraint firstItem="BcI-iW-EFM" firstAttribute="top" secondItem="4QH-Ec-hVR" secondAttribute="bottom" constant="20" id="rRl-JE-1QW"/>
                                     <constraint firstItem="ImX-Cd-98k" firstAttribute="leading" secondItem="0OV-k0-JLg" secondAttribute="leading" constant="10" id="so6-ae-sIn"/>
                                     <constraint firstItem="4QH-Ec-hVR" firstAttribute="leading" secondItem="Eeb-yL-d5g" secondAttribute="leading" constant="20" id="tvf-oj-Rgc"/>
+                                    <constraint firstItem="InB-HJ-5Zv" firstAttribute="centerY" secondItem="ImX-Cd-98k" secondAttribute="centerY" id="wvG-BN-FUw"/>
                                     <constraint firstItem="6SW-DF-jiU" firstAttribute="top" secondItem="ImX-Cd-98k" secondAttribute="bottom" constant="8" symbolic="YES" id="xmC-CZ-3dv"/>
                                     <constraint firstItem="Eeb-yL-d5g" firstAttribute="trailing" secondItem="4QH-Ec-hVR" secondAttribute="trailing" constant="20" id="z3a-2M-lVl"/>
                                     <constraint firstAttribute="trailing" secondItem="6SW-DF-jiU" secondAttribute="trailing" constant="20" id="z9p-Gu-9t4"/>
@@ -731,6 +757,8 @@
                     <connections>
                         <outlet property="myConversationsTableView" destination="VFm-gM-U4C" id="iBs-0i-bOn"/>
                         <outlet property="myPostsCollectionView" destination="ImX-Cd-98k" id="nE4-NM-DJJ"/>
+                        <outlet property="noConversationsLabel" destination="YFs-5j-bxY" id="m8E-S1-AQC"/>
+                        <outlet property="noPostLabel" destination="InB-HJ-5Zv" id="png-6M-hbF"/>
                         <segue destination="wzO-Jn-h8g" kind="show" identifier="proHomeToPostDetails" id="3As-6b-uVd"/>
                         <segue destination="gnD-ti-kbs" kind="show" identifier="proHomepageToChat" id="fsK-PG-A5i"/>
                     </connections>
@@ -1583,7 +1611,7 @@
                                     <action selector="signUpDidTouch:" destination="IfY-18-BZs" eventType="touchUpInside" id="P7g-lE-nBQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-nq-zeD">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-nq-zeD">
                                 <rect key="frame" x="20" y="602" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -2306,7 +2334,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="fsK-PG-A5i"/>
         <segue reference="3As-6b-uVd"/>
-        <segue reference="KGL-gP-Zup"/>
+        <segue reference="xCK-M5-sqh"/>
         <segue reference="RVc-dH-LVX"/>
         <segue reference="6cX-2Y-tzc"/>
     </inferredMetricsTieBreakers>
@@ -2315,6 +2343,7 @@
         <image name="Helpy" width="2000" height="1000"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="launchscreen" width="1170" height="2532"/>
+        <image name="loading" width="2000" height="2000"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>

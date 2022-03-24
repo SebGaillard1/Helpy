@@ -43,6 +43,7 @@ class UserSignInViewController: UIViewController {
             !password.isEmpty
         else {
             errorLabel.text = "Le mot de passe ou l'e-mail ne peuvent être vide"
+            errorLabel.isHidden = false
             return
         }
         sender.isEnabled = false
@@ -55,6 +56,7 @@ class UserSignInViewController: UIViewController {
                 self.performSegue(withIdentifier: self.signInToSuccess, sender: self)
             } else {
                 self.errorLabel.text = error
+                self.errorLabel.isHidden = false
                 sender.isEnabled = true
             }
             self.activityIndicator.isHidden = true

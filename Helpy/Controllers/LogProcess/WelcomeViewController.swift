@@ -11,7 +11,8 @@ import AVFoundation
 
 class WelcomeViewController: UIViewController {
     //MARK: - Outlets
-    @IBOutlet weak var videoUIImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     //MARK: - Properties
     var handle: AuthStateDidChangeListenerHandle?
@@ -23,17 +24,23 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        playVideo()
     }
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.hidesBackButton = false
+        navigationController?.navigationBar.isHidden = false
+        
         // 1
         handle = Auth.auth().addStateDidChangeListener { _, user in
           // 2
             guard let user = user else {
                 self.navigationController?.popToRootViewController(animated: true)
-                self.videoUIImageView.isHidden = true
+                self.backgroundImageView.isHidden = true
+                self.logoImageView.isHidden = true
                 return
             }
             
@@ -41,7 +48,6 @@ class WelcomeViewController: UIViewController {
                 if querySnapshot?.isEmpty == false && error == nil {
                     UIView.setAnimationsEnabled(false)
                     self.performSegue(withIdentifier: self.segueIdWelcomeToClientHome, sender: nil)
-                    self.videoUIImageView.isHidden = true
                 }
             }
             
@@ -49,9 +55,6 @@ class WelcomeViewController: UIViewController {
                 if querySnapshot?.isEmpty == false && error == nil {
                     UIView.setAnimationsEnabled(false)
                     self.performSegue(withIdentifier: self.segueIdWelcomeToProHome, sender: nil)
-                    self.videoUIImageView.isHidden = true
-                } else {
-                    self.videoUIImageView.isHidden = true
                 }
             }
         }
@@ -59,23 +62,10 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
+        //self.hideImages()
         UIView.setAnimationsEnabled(true)
         
         guard let handle = handle else { return }
         Auth.auth().removeStateDidChangeListener(handle)
-    }
-    
-    private func playVideo() {
-        guard let path = Bundle.main.path(forResource: "launchVideo", ofType: "mp4") else {
-            print("Pas trouvé")
-            return }
-        let player = AVPlayer(url: URL(fileURLWithPath: path))
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = videoUIImageView.bounds
-//        playerLayer.contentsCenter = videoUIImageView.layer.contentsCenter
-//        playerLayer.videoGravity = .resizeAspectFill
-        videoUIImageView.layer.addSublayer(playerLayer)
-        player.play()
     }
 }

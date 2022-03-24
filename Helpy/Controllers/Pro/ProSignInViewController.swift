@@ -20,6 +20,13 @@ class ProSignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.hidesBackButton = false
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     @IBAction func signInDidTouch(_ sender: Any) {
         guard let email = emailTextField.text,
               let password = passwordTextField.text
@@ -30,8 +37,10 @@ class ProSignInViewController: UIViewController {
         FirebaseAuthManager.shared.signInUser(userType: .pro, withEmail: email, password: password) { error in
             if error == nil {
                 self.performSegue(withIdentifier: self.segueIdToProHome, sender: self)
+                self.errorLabel.isHidden = true
             } else {
                 self.errorLabel.text = error
+                self.errorLabel.isHidden = false
             }
         }
     }

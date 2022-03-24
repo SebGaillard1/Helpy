@@ -54,7 +54,6 @@
 		57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5D27B7FA5A009AE36D /* LaunchScreen.storyboard */; };
 		57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF6927B7FA5A009AE36D /* HelpyTests.swift */; };
 		57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF8527B807D3009AE36D /* GoogleService-Info.plist */; };
-		57C00DD327CFC73A00B468DB /* launchVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 57C00DD227CFC54800B468DB /* launchVideo.mp4 */; };
 		57C00DD527D00AE300B468DB /* ClientTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */; };
 		57C00DD727D00D1F00B468DB /* ClientMyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C00DD627D00D1F00B468DB /* ClientMyAccountViewController.swift */; };
 		57C00DDC27D011CD00B468DB /* ClientMyAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C00DDA27D011CD00B468DB /* ClientMyAccountTableViewCell.swift */; };
@@ -152,7 +151,6 @@
 		57BACF6527B7FA5A009AE36D /* HelpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BACF6927B7FA5A009AE36D /* HelpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpyTests.swift; sourceTree = "<group>"; };
 		57BACF8527B807D3009AE36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		57C00DD227CFC54800B468DB /* launchVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = launchVideo.mp4; sourceTree = "<group>"; };
 		57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTabBarViewController.swift; sourceTree = "<group>"; };
 		57C00DD627D00D1F00B468DB /* ClientMyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMyAccountViewController.swift; sourceTree = "<group>"; };
 		57C00DDA27D011CD00B468DB /* ClientMyAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMyAccountTableViewCell.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				57BACF5427B7FA59009AE36D /* SceneDelegate.swift */,
 				5765A15927B84E9A0024B828 /* Constants.swift */,
 				57BACF5B27B7FA5A009AE36D /* Assets.xcassets */,
-				57C00DD227CFC54800B468DB /* launchVideo.mp4 */,
 				57C4215127B95198001A93B1 /* categories.txt */,
 				57BACF6027B7FA5A009AE36D /* Info.plist */,
 				57BACF8527B807D3009AE36D /* GoogleService-Info.plist */,
@@ -498,7 +495,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				57881EE727E27DA7007C2BB0 /* ConversationTableViewCell.xib in Resources */,
-				57C00DD327CFC73A00B468DB /* launchVideo.mp4 in Resources */,
 				57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */,
 				57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */,
 				57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */,

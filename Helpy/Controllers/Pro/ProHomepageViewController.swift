@@ -13,14 +13,29 @@ class ProHomepageViewController: UIViewController {
     @IBOutlet weak var myPostsCollectionView: UICollectionView!
     @IBOutlet weak var myConversationsTableView: UITableView!
     
+    @IBOutlet weak var noPostLabel: UILabel!
+    @IBOutlet weak var noConversationsLabel: UILabel!
+    
     //MARK: - Properties
     let postCellId = "postCell"
     let messageCellId = "conversationCell"
     
-    var myPosts = [Post]()
+    var myPosts = [Post]() {
+        didSet {
+            if !myPosts.isEmpty {
+                noPostLabel.isHidden = true
+            }
+        }
+    }
     var selectedPost: Post?
     
-    var myConversations = [Conversation]()
+    var myConversations = [Conversation]() {
+        didSet {
+            if !myConversations.isEmpty {
+                noConversationsLabel.isHidden = true
+            }
+        }
+    }
     var selectedConversation: Conversation?
     
     //MARK: - View life cycle
