@@ -8,17 +8,13 @@
 import Firebase
 
 struct Professional {
-    let ref: DatabaseReference?
-    let key: String
     let lastName: String
     let firstName: String
     let email: String
     let uid: String
     
     // MARK: Initialize with Raw Data
-    init(lastName: String, firstName: String, email: String, uid: String, key: String = "") {
-        self.ref = nil
-        self.key = key
+    init(lastName: String, firstName: String, email: String, uid: String) {
         self.lastName = lastName
         self.firstName = firstName
         self.email = email
@@ -36,8 +32,6 @@ struct Professional {
         else {
             return nil
         }
-        self.ref = snapshot.ref
-        self.key = snapshot.key
         self.lastName = lastName
         self.firstName = firstName
         self.email = email

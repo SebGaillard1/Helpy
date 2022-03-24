@@ -14,7 +14,7 @@ struct Client {
     let uid: String
     
     // MARK: Initialize with Raw Data
-    init(lastName: String, firstName: String, email: String, uid: String, key: String = "") {
+    init(lastName: String, firstName: String, email: String, uid: String) {
         self.lastName = lastName
         self.firstName = firstName
         self.email = email

@@ -340,17 +340,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3E-5a-zR3">
-                                <rect key="frame" x="20" y="471" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mgq-Jr-hpr"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Choisir mon métier"/>
-                                <connections>
-                                    <action selector="chooseJobDidTouch:" destination="WST-jG-DHD" eventType="touchUpInside" id="xb8-8P-ICD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3tz-Is-dqG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -364,7 +353,6 @@
                             <constraint firstItem="hoh-N9-9XO" firstAttribute="leading" secondItem="2WS-Kf-gGQ" secondAttribute="leading" id="DMb-Sp-Yjv"/>
                             <constraint firstItem="SJb-Cp-ht5" firstAttribute="trailing" secondItem="2WS-Kf-gGQ" secondAttribute="trailing" id="FM8-Mw-zSV"/>
                             <constraint firstItem="Fs8-CH-asB" firstAttribute="leading" secondItem="2WS-Kf-gGQ" secondAttribute="leading" id="GSU-Ib-QsJ"/>
-                            <constraint firstItem="s3E-5a-zR3" firstAttribute="trailing" secondItem="2WS-Kf-gGQ" secondAttribute="trailing" id="IVF-qe-iby"/>
                             <constraint firstItem="3tz-Is-dqG" firstAttribute="trailing" secondItem="2WS-Kf-gGQ" secondAttribute="trailing" constant="20" id="IX9-oI-3Tz"/>
                             <constraint firstItem="KeO-c8-xQh" firstAttribute="top" secondItem="2WS-Kf-gGQ" secondAttribute="bottom" constant="4" id="IzV-Bm-kwI"/>
                             <constraint firstItem="KeO-c8-xQh" firstAttribute="trailing" secondItem="2WS-Kf-gGQ" secondAttribute="trailing" id="J0Y-6G-2zG"/>
@@ -385,8 +373,6 @@
                             <constraint firstItem="KeO-c8-xQh" firstAttribute="leading" secondItem="2WS-Kf-gGQ" secondAttribute="leading" id="nY9-qF-uIR"/>
                             <constraint firstItem="3tz-Is-dqG" firstAttribute="trailing" secondItem="clH-gB-MGN" secondAttribute="trailing" constant="20" id="puF-lZ-OOZ"/>
                             <constraint firstItem="YGT-pb-ZYU" firstAttribute="trailing" secondItem="2WS-Kf-gGQ" secondAttribute="trailing" id="s2i-3r-Xrp"/>
-                            <constraint firstItem="s3E-5a-zR3" firstAttribute="leading" secondItem="2WS-Kf-gGQ" secondAttribute="leading" id="sFQ-7q-h7P"/>
-                            <constraint firstItem="s3E-5a-zR3" firstAttribute="top" secondItem="FY2-aI-jev" secondAttribute="bottom" constant="16" id="sLW-ZU-XHB"/>
                             <constraint firstItem="2WS-Kf-gGQ" firstAttribute="leading" secondItem="3tz-Is-dqG" secondAttribute="leading" constant="20" id="sUB-MR-CFt"/>
                             <constraint firstItem="hpW-kn-vdI" firstAttribute="trailing" secondItem="2WS-Kf-gGQ" secondAttribute="trailing" id="tmi-f7-zGP"/>
                             <constraint firstItem="6pP-KZ-k7O" firstAttribute="trailing" secondItem="2WS-Kf-gGQ" secondAttribute="trailing" id="uM8-T3-sy9"/>
@@ -398,7 +384,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="1lO-L8-UUk"/>
                     <connections>
-                        <outlet property="chooseJobButton" destination="s3E-5a-zR3" id="Fs2-uB-6fY"/>
                         <outlet property="createAccountButton" destination="clH-gB-MGN" id="CPO-MD-GRD"/>
                         <outlet property="emailTextField" destination="Fs8-CH-asB" id="sbf-k1-Whd"/>
                         <outlet property="errorLabel" destination="SJb-Cp-ht5" id="Yr4-49-CLC"/>
@@ -406,59 +391,12 @@
                         <outlet property="lastNameTextField" destination="KeO-c8-xQh" id="xBt-Xe-jv8"/>
                         <outlet property="passwordConfirmationTextField" destination="FY2-aI-jev" id="s3g-lT-7RB"/>
                         <outlet property="passwordTextField" destination="hpW-kn-vdI" id="XDa-SS-Vrl"/>
-                        <segue destination="TgL-2B-aWi" kind="show" identifier="proSignUpToJobs" id="GBW-4O-Iud"/>
                         <segue destination="0f7-Pp-UxX" kind="show" identifier="proSignUpToProHome" id="lfN-dd-JJY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k75-wq-duX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1677" y="1894"/>
-        </scene>
-        <!--Jobs Table View Controller-->
-        <scene sceneID="QLC-D2-S9y">
-            <objects>
-                <tableViewController id="TgL-2B-aWi" customClass="JobsTableViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ltC-Ne-Lg9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Rechercher un métier" id="iAl-Wu-1in">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jobCell" textLabel="ROg-Ae-Hj9" style="IBUITableViewCellStyleDefault" id="IWD-Ho-WAY">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IWD-Ho-WAY" id="lf1-7E-NpA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ROg-Ae-Hj9">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TgL-2B-aWi" id="pAv-sv-JoB"/>
-                            <outlet property="delegate" destination="TgL-2B-aWi" id="7Uo-d2-xml"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="PTi-lH-X3w"/>
-                    <connections>
-                        <outlet property="searchBar" destination="iAl-Wu-1in" id="YSx-bf-RZj"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jqs-5L-KNm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1677" y="2581"/>
         </scene>
         <!--Mon compte-->
         <scene sceneID="59J-pK-yTL">
@@ -1726,22 +1664,6 @@
             </objects>
             <point key="canvasLocation" x="4735" y="-577"/>
         </scene>
-        <!--Favoris-->
-        <scene sceneID="geo-Rw-QQQ">
-            <objects>
-                <viewController id="GU0-tX-bSm" customClass="ClientFavoritesViewController" customModule="Helpy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BAU-Bc-Vm6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="oaD-4y-Sgt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favoris" image="star" catalog="system" id="XvX-9K-oIW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="84p-5a-fMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4735" y="-1272"/>
-        </scene>
         <!--Client Tab Bar View Controller-->
         <scene sceneID="k8O-ie-5yK">
             <objects>
@@ -1754,7 +1676,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="bLk-sA-tRa" kind="relationship" relationship="viewControllers" id="H0p-Sw-KT5"/>
-                        <segue destination="GU0-tX-bSm" kind="relationship" relationship="viewControllers" id="bTe-Q3-5by"/>
                         <segue destination="cAL-uE-Pem" kind="relationship" relationship="viewControllers" id="RVc-dH-LVX"/>
                         <segue destination="ACe-ga-Mcb" kind="relationship" relationship="viewControllers" id="BYr-ab-TYB"/>
                     </connections>
@@ -2077,7 +1998,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnT-Ck-KQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4741" y="-1973"/>
+            <point key="canvasLocation" x="4329" y="-1557"/>
         </scene>
         <!--Post Details View Controller-->
         <scene sceneID="sdq-h2-YcO">
@@ -2333,10 +2254,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fsK-PG-A5i"/>
-        <segue reference="3As-6b-uVd"/>
+        <segue reference="zEV-Pg-VI9"/>
         <segue reference="xCK-M5-sqh"/>
         <segue reference="RVc-dH-LVX"/>
-        <segue reference="6cX-2Y-tzc"/>
+        <segue reference="lfN-dd-JJY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.61070382599999995" green="0.31954550739999998" blue="0.87734234330000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
@@ -2350,7 +2271,6 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" width="1200" height="1200"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="BrandPurple">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

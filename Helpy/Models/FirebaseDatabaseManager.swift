@@ -29,13 +29,13 @@ final class FirebaseDatabaseManager {
         
         switch userType {
         case .client:
-            let client = Client(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid, key: "")
+            let client = Client(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid)
             
             db.collection("clients").addDocument(data: client.toDictionnary()) { error in
                 error != nil ? completion(error?.localizedDescription ?? "Impossible de créer le compte") : completion(nil)
             }
         case .pro:
-            let professional = Professional(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid, key: "")
+            let professional = Professional(lastName: lastName, firstName: firstName, email: authResult.user.email!, uid: authResult.user.uid)
             
             db.collection("professionals").addDocument(data: professional.toDictionnary()) { error in
                 error != nil ? completion(error?.localizedDescription ?? "Impossible de créer le compte") : completion(nil)

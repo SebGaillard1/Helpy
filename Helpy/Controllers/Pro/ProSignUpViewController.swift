@@ -8,14 +8,13 @@
 import UIKit
 import Firebase
 
-class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate {
+class ProSignUpViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
-    @IBOutlet weak var chooseJobButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var createAccountButton: UIButton!
@@ -30,8 +29,6 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         view.hideKeyboardOnTap()
-
-        defaultButtonTitle = chooseJobButton.title(for: .normal)
     }
     
     
@@ -64,16 +61,6 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
             return
         }
         
-        if chooseJobButton.title(for: .normal) == defaultButtonTitle || chooseJobButton.title(for: .normal) == "" {
-            errorLabel.text = "Veuillez choisir votre métier."
-            errorLabel.isHidden = false
-            return
-        }
-        
-        guard let job = chooseJobButton.title(for: .normal) else {
-            return
-        }
-        
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: email, password: password, lastName: lastName, firstName: firstName) { authResult, error in
             if let error = error, authResult == nil {
                 self.errorLabel.text = error
@@ -83,20 +70,5 @@ class ProSignUpViewController: UIViewController, JobsTableViewControllerDelegate
                 self.performSegue(withIdentifier: self.segueToSuccess, sender: self)
             }
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueToJobs {
-            let destinationVC = segue.destination as! JobsTableViewController
-            destinationVC.delegate = self
-        }
-    }
-
-    @IBAction func chooseJobDidTouch(_ sender: Any) {
-        performSegue(withIdentifier: segueToJobs, sender: self)
-    }
-    
-    internal func sendJobSelected(job: String) {
-        chooseJobButton.setTitle(job, for: .normal)
     }
 }
