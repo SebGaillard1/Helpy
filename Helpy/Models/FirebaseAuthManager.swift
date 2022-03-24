@@ -11,9 +11,7 @@ import Firebase
 class FirebaseAuthManager {
     //MARK: - Properties
     static let shared = FirebaseAuthManager()
-    
-    //var handle: AuthStateDidChangeListenerHandle?
-    
+        
     private init() {}
     
     func createUser(userType: UserType, withEmail email: String, password: String, lastName: String, firstName: String, completion: @escaping (_ authResult: AuthDataResult?, _ error: String?) -> Void) {

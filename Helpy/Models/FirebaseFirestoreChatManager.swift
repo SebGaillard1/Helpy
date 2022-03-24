@@ -32,37 +32,31 @@ final class FirebaseFirestoreChatManager {
         }
     
         ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true)
-        setLastMessage(message: message)
+        saveLastMessage(message: message)
         saveMessageInReceiverCollection(message: message)
     }
     
-    private func setLastMessage(message: Message) {
-        db.collection("chats").document(message.senderUid).collection("lastsMessages").whereField("receiverUid", isEqualTo: message.receiverUid).getDocuments { snapshot, error in
+    private func saveLastMessage(message: Message) {
+        db.collection("chats").document(message.senderUid).collection("lastsMessages").whereField("receiverUid", in: [message.receiverUid, message.senderUid]).getDocuments { snapshot, error in
             guard let snapshot = snapshot, !snapshot.documents.isEmpty, error == nil else {
                 self.db.collection("chats").document(message.senderUid).collection("lastsMessages").addDocument(data: message.toDictionnary())
                 return
             }
             
+
             let ref = snapshot.documents[0].reference
             ref.setData(message.toDictionnary())
         }
     }
     
     private func saveMessageInReceiverCollection(message: Message) {
-        let ref = db.collection("chats").document(message.receiverUid).collection("receiversUid").document(message.senderUid).collection("messages").addDocument(data: message.toDictionnary()) { error in
-    //            guard error == nil else {
-    //                completion(error?.localizedDescription ?? "Impossible d'envoyer votre message")
-    //                return
-    //            }
-    //            completion(nil)
-        }
-
+        let ref = db.collection("chats").document(message.receiverUid).collection("receiversUid").document(message.senderUid).collection("messages").addDocument(data: message.toDictionnary())
         ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true)
-        setLastMessageForReceiver(message: message)
+        setLastMessageInReceiverCollection(message: message)
     }
     
-    private func setLastMessageForReceiver(message: Message) {
-        db.collection("chats").document(message.receiverUid).collection("lastsMessages").whereField("receiverUid", isEqualTo: message.receiverUid).getDocuments { snapshot, error in
+    private func setLastMessageInReceiverCollection(message: Message) {
+        db.collection("chats").document(message.receiverUid).collection("lastsMessages").whereField("receiverUid", in: [message.receiverUid, message.senderUid]).getDocuments { snapshot, error in
             guard let snapshot = snapshot, !snapshot.documents.isEmpty, error == nil else {
                 self.db.collection("chats").document(message.receiverUid).collection("lastsMessages").addDocument(data: message.toDictionnary())
                 return
