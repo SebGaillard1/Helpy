@@ -43,7 +43,6 @@ final class FirebaseFirestoreChatManager {
                 return
             }
             
-
             let ref = snapshot.documents[0].reference
             ref.setData(message.toDictionnary())
         }
@@ -97,6 +96,7 @@ final class FirebaseFirestoreChatManager {
             return
         }
     
+        print(db.collection("chats").document(currentUid).collection("lastsMessages").path)
         db.collection("chats").document(currentUid).collection("lastsMessages").addSnapshotListener { snapshot, error in
             guard let snapshot = snapshot, error == nil else {
                 completion("Impossible de récupérer les conversations !", [])

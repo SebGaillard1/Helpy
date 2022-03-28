@@ -38,6 +38,7 @@
 		5765A15E27B852830024B828 /* UserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15D27B852830024B828 /* UserSignUpViewController.swift */; };
 		5765A16027B8557F0024B828 /* ClientHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A15F27B8557F0024B828 /* ClientHomepageViewController.swift */; };
 		5765A16227B856FD0024B828 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765A16127B856FD0024B828 /* UserSignInViewController.swift */; };
+		5776650827ECDB37006021C4 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5776650727ECDB37006021C4 /* IQKeyboardManagerSwift */; };
 		57881ED727E21C6D007C2BB0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881ED627E21C6D007C2BB0 /* ChatViewController.swift */; };
 		57881EDB27E21D0D007C2BB0 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EDA27E21D0D007C2BB0 /* MessageCell.swift */; };
 		57881EDD27E24596007C2BB0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57881EDC27E24596007C2BB0 /* Message.swift */; };
@@ -188,6 +189,7 @@
 				57CD9A6C27E61BCA00B9E8D9 /* FirebaseAuth in Frameworks */,
 				5703EF1827D52A6900541577 /* MessageKit in Frameworks */,
 				5703EF1D27D52EC700541577 /* JGProgressHUD in Frameworks */,
+				5776650827ECDB37006021C4 /* IQKeyboardManagerSwift in Frameworks */,
 				57CD9A7227E61BCA00B9E8D9 /* FirebaseStorage in Frameworks */,
 				4AF3A9ACC381CCC1E539E5A0 /* Pods_Helpy.framework in Frameworks */,
 				57CD9A7027E61BCA00B9E8D9 /* FirebaseFirestore in Frameworks */,
@@ -419,6 +421,7 @@
 				57CD9A6D27E61BCA00B9E8D9 /* FirebaseDatabase */,
 				57CD9A6F27E61BCA00B9E8D9 /* FirebaseFirestore */,
 				57CD9A7127E61BCA00B9E8D9 /* FirebaseStorage */,
+				5776650727ECDB37006021C4 /* IQKeyboardManagerSwift */,
 			);
 			productName = Helpy;
 			productReference = 57BACF4F27B7FA59009AE36D /* Helpy.app */;
@@ -475,6 +478,7 @@
 				5703EF1627D52A6900541577 /* XCRemoteSwiftPackageReference "MessageKit" */,
 				5703EF1B27D52EC700541577 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				57CD9A6827E61BCA00B9E8D9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5776650627ECDB37006021C4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 57BACF5027B7FA59009AE36D /* Products */;
 			projectDirPath = "";
@@ -959,6 +963,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		5776650627ECDB37006021C4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
 		57CD9A6827E61BCA00B9E8D9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -979,6 +991,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5703EF1B27D52EC700541577 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
+		};
+		5776650727ECDB37006021C4 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5776650627ECDB37006021C4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		57CD9A6927E61BCA00B9E8D9 /* FirebaseAppCheck */ = {
 			isa = XCSwiftPackageProductDependency;

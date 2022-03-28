@@ -19,7 +19,7 @@ class AuthTestCase: XCTestCase {
     }
     
     func testCreateClient() {
-        let exp = self.expectation(description: "Waiting for async operation")
+        let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "email@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)
@@ -30,7 +30,7 @@ class AuthTestCase: XCTestCase {
     }
     
     func testCreateClientWhenAlreadyExisting() {
-        let exp = self.expectation(description: "Waiting for async operation")
+        let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "email3@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)
@@ -43,9 +43,9 @@ class AuthTestCase: XCTestCase {
         
         wait(for: [exp], timeout: 3)
     }
-    
+
     func testSignInClient() {
-        let exp = self.expectation(description: "Waiting for async operation")
+        let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "email2@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)
@@ -62,31 +62,30 @@ class AuthTestCase: XCTestCase {
         }
         wait(for: [exp], timeout: 3)
     }
-    
+
     func testSignInNonExistingClient() {
-        let exp = self.expectation(description: "Waiting for async operation")
-        FirebaseAuthManager.shared.signInUser(userType: .client, withEmail: "nonexistingemail@exemple.fr", password: self.password) { error in
+        let exp = XCTestExpectation(description: "wait")
+        FirebaseAuthManager.shared.signInUser(userType: .client, withEmail: "nonertretil@exemple.fr", password: self.password) { error in
                 XCTAssertNotNil(error)
-                XCTAssertNil(Auth.auth().currentUser?.uid)
                 exp.fulfill()
             }
-        
+
         wait(for: [exp], timeout: 3)
     }
-    
+
     func testCreatePro() {
-        let exp = self.expectation(description: "Waiting for async operation")
+        let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: "emailpro@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)
             exp.fulfill()
         }
-        
+
         wait(for: [exp], timeout: 3)
     }
-    
+
     func testCreateProWhenAlreadyExisting() {
-        let exp = self.expectation(description: "Waiting for async operation")
+        let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: "emailpro3@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)
@@ -96,12 +95,12 @@ class AuthTestCase: XCTestCase {
                 exp.fulfill()
             }
         }
-        
+
         wait(for: [exp], timeout: 3)
     }
-    
+
     func testSignInPro() {
-        let exp = self.expectation(description: "Waiting for async operation")
+        let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: "emailpro2@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)

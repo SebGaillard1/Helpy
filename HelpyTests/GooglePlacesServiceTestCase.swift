@@ -41,7 +41,7 @@ class GooglePlacesServiceTestCase: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
     
     func testGivenErrorAndNoDataWhenFetchingCityAndPostalCodeThenShouldFail() {
@@ -61,7 +61,7 @@ class GooglePlacesServiceTestCase: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
     
     func testGivenGoodDataBadResponseNoErrorWhenFetchingCityAndPostalCodeThenShouldFail() {
@@ -81,7 +81,7 @@ class GooglePlacesServiceTestCase: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
 
     func testGivenIncorrectDataGoodResponseNoErrorWhenFetchingCityAndPostalCodeThenShouldFail() {
@@ -101,6 +101,6 @@ class GooglePlacesServiceTestCase: XCTestCase {
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
 }
