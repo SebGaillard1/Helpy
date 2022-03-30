@@ -46,8 +46,9 @@ final class FirebaseDatabaseManager {
     func getProName(forUid uid: String, completion: @escaping (_ name: String?) -> Void) {
         db.collection("professionals").whereField("uid", isEqualTo: uid).getDocuments { snapshot, error in
             guard error == nil,
-                  let doc = snapshot?.documents[0],
-                  let name = doc["firstName"] as? String else {
+                  let snapshot = snapshot,
+                  !snapshot.documents.isEmpty,
+                  let name = snapshot.documents[0]["firstName"] as? String else {
                 completion(nil)
                 return
             }
@@ -86,6 +87,7 @@ final class FirebaseDatabaseManager {
         savePostImage(image: image) { imageDowndloadLink, error in
             guard !imageDowndloadLink.isEmpty, error == nil else {
                 // Failed to save or get the image url
+                //print(error)
                 completion(error)
                 return
             }
@@ -96,15 +98,15 @@ final class FirebaseDatabaseManager {
             let ref = self.db.collection("posts").addDocument(data: post.toDictionnary()) { error in
                 if let error = error {
                     completion(error.localizedDescription)
-                } else {
-                    completion(nil)
+                    return
                 }
             }
+            
             // Add time
-            ref.updateData(["postDate": FieldValue.serverTimestamp()])
+            ref.updateData(["postDate": FieldValue.serverTimestamp()]) { error in
+                error == nil ? completion(nil) : completion(error?.localizedDescription ?? "Impossible d'enregistrer l'heure de publication")
+            }
         }
-        
-        
     }
     
     func savePostImage(image: UIImage, completion: @escaping (_ imageDowndloadLink: String, _ error: String?) -> Void) {
@@ -117,9 +119,10 @@ final class FirebaseDatabaseManager {
         let ref = storageRef.child(path)
         
         ref.putData(imageData, metadata: nil) { _, error in
-            if let error = error {
-                completion("", error.localizedDescription)
-            } else {
+//            if let error = error {
+//                print(error)
+//                completion("", error.localizedDescription)
+            //} else {
                 self.storageRef.child(path).downloadURL { url, error in
                     guard let url = url, error == nil else {
                         completion("", error?.localizedDescription)
@@ -127,7 +130,7 @@ final class FirebaseDatabaseManager {
                     }
                     completion(url.absoluteString, nil)
                 }
-            }
+            //}
         }
     }
     
@@ -161,7 +164,7 @@ final class FirebaseDatabaseManager {
                 completion([])
                 return
             }
-            
+            print(snapshot.documents.count)
             snapshot.documents.forEach { doc in
                 if let newPost = Post(dictionnary: doc.data()) {
                     posts.append(newPost)

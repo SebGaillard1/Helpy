@@ -15,7 +15,7 @@ class AuthTestCase: XCTestCase {
     override func tearDown() {
         super.tearDown()
         
-        Auth.auth().currentUser?.delete()
+        //Auth.auth().currentUser?.delete()
     }
     
     func testCreateClient() {

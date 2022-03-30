@@ -28,41 +28,55 @@ final class FirebaseFirestoreChatManager {
                 completion(error?.localizedDescription ?? "Impossible d'envoyer votre message")
                 return
             }
-            completion(nil)
         }
     
-        ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true)
-        saveLastMessage(message: message)
-        saveMessageInReceiverCollection(message: message)
+        ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true) { _ in
+            self.saveLastMessage(message: message) { success in
+                success ? completion(nil) : completion("Impossible d'envoyer le message")
+            }
+        }
     }
     
-    private func saveLastMessage(message: Message) {
+    private func saveLastMessage(message: Message, completion: @escaping (_ success: Bool) -> Void) {
         db.collection("chats").document(message.senderUid).collection("lastsMessages").whereField("receiverUid", in: [message.receiverUid, message.senderUid]).getDocuments { snapshot, error in
             guard let snapshot = snapshot, !snapshot.documents.isEmpty, error == nil else {
-                self.db.collection("chats").document(message.senderUid).collection("lastsMessages").addDocument(data: message.toDictionnary())
+                self.db.collection("chats").document(message.senderUid).collection("lastsMessages").addDocument(data: message.toDictionnary()) { _ in
+                    completion(true)
+                }
                 return
             }
             
             let ref = snapshot.documents[0].reference
-            ref.setData(message.toDictionnary())
+            ref.setData(message.toDictionnary()) { _ in
+                self.saveMessageInReceiverCollection(message: message) { success in
+                    completion(true)
+                }
+            }
         }
     }
     
-    private func saveMessageInReceiverCollection(message: Message) {
+    private func saveMessageInReceiverCollection(message: Message, completion: @escaping (_ success: Bool) -> Void) {
         let ref = db.collection("chats").document(message.receiverUid).collection("receiversUid").document(message.senderUid).collection("messages").addDocument(data: message.toDictionnary())
-        ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true)
-        setLastMessageInReceiverCollection(message: message)
+        ref.setData(["timestamp": FieldValue.serverTimestamp()], merge: true) { _ in
+            self.setLastMessageInReceiverCollection(message: message) { success in
+                completion(true)
+            }
+        }
     }
     
-    private func setLastMessageInReceiverCollection(message: Message) {
+    private func setLastMessageInReceiverCollection(message: Message, completion: @escaping (_ success: Bool) -> Void) {
         db.collection("chats").document(message.receiverUid).collection("lastsMessages").whereField("receiverUid", in: [message.receiverUid, message.senderUid]).getDocuments { snapshot, error in
             guard let snapshot = snapshot, !snapshot.documents.isEmpty, error == nil else {
-                self.db.collection("chats").document(message.receiverUid).collection("lastsMessages").addDocument(data: message.toDictionnary())
+                self.db.collection("chats").document(message.receiverUid).collection("lastsMessages").addDocument(data: message.toDictionnary()) { _ in
+                    completion(true)
+                }
                 return
             }
             
             let ref = snapshot.documents[0].reference
-            ref.setData(message.toDictionnary())
+            ref.setData(message.toDictionnary()) { _ in
+                completion(true)
+            }
         }
 
     }
@@ -96,7 +110,6 @@ final class FirebaseFirestoreChatManager {
             return
         }
     
-        print(db.collection("chats").document(currentUid).collection("lastsMessages").path)
         db.collection("chats").document(currentUid).collection("lastsMessages").addSnapshotListener { snapshot, error in
             guard let snapshot = snapshot, error == nil else {
                 completion("Impossible de récupérer les conversations !", [])
