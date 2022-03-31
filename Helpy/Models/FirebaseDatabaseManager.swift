@@ -87,7 +87,6 @@ final class FirebaseDatabaseManager {
         savePostImage(image: image) { imageDowndloadLink, error in
             guard !imageDowndloadLink.isEmpty, error == nil else {
                 // Failed to save or get the image url
-                //print(error)
                 completion(error)
                 return
             }
@@ -119,17 +118,17 @@ final class FirebaseDatabaseManager {
         let ref = storageRef.child(path)
         
         ref.putData(imageData, metadata: nil) { _, error in
-//            if let error = error {
-//                print(error)
-//                completion("", error.localizedDescription)
+            //            if let error = error {
+            //                print(error)
+            //                completion("", error.localizedDescription)
             //} else {
-                self.storageRef.child(path).downloadURL { url, error in
-                    guard let url = url, error == nil else {
-                        completion("", error?.localizedDescription)
-                        return
-                    }
-                    completion(url.absoluteString, nil)
+            self.storageRef.child(path).downloadURL { url, error in
+                guard let url = url, error == nil else {
+                    completion("", error?.localizedDescription)
+                    return
                 }
+                completion(url.absoluteString, nil)
+            }
             //}
         }
     }
@@ -164,7 +163,7 @@ final class FirebaseDatabaseManager {
                 completion([])
                 return
             }
-            print(snapshot.documents.count)
+            
             snapshot.documents.forEach { doc in
                 if let newPost = Post(dictionnary: doc.data()) {
                     posts.append(newPost)
@@ -188,16 +187,24 @@ final class FirebaseDatabaseManager {
         }
     }
     
-    func getPostByLocation(center: CLLocationCoordinate2D, radiusInMeters: CLLocationDistance, completion: @escaping (_ posts: [Post]) -> Void) {
+    func getPostByLocation(category: String, center: CLLocationCoordinate2D, radiusInMeters: CLLocationDistance, completion: @escaping (_ posts: [Post]) -> Void) {
         // Each item in 'bounds' represents a startAt/endAt pair. We have to issue
         // a separate query for each pair. There can be up to 9 pairs of bounds
         // depending on overlap, but in most cases there are 4.
         let queryBounds = GFUtils.queryBounds(forLocation: center, withRadius: radiusInMeters)
         let queries = queryBounds.map { bound -> Query in
-            return db.collection("posts")
-                .order(by: "geohash")
-                .start(at: [bound.startValue])
-                .end(at: [bound.endValue])
+            if category != ""{
+                return db.collection("posts")
+                    .whereField("category", isEqualTo: category.capitalized)
+                    .order(by: "geohash")
+                    .start(at: [bound.startValue])
+                    .end(at: [bound.endValue])
+            } else {
+                return db.collection("posts")
+                    .order(by: "geohash")
+                    .start(at: [bound.startValue])
+                    .end(at: [bound.endValue])
+            }
         }
         
         var matchingDocs = [QueryDocumentSnapshot]()

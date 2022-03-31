@@ -17,6 +17,7 @@ class PostSearchViewController: UIViewController {
     //MARK: - Properties
     private var categories = Categories.categoriesArray
     private var filteredCategories = [String]()
+    private var selectedCategory = ""
     
     private var radiusInKm: CLLocationDistance?
     private var center: CLLocationCoordinate2D?
@@ -53,7 +54,7 @@ class PostSearchViewController: UIViewController {
         }
         
         let radiusInMeters = CLLocationDistance(Int(radiusInKm) * 1000)
-        FirebaseDatabaseManager.shared.getPostByLocation(center: center, radiusInMeters: radiusInMeters) { posts in
+        FirebaseDatabaseManager.shared.getPostByLocation(category: selectedCategory, center: center, radiusInMeters: radiusInMeters) { posts in
             if !posts.isEmpty {
                 self.postsSearchResult = posts
                 self.performSegue(withIdentifier: self.segueIdToSearchResult, sender: self)
@@ -99,7 +100,9 @@ extension PostSearchViewController: UITableViewDataSource {
 }
 
 extension PostSearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCategory = filteredCategories[indexPath.row]
+    }
 }
 
 extension PostSearchViewController: UISearchBarDelegate {

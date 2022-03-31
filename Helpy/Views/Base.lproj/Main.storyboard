@@ -209,7 +209,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En tant que professionnel, vous pouvez poster des annonces et nanani nanana. Touchez vos clients et blablabla" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC0-kk-lsc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En tant que prestataire de services, vous pouvez poster des annonces décrivant vos prestations. Chattez avec vos clients !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC0-kk-lsc">
                                 <rect key="frame" x="20" y="288" width="374" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1506,34 +1506,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IgG-UO-QCR">
-                                <rect key="frame" x="20" y="394" width="374" height="34"/>
+                                <rect key="frame" x="20" y="327" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZE-gD-T4k">
-                                <rect key="frame" x="20" y="369" width="374" height="21"/>
+                                <rect key="frame" x="20" y="302" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KaS-Ot-k3c">
-                                <rect key="frame" x="20" y="461" width="374" height="34"/>
+                                <rect key="frame" x="20" y="394" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mot de passe :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0w-Sh-2oi">
-                                <rect key="frame" x="20" y="436" width="374" height="21"/>
+                                <rect key="frame" x="20" y="369" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-Uv-iAV">
-                                <rect key="frame" x="20" y="528" width="374" height="34"/>
+                                <rect key="frame" x="20" y="461" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation mot de passe :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTK-2q-A8p">
-                                <rect key="frame" x="20" y="503" width="374" height="21"/>
+                                <rect key="frame" x="20" y="436" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1550,28 +1550,14 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-nq-zeD">
-                                <rect key="frame" x="20" y="602" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h4h-we-JCl" userLabel="Address Text Field">
-                                <rect key="frame" x="20" y="327" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="postal-code"/>
-                                <connections>
-                                    <action selector="addressTextFieldTouchDown:" destination="IfY-18-BZs" eventType="touchDown" id="WQu-sf-u7K"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-t6-3Qu">
-                                <rect key="frame" x="20" y="302" width="374" height="21"/>
+                                <rect key="frame" x="20" y="535" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I38-5L-JqZ"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="rl1-wv-nTl" secondAttribute="trailing" constant="20" id="0GR-yt-Fnm"/>
                             <constraint firstItem="nIl-dS-a7p" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="0aR-uW-B10"/>
@@ -1584,14 +1570,13 @@
                             <constraint firstItem="cTK-2q-A8p" firstAttribute="top" secondItem="KaS-Ot-k3c" secondAttribute="bottom" constant="8" id="Bd0-yr-BQX"/>
                             <constraint firstItem="LcM-Uv-iAV" firstAttribute="top" secondItem="cTK-2q-A8p" secondAttribute="bottom" constant="4" id="Bla-cH-dl9"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="H0w-Sh-2oi" secondAttribute="trailing" constant="20" id="CAK-aU-1Ia"/>
+                            <constraint firstItem="oZE-gD-T4k" firstAttribute="top" secondItem="AaG-2O-MG4" secondAttribute="bottom" constant="8" symbolic="YES" id="DY9-eP-eX2"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="LcM-Uv-iAV" secondAttribute="trailing" constant="20" id="Dca-Tu-fdE"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="KaS-Ot-k3c" secondAttribute="trailing" constant="20" id="Fdu-uD-RfO"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="nIl-dS-a7p" secondAttribute="trailing" constant="20" id="GVW-dX-VXc"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="iGS-nq-zeD" secondAttribute="trailing" constant="20" id="Hh8-js-9XT"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="diI-9O-Vrm" secondAttribute="trailing" constant="20" id="Ky1-zt-Qgy"/>
-                            <constraint firstItem="h4h-we-JCl" firstAttribute="top" secondItem="L9c-t6-3Qu" secondAttribute="bottom" constant="4" id="MMv-9E-6WP"/>
                             <constraint firstItem="H0w-Sh-2oi" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="Mdm-jC-Be0"/>
-                            <constraint firstItem="L9c-t6-3Qu" firstAttribute="top" secondItem="AaG-2O-MG4" secondAttribute="bottom" constant="8" id="OHu-WJ-2UC"/>
                             <constraint firstItem="iGS-nq-zeD" firstAttribute="top" secondItem="LcM-Uv-iAV" secondAttribute="bottom" constant="40" id="Tvc-rk-4Cc"/>
                             <constraint firstItem="Kbh-Py-ChK" firstAttribute="top" secondItem="nIl-dS-a7p" secondAttribute="bottom" constant="8" id="W1Z-hi-9L9"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="bottom" secondItem="rl1-wv-nTl" secondAttribute="bottom" constant="20" id="aqU-wD-CHC"/>
@@ -1601,15 +1586,10 @@
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="Kbh-Py-ChK" secondAttribute="trailing" constant="20" id="ebN-bk-0bd"/>
                             <constraint firstItem="diI-9O-Vrm" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="f7J-5S-MRV"/>
                             <constraint firstItem="cTK-2q-A8p" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="fF2-s2-j0U"/>
-                            <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="L9c-t6-3Qu" secondAttribute="trailing" constant="20" id="ggK-Oe-NMx"/>
                             <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="AaG-2O-MG4" secondAttribute="trailing" constant="20" id="k3o-6w-bdp"/>
                             <constraint firstItem="H0w-Sh-2oi" firstAttribute="top" secondItem="IgG-UO-QCR" secondAttribute="bottom" constant="8" id="nwH-IR-knX"/>
-                            <constraint firstItem="L9c-t6-3Qu" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="oca-sj-Q2Y"/>
                             <constraint firstItem="AaG-2O-MG4" firstAttribute="top" secondItem="Kbh-Py-ChK" secondAttribute="bottom" constant="4" id="oq1-Gt-5j9"/>
                             <constraint firstItem="diI-9O-Vrm" firstAttribute="top" secondItem="I38-5L-JqZ" secondAttribute="top" constant="80" id="pIz-48-ztv"/>
-                            <constraint firstItem="I38-5L-JqZ" firstAttribute="trailing" secondItem="h4h-we-JCl" secondAttribute="trailing" constant="20" id="pOr-Wk-17k"/>
-                            <constraint firstItem="oZE-gD-T4k" firstAttribute="top" secondItem="h4h-we-JCl" secondAttribute="bottom" constant="8" id="ral-ui-gru"/>
-                            <constraint firstItem="h4h-we-JCl" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="tSq-ij-3ft"/>
                             <constraint firstItem="KaS-Ot-k3c" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="vRl-Uz-ng2"/>
                             <constraint firstItem="oZE-gD-T4k" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="wdL-l4-q68"/>
                             <constraint firstItem="LcM-Uv-iAV" firstAttribute="leading" secondItem="I38-5L-JqZ" secondAttribute="leading" constant="20" id="z7U-xf-FKb"/>
@@ -1619,7 +1599,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="rF4-gl-Org"/>
                     <connections>
-                        <outlet property="adressTextField" destination="h4h-we-JCl" id="8fL-vv-9tP"/>
                         <outlet property="emailTextField" destination="IgG-UO-QCR" id="LUy-bX-RLT"/>
                         <outlet property="errorLabel" destination="iGS-nq-zeD" id="uu7-aA-ojx"/>
                         <outlet property="firstNameTextField" destination="AaG-2O-MG4" id="vnQ-YF-WeY"/>
@@ -1823,15 +1802,15 @@
                                 <rect key="frame" x="0.0" y="193" width="414" height="595"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="xTY-Qn-U7e" style="IBUITableViewCellStyleDefault" id="5g3-Jw-cl2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="xTY-Qn-U7e" style="IBUITableViewCellStyleDefault" id="5g3-Jw-cl2">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5g3-Jw-cl2" id="HvG-3x-gAW">
-                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xTY-Qn-U7e">
-                                                    <rect key="frame" x="20" y="0.0" width="357.5" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -2254,7 +2233,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fsK-PG-A5i"/>
-        <segue reference="zEV-Pg-VI9"/>
+        <segue reference="3As-6b-uVd"/>
         <segue reference="xCK-M5-sqh"/>
         <segue reference="RVc-dH-LVX"/>
         <segue reference="6cX-2Y-tzc"/>

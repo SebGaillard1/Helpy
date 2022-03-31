@@ -13,7 +13,6 @@ class UserSignUpViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var adressTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
@@ -21,10 +20,6 @@ class UserSignUpViewController: UIViewController {
     
     //MARK: - Properties
     let signUpToSuccess = "signUpToHome"
-    
-    //var handle: AuthStateDidChangeListenerHandle?
-    
-    //let ref = Database.database(url: FirebaseHelper.databaseUrl).reference(withPath: FirebaseHelper.pathForClients)
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -41,24 +36,6 @@ class UserSignUpViewController: UIViewController {
     }
     
     //MARK: - Actions
-    
-    @IBAction func addressTextFieldTouchDown(_ sender: UITextField) {
-        let autocompleteController = GMSAutocompleteViewController()
-        autocompleteController.delegate = self
-        
-        // Specify a filter
-        let filter = GMSAutocompleteFilter()
-        filter.country = "FR"
-        filter.type = .address
-        autocompleteController.autocompleteFilter = filter
-        
-        // Place data to return
-        let fields: GMSPlaceField = [.formattedAddress, .addressComponents, .coordinate]
-        autocompleteController.placeFields = fields
-        
-        present(autocompleteController, animated: true, completion: nil)
-    }
-    
     @IBAction func signUpDidTouch(_ sender: Any) {
         if passwordTextField.text != passwordConfirmationTextField.text {
             errorLabel.text = "Le mot de passe et sa confirmation ne correspondent pas."
@@ -92,41 +69,6 @@ class UserSignUpViewController: UIViewController {
                 self.performSegue(withIdentifier: self.signUpToSuccess, sender: self)
             }
         }
-    }
-}
-
-extension UserSignUpViewController: GMSAutocompleteViewControllerDelegate {
-    // Handle the user's selection.
-    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        //print(place.formattedAddress)
-        //print(place.addressComponents)
-        //print(place.coordinate.latitude)
-        //print(place.coordinate.longitude)
-        guard let components = place.addressComponents else { return }
-        for component in components {
-            for type in component.types {
-                switch type {
-                case "locality":
-                    print(component.name)
-                case "postal_code":
-                    print(component.name)
-                default:
-                    break
-                }
-            }
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        // TODO: handle the error.
-        print("Error: ", error.localizedDescription)
-    }
-    
-    // User canceled the operation.
-    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        dismiss(animated: true, completion: nil)
     }
 }
 
