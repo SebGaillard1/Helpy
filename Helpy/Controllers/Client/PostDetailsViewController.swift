@@ -71,10 +71,6 @@ class PostDetailsViewController: UIViewController {
             let constraint = scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             NSLayoutConstraint.activate([constraint])
         } else {
-            if let superview = postDescriptionLabel.superview {
-                superview.addSeparator(x: 0, y: superview.bounds.minY - CGFloat(20))
-                superview.addSeparator(x: 0, y: superview.bounds.maxY + CGFloat(20))
-            }
             view.addGradientOnButtonTop(buttonContainerView: bottomContainerView)
         }
     }

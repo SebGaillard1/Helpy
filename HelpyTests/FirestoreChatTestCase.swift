@@ -28,9 +28,8 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-    func testSendMessageTest() {
+    func testGivenUserIsConnectedWhenSendingMessageThenShouldNotHaveError() {
         let exp = XCTestExpectation(description: "wait")
-        //let exp = self.expectation(description: "Waiting for async operation")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "emailchat@exemple.fr", password: "password", lastName: "Seb", firstName: "G") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)
@@ -43,7 +42,7 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-    func testGetAllMessages() {
+    func testGivenUserIsConnectedWhenGettingAllConversationsThenShouldHaveOneConversation() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "emailchat5@mail.com", password: "password", lastName: "seb", firstName: "seb") { authResult, error in
             FirebaseFirestoreChatManager.shared.sendMessage(message: "Test", senderName: "Seb", receiverUid: "receiver", receiverName: "receiverName") { error in
@@ -59,7 +58,7 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-    func testGetConversationForTwoMessages() {
+    func testGivenUserConnectedWithMultipleMessagesSentWhenGettingConversationThenShouldHaveOnlyOne() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "emailchat6@mail.com", password: "password", lastName: "seb", firstName: "seb") { authResult, error in
             FirebaseFirestoreChatManager.shared.sendMessage(message: "Test", senderName: "Seb", receiverUid: "receiver", receiverName: "receiverName") { error in
@@ -78,7 +77,7 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-    func testGetAllMessage() {
+    func testGivenUserConnectedWhenGettingAllMessagesThenShouldHaveOneMessage() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "emailchat7@mail.com", password: "password", lastName: "seb", firstName: "seb") { authResult, error in
             FirebaseFirestoreChatManager.shared.sendMessage(message: "Test", senderName: "Seb", receiverUid: "receiverForConv", receiverName: "receiverName") { error in
@@ -94,26 +93,14 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-//    func testTest(){
-//        let exp = XCTestExpectation(description: "wait")
-//        FirebaseFirestoreChatManager.shared.getConversationMessages(with: "exemple") { error, messages in
-//            XCTAssertNil(error)
-//            XCTAssertEqual(messages.count, 1)
-//            exp.fulfill()
-//        }
-//        
-//        wait(for: [exp], timeout: 5)
-//    }
-    
-    func testSendMultipleMessage() {
+    func testGivenUserConnectedWhenSendingMultipleMessagesThenShouldNotHaveError() {
         let exp = XCTestExpectation(description: "wait")
-        //let exp = self.expectation(description: "Waiting for async operation")
-        FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "emailchat4@exemple.fr", password: "password", lastName: "Seb", firstName: "G") { authResult, error in
+        FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "emailchat10@exemple.fr", password: "password", lastName: "Sebi", firstName: "Gail") { authResult, error in
             XCTAssertNotNil(authResult)
             XCTAssertNil(error)
-            FirebaseFirestoreChatManager.shared.sendMessage(message: "Exemple", senderName: "name", receiverUid: "exemple", receiverName: "namereceiver") { error in
+            FirebaseFirestoreChatManager.shared.sendMessage(message: "Exemple", senderName: "name", receiverUid: "exemplenew", receiverName: "namereceiverww") { error in
                 XCTAssertNil(error)
-                FirebaseFirestoreChatManager.shared.sendMessage(message: "Exemple2", senderName: "name", receiverUid: "exemple", receiverName: "namereceiver") { error in
+                FirebaseFirestoreChatManager.shared.sendMessage(message: "Exemple", senderName: "name", receiverUid: "exemplenew", receiverName: "namereceiverww") { error in
                     XCTAssertNil(error)
                     exp.fulfill()
                 }
@@ -123,7 +110,7 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-    func testGetMessageWithoutBeingConnected() {
+    func testGivenNoUserConnectedWhenGettingMessageThenShouldReturnAnErrorAndNoMessage() {
         
         let exp = XCTestExpectation(description: "wait")
         do {
@@ -141,7 +128,7 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-    func testGetConversationsWithoutBeingConnected() {
+    func testGivenNoUserConnectedWhenGettingConversationsThenShouldReturnAnErrorAndNoConversation() {
         let exp = XCTestExpectation(description: "wait")
         do {
             try Auth.auth().signOut()
@@ -158,7 +145,7 @@ class FirestoreChatTestCase: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-    func testWhenSenderUidIsReceiverUid() {
+    func testGivenConnectedUserIsReceiverWhenGettingConversationThenShouldHaveOneMessageWithoutError() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "emailchat8@mail.com", password: "password", lastName: "seb", firstName: "seb") { authResult, error in
             FirebaseFirestoreChatManager.shared.sendMessage(message: "Test", senderName: "Seb", receiverUid: authResult?.user.uid ?? "", receiverName: "receiverName") { error in
@@ -170,7 +157,7 @@ class FirestoreChatTestCase: XCTestCase {
                 }
             }
         }
-
+        
         wait(for: [exp], timeout: 5)
     }
 }

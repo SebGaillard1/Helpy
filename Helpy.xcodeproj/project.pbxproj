@@ -22,7 +22,6 @@
 		57439B3427BA950C003C12E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */; };
 		57439B3527BA950C003C12E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */; };
 		57439B3827BB0B45003C12E3 /* NewPostTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */; };
-		57458DFA27D2C11600D51356 /* UIView+addSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57458DF927D2C11600D51356 /* UIView+addSeparator.swift */; };
 		5753697027B9AA16000E93F0 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */; };
 		5759673327BEA71F007F0F54 /* ProSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5759673227BEA71F007F0F54 /* ProSignInViewController.swift */; };
 		575C102227BBEC350014039A /* String+isTitleCorrectLenght.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C102127BBEC350014039A /* String+isTitleCorrectLenght.swift */; };
@@ -53,7 +52,7 @@
 		57BACF5A27B7FA59009AE36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5827B7FA59009AE36D /* Main.storyboard */; };
 		57BACF5C27B7FA5A009AE36D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5B27B7FA5A009AE36D /* Assets.xcassets */; };
 		57BACF5F27B7FA5A009AE36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF5D27B7FA5A009AE36D /* LaunchScreen.storyboard */; };
-		57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF6927B7FA5A009AE36D /* HelpyTests.swift */; };
+		57BACF6A27B7FA5A009AE36D /* FirestoreManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACF6927B7FA5A009AE36D /* FirestoreManagerTestCase.swift */; };
 		57BACF8627B807D3009AE36D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BACF8527B807D3009AE36D /* GoogleService-Info.plist */; };
 		57C00DD527D00AE300B468DB /* ClientTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */; };
 		57C00DD727D00D1F00B468DB /* ClientMyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C00DD627D00D1F00B468DB /* ClientMyAccountViewController.swift */; };
@@ -114,7 +113,6 @@
 		57439B3227BA950C003C12E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		57439B3327BA950C003C12E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		57439B3727BB0B45003C12E3 /* NewPostTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostTitleViewController.swift; sourceTree = "<group>"; };
-		57458DF927D2C11600D51356 /* UIView+addSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSeparator.swift"; sourceTree = "<group>"; };
 		5753696F27B9AA16000E93F0 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		5755BE8227CC28A70007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5755BE8827CC2DFD0007F86A /* libGeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeoFire.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +147,7 @@
 		57BACF5E27B7FA5A009AE36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57BACF6027B7FA5A009AE36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57BACF6527B7FA5A009AE36D /* HelpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57BACF6927B7FA5A009AE36D /* HelpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpyTests.swift; sourceTree = "<group>"; };
+		57BACF6927B7FA5A009AE36D /* FirestoreManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManagerTestCase.swift; sourceTree = "<group>"; };
 		57BACF8527B807D3009AE36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57C00DD427D00AE300B468DB /* ClientTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTabBarViewController.swift; sourceTree = "<group>"; };
 		57C00DD627D00D1F00B468DB /* ClientMyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMyAccountViewController.swift; sourceTree = "<group>"; };
@@ -304,9 +302,9 @@
 		57BACF6827B7FA5A009AE36D /* HelpyTests */ = {
 			isa = PBXGroup;
 			children = (
-				57BACF6927B7FA5A009AE36D /* HelpyTests.swift */,
 				57CC97D627E8B33B00C1C551 /* AuthTestCase.swift */,
 				57C72EDD27E8F49C00A95EC1 /* FirestoreChatTestCase.swift */,
+				57BACF6927B7FA5A009AE36D /* FirestoreManagerTestCase.swift */,
 				57CC97C827E881AD00C1C551 /* GooglePlacesServiceTestCase.swift */,
 				57CC97CA27E8828300C1C551 /* MockURLProtocol.swift */,
 				57CC97CC27E8837D00C1C551 /* FakeResponseData.swift */,
@@ -323,8 +321,7 @@
 				5759673427BEA74E007F0F54 /* Pro */,
 				57CACEEA27CD1C5500700E6A /* Client */,
 				570FCAA327BB185F00404003 /* NewPostFlow */,
-				5703EF1927D52BD500541577 /* ConversationsViewController.swift */,
-				57881ED627E21C6D007C2BB0 /* ChatViewController.swift */,
+				57C352A627F86FAD0044A693 /* Chat */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -365,6 +362,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		57C352A627F86FAD0044A693 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5703EF1927D52BD500541577 /* ConversationsViewController.swift */,
+				57881ED627E21C6D007C2BB0 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		57C4215927B9999E001A93B1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,7 +379,6 @@
 				575C102727BC53590014039A /* UIImageView+roundedCorners.swift */,
 				5736C92D27BD29FB00970DE9 /* UITextField+resignFirstResponser.swift */,
 				5736C92F27BD2C5B00970DE9 /* UIView+hideKeyboardOnTap.swift */,
-				57458DF927D2C11600D51356 /* UIView+addSeparator.swift */,
 				5703EF1227D5183000541577 /* UIView+addGradientOnButtonTop.swift */,
 			);
 			path = Extensions;
@@ -631,7 +636,6 @@
 				575C102427BC18840014039A /* NewPostAddressViewController.swift in Sources */,
 				57CEFAC027D1A3A400F0D630 /* PostSearchResultViewController.swift in Sources */,
 				57CD9A6727E6110300B9E8D9 /* UserType.swift in Sources */,
-				57458DFA27D2C11600D51356 /* UIView+addSeparator.swift in Sources */,
 				57C00DDF27D022E200B468DB /* ClientFavoritesViewController.swift in Sources */,
 				57881EE627E27DA7007C2BB0 /* ConversationTableViewCell.swift in Sources */,
 			);
@@ -647,7 +651,7 @@
 				57CC97CD27E8837D00C1C551 /* FakeResponseData.swift in Sources */,
 				57CC97C927E881AD00C1C551 /* GooglePlacesServiceTestCase.swift in Sources */,
 				57C72EDE27E8F49C00A95EC1 /* FirestoreChatTestCase.swift in Sources */,
-				57BACF6A27B7FA5A009AE36D /* HelpyTests.swift in Sources */,
+				57BACF6A27B7FA5A009AE36D /* FirestoreManagerTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

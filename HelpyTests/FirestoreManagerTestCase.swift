@@ -7,10 +7,10 @@
 
 import XCTest
 import Firebase
-@testable import Helpy
 import CoreLocation
+@testable import Helpy
 
-class HelpyTests: XCTestCase {
+class FirestoreManagerTestCase: XCTestCase {
     var post: Post!
     
     override func setUp() {
@@ -25,18 +25,6 @@ class HelpyTests: XCTestCase {
     }
     
     
-    
-//    func testGivenNoRecentPostsWhenFetchingRecentPostsThenShouldReturnNothing() {
-//        let exp = XCTestExpectation(description: "wait")
-//
-//        FirebaseDatabaseManager.shared.getRecentPosts { posts in
-//            XCTAssertEqual(posts.count, 0)
-//            exp.fulfill()
-//        }
-//
-//        wait(for: [exp], timeout: 3)
-//    }
-    
     func testGivenAPostToSaveWhenSavingItToFirestoreThenShouldHaveOnePost() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseDatabaseManager.shared.savePost(post: Post(title: "Post Exemple", category: "Au pair", locality: "Paris", postalCode: "69002", latitude: 48.8786916, longitude: 2.3315296, geohash: "u09wj41g08", proUid: "Uid1", postedBy: "Seb", description: "Description de l’annonce 2 !", image: UIImage(named: "garde-enfant"), imageUrl: "", isOnline: false)) { error in
@@ -44,30 +32,21 @@ class HelpyTests: XCTestCase {
 
             FirebaseDatabaseManager.shared.getPostFrom(pro: "Uid1") { posts in
                 XCTAssertNotNil(posts)
-                print(posts.count)
-                //XCTAssertEqual(posts.count, 1)
-                //XCTAssertEqual(posts.first?.title, "Post Exemple")
-
                 exp.fulfill()
             }
         }
 
         wait(for: [exp], timeout: 3)
     }
-    
-//    override class func tearDown() {
-//        super.tearDown()
-//
-//    }
 
-    func testGetRecentPosts() {
+    func testGivenAPostWhenGetingRecentPostsThenShouldHaveAPost() {
         let exp = XCTestExpectation(description: "wait")
         
         FirebaseDatabaseManager.shared.savePost(post: Post(title: "Post Exemple", category: "Au pair", locality: "Paris", postalCode: "69002", latitude: 48.8786916, longitude: 2.3315296, geohash: "u09wj41g08", proUid: "UmFHryyZ4qWG2cps41OFWB43NTC3", postedBy: "Seb", description: "Description de l’annonce 2 !", image: UIImage(named: "garde-enfant"), imageUrl: "", isOnline: false)) { error in
             XCTAssertNil(error)
 
             FirebaseDatabaseManager.shared.getRecentPosts { posts in
-                //XCTAssertEqual(posts.count, 2)
+                XCTAssertNotNil(posts)
                 exp.fulfill()
             }
         }
@@ -75,12 +54,13 @@ class HelpyTests: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
     
-    func testGetRecentPostsWithImage() {
+    func testGivenAPostSavedWhenDownloadingImageThenSouldHaveAnImage() {
         let exp = XCTestExpectation(description: "wait")
         
         FirebaseDatabaseManager.shared.savePost(post: Post(title: "Post Exemple", category: "Au pair", locality: "Paris", postalCode: "69002", latitude: 48.8786916, longitude: 2.3315296, geohash: "u09wj41g08", proUid: "Uid2", postedBy: "Seb", description: "Description de l’annonce 2 !", image: UIImage(named: "garde-enfant"), imageUrl: "", isOnline: false)) { error in
             XCTAssertNil(error)
 
+            
             FirebaseDatabaseManager.shared.getRecentPosts { posts in
                 FirebaseDatabaseManager.shared.downloadImage(from: posts[0].imageUrl) { postImage in
                     XCTAssertNotNil(postImage)
@@ -109,15 +89,15 @@ class HelpyTests: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
     
-    func testGetpostLByLocation() {
+    func testGivenAPostWhenGettingtPostByLocationThenShouldHaveAPost() {
         let exp = XCTestExpectation(description: "wait")
 
         FirebaseDatabaseManager.shared.savePost(post: Post(title: "Post Exemple", category: "Au pair", locality: "Paris", postalCode: "69002", latitude: 48.8786916, longitude: 2.3315296, geohash: "u09wj41g08", proUid: "Uid3", postedBy: "Seb", description: "Description de l’annonce 2 !", image: UIImage(named: "garde-enfant"), imageUrl: "", isOnline: false)) { error in
             XCTAssertNil(error)
 
             let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(48.8786916), longitude: CLLocationDegrees(2.3315296))
-            FirebaseDatabaseManager.shared.getPostByLocation(center: center, radiusInMeters: 1000) { posts in
-                //XCTAssertEqual(posts[0].title, "Post Exemple")
+            FirebaseDatabaseManager.shared.getPostByLocation(category: "Au pair", center: center, radiusInMeters: 1000) { posts in
+                XCTAssertNotNil(posts)
                 exp.fulfill()
             }
         }
@@ -125,7 +105,39 @@ class HelpyTests: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
     
-    func testGetProName() {
+    func testGivenAPostWhenGettingPostWithNoVlaidCategoryThenShouldNotReturnPost() {
+        let exp = XCTestExpectation(description: "wait")
+
+        FirebaseDatabaseManager.shared.savePost(post: Post(title: "Post Exemple", category: "Au pair", locality: "Paris", postalCode: "69002", latitude: 48.8786916, longitude: 2.3315296, geohash: "u09wj41g08", proUid: "Uid3", postedBy: "Seb", description: "Description de l’annonce 2 !", image: UIImage(named: "garde-enfant"), imageUrl: "", isOnline: false)) { error in
+            XCTAssertNil(error)
+
+            let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(48.8786916), longitude: CLLocationDegrees(2.3315296))
+            FirebaseDatabaseManager.shared.getPostByLocation(category: "BadCategory", center: center, radiusInMeters: 1000) { posts in
+                XCTAssertEqual(posts.count, 0)
+                exp.fulfill()
+            }
+        }
+
+        wait(for: [exp], timeout: 3)
+    }
+    
+    func testGivenAPostWhenGettingAllPostByLocationThenShouldHavePost() {
+        let exp = XCTestExpectation(description: "wait")
+
+        FirebaseDatabaseManager.shared.savePost(post: Post(title: "Post Exemple", category: "Au pair", locality: "Paris", postalCode: "69002", latitude: 48.8786916, longitude: 2.3315296, geohash: "u09wj41g08", proUid: "Uid3", postedBy: "Seb", description: "Description de l’annonce 2 !", image: UIImage(named: "garde-enfant"), imageUrl: "", isOnline: false)) { error in
+            XCTAssertNil(error)
+
+            let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(48.8786916), longitude: CLLocationDegrees(2.3315296))
+            FirebaseDatabaseManager.shared.getPostByLocation(category: "", center: center, radiusInMeters: 1000) { posts in
+                XCTAssertNotNil(posts)
+                exp.fulfill()
+            }
+        }
+
+        wait(for: [exp], timeout: 3)
+    }
+    
+    func testGivenAProUserWhenGettinUserNameThenShouldGetProName() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: "emailpro1@mail.com", password: "password", lastName: "Gaillard", firstName: "SebProTest") { authResult, error in
             XCTAssertNil(error)
@@ -139,7 +151,7 @@ class HelpyTests: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
     
-    func testGetProNameWhenNoAccount() {
+    func testGivenNoProUserConnectedWhenGettingProNameThenShouldHaveNoName() {
         let exp = XCTestExpectation(description: "wait")
         
             FirebaseDatabaseManager.shared.getProName(forUid: "nonexistingpro") { name in

@@ -18,7 +18,7 @@ class AuthTestCase: XCTestCase {
         //Auth.auth().currentUser?.delete()
     }
     
-    func testCreateClient() {
+    func testGivenNoUserWhenCreatingClientAccoountThenAccountShouldBeCreated() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "email@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
@@ -29,7 +29,7 @@ class AuthTestCase: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
     
-    func testCreateClientWhenAlreadyExisting() {
+    func testGivenAnAccountWhenCreatingClientAccountWhenAlreadyExistingThenShouldReturnAnError() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "email3@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
@@ -44,7 +44,7 @@ class AuthTestCase: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
 
-    func testSignInClient() {
+    func testGivenAUserAccountWhenSigninInClientThenUserShouldBeConnected() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .client, withEmail: "email2@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
@@ -63,7 +63,7 @@ class AuthTestCase: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
 
-    func testSignInNonExistingClient() {
+    func testGivenNoAccountWhenSigninInNonExistingClientThenShouldReturnAnError() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.signInUser(userType: .client, withEmail: "nonertretil@exemple.fr", password: self.password) { error in
                 XCTAssertNotNil(error)
@@ -73,7 +73,7 @@ class AuthTestCase: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
 
-    func testCreatePro() {
+    func testGivenNoProAccountWhenCreatingProAccountThenShouldCreateAccountWithoutError() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: "emailpro@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
@@ -84,7 +84,7 @@ class AuthTestCase: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
 
-    func testCreateProWhenAlreadyExisting() {
+    func testGivenAProAccountWhenCreatingProAccountAlreadyExistingThenShouldReturnAnError() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: "emailpro3@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)
@@ -99,7 +99,7 @@ class AuthTestCase: XCTestCase {
         wait(for: [exp], timeout: 3)
     }
 
-    func testSignInPro() {
+    func testGivenProAccountIsExistingWhenSigninInProThenShouldBeConnected() {
         let exp = XCTestExpectation(description: "wait")
         FirebaseAuthManager.shared.createUser(userType: .pro, withEmail: "emailpro2@exemple.fr", password: password, lastName: "", firstName: "") { authResult, error in
             XCTAssertNotNil(authResult)

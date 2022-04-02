@@ -45,8 +45,6 @@ class PostSearchLocationViewController: UIViewController {
         locationLabel.layer.borderColor = UIColor.label.cgColor
         locationLabel.layer.borderWidth = 2.0
         locationLabel.layer.cornerRadius = 8
-        view.addSeparator(x: 0, y: locationLabel.layer.position.y - CGFloat(30))
-        view.addSeparator(x: 0, y: locationLabel.layer.position.y + CGFloat(30))
         setLocationLabelText()
         
         radiusLabel.text = "\(radiusInKm) km"

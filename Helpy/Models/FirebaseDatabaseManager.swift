@@ -81,12 +81,11 @@ final class FirebaseDatabaseManager {
         }
     }
     
-    func savePost(post: Post ,completion: @escaping (_ error: String?) -> Void) {
+    func savePost(post: Post, completion: @escaping (_ error: String?) -> Void) {
         let image = post.image ?? UIImage(named: "garde-enfant")!
         
         savePostImage(image: image) { imageDowndloadLink, error in
             guard !imageDowndloadLink.isEmpty, error == nil else {
-                // Failed to save or get the image url
                 completion(error)
                 return
             }
