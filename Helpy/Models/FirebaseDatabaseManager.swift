@@ -136,7 +136,7 @@ final class FirebaseDatabaseManager {
     func getRecentPosts(completion: @escaping (_ posts: [Post]) -> Void) {
         var posts = [Post]()
         
-        db.collection("posts").addSnapshotListener { snapshot, error in
+        db.collection("posts").order(by: "postDate", descending: false).addSnapshotListener { snapshot, error in
             guard let snapshot = snapshot, !snapshot.isEmpty else {
                 completion([])
                 return

@@ -39,11 +39,12 @@ class MessageCell: UITableViewCell {
         if message.receiverUid == currentUid {
             leftView.isHidden = true
             rightView.isHidden = false
-            messageBuble.backgroundColor = Constants.appAccentUIColor
+            messageBuble.backgroundColor = UIColor.systemGray6
+            messageLabel.textColor = UIColor.label
         } else {
             leftView.isHidden = false
             rightView.isHidden = true
-            messageBuble.backgroundColor = UIColor.green
+            messageBuble.backgroundColor = Constants.appAccentUIColor
         }
     }
 }

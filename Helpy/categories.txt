@@ -34,6 +34,7 @@ Doula
 Drogman
 Écrivain public
 Éducateur canin
+Éducation
 Enquêteur d'assurances
 Enquêteur de droit privé
 Escort
@@ -78,7 +79,7 @@ Recruteur
 Rédacteur professionnel
 Secrétariat
 Service de voiturier
-Services à la personne en France
+Services à la personne
 Services aux occupants
 Services généraux
 Sténo-dactylo
